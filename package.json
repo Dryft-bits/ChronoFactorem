@@ -1,8 +1,8 @@
 {
-  "name": "chronofactorem",
+  "name": "ChronoFactorem",
   "version": "1.0.0",
   "description": "Timetable maker-helper",
-  "homepage": "https://github.com/VikramjeetD/ChronoFactorem#readme",
+  "homepage": "https://github.com/Dryft-bits/ChronoFactorem#readme",
   "author": "Dryft-bits",
   "main": "server.jsx",
   "dependencies": {
