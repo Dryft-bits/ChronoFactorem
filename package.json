@@ -56,10 +56,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/VikramjeetD/ChronoFactorem.git"
+    "url": "git+https://github.com/Dryft-bits/ChronoFactorem.git"
   },
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/VikramjeetD/ChronoFactorem/issues"
+    "url": "https://github.com/Dryft-bits/ChronoFactorem/issues"
   }
 }
