@@ -1,12 +1,12 @@
-var config = {};
+// var config = {};
 
-config.admin={};
+// config.admin = {};
 
-config.app={};
+// config.app = {};
 
-config.admin.name="Dryft-bits";
-config.admin.email="";
-config.app.name="ChronoFactorem";
-config.app.url="";
+// config.admin.name = "Dryft-bits";
+// config.admin.email = "";
+// config.app.name = "ChronoFactorem";
+// config.app.url = "";
 
-module.exports=config
+// module.exports = config;
