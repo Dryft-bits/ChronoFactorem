@@ -1,5 +1,5 @@
 const express = require("express");
-const connectDB = require("./config/db.jsx");
+const connectDB = require("./config/db");
 
 const app = express();
 
@@ -9,7 +9,7 @@ connectDB();
 app.get("/", (req, res) => res.send("API Running"));
 
 // Define Routes
-app.use("/api/auth", require("./routes/api/auth.jsx"));
+app.use("/api/auth", require("./routes/api/auth"));
 
 const PORT = process.env.port || 5000;
 
