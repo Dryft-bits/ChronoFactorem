@@ -12,7 +12,9 @@ class Search extends Component {
     var updatedlist = this.state.initial;
     updatedlist = updatedlist.filter(item => {
       return (
-        item.code.toLowerCase().search(input.target.value.toLowerCase()) !== -1
+        item.code.toLowerCase().search(input.target.value.toLowerCase()) !==
+          -1 ||
+        item.name.toLowerCase().search(input.target.value.toLowerCase()) !== -1
       );
     });
     this.setState({ current: updatedlist });
