@@ -8,7 +8,7 @@ class ListCourse extends Component {
   render() {
     return (
       <ul>
-        {this.props.courses.map(function(course) {
+        {this.props.courses.map(course => {
           return (
             <li key={course.code}>
               {course.code} {course.name}
