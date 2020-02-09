@@ -1,11 +1,11 @@
-const mongoose = require("mongoose");
-const config = require("config");
-const mongoURI = config.get("mongoURI");
+import { connect } from "mongoose";
+import { get } from "config";
+const mongoURI = get("mongoURI");
 
 // Connects to database
 const connectDB = async () => {
   try {
-    await mongoose.connect(mongoURI, {
+    await connect(mongoURI, {
       // Change deprecated settings to resolve warnings
       useUnifiedTopology: true,
       useNewUrlParser: true,
@@ -19,4 +19,4 @@ const connectDB = async () => {
   }
 };
 
-module.exports = connectDB;
+export default connectDB;

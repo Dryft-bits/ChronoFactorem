@@ -1,20 +1,17 @@
 {
-  "name": "ChronoFactorem",
-  "version": "1.0.0",
+  "name": "chronofactorem",
+  "version": "0.1.0",
   "description": "Timetable maker-helper",
-  "homepage": "https://github.com/Dryft-bits/ChronoFactorem#readme",
+  "homepage": "https://github.com/Dryft-bits/ChronoFactorem",
   "author": "Dryft-bits",
-  "main": "server.jsx",
+  "main": "server.js",
   "dependencies": {
-    "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
     "config": "^3.2.5",
-    "cookie-parser": "^1.4.3",
     "debug": "^4.1.0",
     "dotenv": "6.2.0",
     "express": "^4.17.1",
     "express-validator": "^6.4.0",
-    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.8.11",
     "node-sass": "^4.5.3",
     "node-sass-middleware": "^0.11.0",
@@ -58,7 +55,7 @@
     "type": "git",
     "url": "git+https://github.com/Dryft-bits/ChronoFactorem.git"
   },
-  "license": "ISC",
+  "license": "SEE LICENSE IN LICENSE",
   "bugs": {
     "url": "https://github.com/Dryft-bits/ChronoFactorem/issues"
   }
