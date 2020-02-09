@@ -6,7 +6,7 @@ function App() {
   const courses = [
     {
       code: "CS F211",
-      name: "absdkvndsinvsd",
+      name: "DSA",
       lecture: [
         { id: 1, teacher: "abc", hours: " 6 7", room: "ht", days: "hk" },
         { id: 1, teacher: "abc", hours: " 6 7", room: "ht", days: "hk" }
@@ -24,7 +24,7 @@ function App() {
     },
     {
       code: "CS F212",
-      name: "absdkvndsinvsd",
+      name: "OOPS",
       lecture: [
         { id: 1, teacher: "abc", hours: " 6 7", room: "ht", days: "hk" },
         { id: 1, teacher: "abc", hours: " 6 7", room: "ht", days: "hk" }
