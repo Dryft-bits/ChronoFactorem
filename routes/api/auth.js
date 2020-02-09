@@ -1,5 +1,5 @@
-import { Router } from "express";
-const router = Router();
+import express from "express";
+const router = express.Router();
 
 // @route   GET api/auth
 // @desc    Test route
