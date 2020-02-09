@@ -1,0 +1,3 @@
+{
+  "mongoURI": "mongodb+srv://admin:admin@chronofactorem-l0f9q.mongodb.net/test?retryWrites=true&w=majority"
+}
