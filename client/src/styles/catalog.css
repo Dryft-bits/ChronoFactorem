@@ -1,0 +1,14 @@
+ul {
+  list-style: None;
+}
+
+ul.course-tile > li {
+  display: inline-block;
+  width: 20%;
+}
+
+ul.top-bar > li {
+  display: inline-block;
+  width: 20%;
+  background-color: aquamarine;
+}

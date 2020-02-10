@@ -1,6 +1,8 @@
 import React from "react";
 import "./App.css";
 import Search from "./components/Search";
+import Catalog from "./components/Catalog";
+import "./styles/catalog.css";
 
 function App() {
   const courses = [
@@ -45,6 +47,7 @@ function App() {
   return (
     <div className="App">
       <Search items={courses} />
+      <Catalog courses={courses} />
     </div>
   );
 }
