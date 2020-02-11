@@ -1,7 +1,9 @@
 import express from "express";
 import connectDB from "./config/db.js";
 
-import auth from "./routes/api/auth.js";
+import authRoute from "./routes/api/auth.js";
+import staffRoute from "./routes/api/staff.js";
+import studentRoute from "./routes/api/student.js";
 
 const app = express();
 
@@ -11,7 +13,9 @@ connectDB();
 app.get("/", (req, res) => res.send("API Running"));
 
 // Define Routes
-app.use("/api/auth", auth);
+app.use("/api/auth", authRoute);
+app.use("/api/staff", staffRoute);
+app.use("/api/student", studentRoute);
 
 const PORT = process.env.port || 5000;
 
