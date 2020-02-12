@@ -138,12 +138,12 @@ img {
 
 .btn-left span:after {
   /* right: 20px; */
-  content: '\00bb';
+  content: "\00bb";
 }
 
 .btn-right span:after {
   /* right: 20px; */
-  content: '\00bb';
+  content: "\00bb";
 }
 
 .btn-right:hover span {
@@ -178,7 +178,7 @@ img {
 .landing {
   position: relative;
   height: 100vh;
-  background: url("./img/bkg.jpg") no-repeat center center/cover;
+  background: url("./img/landingbackground.jpg") no-repeat center center/cover;
 }
 
 body {
