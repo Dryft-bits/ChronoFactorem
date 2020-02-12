@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react";
 
-const Register = () => {
+const Login = () => {
   const [formData, setFormData] = useState({
     // default values
     username: "",
@@ -44,4 +44,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Login;

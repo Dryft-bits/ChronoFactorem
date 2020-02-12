@@ -12,10 +12,7 @@ export const Landing = () => {
               Create your own timetable.
             </p>
             <div className='buttons centered'>
-              <Link
-                to='/register'
-                className='btn btn-light btn-landing btn-left'
-              >
+              <Link to='/login' className='btn btn-light btn-landing btn-left'>
                 <span>Staff</span>
               </Link>
               <Link
