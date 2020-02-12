@@ -1,4 +1,4 @@
-import React,{Component} from React
+import React,{Component} from "react"
 import Timetable from 'react-timetable-events'
 
 class PreviewTT extends Component
@@ -28,3 +28,4 @@ class PreviewTT extends Component
         )
     }
 }
+export default PreviewTT;
