@@ -3,6 +3,7 @@ import "./App.css";
 import Search from "./components/Search";
 import Timetable from "./components/TimeTable";
 
+
 class App extends Component {
   constructor(props)
   {
@@ -10,6 +11,7 @@ class App extends Component {
     this.state = {
       isRoot: 1,
       isPreview: 0
+
     }
     this.courses = [
       {
@@ -74,6 +76,7 @@ class App extends Component {
         </div>
         </>
       );
+
     }
     else if(this.state.isRoot)
     {
@@ -86,6 +89,7 @@ class App extends Component {
           <Search items={this.courses} />
         </div>
         </>
+
       );
     }
   }
