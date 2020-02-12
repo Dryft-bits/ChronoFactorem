@@ -1,9 +1,9 @@
-import "./App.css";
 import React, { Fragment } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Landing from "./components/layout/Landing.jsx";
 import Register from "./components/auth/Register.jsx";
 import Testbed from "./components/testbed/Testbed.jsx";
+import "./App.css";
 
 const App = () => {
   return (
