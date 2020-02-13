@@ -1,7 +1,7 @@
-import express from "express";
-import connectDB from "./config/db.js";
+const express = require("express");
+const connectDB = require("./config/db");
 
-import auth from "./routes/api/auth.js";
+const auth = require("./routes/api/auth.js");
 
 const app = express();
 

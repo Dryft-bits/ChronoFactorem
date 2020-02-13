@@ -1,7 +1,6 @@
 {
   "name": "chronofactorem",
   "version": "0.1.0",
-  "type": "module",
   "description": "Timetable maker-helper",
   "homepage": "https://github.com/Dryft-bits/ChronoFactorem",
   "author": "Dryft-bits",
