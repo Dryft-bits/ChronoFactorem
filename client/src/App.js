@@ -1,14 +1,7 @@
 import React, {Component} from "react";
 import "./App.css";
 import Search from "./components/Search";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useRouteMatch,
-  useParams
-} from "react-router-dom";
+import Timetable from "./components/TimeTable";
 
 class App extends Component {
   constructor(props)
@@ -16,7 +9,7 @@ class App extends Component {
     super(props);
     this.state = {
       isRoot: 1,
-      isPreview: 0,
+      isPreview: 0
     }
     this.courses = [
       {
@@ -56,19 +49,43 @@ class App extends Component {
         compre: "4 May"
       }
         ];
+      this.sendPrevOrBack = this.sendPrevOrBack.bind(this);
 
+  }
+  sendPrevOrBack()
+  {
+    this.setState(state => ({
+      isPreview: !state.isPreview
+    }));
+    this.setState(state =>({
+      isRoot: !state.isRoot
+    }));
   }
   render()
   {
-    if(this.isPreview){
-
+    if(this.state.isPreview){
+      return(
+        <>
+        <div>
+          <button type="Button" onClick = {this.sendPrevOrBack}>Back</button>
+        </div>
+        <div>
+          <Timetable />
+        </div>
+        </>
+      );
     }
     else if(this.state.isRoot)
     {
       return (
+        <>
+        <div>
+          <button type="Button" onClick = {this.sendPrevOrBack}>View Preview</button>
+        </div>
         <div className="App">
           <Search items={this.courses} />
         </div>
+        </>
       );
     }
   }
