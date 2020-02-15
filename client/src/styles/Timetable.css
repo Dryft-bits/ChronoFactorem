@@ -1,20 +1,52 @@
 .gridElement
 {
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-columns: 0fr 1fr 1fr 1fr 1fr 1fr 1fr;
     row-gap: 5px;
     column-gap:10px;
     background-color: #2196F3;
     padding: 10px;
     border-radius: 5px;
-    grid-template-rows: 48px 48px 48px 48px 48px 48px 48px 48px 48px 48px;
+    grid-template-rows: 48px 48px 48px 48px 48px 48px 48px 48px 48px 48px 48px;
 }
 
 .gridElement > div
 {
     background-color: rgba(255, 255, 255, 0.8);
+    position: relative;
     text-align: center;
     padding: 10px 10px;
     font-size: 10px;
     border-radius: 5px;
+}
+
+.gridItem
+{
+    background-color: '#ccc';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gridItem:hover
+{
+    box-shadow: 0 0 0 1px rgba(5, 27, 43, 0.2);
+}
+.gridHeader
+{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    row-gap: 5px;
+    column-gap:10px;
+    background-color: #2196F3;
+    padding: 10px;
+    border-radius: 5px;
+    grid-template-rows: 45px 45px 45px 45px 45px 45px 45px 45px 45px 45px;
+}
+
+table#t01{
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #2196F3;
+
 }

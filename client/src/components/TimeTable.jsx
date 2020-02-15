@@ -1,7 +1,6 @@
 import { Component } from "react";
 import React from "react";
 import "../styles/Timetable.css";
-import Table from "reactstrap";
 class Timetable extends Component{
    //props needed: Specialized timetable for BITSIANS
    /*
@@ -70,7 +69,7 @@ class Timetable extends Component{
                     Name: "DSA",
                     ID: "CS F211",
                     Days: "Tuesday Thursday Saturday",
-                    Hours:"5 6",
+                    Hours:"5 6 7 8",
                     Section: "L1"
                 },
                 
@@ -82,12 +81,13 @@ class Timetable extends Component{
     populateTimetable(coursesAdded)
     {
         var gridList = [
-            [0,0,0,0,0,0,0,0,0,0,0],
-            [0,0,0,0,0,0,0,0,0,0,0],
-            [0,0,0,0,0,0,0,0,0,0,0],
-            [0,0,0,0,0,0,0,0,0,0,0],
-            [0,0,0,0,0,0,0,0,0,0,0],
-            [0,0,0,0,0,0,0,0,0,0,0]
+            ["Time",1,2,3,4,5,6,7,8,9,10],
+            ["Monday",0,0,0,0,0,0,0,0,0,0],
+            ["Tuesday",0,0,0,0,0,0,0,0,0,0],
+            ["Wednesday",0,0,0,0,0,0,0,0,0,0],
+            ["Thursday",0,0,0,0,0,0,0,0,0,0],
+            ["Friday",0,0,0,0,0,0,0,0,0,0],
+            ["Saturday",0,0,0,0,0,0,0,0,0,0]
         ];
         /*
         var to_not_render = [
@@ -130,36 +130,36 @@ class Timetable extends Component{
                     var divStyle = {};
                     renderFlag = 0;
                     if(listOfHours.length > 1)
-                    { renderFlag = 1;
+                    { 
+                        renderFlag = 1;
                          divStyle = {
-                           backgroundColor: '#ccc',
-                           gridRowStart: `${listOfHours[0]}`,
-                           gridColumnStart: `${Map[i]+1}`,
-                           gridCoulmnEnd: `${Map[i]+2}`,
+                           
+                           gridRowStart: `${listOfHours[0]+1}`,
+                           gridColumnStart: `${Map[i]+1+1}`,
+                           gridCoulmnEnd: `${Map[i]+1+2}`,
                            gridRowEnd: `span ${listOfHours[listOfHours.length-1]-listOfHours[0]+1}`
                         }
                     }
                     else
                     {
                         divStyle = {
-                            backgroundColor: '#ccc'
+                           
                            };  
                     }
-
                     let str = <>
-                                <div style={divStyle}>
+                                <div className="gridItem" style={divStyle}>
                                     {course.Name}<br></br>
                                     {course.ID}<br></br>
                                     {course.Section}<br></br>
                                 </div>
                             </>;
                     
-                        gridList[Map[i]][listOfHours[0]] = str;
+                        gridList[Map[i]+1][listOfHours[0]] = str;
                         if(renderFlag)
                         {
                             for(var j = listOfHours[0]+1 ; j < listOfHours[0]+listOfHours.length;j++)
                             {
-                                gridList[Map[i]][j] = -1;
+                                gridList[Map[i]+1][j] = -1;
                             }
                         }
                    // renderFlag = 1;
@@ -167,19 +167,34 @@ class Timetable extends Component{
                 }
             }
 
-            for(i = 0; i< 6; i++)
-                for(j =1 ; j<= 10; j++)
+            for(i = 0; i<=6; i++)
+                for(j =0 ; j<= 10; j++)
                 {
                     if(gridList[i][j] === 0)
                     {
                         gridList[i][j] =
                          <>
-                        <div style={{backgroundColor: '#ffffff'}}>
+                        <div style={{backgroundColor: '#ffffff',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'}}>
                             {' '}<br></br>
                             {' '}<br></br>
                             {' '}<br></br>
                         </div>
                         </>;  
+                    }
+                    else if(j === 0 || i === 0)
+                    {
+                        gridList[i][j] = 
+                        <>
+                        <div style={{backgroundColor: "#d6afc7",
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'}}>
+                            {gridList[i][j]}
+                        </div>
+                        </>;
                     }
                 }
             
@@ -189,9 +204,9 @@ class Timetable extends Component{
     render()
     {
        var divsToRender = [];
-       for(var i = 1; i<= 10;i++)
+       for(var i = 0; i<= 10;i++)
        {
-           for(var j = 0; j<6; j++)
+           for(var j = 0; j<=6; j++)
            {
                if(this.gridArray[j][i] === -1);
                else{
