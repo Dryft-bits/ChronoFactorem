@@ -8,6 +8,7 @@
     padding: 10px;
     border-radius: 5px;
     grid-template-rows: 48px 48px 48px 48px 48px 48px 48px 48px 48px 48px 48px;
+    transition-duration: 0.4s;
 }
 
 .gridElement > div
@@ -30,23 +31,7 @@
 
 .gridItem:hover
 {
-    box-shadow: 0 0 0 1px rgba(5, 27, 43, 0.2);
-}
-.gridHeader
-{
-    display: grid;
-    grid-template-columns: auto auto auto auto auto auto auto;
-    row-gap: 5px;
-    column-gap:10px;
-    background-color: #2196F3;
-    padding: 10px;
-    border-radius: 5px;
-    grid-template-rows: 45px 45px 45px 45px 45px 45px 45px 45px 45px 45px;
-}
-
-table#t01{
-    border: 1px solid black;
-    border-radius: 5px;
-    background-color: #2196F3;
-
+    background-color: #31A6FF;
+    box-shadow: 5px 5px 5px 2px rgba(5, 27, 43, 0.2);
+    transition-duration: 0.4s;
 }
