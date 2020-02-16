@@ -9,8 +9,13 @@ class App extends Component {
   {
     super(props);
     this.state = {
+<<<<<<< HEAD
       isRoot: 1,
       isPreview: 0
+=======
+      isRoot: true,
+      isPreview: false
+>>>>>>> feature
 
     }
     this.courses = [
@@ -51,6 +56,7 @@ class App extends Component {
         compre: "4 May"
       }
         ];
+<<<<<<< HEAD
       this.sendPrevOrBack = this.sendPrevOrBack.bind(this);
 
   }
@@ -62,6 +68,26 @@ class App extends Component {
     this.setState(state =>({
       isRoot: !state.isRoot
     }));
+=======
+      
+      this.view = {ROOT: 0, PREVIEW: 1};
+  }
+  sendTo(view)
+  {
+    if(view === this.view.ROOT){
+    this.setState(state => ({
+      isPreview: false,
+      isRoot: true
+    }));
+   }
+   else if(view === this.view.PREVIEW)
+   {
+     this.setState(state => ({
+       isPreview: true,
+       isRoot: false
+     }))
+   }
+>>>>>>> feature
   }
   render()
   {
@@ -69,7 +95,11 @@ class App extends Component {
       return(
         <>
         <div>
+<<<<<<< HEAD
           <button type="Button" onClick = {this.sendPrevOrBack}>Back</button>
+=======
+          <button type="Button" onClick = {this.sendTo.bind(this,this.view.ROOT)}>Back</button>
+>>>>>>> feature
         </div>
         <div>
           <Timetable />
@@ -83,7 +113,11 @@ class App extends Component {
       return (
         <>
         <div>
+<<<<<<< HEAD
           <button type="Button" onClick = {this.sendPrevOrBack}>View Preview</button>
+=======
+          <button type="Button" onClick = {this.sendTo.bind(this,this.view.PREVIEW)}>View Preview</button>
+>>>>>>> feature
         </div>
         <div className="App">
           <Search items={this.courses} />

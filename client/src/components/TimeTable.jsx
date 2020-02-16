@@ -83,6 +83,7 @@ class Timetable extends Component{
             ["Saturday",0,0,0,0,0,0,0,0,0,0]
         ];
        
+<<<<<<< HEAD
         var Map = {};
          Map['Monday'] = 1;
          //Map[1] = 'Monday';
@@ -138,11 +139,65 @@ class Timetable extends Component{
 
             for(i = 0; i<=6; i++)
                 for(j =0 ; j<= 10; j++)
+=======
+        let Map = {};
+         Map['Monday'] = 1;
+         Map['Tuesday'] = 2;
+         Map['Wednesday'] = 3;
+         Map['Thursday'] = 4;
+         Map['Friday'] = 5;
+         Map['Saturday'] = 6;
+            
+            //let each course have a day list, and a hours list, both space separated strings
+        for(let course of coursesAdded)
+        {    
+            
+            let listOfDays = Array.from(course.Days.split(' '));
+            let listOfHours = (Array.from(course.Hours.split(' ')));
+            for(let i = 0; i< listOfHours.length; i++)
+            {
+                listOfHours[i] = parseInt(listOfHours[i]);
+            }
+            for(let i of listOfDays)
+            {
+                let divStyle = {};
+                if(listOfHours.length > 1)
+                {
+                     divStyle = {
+                       gridRowStart: `${listOfHours[0]+1}`,
+                       gridColumnStart: `${Map[i]+1}`,
+                       gridCoulmnEnd: `${Map[i]+2}`,
+                       gridRowEnd: `span ${listOfHours[listOfHours.length-1]-listOfHours[0]+1}`
+                    }
+                }
+                let str = 
+                            <div className="gridItem" style={divStyle}>
+                                {course.Name}<br></br>
+                                {course.ID}<br></br>
+                                {course.Section}<br></br>
+                            </div>
+                        
+                
+                gridList[Map[i]][listOfHours[0]] = str;
+                for(let j = listOfHours[0]+1 ; j < listOfHours[0]+listOfHours.length;j++)
+                {
+                    gridList[Map[i]][j] = -1;
+                }
+            }
+        }
+
+            for(let i = 0; i<=6; i++)
+                for(let j =0 ; j<= 10; j++)
+>>>>>>> feature
                 {
                     if(gridList[i][j] === 0)
                     {
                         gridList[i][j] =
+<<<<<<< HEAD
                          <>
+=======
+                         
+>>>>>>> feature
                             <div style={{
                                         backgroundColor: '#ffffff',
                                         display: 'flex',
@@ -153,12 +208,20 @@ class Timetable extends Component{
                                 {' '}<br></br>
                                 {' '}<br></br>
                             </div>
+<<<<<<< HEAD
                         </>;  
+=======
+                          
+>>>>>>> feature
                     }
                     else if(j === 0 || i === 0)
                     {
                         gridList[i][j] = 
+<<<<<<< HEAD
                         <>
+=======
+                        
+>>>>>>> feature
                             <div style={{
                                         backgroundColor: "#d6afc7",
                                         display: 'flex',
@@ -167,7 +230,11 @@ class Timetable extends Component{
                                 }}>
                                 {gridList[i][j]}
                             </div>
+<<<<<<< HEAD
                         </>;
+=======
+                        
+>>>>>>> feature
                     }
                 }
             
@@ -176,10 +243,17 @@ class Timetable extends Component{
     }
     render()
     {
+<<<<<<< HEAD
        var divsToRender = [];
        for(var i = 0; i<= 10;i++)
        {
            for(var j = 0; j<=6; j++)
+=======
+       let divsToRender = [];
+       for(let i = 0; i<= 10;i++)
+       {
+           for(let j = 0; j<=6; j++)
+>>>>>>> feature
            {
                if(this.gridArray[j][i] === -1);
                else{
