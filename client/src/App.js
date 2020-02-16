@@ -1,17 +1,15 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import "./App.css";
 import Search from "./components/Search";
 import Timetable from "./components/TimeTable";
 
 
 class App extends Component {
-  constructor(props)
-  {
+  constructor(props) {
     super(props);
     this.state = {
       isRoot: true,
       isPreview: false
-
     }
     this.courses = [
       {
@@ -50,51 +48,47 @@ class App extends Component {
         midsem: "3 Mar",
         compre: "4 May"
       }
-        ];
-      
-      this.view = {ROOT: 0, PREVIEW: 1};
+    ];
+
+    this.view = { ROOT: 0, PREVIEW: 1 };
   }
-  sendTo(view)
-  {
-    if(view === this.view.ROOT){
-    this.setState(state => ({
-      isPreview: false,
-      isRoot: true
-    }));
-   }
-   else if(view === this.view.PREVIEW)
-   {
-     this.setState(state => ({
-       isPreview: true,
-       isRoot: false
-     }))
-   }
+  sendTo(view) {
+    if (view === this.view.ROOT) {
+      this.setState(state => ({
+        isPreview: false,
+        isRoot: true
+      }));
+    }
+    else if (view === this.view.PREVIEW) {
+      this.setState(state => ({
+        isPreview: true,
+        isRoot: false
+      }))
+    }
   }
-  render()
-  {
-    if(this.state.isPreview){
-      return(
+  render() {
+    if (this.state.isPreview) {
+      return (
         <>
-        <div>
-          <button type="Button" onClick = {this.sendTo.bind(this,this.view.ROOT)}>Back</button>
-        </div>
-        <div>
-          <Timetable />
-        </div>
+          <div>
+            <button type="Button" onClick={this.sendTo.bind(this, this.view.ROOT)}>Back</button>
+          </div>
+          <div>
+            <Timetable />
+          </div>
         </>
       );
 
     }
-    else if(this.state.isRoot)
-    {
+    else if (this.state.isRoot) {
       return (
         <>
-        <div>
-          <button type="Button" onClick = {this.sendTo.bind(this,this.view.PREVIEW)}>View Preview</button>
-        </div>
-        <div className="App">
-          <Search items={this.courses} />
-        </div>
+          <div>
+            <button type="Button" onClick={this.sendTo.bind(this, this.view.PREVIEW)}>View Preview</button>
+          </div>
+          <div className="App">
+            <Search items={this.courses} />
+          </div>
         </>
 
       );
