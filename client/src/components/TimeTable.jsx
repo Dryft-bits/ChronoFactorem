@@ -83,7 +83,7 @@ class Timetable extends Component{
             ["Saturday",0,0,0,0,0,0,0,0,0,0]
         ];
        
-        var Map = {};
+        let Map = {};
          Map['Monday'] = 1;
          //Map[1] = 'Monday';
          Map['Tuesday'] = 2;
@@ -98,18 +98,18 @@ class Timetable extends Component{
          //Map[6] = 'Saturday';
             
             //let each course have a day list, and a hours list, both space separated strings
-            for(var course of coursesAdded)
+            for(let course of coursesAdded)
             {    
                 
-                var listOfDays = Array.from(course.Days.split(' '));
-                var listOfHours = (Array.from(course.Hours.split(' ')));
-                for(var i = 0; i< listOfHours.length; i++)
+                let listOfDays = Array.from(course.Days.split(' '));
+                let listOfHours = (Array.from(course.Hours.split(' ')));
+                for(let i = 0; i< listOfHours.length; i++)
                 {
-                    listOfHours[i] = +listOfHours[i];
+                    listOfHours[i] = parseInt(listOfHours[i]);
                 }
-                for(i of listOfDays)
+                for(let i of listOfDays)
                 {
-                    var divStyle = {};
+                    let divStyle = {};
                     if(listOfHours.length > 1)
                     {
                          divStyle = {
@@ -119,16 +119,16 @@ class Timetable extends Component{
                            gridRowEnd: `span ${listOfHours[listOfHours.length-1]-listOfHours[0]+1}`
                         }
                     }
-                    let str = <>
+                    let str = 
                                 <div className="gridItem" style={divStyle}>
                                     {course.Name}<br></br>
                                     {course.ID}<br></br>
                                     {course.Section}<br></br>
                                 </div>
-                            </>;
+                            
                     
                     gridList[Map[i]][listOfHours[0]] = str;
-                    for(var j = listOfHours[0]+1 ; j < listOfHours[0]+listOfHours.length;j++)
+                    for(let j = listOfHours[0]+1 ; j < listOfHours[0]+listOfHours.length;j++)
                     {
                         gridList[Map[i]][j] = -1;
                     }
@@ -136,13 +136,13 @@ class Timetable extends Component{
                 }
             }
 
-            for(i = 0; i<=6; i++)
-                for(j =0 ; j<= 10; j++)
+            for(let i = 0; i<=6; i++)
+                for(let j =0 ; j<= 10; j++)
                 {
                     if(gridList[i][j] === 0)
                     {
                         gridList[i][j] =
-                         <>
+                         
                             <div style={{
                                         backgroundColor: '#ffffff',
                                         display: 'flex',
@@ -153,12 +153,12 @@ class Timetable extends Component{
                                 {' '}<br></br>
                                 {' '}<br></br>
                             </div>
-                        </>;  
+                          
                     }
                     else if(j === 0 || i === 0)
                     {
                         gridList[i][j] = 
-                        <>
+                        
                             <div style={{
                                         backgroundColor: "#d6afc7",
                                         display: 'flex',
@@ -167,7 +167,7 @@ class Timetable extends Component{
                                 }}>
                                 {gridList[i][j]}
                             </div>
-                        </>;
+                        
                     }
                 }
             
@@ -176,10 +176,10 @@ class Timetable extends Component{
     }
     render()
     {
-       var divsToRender = [];
-       for(var i = 0; i<= 10;i++)
+       let divsToRender = [];
+       for(let i = 0; i<= 10;i++)
        {
-           for(var j = 0; j<=6; j++)
+           for(let j = 0; j<=6; j++)
            {
                if(this.gridArray[j][i] === -1);
                else{
