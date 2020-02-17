@@ -3,10 +3,10 @@ import React from "react";
 const ListCourse = props => {
   return (
     <ul>
-      {props.courses.map(course => {
+      {Object.keys(props.courses).map(course => {
         return (
-          <option key={course.code} id={course.code} onClick={props.action}>
-            {course.code} {course.name}
+          <option key={course} id={course} onClick={props.action}>
+            {course} {props.courses[course]["name"]}
           </option>
         );
       })}
