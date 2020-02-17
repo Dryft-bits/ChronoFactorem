@@ -18,7 +18,7 @@ class AddCourse extends Component {
   }
 
   filterItems(input) {
-    Object.filter = obj =>
+    var filterCourses = obj =>
       Object.keys(obj)
         .filter(
           item =>
@@ -29,7 +29,7 @@ class AddCourse extends Component {
               .search(input.target.value.toLowerCase()) !== -1
         )
         .reduce((res, key) => ((res[key] = obj[key]), res), {});
-    var updatedlist = Object.filter(this.state.initial);
+    var updatedlist = filterCourses(this.state.initial);
     this.setState({ current: updatedlist });
   }
 
@@ -48,13 +48,11 @@ class AddCourse extends Component {
   getSections(type) {
     var course = this.state.selectedCourse;
     var code = Object.keys(course)[0];
-    Object.filter = obj =>
+    var selectSections = obj =>
       Object.keys(obj)
-        .filter(item => Object.keys(obj[item].sections)[0].charAt(0) === type)
+        .filter(item => item.charAt(0) === type)
         .reduce((res, key) => ((res[key] = obj[key]), res), {});
-    var list = Object.filter(course[code].sections);
-    console.log("yee");
-    console.log(list);
+    var list = selectSections(this.state.selectedCourse[code].sections);
     return list;
   }
 
@@ -80,17 +78,20 @@ class AddCourse extends Component {
           <CollapsibleList
             title="Lecture"
             action={this.handleSectionAddition}
-            list={this.getSections("L")}
+            getSections={this.getSections}
+            type="L"
           />
           <CollapsibleList
             title="Tutorial"
             action={this.handleSectionAddition}
-            list={this.getSections("T")}
+            getSections={this.getSections}
+            type="T"
           />
           <CollapsibleList
             title="Practical"
             action={this.handleSectionAddition}
-            list={this.getSections("P")}
+            getSections={this.getSections}
+            type="P"
           />
         </div>
       );

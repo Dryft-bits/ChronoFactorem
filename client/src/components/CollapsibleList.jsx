@@ -18,15 +18,13 @@ class CollapsibleList extends Component {
   }
 
   render() {
+    var sections = this.props.getSections(this.props.type);
     return (
       <div>
         <div onClick={this.togglePanel}>{this.props.title}</div>
         {this.state.open ? (
           <div>
-            <ListSection
-              action={this.props.action}
-              sections={this.props.list}
-            />
+            <ListSection action={this.props.action} sections={sections} />
           </div>
         ) : null}
       </div>
