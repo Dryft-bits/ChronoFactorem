@@ -13,7 +13,6 @@ class AddCourse extends Component {
     };
     this.filterItems = this.filterItems.bind(this);
     this.handleCourseAddition = this.handleCourseAddition.bind(this);
-    this.handleSectionAddition = this.handleSectionAddition.bind(this);
     this.getSections = this.getSections.bind(this);
   }
 
@@ -40,6 +39,7 @@ class AddCourse extends Component {
         .filter(course => course === selectedCode)
         .reduce((res, key) => ((res[key] = obj[key]), res), {});
     var selectedCourse = selectCourse(this.state.current);
+    this.props.updateCurrent(selectedCourse);
     this.setState({
       selectedCourse: selectedCourse
     });
@@ -54,11 +54,6 @@ class AddCourse extends Component {
         .reduce((res, key) => ((res[key] = obj[key]), res), {});
     var list = selectSections(this.state.selectedCourse[code].sections);
     return list;
-  }
-
-  handleSectionAddition(input) {
-    //var selectedCode = input.target.id;
-    console.log("Section Selected");
   }
 
   render() {
@@ -77,19 +72,19 @@ class AddCourse extends Component {
         <div>
           <CollapsibleList
             title="Lecture"
-            action={this.handleSectionAddition}
+            action={this.props.addSection}
             getSections={this.getSections}
             type="L"
           />
           <CollapsibleList
             title="Tutorial"
-            action={this.handleSectionAddition}
+            action={this.props.addSection}
             getSections={this.getSections}
             type="T"
           />
           <CollapsibleList
             title="Practical"
-            action={this.handleSectionAddition}
+            action={this.props.addSection}
             getSections={this.getSections}
             type="P"
           />
