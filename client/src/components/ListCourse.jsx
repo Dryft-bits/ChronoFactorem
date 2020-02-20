@@ -1,23 +1,17 @@
-import React, { Component } from "react";
+import React from "react";
 
-class ListCourse extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-  render() {
-    return (
-      <ul>
-        {this.props.courses.map(course => {
-          return (
-            <li key={course.code}>
-              {course.code} {course.name}
-            </li>
-          );
-        })}
-      </ul>
-    );
-  }
-}
+const ListCourse = props => {
+  return (
+    <ul>
+      {Object.keys(props.courses).map(course => {
+        return (
+          <option key={course} id={course} onClick={props.action}>
+            {course} {props.courses[course]["name"]}
+          </option>
+        );
+      })}
+    </ul>
+  );
+};
 
 export default ListCourse;
