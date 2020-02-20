@@ -3,11 +3,11 @@ import React from "react";
 import "../styles/Timetable.css";
 
 const ntw=require("number-to-words");
-class PreviewTT extends Component{
+class PreviewTT extends Component
+{
     constructor(props)
     {
         super(props);  
-        
         this.populateTimetable.bind(this);
         this.gridArray = []; 
     }
@@ -35,10 +35,12 @@ class PreviewTT extends Component{
         var days=['M','T','W','Th','F','S'];
         var hours= [1,2,3,4,5,6,7,8,9,10];
         var day,hour;
-        for(day of days){
-            for(hour of hours){
+        for(day of days)
+        {
+            for(hour of hours)
+            {
                 divStyle = {};
-                var section=this.props.TimeTable[day][ntw.toWords(hour)];
+                let section=this.props.TimeTable[day][ntw.toWords(hour)];
                 console.log(section);
                 let str = "";
                 if(gridList[Map[day]][hour] === -1)
@@ -48,7 +50,7 @@ class PreviewTT extends Component{
                 else if(!section.courseCode)
                 {
                    str = <div style={{
-                        backgroundColor: '#ffffff',
+                        backgroundColor: '#444444',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center'
@@ -66,7 +68,8 @@ class PreviewTT extends Component{
                         {
                             gridList[Map[day]][hour+i] = -1;
                         }
-                        divStyle = {
+                        divStyle = 
+                        {
                             gridRowStart: `${hour+1}`,
                             gridColumnStart: `${Map[day]+1}`,
                             gridCoulmnEnd: `${Map[day]+2}`,
@@ -74,45 +77,47 @@ class PreviewTT extends Component{
                          }
                     }
                     
-                str =
-                <div className="gridItem" style={divStyle}>
-                    {section.courseName}<br></br>
-                    {section.courseCode}<br></br>
-                    {section.sectionRoom}<br></br>
-                </div>;
+                    str =
+                    <div className="gridItem" style={divStyle}>
+                        {section.courseName}<br></br>
+                        {section.courseCode}<br></br>
+                        {section.sectionRoom}<br></br>
+                    </div>;
                 }
             
                 gridList[Map[day]][hour] = str;
             }
         }
         for(let i = 0; i <=6; i++)
+        {
             for(let j = 0; j <=10;j++)
             {
              if(j === 0 || i === 0)
              {
                 gridList[i][j] = 
-                
                     <div style={{
-                                backgroundColor: "#d6afc7",
+                                backgroundColor: "#222222",
                                 display: 'flex',
                                 alignItems: 'center',
-                                justifyContent: 'center'
+                                justifyContent: 'center',
+                                color:'white'
                         }}>
                         {gridList[i][j]}
                     </div>
                 
                 }
             }
+        }
             return gridList;
     }
     render()
     {
        console.log(this.props.TimeTable);
        this.gridArray = this.populateTimetable();
-       var divsToRender = [];
-       for(var i = 0; i<= 10;i++)
+       let divsToRender = [];
+       for(let i = 0; i<= 10;i++)
        {
-           for(var j = 0; j<=6; j++)
+           for(let j = 0; j<=6; j++)
            {
                if(this.gridArray[j][i] === -1);
                else{
