@@ -41,7 +41,6 @@ class PreviewTT extends Component
             {
                 divStyle = {};
                 let section=this.props.TimeTable[day][ntw.toWords(hour)];
-                console.log(section);
                 let str = "";
                 if(gridList[Map[day]][hour] === -1)
                 {
@@ -112,7 +111,6 @@ class PreviewTT extends Component
     }
     render()
     {
-       console.log(this.props.TimeTable);
        this.gridArray = this.populateTimetable();
        let divsToRender = [];
        for(let i = 0; i<= 10;i++)
