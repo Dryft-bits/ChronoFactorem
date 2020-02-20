@@ -1,8 +1,8 @@
 class Entry {
-  constructor() {
-    this.courseCode = null;
-    this.courseName = null;
-    this.sectionRoom = null;
+  constructor(code, name, room) {
+    this.courseCode = code;
+    this.courseName = name;
+    this.sectionRoom = room;
   }
 }
 
