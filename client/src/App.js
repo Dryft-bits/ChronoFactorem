@@ -58,7 +58,11 @@ class App extends Component {
         temp[day][ntw.toWords(hour)] = entry;
       }
     }
-    this.setState({ myTimeTable: temp });
+    var courseTemp = this.setState.myCourses;
+    if (!courseTemp || !courseTemp.includes(this.currentCourse)) {
+      courseTemp += this.state.currentCourse;
+    }
+    this.setState({ myTimeTable: temp, myCourses: courseTemp });
   }
 
   updateCurrent(input) {
