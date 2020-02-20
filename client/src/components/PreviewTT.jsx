@@ -100,10 +100,15 @@ class PreviewTT extends Component{
                 var day,hour;
                 for(day of days){
                     for(hour of hours){
+                        divStyle = {};
                         var section=this.props.TimeTable[day][ntw.toWords(hour)];
                         console.log(section);
                         let str = "";
-                        if(!section.courseCode)
+                        if(gridList[Map[day]][hour] === -1)
+                        {
+                            continue;
+                        }
+                        else if(!section.courseCode)
                         {
                            str = <div style={{
                                 backgroundColor: '#ffffff',
@@ -118,9 +123,24 @@ class PreviewTT extends Component{
                         }
                         else
                         {
+                            
+                            if(section.numHours > 1)
+                            {
+                                for(let i = 1; i< section.numHours; i++)
+                                {
+                                    gridList[Map[day]][hour+i] = -1;
+                                }
+                                divStyle = {
+                                    gridRowStart: `${hour+1}`,
+                                    gridColumnStart: `${Map[day]+1}`,
+                                    gridCoulmnEnd: `${Map[day]+2}`,
+                                    gridRowEnd: `span ${section.numHours}`
+                                 }
+                            }
+                            
                         str =
                         <div className="gridItem" style={divStyle}>
-                            {section.courseName[0]}<br></br>
+                            {section.courseName}<br></br>
                             {section.courseCode}<br></br>
                             {section.sectionRoom}<br></br>
                         </div>;

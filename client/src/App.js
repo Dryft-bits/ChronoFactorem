@@ -51,10 +51,12 @@ class App extends Component {
     var temp = this.state.myTimeTable;
     for (day of days) {
       for (hour of hours) {
+        console.log(hours.length);
         var entry = new Entry(
           courseCode,
           this.state.currentCourse[courseCode].name,
-          room
+          room,
+          hours.length
         );
         temp[day][ntw.toWords(hour)] = entry;
       }
@@ -71,6 +73,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.myTimeTable);
     return (
       <div>
         <AddCourse
