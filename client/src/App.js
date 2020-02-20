@@ -72,11 +72,6 @@ class App extends Component {
   render() {
     return (
       <div>
-        {this.state.currentCourse ? (
-          <div>
-            <h1>{Object.keys(this.state.currentCourse)}</h1>
-          </div>
-        ) : null}
         <AddCourse
           allCourses={courses.default}
           myCourses={this.state.myCourses}

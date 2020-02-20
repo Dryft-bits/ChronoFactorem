@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Search from "./Search";
 import ListCourse from "./ListCourse";
 import CollapsibleList from "./CollapsibleList";
+import ToggleButton from "./ToggleButton";
 
 class AddCourse extends Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class AddCourse extends Component {
     this.filterItems = this.filterItems.bind(this);
     this.handleCourseAddition = this.handleCourseAddition.bind(this);
     this.getSections = this.getSections.bind(this);
+    this.changeCourse = this.changeCourse.bind(this);
   }
 
   filterItems(input) {
@@ -56,41 +58,48 @@ class AddCourse extends Component {
     return list;
   }
 
+  changeCourse() {
+    this.setState({ selectedCourse: null });
+  }
+
   render() {
-    if (!this.state.selectedCourse) {
-      return (
-        <div>
-          <Search action={this.filterItems} />
-          <ListCourse
-            courses={this.state.current}
-            action={this.handleCourseAddition}
-          />
-        </div>
-      );
-    } else {
-      return (
-        <div>
-          <CollapsibleList
-            title="Lecture"
-            action={this.props.addSection}
-            getSections={this.getSections}
-            type="L"
-          />
-          <CollapsibleList
-            title="Tutorial"
-            action={this.props.addSection}
-            getSections={this.getSections}
-            type="T"
-          />
-          <CollapsibleList
-            title="Practical"
-            action={this.props.addSection}
-            getSections={this.getSections}
-            type="P"
-          />
-        </div>
-      );
-    }
+    return (
+      <div>
+        {!this.state.selectedCourse ? (
+          <div>
+            <Search action={this.filterItems} />
+            <ListCourse
+              courses={this.state.current}
+              action={this.handleCourseAddition}
+            />
+          </div>
+        ) : (
+          <div>
+            <h1>{Object.keys(this.state.selectedCourse)}</h1>
+            <ToggleButton action={this.changeCourse} title="Change Course" />
+            <CollapsibleList
+              title="Lecture"
+              action={this.props.addSection}
+              getSections={this.getSections}
+              type="L"
+            />
+            <CollapsibleList
+              title="Tutorial"
+              action={this.props.addSection}
+              getSections={this.getSections}
+              type="T"
+            />
+            <CollapsibleList
+              title="Practical"
+              action={this.props.addSection}
+              getSections={this.getSections}
+              type="P"
+            />
+          </div>
+        )}
+      </div>
+    );
   }
 }
+
 export default AddCourse;
