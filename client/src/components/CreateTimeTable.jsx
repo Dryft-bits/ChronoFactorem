@@ -63,7 +63,7 @@ class CreateTimeTable extends Component {
           freq++;
         }
       }
-      if (freq == temp.length) {
+      if (freq === temp.length) {
         return day;
       }
     }
