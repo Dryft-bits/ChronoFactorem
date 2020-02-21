@@ -21,7 +21,6 @@ const StudentLayout = () => {
   const name = getName();
   return (
     <Fragment>
-      <p>Welcome </p>
       <TimetableManager></TimetableManager>
       <a href='http://localhost:5000/api/logout'>Logout</a>
     </Fragment>
