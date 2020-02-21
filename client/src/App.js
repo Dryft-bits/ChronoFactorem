@@ -4,6 +4,8 @@ import TimeTable from "./schemas/TimeTable.js";
 import * as TimeTableData from "./Timetable.json";
 import AddCourse from "./components/AddCourse.jsx";
 import Entry from "./schemas/Entry";
+import PreviewTT from "./components/PreviewTT.jsx";
+import "./App.css"
 const ntw = require("number-to-words");
 
 const courses = JSON.parse(JSON.stringify(TimeTableData));
@@ -13,13 +15,23 @@ class App extends Component {
     this.state = {
       myTimeTable: new TimeTable(),
       myCourses: [],
-      currentCourse: null
+      currentCourse: null,
+      view: 0
     };
     this.addSection = this.addSection.bind(this);
     this.updateCurrent = this.updateCurrent.bind(this);
     this.checkClash = this.checkClash.bind(this);
+    this.showView = this.showView.bind(this);
   }
 
+  showView()
+  {
+    this.setState(
+      () => ({
+        view: 1-this.state.view
+      })
+    );
+  }
   checkClash(hours, days) {
     var day, hour;
     for (day of days) {
@@ -53,7 +65,8 @@ class App extends Component {
         var entry = new Entry(
           courseCode,
           this.state.currentCourse[courseCode].name,
-          room
+          room,
+          hours.length
         );
         temp[day][ntw.toWords(hour)] = entry;
       }
@@ -70,8 +83,16 @@ class App extends Component {
   }
 
   render() {
-    return (
+    let str =""
+    if(this.state.view === 0)
+    {
+      str= 
+      <>
+      <button onClick={this.showView}>
+          {this.state.view === 0?"Preview":"Back"}
+        </button>
       <div>
+      <div style={{float:"left"}}>
         <AddCourse
           allCourses={courses.default}
           myCourses={this.state.myCourses}
@@ -79,6 +100,29 @@ class App extends Component {
           updateCurrent={this.updateCurrent}
         />
       </div>
+        <div style={{float:"right"}}>
+          <PreviewTT TimeTable={this.state.myTimeTable} style={{float: "right"}}/>
+        </div>
+      </div>
+      </>;
+    }
+    else
+    {
+      str =
+      <>
+      <button onClick={this.showView}>
+          {this.state.view === 0?"Preview":"Back"}
+        </button>
+      <PreviewTT TimeTable={this.state.myTimeTable}/>
+      </>;
+    }
+    return (
+      <>
+        
+        <>
+          {str}
+        </>
+      </>
     );
   }
 }

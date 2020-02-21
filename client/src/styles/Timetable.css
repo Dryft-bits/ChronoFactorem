@@ -1,0 +1,41 @@
+.gridElement
+{
+    display: grid;
+    grid-template-columns: 0fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    row-gap: 2.5px;
+    column-gap:5px;
+    background-color: #3bceac;
+    padding: 7px;
+    border-radius: 5px;
+    grid-template-rows: 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px 50px;
+    transition-duration: 0.4s;
+   
+}
+
+.gridElement > div
+{
+    background-color: #313131;
+    position: relative;
+    text-align: center;
+    padding: 10px 10px;
+    font-size: 10px;
+    border-radius: 3px;
+    color: white;
+    box-shadow: 2px 1.5px 4px 0.5px rgba(1, 4, 7, 0.5);
+}
+
+.gridItem
+{
+    background-color: '#333333';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gridItem:hover
+{
+    background-color: #aaaaaa;
+    box-shadow: 2px 2px 5px 5px rgba(1, 4, 7, 0.76);
+    transition-duration: 0.4s;
+    color: black;
+}
