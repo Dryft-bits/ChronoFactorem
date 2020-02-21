@@ -8,6 +8,14 @@ import "../styles/CreateTimeTable.css";
 const ntw = require("number-to-words");
 
 const courses = JSON.parse(JSON.stringify(TimeTableData));
+const mapDay = {
+  M: "Monday",
+  T: "Tuesday",
+  W: "Wednesday",
+  Th: "Thursday",
+  F: "Friday",
+  S: "Saturday"
+};
 
 class CreateTimeTable extends Component {
   constructor(props) {
@@ -22,6 +30,7 @@ class CreateTimeTable extends Component {
     this.updateCurrent = this.updateCurrent.bind(this);
     this.checkClash = this.checkClash.bind(this);
     this.showView = this.showView.bind(this);
+    this.checkLunchHour = this.checkLunchHour.bind(this);
   }
 
   showView() {
@@ -29,13 +38,33 @@ class CreateTimeTable extends Component {
       view: 1 - this.state.view
     }));
   }
+
   checkClash(hours, days) {
-    var day, hour;
-    for (day of days) {
-      for (hour of hours) {
+    for (let day of days) {
+      for (let hour of hours) {
         if (this.state.myTimeTable[day][ntw.toWords(hour)].courseCode != null) {
           return true;
         }
+      }
+    }
+    return false;
+  }
+
+  checkLunchHour(hours, days) {
+    let lunchHours = [4, 5, 6];
+    for (let day of days) {
+      let temp = lunchHours;
+      for (let hour of hours) {
+        temp = temp.filter(item => item !== hour);
+      }
+      let freq = 0;
+      for (let hour of temp) {
+        if (this.state.myTimeTable[day][ntw.toWords(hour)].courseCode != null) {
+          freq++;
+        }
+      }
+      if (freq == temp.length) {
+        return day;
       }
     }
     return false;
@@ -49,9 +78,23 @@ class CreateTimeTable extends Component {
       .hours;
     var days = this.state.currentCourse[courseCode].sections[section].sched[0]
       .days;
-    var clash = this.checkClash(hours, days);
-    if (clash) {
-      alert("You got a damn clash!!");
+    if (
+      this.checkClash(hours, days) &&
+      !window.confirm(
+        "The selected section clashes with an already present course section! Click ok to force use the current one!"
+      )
+    ) {
+      return;
+    }
+    let checkLunch = this.checkLunchHour(hours, days);
+    if (
+      checkLunch &&
+      !window.confirm(
+        "Upon chosing this section you are not left with any lunch hour on " +
+          mapDay[checkLunch] +
+          " Click ok to proceed anyway"
+      )
+    ) {
       return;
     }
     var room = this.state.currentCourse[courseCode].sections[section].sched[0]
