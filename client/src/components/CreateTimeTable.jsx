@@ -73,7 +73,7 @@ class CreateTimeTable extends Component {
   addSection(input) {
     var courseCode = Object.keys(this.state.currentCourse);
     var day, hour;
-    var section = input.target.id;
+    var section = input.target.parentNode.id;
     var hours = this.state.currentCourse[courseCode].sections[section].sched[0]
       .hours;
     var days = this.state.currentCourse[courseCode].sections[section].sched[0]
@@ -125,13 +125,14 @@ class CreateTimeTable extends Component {
   render() {
     let str = "";
     if (this.state.view === 0) {
-      str = (
+      str = 
         <>
           <button onClick={this.showView}>
             {this.state.view === 0 ? "Preview" : "Back"}
           </button>
           <div>
-            <div style={{ float: "left" }}>
+            <div style={{ float: "right",
+          width: "35vw" }}>
               <AddCourse
                 allCourses={courses.default}
                 myCourses={this.state.myCourses}
@@ -139,15 +140,15 @@ class CreateTimeTable extends Component {
                 updateCurrent={this.updateCurrent}
               />
             </div>
-            <div style={{ float: "right" }}>
+            <div style={{ float: "left",
+          width: "60vw" }}>
               <PreviewTT
                 TimeTable={this.state.myTimeTable}
-                style={{ float: "right" }}
+                style={{ float: "left" }}
               />
             </div>
           </div>
-        </>
-      );
+        </>;
     } else {
       str = (
         <>
