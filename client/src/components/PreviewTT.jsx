@@ -94,7 +94,7 @@ class PreviewTT extends Component
              if(j === 0 || i === 0)
              {
                 gridList[i][j] = 
-                    <div style={{
+                    <div key={([i,j]).toString()} style={{
                                 backgroundColor: "#222222",
                                 display: 'flex',
                                 alignItems: 'center',
@@ -107,7 +107,7 @@ class PreviewTT extends Component
                 }
             }
         }
-            return gridList;
+        return gridList;
     }
     render()
     {

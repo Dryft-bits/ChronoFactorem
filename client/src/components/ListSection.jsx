@@ -2,18 +2,32 @@ import React from "react";
 
 const ListSection = props => {
   return (
-    <ul>
+    <ol className="courseWindow">
       {Object.keys(props.sections).map(section => {
+        console.log(section);
         return (
-          <option key={section} id={section} onClick={props.action}>
-            {section} {props.sections[section].instructors}{" "}
-            {props.sections[section].sched[0].days}
-            {props.sections[section].sched[0].hours}
-            {props.sections[section].sched[0].room}
-          </option>
+          <h5 key={section} id={section} onClick={props.action}>
+            <div className ="courseElement" id={section}>
+              <div className = "courseItem">
+                {section} 
+              </div>
+              <div className = "courseItem">
+                {props.sections[section].instructors[0]}
+              </div>
+              <div className = "courseItem">
+                {props.sections[section].sched[0].days}
+              </div>
+              <div className = "courseItem">
+                {props.sections[section].sched[0].hours}
+              </div>
+              <div className = "courseItem">
+                { props.sections[section].sched[0].room}
+              </div>
+            </div>
+          </h5>
         );
       })}
-    </ul>
+    </ol>
   );
 };
 
