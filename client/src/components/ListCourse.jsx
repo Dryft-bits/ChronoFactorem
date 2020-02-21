@@ -1,8 +1,7 @@
 import React from "react";
-
 const ListCourse = props => {
   return (
-    <ul>
+    <ul className="courseSearch">
       {Object.keys(props.courses).map(course => {
         return (
           <option key={course} id={course} onClick={props.action}>
