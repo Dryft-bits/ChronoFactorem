@@ -2,9 +2,6 @@ import passport from "passport";
 import express from "express";
 const authRouter = express.Router();
 
-authRouter.get("/auth/test", (req, res) => {
-  res.send("Auth Working properly");
-});
 authRouter.get(
   "/auth/google",
   passport.authenticate("google", {
