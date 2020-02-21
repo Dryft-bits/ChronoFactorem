@@ -122,4 +122,7 @@ thumb
 sketch
 
 .vscode
+
+### Keys ###
+config/default.json
 # End of https://www.gitignore.io/api/node,react
