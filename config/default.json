@@ -1,3 +1,5 @@
 {
-  "mongoURI": "mongodb+srv://admin:admin@chronofactorem-l0f9q.mongodb.net/test?retryWrites=true&w=majority"
+  "mongoURI": "mongodb+srv://admin:admin@chronofactorem-l0f9q.mongodb.net/test?retryWrites=true&w=majority",
+  "GOOGLE_CLIENT_SECRET": "vPX9MhDkpekeZe23x24iArOC",
+  "GOOGLE_CLIENT_ID": "884457205254-bu20rma52v3trvc0qi0eej05mrbk2csp.apps.googleusercontent.com"
 }

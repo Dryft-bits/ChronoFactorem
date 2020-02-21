@@ -1,9 +1,32 @@
+import passport from "passport";
 import express from "express";
-const router = express.Router();
+const authRouter = express.Router();
 
-// @route   GET api/auth
-// @desc    Test route
-// @access  Public
-router.get("/", (req, res) => res.send("Auth route"));
+authRouter.get("/auth/test", (req, res) => {
+  res.send("Auth Working properly");
+});
+authRouter.get(
+  "/auth/google",
+  passport.authenticate("google", {
+    scope: ["profile", "email"]
+  })
+);
 
-export default router;
+authRouter.get(
+  "/auth/google/callback",
+  passport.authenticate("google"),
+  (req, res) => {
+    res.redirect("http://localhost:3000/student");
+  }
+);
+
+authRouter.get("/logout", (req, res) => {
+  req.logout();
+  res.redirect("http://localhost:3000");
+});
+
+authRouter.get("/current_user", (req, res) => {
+  res.send(req.session._ctx.user.name);
+});
+
+export default authRouter;
