@@ -71,12 +71,12 @@ class CreateTimeTable extends Component {
   }
 
   addSection(input) {
-    var courseCode = Object.keys(this.state.currentCourse);
-    var day, hour;
-    var section = input.target.parentNode.id;
-    var hours = this.state.currentCourse[courseCode].sections[section].sched[0]
+    let courseCode = Object.keys(this.state.currentCourse);
+    let day, hour;
+    let section = input.target.parentNode.id;
+    let hours = this.state.currentCourse[courseCode].sections[section].sched[0]
       .hours;
-    var days = this.state.currentCourse[courseCode].sections[section].sched[0]
+    let days = this.state.currentCourse[courseCode].sections[section].sched[0]
       .days;
     if (
       this.checkClash(hours, days) &&
@@ -97,12 +97,12 @@ class CreateTimeTable extends Component {
     ) {
       return;
     }
-    var room = this.state.currentCourse[courseCode].sections[section].sched[0]
+    let room = this.state.currentCourse[courseCode].sections[section].sched[0]
       .room;
-    var temp = this.state.myTimeTable;
+    let temp = this.state.myTimeTable;
     for (day of days) {
       for (hour of hours) {
-        var entry = new Entry(
+        let entry = new Entry(
           courseCode,
           this.state.currentCourse[courseCode].name,
           room,
@@ -111,7 +111,7 @@ class CreateTimeTable extends Component {
         temp[day][ntw.toWords(hour)] = entry;
       }
     }
-    var courseTemp = this.setState.myCourses;
+    let courseTemp = this.setState.myCourses;
     if (!courseTemp || !courseTemp.includes(this.currentCourse)) {
       courseTemp += this.state.currentCourse;
     }
