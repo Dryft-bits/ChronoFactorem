@@ -9,7 +9,7 @@
     grid-template-columns: 7% 15% 15% 15% 15% 15% 15%;
     row-gap: 0.75vh;
     column-gap:0.5%;
-    background-color: #fed330;
+    background-color: #ffdf00;
     padding: 7px;
     border-radius: 5px;
     grid-template-rows: 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh ;
@@ -25,7 +25,7 @@
     font-size: 67%;
     border-radius: 3px;
     color: white;
-    box-shadow: 2px 1.5px 4px 0.5px rgba(1, 4, 7, 0.5);
+    box-shadow: 2px 1.5px 2px 0.5px rgba(1, 4, 7, 0.5);
 }
 
 
@@ -73,8 +73,17 @@
     margin:5px;
     padding:5px;
     background-color: white;
-    /* width: 35vw; */
     height: 45vh;
+    overflow: auto;
+    font-size: medium;
+    text-align:justify;
+}
+.courseSearch
+{
+    margin:5px;
+    padding:5px;
+    background-color: white;
+    height: 68vh;
     overflow: auto;
     text-align:justify;
 }

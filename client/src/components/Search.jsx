@@ -3,7 +3,7 @@ import React from "react";
 const Search = props => {
   return (
     <div>
-      <input type="text" onChange={props.action} />
+      <input type="text" placeholder="Search Course" onChange={props.action} />
     </div>
   );
 };

@@ -1,5 +1,4 @@
 import React from "react";
-
 const ListSection = props => {
   return (
     <ol className="courseWindow">
@@ -7,7 +6,7 @@ const ListSection = props => {
         console.log(section);
         return (
           <h5 key={section} id={section} onClick={props.action}>
-            <div className ="courseElement" id={section}>
+            <div className ="courseElement" style={{fontSize: "medium"}} id={section}>
               <div className = "courseItem">
                 {section} 
               </div>

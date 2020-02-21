@@ -19,7 +19,7 @@ class AddCourse extends Component {
   }
 
   filterItems(input) {
-    var filterCourses = obj =>
+    let filterCourses = obj =>
       Object.keys(obj)
         .filter(
           item =>
@@ -30,17 +30,17 @@ class AddCourse extends Component {
               .search(input.target.value.toLowerCase()) !== -1
         )
         .reduce((res, key) => ((res[key] = obj[key]), res), {});
-    var updatedlist = filterCourses(this.state.initial);
+    let updatedlist = filterCourses(this.state.initial);
     this.setState({ current: updatedlist });
   }
 
   handleCourseAddition(input) {
-    var selectedCode = input.target.id;
-    var selectCourse = obj =>
+    let selectedCode = input.target.id;
+    let selectCourse = obj =>
       Object.keys(obj)
         .filter(course => course === selectedCode)
         .reduce((res, key) => ((res[key] = obj[key]), res), {});
-    var selectedCourse = selectCourse(this.state.current);
+    let selectedCourse = selectCourse(this.state.current);
     this.props.updateCurrent(selectedCourse);
     this.setState({
       selectedCourse: selectedCourse
@@ -48,13 +48,13 @@ class AddCourse extends Component {
   }
 
   getSections(type) {
-    var course = this.state.selectedCourse;
-    var code = Object.keys(course)[0];
-    var selectSections = obj =>
+    let course = this.state.selectedCourse;
+    let code = Object.keys(course)[0];
+    let selectSections = obj =>
       Object.keys(obj)
         .filter(item => item.charAt(0) === type)
         .reduce((res, key) => ((res[key] = obj[key]), res), {});
-    var list = selectSections(this.state.selectedCourse[code].sections);
+    let list = selectSections(this.state.selectedCourse[code].sections);
     return list;
   }
 
@@ -75,7 +75,7 @@ class AddCourse extends Component {
           </div>
         ) : (
           <div>
-            <h1>{Object.keys(this.state.selectedCourse)}</h1>
+            <h6>{Object.keys(this.state.selectedCourse)}</h6>
             <ToggleButton action={this.changeCourse} title="Change Course" />
             <CollapsibleList
               title="Lecture"
