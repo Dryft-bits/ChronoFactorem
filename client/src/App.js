@@ -4,6 +4,7 @@ import TimeTable from "./schemas/TimeTable.js";
 import * as TimeTableData from "./Timetable.json";
 import AddCourse from "./components/AddCourse.jsx";
 import Entry from "./schemas/Entry";
+import PreviewTT from "./components/PreviewTT";
 const ntw = require("number-to-words");
 
 const courses = JSON.parse(JSON.stringify(TimeTableData));
@@ -13,11 +14,13 @@ class App extends Component {
     this.state = {
       myTimeTable: new TimeTable(),
       myCourses: [],
-      currentCourse: null
+      currentCourse: null,
+      view: 0
     };
     this.addSection = this.addSection.bind(this);
     this.updateCurrent = this.updateCurrent.bind(this);
     this.checkClash = this.checkClash.bind(this);
+    this.showView = this.showView.bind(this);
   }
 
   checkClash(hours, days) {
@@ -69,8 +72,20 @@ class App extends Component {
     this.setState({ currentCourse: input });
   }
 
+  showView()
+  {
+    let view = this.state.view;
+    this.setState(
+      {
+        view: 1-view
+      }
+    );
+  }
   render() {
-    return (
+    let str = "";
+      if(this.state.view === 0)
+      {
+      str = <>
       <div>
       <div style={{float:"right",
                   width: "35vw"}}>
