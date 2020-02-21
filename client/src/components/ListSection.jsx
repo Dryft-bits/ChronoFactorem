@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../styles/ListSection.css"
 const ListSection = props => {
   return (
     <ol className="courseWindow">

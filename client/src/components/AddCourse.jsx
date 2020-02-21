@@ -75,7 +75,7 @@ class AddCourse extends Component {
           </div>
         ) : (
           <div>
-            <h1>{Object.keys(this.state.selectedCourse)}</h1>
+            <h6>{Object.keys(this.state.selectedCourse)}</h6>
             <ToggleButton action={this.changeCourse} title="Change Course" />
             <CollapsibleList
               title="Lecture"
