@@ -129,7 +129,7 @@ class PreviewTT extends Component
         }
         console.log(divsToRender);
         return (
-            <div className = "gridElement" width = "60vw" >
+            <div className = "gridElement" >
                 {divsToRender}
             </div>
         );

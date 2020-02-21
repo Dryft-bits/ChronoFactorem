@@ -4,7 +4,8 @@ import TimeTable from "./schemas/TimeTable.js";
 import * as TimeTableData from "./Timetable.json";
 import AddCourse from "./components/AddCourse.jsx";
 import Entry from "./schemas/Entry";
-import PreviewTT from "./components/PreviewTT";
+import PreviewTT from "./components/PreviewTT.jsx";
+import "./App.css"
 const ntw = require("number-to-words");
 
 const courses = JSON.parse(JSON.stringify(TimeTableData));
@@ -23,6 +24,14 @@ class App extends Component {
     this.showView = this.showView.bind(this);
   }
 
+  showView()
+  {
+    this.setState(
+      () => ({
+        view: 1-this.state.view
+      })
+    );
+  }
   checkClash(hours, days) {
     var day, hour;
     for (day of days) {
@@ -56,7 +65,8 @@ class App extends Component {
         var entry = new Entry(
           courseCode,
           this.state.currentCourse[courseCode].name,
-          room
+          room,
+          hours.length
         );
         temp[day][ntw.toWords(hour)] = entry;
       }
@@ -72,23 +82,18 @@ class App extends Component {
     this.setState({ currentCourse: input });
   }
 
-  showView()
-  {
-    let view = this.state.view;
-    this.setState(
-      {
-        view: 1-view
-      }
-    );
-  }
   render() {
-    let str = "";
-      if(this.state.view === 0)
-      {
-      str = <>
+    let str =""
+    if(this.state.view === 0)
+    {
+      str= 
+      <>
+      <button onClick={this.showView}>
+          {this.state.view === 0?"Preview":"Back"}
+        </button>
       <div>
       <div style={{float:"right",
-                  width: "35vw"}}>
+                width: "35vw"}}>
         <AddCourse
           allCourses={courses.default}
           myCourses={this.state.myCourses}
@@ -96,9 +101,9 @@ class App extends Component {
           updateCurrent={this.updateCurrent}
         />
       </div>
-        <div className="TTwrapper" style={{float:"left",
-                      }}>
-          <PreviewTT TimeTable={this.state.myTimeTable} style={{float: "right"}}/>
+        <div style={{float:"left",
+        width: "60vw"}}>
+          <PreviewTT TimeTable={this.state.myTimeTable} style={{float: "left"}}/>
         </div>
       </div>
       </>;
