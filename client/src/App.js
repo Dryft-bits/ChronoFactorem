@@ -35,7 +35,7 @@ class App extends Component {
   addSection(input) {
     var courseCode = Object.keys(this.state.currentCourse);
     var day, hour;
-    var section = input.target.id;
+    var section = input.target.parentNode.id;
     var hours = this.state.currentCourse[courseCode].sections[section].sched[0]
       .hours;
     var days = this.state.currentCourse[courseCode].sections[section].sched[0]
@@ -72,6 +72,8 @@ class App extends Component {
   render() {
     return (
       <div>
+      <div style={{float:"right",
+                  width: "35vw"}}>
         <AddCourse
           allCourses={courses.default}
           myCourses={this.state.myCourses}
@@ -79,6 +81,30 @@ class App extends Component {
           updateCurrent={this.updateCurrent}
         />
       </div>
+        <div className="TTwrapper" style={{float:"left",
+                      }}>
+          <PreviewTT TimeTable={this.state.myTimeTable} style={{float: "right"}}/>
+        </div>
+      </div>
+      </>;
+    }
+    else
+    {
+      str =
+      <>
+      <button onClick={this.showView}>
+          {this.state.view === 0?"Preview":"Back"}
+        </button>
+      <PreviewTT TimeTable={this.state.myTimeTable}/>
+      </>;
+    }
+    return (
+      <>
+        
+        <>
+          {str}
+        </>
+      </>
     );
   }
 }

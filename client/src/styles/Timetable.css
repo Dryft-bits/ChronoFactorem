@@ -1,0 +1,81 @@
+:root {
+    --row-gap: 0.5vh;
+    --header-column-width: 10%;
+    --reg-column-width: 15%;
+  }
+.gridElement
+{
+    display: grid;
+    grid-template-columns: 7% 15% 15% 15% 15% 15% 15%;
+    row-gap: 0.75vh;
+    column-gap:0.5%;
+    background-color: #fed330;
+    padding: 7px;
+    border-radius: 5px;
+    grid-template-rows: 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh ;
+    transition-duration: 0.4s;
+    
+}
+
+.gridElement > div
+{
+    background-color: #313131;
+    position: relative;
+    text-align: center;
+    padding: 10px 10px;
+    font-size: 67%;
+    border-radius: 3px;
+    color: white;
+    box-shadow: 2px 1.5px 4px 0.5px rgba(1, 4, 7, 0.5);
+}
+
+
+
+.gridItem
+{
+    background-color: #333333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gridItem:hover
+{
+    /*background-color: #aaaaaa;*/
+    box-shadow: 2px 2px 5px 5px rgba(1, 4, 7, 0.76);
+    transition-duration: 0.4s;
+    font-size: 75%;
+    /*color: black;*/
+}
+
+
+.courseElement
+{
+    display: grid;
+    grid-template-columns: 5% 60% 5% 5% 10%;
+    column-gap: 0.5vh;
+    /* column-gap:0.5%; */
+    /* background-color: #fed330; */
+    /* padding: 7px; */
+    /* border-radius: 5px; */
+    grid-template-rows: 5vh;
+}
+
+.courseItem
+{
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.courseWindow
+{
+    margin:5px;
+    padding:5px;
+    background-color: white;
+    /* width: 35vw; */
+    height: 45vh;
+    overflow: auto;
+    text-align:justify;
+}
