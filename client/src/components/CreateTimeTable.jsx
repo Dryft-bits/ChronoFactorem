@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import TimeTable from "../../schemas/TimeTable.js";
-import * as TimeTableData from "../../Timetable.json";
-import AddCourse from "../../components/timetable/AddCourse.jsx";
-import Entry from "../../schemas/Entry";
-import PreviewTT from "../../components/timetable/PreviewTT.jsx";
-import "../../styles/TimetableManager.css";
+import TimeTable from "../schemas/TimeTable.js";
+import * as TimeTableData from "../Timetable.json";
+import AddCourse from "./AddCourse.jsx";
+import Entry from "../schemas/Entry";
+import PreviewTT from "./PreviewTT.jsx";
+import "../styles/CreateTimeTable.css";
 const ntw = require("number-to-words");
 
 const courses = JSON.parse(JSON.stringify(TimeTableData));
@@ -17,7 +17,7 @@ const mapDay = {
   S: "Saturday"
 };
 
-class TimetableManager extends Component {
+class CreateTimeTable extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -165,4 +165,4 @@ class TimetableManager extends Component {
     );
   }
 }
-export default TimetableManager;
+export default CreateTimeTable;
