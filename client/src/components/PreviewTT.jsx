@@ -76,12 +76,16 @@ class PreviewTT extends Component
                          }
                     }
                     
-                    str =
+                    str =<>
+                    
                     <div className="gridItem" style={divStyle}>
+                    <div style={divStyle,{fontSize:"xx-small"}}>
                         {section.courseName}<br></br>
+                    </div>
                         {section.courseCode}<br></br>
                         {section.sectionRoom}<br></br>
-                    </div>;
+                    </div>
+                    </>;
                 }
             
                 gridList[Map[day]][hour] = str;
