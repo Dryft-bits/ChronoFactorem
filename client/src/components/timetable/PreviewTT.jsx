@@ -1,5 +1,4 @@
-import { Component } from "react";
-import React from "react";
+import React, { Component } from "react";
 import "../../styles/Timetable.css";
 
 const ntw = require("number-to-words");
@@ -86,6 +85,7 @@ class PreviewTT extends Component {
         if (j === 0 || i === 0) {
           gridList[i][j] = (
             <div
+              key={[i, j].toString()}
               style={{
                 backgroundColor: "#222222",
                 display: "flex",
