@@ -131,7 +131,6 @@ class PreviewTT extends Component
                }
             }
         }
-        console.log(divsToRender);
         return (
             <div className = "gridElement" >
                 {divsToRender}

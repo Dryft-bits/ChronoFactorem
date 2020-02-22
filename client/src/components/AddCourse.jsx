@@ -49,6 +49,7 @@ class AddCourse extends Component {
 
   getSections(type) {
     let course = this.state.selectedCourse;
+    //console.log(course);
     let code = Object.keys(course)[0];
     let selectSections = obj =>
       Object.keys(obj)
@@ -60,6 +61,7 @@ class AddCourse extends Component {
 
   changeCourse() {
     this.setState({ selectedCourse: null });
+    this.setState({current: this.state.initial});
   }
 
   render() {
