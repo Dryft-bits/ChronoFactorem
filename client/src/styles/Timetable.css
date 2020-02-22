@@ -59,6 +59,17 @@
     /* border-radius: 5px; */
     grid-template-rows: 5vh;
 }
+.examElement
+{
+    display: grid;
+    grid-template-columns: 10% 60% 15% 15%;
+    column-gap: 0.5vh;
+    /* column-gap:0.5%; */
+    /* background-color: #fed330; */
+    /* padding: 7px; */
+    /* border-radius: 5px; */
+    grid-template-rows: 5vh;
+}
 
 .courseItem
 {

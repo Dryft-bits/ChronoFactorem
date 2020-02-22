@@ -224,13 +224,13 @@ class CreateTimeTable extends Component {
     if (this.state.view === 0) {
       str = (
         <>
-          <button id={1} onClick={this.showView}>
+          <button className="purple waves-effect waves-light btn" id={1} onClick={this.showView}>
             {this.state.view === 0 ? "Preview" : "Back"}
           </button>
-          <button id={2} onClick={this.showView}>
+          <button className="purple waves-effect waves-light btn" id={2} onClick={this.showView}>
             {this.state.view === 0 ? "Midsem Schedule" : "Back"}
           </button>
-          <button id={3} onClick={this.showView}>
+          <button className="purple waves-effect waves-light btn" id={3} onClick={this.showView}>
             {this.state.view === 0 ? "Compre Schedule" : "Back"}
           </button>
           <button onClick={this.clearAll}>Clear All Entries</button>
@@ -255,7 +255,7 @@ class CreateTimeTable extends Component {
     } else if (this.state.view === 1) {
       str = (
         <>
-          <button id={0} onClick={this.showView}>
+          <button className="purple waves-effect waves-light btn" id={0} onClick={this.showView}>
             {this.state.view === 0 ? "Preview" : "Back"}
           </button>
           <PreviewTT TimeTable={this.state.myTimeTable} />
@@ -264,7 +264,7 @@ class CreateTimeTable extends Component {
     } else if (this.state.view === 2) {
       str = (
         <>
-          <button id={0} onClick={this.showView}>
+          <button className="purple waves-effect waves-light btn" id={0} onClick={this.showView}>
             {this.state.view === 0 ? "Midsem Schedule" : "Back"}
           </button>
           <MidsemSched myCourses={this.state.myCourses} />
@@ -273,7 +273,7 @@ class CreateTimeTable extends Component {
     } else if (this.state.view === 3) {
       str = (
         <>
-          <button id={0} onClick={this.showView}>
+          <button className="purple waves-effect waves-light btn" id={0} onClick={this.showView}>
             {this.state.view === 0 ? "Compre Schedule" : "Back"}
           </button>
           <CompreSched myCourses={this.state.myCourses} />
