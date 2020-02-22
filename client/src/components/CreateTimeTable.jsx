@@ -42,10 +42,13 @@ class CreateTimeTable extends Component {
     }));
   }
 
-  checkClash(hours, days) {
+  checkClash(hours, days, room) {
     for (let day of days) {
       for (let hour of hours) {
-        if (this.state.myTimeTable[day][ntw.toWords(hour)].courseCode != null) {
+        if (
+          this.state.myTimeTable[day][ntw.toWords(hour)].courseCode != null &&
+          this.state.myTimeTable[day][ntw.toWords(hour)].sectionRoom !== room
+        ) {
           return true;
         }
       }
@@ -74,12 +77,11 @@ class CreateTimeTable extends Component {
   }
 
   checkSection(courseTemp, course, section) {
-    if (
-      courseTemp[course].sections.find(item => {
-        return item.charAt(0) === section.charAt(0);
-      })
-    ) {
-      return true;
+    let prev = courseTemp[course].sections.find(item => {
+      return item.charAt(0) === section.charAt(0);
+    });
+    if (prev) {
+      return prev;
     }
     return false;
   }
@@ -92,12 +94,12 @@ class CreateTimeTable extends Component {
       .hours;
     let days = this.state.currentCourse[courseCode].sections[section].sched[0]
       .days;
-    if (
-      this.checkClash(hours, days) &&
-      !window.confirm(
-        "The selected section clashes with an already present course section! Click ok to force use the current one!"
-      )
-    ) {
+    let room = this.state.currentCourse[courseCode].sections[section].sched[0]
+      .room;
+    if (this.checkClash(hours, days, room)) {
+      window.alert(
+        "The selected section clashes with an already present course section! Please remove the previous course first!"
+      );
       return;
     }
     let checkLunch = this.checkLunchHour(hours, days);
@@ -111,8 +113,6 @@ class CreateTimeTable extends Component {
     ) {
       return;
     }
-    let room = this.state.currentCourse[courseCode].sections[section].sched[0]
-      .room;
     let temp = this.state.myTimeTable;
     for (day of days) {
       for (hour of hours) {
@@ -138,8 +138,11 @@ class CreateTimeTable extends Component {
         return item.course === this.state.currentCourse;
       });
       let duplicate = this.checkSection(courseTemp, index, section);
+      if (duplicate === section) {
+        return;
+      }
       if (!duplicate) {
-        courseTemp[index].sections += section;
+        courseTemp[index].sections.push(section);
       } else if (
         duplicate &&
         !window.confirm(
@@ -153,22 +156,19 @@ class CreateTimeTable extends Component {
         courseTemp[index].sections = courseTemp[index].sections.filter(item => {
           return item.charAt(0) !== section.charAt(0);
         });
-        console.log(section);
-        courseTemp[index].sections = Array.from(
-          courseTemp[index].sections.push(section)
-        );
-        let hours = this.state.currentCourse[courseCode].sections[section]
+        courseTemp[index].sections = Array.from(courseTemp[index].sections);
+        courseTemp[index].sections.push(section);
+        let hours = this.state.currentCourse[courseCode].sections[duplicate]
           .sched[0].hours;
-        let days = this.state.currentCourse[courseCode].sections[section]
+        let days = this.state.currentCourse[courseCode].sections[duplicate]
           .sched[0].days;
         for (let day of days) {
           for (let hour of hours) {
-            temp[day][ntw.toWords(hour)] = null;
+            temp[day][ntw.toWords(hour)] = new Entry();
           }
         }
       }
     }
-    console.log(courseTemp);
     this.setState({ myTimeTable: temp, myCourses: courseTemp });
   }
 
