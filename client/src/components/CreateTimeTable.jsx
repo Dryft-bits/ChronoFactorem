@@ -32,7 +32,7 @@ class CreateTimeTable extends Component {
     };
     this.addSection = this.addSection.bind(this);
     this.updateCurrent = this.updateCurrent.bind(this);
-    this.checkClash = this.checkClash.bind(this);
+    this.checkClashorDelete = this.checkClashorDelete.bind(this);
     this.showView = this.showView.bind(this);
     this.checkLunchHour = this.checkLunchHour.bind(this);
     this.checkSection = this.checkSection.bind(this);
@@ -44,12 +44,15 @@ class CreateTimeTable extends Component {
     this.setState({ view: id });
   }
 
-  checkClash(hours, days, room) {
+  checkClashorDelete(hours, days, room) {
     for (let day of days) {
       for (let hour of hours) {
         if (
-          this.state.myTimeTable[day][ntw.toWords(hour)].courseCode != null &&
-          this.state.myTimeTable[day][ntw.toWords(hour)].sectionRoom !== room
+          this.state.myTimeTable[day][ntw.toWords(hour)].sectionRoom === room
+        ) {
+          return "delete";
+        } else if (
+          this.state.myTimeTable[day][ntw.toWords(hour)].courseCode != null
         ) {
           return true;
         }
@@ -98,11 +101,46 @@ class CreateTimeTable extends Component {
       .days;
     let room = this.state.currentCourse[courseCode].sections[section].sched[0]
       .room;
-    if (this.checkClash(hours, days, room)) {
+    let clash = this.checkClashorDelete(hours, days, room);
+    let temp = this.state.myTimeTable;
+    if (clash && clash !== "delete") {
       window.alert(
         "The selected section clashes with an already present course section! Please remove the previous course first!"
       );
       return;
+    } else if (clash === "delete") {
+      if (
+        !window.confirm("Are You Sure That You Want To delete this Section?")
+      ) {
+        return;
+      } else {
+        for (let day of days) {
+          for (let hour of hours) {
+            temp[day][ntw.toWords(hour)] = new Entry();
+          }
+        }
+        let courseTemp = Array.from(this.state.myCourses);
+        let index = courseTemp.findIndex(item => {
+          return Object.keys(item.course)[0] === courseCode[0];
+        });
+
+        let no = Array.from(
+          courseTemp[index].sections.filter(item => {
+            return item.charAt(0) !== section.charAt(0);
+          })
+        );
+        console.log(no.length);
+        if (!no.length) {
+          courseTemp = courseTemp.filter(item => {
+            return Object.keys(item.course)[0] !== courseCode[0];
+          });
+        } else {
+          courseTemp[index].sections = no;
+        }
+        console.log(courseTemp);
+        this.setState({ myTimeTable: temp, myCourses: courseTemp });
+        return;
+      }
     }
     let checkLunch = this.checkLunchHour(hours, days);
     if (
@@ -115,7 +153,6 @@ class CreateTimeTable extends Component {
     ) {
       return;
     }
-    let temp = this.state.myTimeTable;
     for (day of days) {
       for (hour of hours) {
         let entry = new Entry(
