@@ -10,24 +10,24 @@ class SectionTabs extends Component {
   render() {
     return (
       <>
-        <ul
-          ref={Tabs => {
-            this.Tabs = Tabs;
-          }}
-          id="tabs-swipe-demo"
-          className="tabs"
-        >
-          <li className="tab col s3">
-            <a href="#Lecture">Lecture</a>
-          </li>
-          <li className="tab col s3">
-            <a href="#Tutorial">Tutorial</a>
-          </li>
-          <li className="tab col s3">
-            <a href="#Practical">Practical</a>
-          </li>
-        </ul>
-
+        <div className="col s12">
+          <ul
+            ref={Tabs => {
+              this.Tabs = Tabs;
+            }}
+            className="tabs"
+          >
+            <li className="tab col s3">
+              <a href="#Lecture">Lecture</a>
+            </li>
+            <li className="tab col s3">
+              <a href="#Tutorial">Tutorial</a>
+            </li>
+            <li className="tab col s3">
+              <a href="#Practical">Practical</a>
+            </li>
+          </ul>
+        </div>
         <div id="Lecture" className="col s12">
           <ListSection
             action={this.props.action}

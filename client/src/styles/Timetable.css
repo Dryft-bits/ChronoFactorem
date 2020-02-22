@@ -3,13 +3,18 @@
     --header-column-width: 10%;
     --reg-column-width: 15%;
   }
+
+body
+{
+    background-color: #f7b731;
+}
 .gridElement
 {
     display: grid;
     grid-template-columns: 7% 15% 15% 15% 15% 15% 15%;
     row-gap: 0.75vh;
     column-gap:0.5%;
-    background-color: #ffdf00;
+    background-color: #e15f41;
     padding: 7px;
     border-radius: 5px;
     grid-template-rows: 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh ;
@@ -59,6 +64,19 @@
     /* border-radius: 5px; */
     grid-template-rows: 5vh;
 }
+.courseElement:hover
+{
+    display: grid;
+    grid-template-columns: 5% 60% 5% 5% 10%;
+    column-gap: 0.5vh;
+    /* column-gap:0.5%; */
+    /* background-color: #fed330; */
+    /* padding: 7px; */
+    /* border-radius: 5px; */
+    grid-template-rows: 5vh;
+    background-color: orange;
+    cursor: pointer;
+}
 .examElement
 {
     display: grid;
@@ -82,7 +100,7 @@
 {
     margin:5px;
     padding:5px;
-    background-color: white;
+    background-color: #f7d794;
     height: 45vh;
     overflow: auto;
     font-size: medium;
@@ -92,7 +110,7 @@
 {
     margin:5px;
     padding:5px;
-    background-color: white;
+    background-color: #f7d794;
     height: 68vh;
     overflow: auto;
     text-align:justify;
@@ -100,4 +118,28 @@
 
 .courseSearch :hover{
     font-size: medium;
+    cursor: pointer;
+    background-color: orange;
 }
+ /* label focus color */
+ .input-field input[type=text]:focus + label {
+    color: #000;
+}
+.input-field label {
+    color: #000;
+  }
+/* label underline focus color */
+.input-field input[type=text]:focus {
+border-bottom: 1px solid #000;
+box-shadow: 0 1px 0 0 #000;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+border-bottom: 1px solid #000;
+box-shadow: 0 1px 0 0 #000;
+}
+   /* icon prefix focus color */
+   .input-field .prefix.active {
+    color: #000;
+  }
+       
