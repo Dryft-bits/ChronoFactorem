@@ -3,9 +3,8 @@ const ListSection = props => {
   return (
     <ol className="courseWindow">
       {Object.keys(props.sections).map(section => {
-        console.log(section);
         return (
-          <h5 key={section} id={section} onClick={props.action}>
+          <div key={section} id={section} onClick={props.action}>
             <div className ="courseElement" style={{fontSize: "medium"}} id={section}>
               <div className = "courseItem">
                 {section} 
@@ -23,7 +22,7 @@ const ListSection = props => {
                 { props.sections[section].sched[0].room}
               </div>
             </div>
-          </h5>
+          </div>
         );
       })}
     </ol>

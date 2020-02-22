@@ -62,7 +62,6 @@
 
 .courseItem
 {
-   
     display: flex;
     align-items: center;
     justify-content: center;
@@ -86,4 +85,8 @@
     height: 68vh;
     overflow: auto;
     text-align:justify;
+}
+
+.courseSearch :hover{
+    font-size: medium;
 }

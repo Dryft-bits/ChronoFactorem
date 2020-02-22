@@ -4,9 +4,9 @@ const ListCourse = props => {
     <ul className="courseSearch">
       {Object.keys(props.courses).map(course => {
         return (
-          <option key={course} id={course} onClick={props.action}>
+          <div key={course} id={course} onClick={props.action}>
             {course} {props.courses[course]["name"]}
-          </option>
+          </div>
         );
       })}
     </ul>
