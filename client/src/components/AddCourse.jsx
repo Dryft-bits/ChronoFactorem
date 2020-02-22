@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Search from "./Search";
 import ListCourse from "./ListCourse";
-import CollapsibleList from "./CollapsibleList";
+import SectionTabs from "./SectionTab";
 import ToggleButton from "./ToggleButton";
 
 class AddCourse extends Component {
@@ -49,7 +49,6 @@ class AddCourse extends Component {
 
   getSections(type) {
     let course = this.state.selectedCourse;
-    //console.log(course);
     let code = Object.keys(course)[0];
     let selectSections = obj =>
       Object.keys(obj)
@@ -78,23 +77,9 @@ class AddCourse extends Component {
           <div>
             <h6>{Object.keys(this.state.selectedCourse)}</h6>
             <ToggleButton action={this.changeCourse} title="Change Course" />
-            <CollapsibleList
-              title="Lecture"
+            <SectionTabs
               action={this.props.addSection}
               getSections={this.getSections}
-              type="L"
-            />
-            <CollapsibleList
-              title="Tutorial"
-              action={this.props.addSection}
-              getSections={this.getSections}
-              type="T"
-            />
-            <CollapsibleList
-              title="Practical"
-              action={this.props.addSection}
-              getSections={this.getSections}
-              type="P"
             />
           </div>
         )}
