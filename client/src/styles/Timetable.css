@@ -121,25 +121,7 @@ body
     cursor: pointer;
     background-color: orange;
 }
- /* label focus color */
- .input-field input[type=text]:focus + label {
-    color: #000;
+.input-field ::placeholder{
+    color: #3d3d3d;
+    opacity: 1;
 }
-.input-field label {
-    color: #000;
-  }
-/* label underline focus color */
-.input-field input[type=text]:focus {
-border-bottom: 1px solid #000;
-box-shadow: 0 1px 0 0 #000;
-}
-/* label underline focus color */
-.input-field input[type=text]:focus {
-border-bottom: 1px solid #000;
-box-shadow: 0 1px 0 0 #000;
-}
-   /* icon prefix focus color */
-   .input-field .prefix.active {
-    color: #000;
-  }
-       
