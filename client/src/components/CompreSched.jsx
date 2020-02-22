@@ -15,7 +15,7 @@ const CompreSched = props => {
                     {myCourse.course[code].compre.date}
                   </div>
                   <div className="courseItem">
-                    {myCourse.course[code].compre.time}
+                    {myCourse.course[code].compre.session}
                   </div>
                 </div>
               </h5>
