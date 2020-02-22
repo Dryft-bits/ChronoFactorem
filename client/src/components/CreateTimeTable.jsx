@@ -36,6 +36,7 @@ class CreateTimeTable extends Component {
     this.showView = this.showView.bind(this);
     this.checkLunchHour = this.checkLunchHour.bind(this);
     this.checkSection = this.checkSection.bind(this);
+    this.clearAll = this.clearAll.bind(this);
   }
 
   showView(input) {
@@ -177,6 +178,10 @@ class CreateTimeTable extends Component {
     this.setState({ currentCourse: input });
   }
 
+  clearAll() {
+    this.setState({ myTimeTable: new TimeTable(), myCourses: [] });
+  }
+
   render() {
     let str = "";
     if (this.state.view === 0) {
@@ -191,6 +196,7 @@ class CreateTimeTable extends Component {
           <button id={3} onClick={this.showView}>
             {this.state.view === 0 ? "Compre Schedule" : "Back"}
           </button>
+          <button onClick={this.clearAll}>Clear All Entries</button>
           <div>
             <div style={{ float: "right", width: "35vw" }}>
               <AddCourse
