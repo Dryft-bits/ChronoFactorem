@@ -6,6 +6,7 @@ import Entry from "../schemas/Entry";
 import MyCourse from "../schemas/MyCourse";
 import PreviewTT from "./PreviewTT.jsx";
 import MidsemSched from "./MidsemSched.jsx";
+import CompreSched from "./CompreSched.jsx";
 import "../styles/CreateTimeTable.css";
 const ntw = require("number-to-words");
 
@@ -187,6 +188,9 @@ class CreateTimeTable extends Component {
           <button id={2} onClick={this.showView}>
             {this.state.view === 0 ? "Midsem Schedule" : "Back"}
           </button>
+          <button id={3} onClick={this.showView}>
+            {this.state.view === 0 ? "Compre Schedule" : "Back"}
+          </button>
           <div>
             <div style={{ float: "right", width: "35vw" }}>
               <AddCourse
@@ -221,6 +225,15 @@ class CreateTimeTable extends Component {
             {this.state.view === 0 ? "Midsem Schedule" : "Back"}
           </button>
           <MidsemSched myCourses={this.state.myCourses} />
+        </>
+      );
+    } else if (this.state.view === 3) {
+      str = (
+        <>
+          <button id={0} onClick={this.showView}>
+            {this.state.view === 0 ? "Compre Schedule" : "Back"}
+          </button>
+          <CompreSched myCourses={this.state.myCourses} />
         </>
       );
     }
