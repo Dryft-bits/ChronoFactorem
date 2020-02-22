@@ -5,6 +5,7 @@ import AddCourse from "./AddCourse.jsx";
 import Entry from "../schemas/Entry";
 import MyCourse from "../schemas/MyCourse";
 import PreviewTT from "./PreviewTT.jsx";
+import MidsemSched from "./MidsemSched.jsx";
 import "../styles/CreateTimeTable.css";
 const ntw = require("number-to-words");
 
@@ -36,10 +37,9 @@ class CreateTimeTable extends Component {
     this.checkSection = this.checkSection.bind(this);
   }
 
-  showView() {
-    this.setState(() => ({
-      view: 1 - this.state.view
-    }));
+  showView(input) {
+    let id = parseInt(input.target.id);
+    this.setState({ view: id });
   }
 
   checkClash(hours, days, room) {
@@ -181,8 +181,11 @@ class CreateTimeTable extends Component {
     if (this.state.view === 0) {
       str = (
         <>
-          <button onClick={this.showView}>
+          <button id={1} onClick={this.showView}>
             {this.state.view === 0 ? "Preview" : "Back"}
+          </button>
+          <button id={2} onClick={this.showView}>
+            {this.state.view === 0 ? "Midsem Schedule" : "Back"}
           </button>
           <div>
             <div style={{ float: "right", width: "35vw" }}>
@@ -202,13 +205,22 @@ class CreateTimeTable extends Component {
           </div>
         </>
       );
-    } else {
+    } else if (this.state.view === 1) {
       str = (
         <>
-          <button onClick={this.showView}>
+          <button id={0} onClick={this.showView}>
             {this.state.view === 0 ? "Preview" : "Back"}
           </button>
           <PreviewTT TimeTable={this.state.myTimeTable} />
+        </>
+      );
+    } else if (this.state.view === 2) {
+      str = (
+        <>
+          <button id={0} onClick={this.showView}>
+            {this.state.view === 0 ? "Midsem Schedule" : "Back"}
+          </button>
+          <MidsemSched myCourses={this.state.myCourses} />
         </>
       );
     }
