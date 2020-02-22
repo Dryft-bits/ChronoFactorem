@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import Search from "./Search";
+import Search from "../Search";
 import ListCourse from "./ListCourse";
 import CollapsibleList from "./CollapsibleList";
-import ToggleButton from "./ToggleButton";
+import ToggleButton from "../ToggleButton";
 
 class AddCourse extends Component {
   constructor(props) {
@@ -77,24 +77,24 @@ class AddCourse extends Component {
         ) : (
           <div>
             <h6>{Object.keys(this.state.selectedCourse)}</h6>
-            <ToggleButton action={this.changeCourse} title="Change Course" />
+            <ToggleButton action={this.changeCourse} title='Change Course' />
             <CollapsibleList
-              title="Lecture"
+              title='Lecture'
               action={this.props.addSection}
               getSections={this.getSections}
-              type="L"
+              type='L'
             />
             <CollapsibleList
-              title="Tutorial"
+              title='Tutorial'
               action={this.props.addSection}
               getSections={this.getSections}
-              type="T"
+              type='T'
             />
             <CollapsibleList
-              title="Practical"
+              title='Practical'
               action={this.props.addSection}
               getSections={this.getSections}
-              type="P"
+              type='P'
             />
           </div>
         )}
