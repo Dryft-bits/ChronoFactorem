@@ -60,8 +60,7 @@ class AddCourse extends Component {
   }
 
   changeCourse() {
-    this.setState({ selectedCourse: null });
-    this.setState({current: this.state.initial});
+    this.setState({ selectedCourse: null, current: this.props.allCourses });
   }
 
   render() {

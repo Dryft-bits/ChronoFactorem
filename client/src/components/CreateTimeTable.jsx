@@ -3,6 +3,7 @@ import TimeTable from "../schemas/TimeTable.js";
 import * as TimeTableData from "../Timetable.json";
 import AddCourse from "./AddCourse.jsx";
 import Entry from "../schemas/Entry";
+import MyCourse from "../schemas/MyCourse";
 import PreviewTT from "./PreviewTT.jsx";
 import "../styles/CreateTimeTable.css";
 const ntw = require("number-to-words");
@@ -16,6 +17,7 @@ const mapDay = {
   F: "Friday",
   S: "Saturday"
 };
+const mapSection = { L: "Lecture", T: "Tutorial", P: "Practical" };
 
 class CreateTimeTable extends Component {
   constructor(props) {
@@ -31,6 +33,7 @@ class CreateTimeTable extends Component {
     this.checkClash = this.checkClash.bind(this);
     this.showView = this.showView.bind(this);
     this.checkLunchHour = this.checkLunchHour.bind(this);
+    this.checkSection = this.checkSection.bind(this);
   }
 
   showView() {
@@ -39,10 +42,13 @@ class CreateTimeTable extends Component {
     }));
   }
 
-  checkClash(hours, days) {
+  checkClash(hours, days, room) {
     for (let day of days) {
       for (let hour of hours) {
-        if (this.state.myTimeTable[day][ntw.toWords(hour)].courseCode != null) {
+        if (
+          this.state.myTimeTable[day][ntw.toWords(hour)].courseCode != null &&
+          this.state.myTimeTable[day][ntw.toWords(hour)].sectionRoom !== room
+        ) {
           return true;
         }
       }
@@ -70,6 +76,16 @@ class CreateTimeTable extends Component {
     return false;
   }
 
+  checkSection(courseTemp, course, section) {
+    let prev = courseTemp[course].sections.find(item => {
+      return item.charAt(0) === section.charAt(0);
+    });
+    if (prev) {
+      return prev;
+    }
+    return false;
+  }
+
   addSection(input) {
     let courseCode = Object.keys(this.state.currentCourse);
     let day, hour;
@@ -78,12 +94,12 @@ class CreateTimeTable extends Component {
       .hours;
     let days = this.state.currentCourse[courseCode].sections[section].sched[0]
       .days;
-    if (
-      this.checkClash(hours, days) &&
-      !window.confirm(
-        "The selected section clashes with an already present course section! Click ok to force use the current one!"
-      )
-    ) {
+    let room = this.state.currentCourse[courseCode].sections[section].sched[0]
+      .room;
+    if (this.checkClash(hours, days, room)) {
+      window.alert(
+        "The selected section clashes with an already present course section! Please remove the previous course first!"
+      );
       return;
     }
     let checkLunch = this.checkLunchHour(hours, days);
@@ -97,8 +113,6 @@ class CreateTimeTable extends Component {
     ) {
       return;
     }
-    let room = this.state.currentCourse[courseCode].sections[section].sched[0]
-      .room;
     let temp = this.state.myTimeTable;
     for (day of days) {
       for (hour of hours) {
@@ -111,9 +125,49 @@ class CreateTimeTable extends Component {
         temp[day][ntw.toWords(hour)] = entry;
       }
     }
-    let courseTemp = this.setState.myCourses;
-    if (!courseTemp || !courseTemp.includes(this.currentCourse)) {
-      courseTemp += this.state.currentCourse;
+    let courseTemp = Array.from(this.state.myCourses);
+    if (
+      !courseTemp.length ||
+      !courseTemp.find(item => {
+        return item.course === this.state.currentCourse;
+      })
+    ) {
+      courseTemp.push(new MyCourse(this.state.currentCourse, section));
+    } else {
+      let index = courseTemp.findIndex(item => {
+        return item.course === this.state.currentCourse;
+      });
+      let duplicate = this.checkSection(courseTemp, index, section);
+      if (duplicate === section) {
+        return;
+      }
+      if (!duplicate) {
+        courseTemp[index].sections.push(section);
+      } else if (
+        duplicate &&
+        !window.confirm(
+          "You have already chosen a " +
+            mapSection[section.charAt(0)] +
+            " for this course.Click ok to swap it with the selected section"
+        )
+      ) {
+        return;
+      } else {
+        courseTemp[index].sections = courseTemp[index].sections.filter(item => {
+          return item.charAt(0) !== section.charAt(0);
+        });
+        courseTemp[index].sections = Array.from(courseTemp[index].sections);
+        courseTemp[index].sections.push(section);
+        let hours = this.state.currentCourse[courseCode].sections[duplicate]
+          .sched[0].hours;
+        let days = this.state.currentCourse[courseCode].sections[duplicate]
+          .sched[0].days;
+        for (let day of days) {
+          for (let hour of hours) {
+            temp[day][ntw.toWords(hour)] = new Entry();
+          }
+        }
+      }
     }
     this.setState({ myTimeTable: temp, myCourses: courseTemp });
   }
@@ -125,14 +179,13 @@ class CreateTimeTable extends Component {
   render() {
     let str = "";
     if (this.state.view === 0) {
-      str = 
+      str = (
         <>
           <button onClick={this.showView}>
             {this.state.view === 0 ? "Preview" : "Back"}
           </button>
           <div>
-            <div style={{ float: "right",
-          width: "35vw" }}>
+            <div style={{ float: "right", width: "35vw" }}>
               <AddCourse
                 allCourses={courses.default}
                 myCourses={this.state.myCourses}
@@ -140,15 +193,15 @@ class CreateTimeTable extends Component {
                 updateCurrent={this.updateCurrent}
               />
             </div>
-            <div style={{ float: "left",
-          width: "60vw" }}>
+            <div style={{ float: "left", width: "60vw" }}>
               <PreviewTT
                 TimeTable={this.state.myTimeTable}
                 style={{ float: "left" }}
               />
             </div>
           </div>
-        </>;
+        </>
+      );
     } else {
       str = (
         <>
