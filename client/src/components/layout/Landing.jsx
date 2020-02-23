@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import "../../styles/Landing.css";
 
 export const Landing = () => {
@@ -13,19 +12,16 @@ export const Landing = () => {
               Create your own timetable.
             </p>
             <div className='buttons'>
-              <Link to='/login' className='btn btn-light btn-landing btn-left'>
-                <span>Staff</span>
-              </Link>
+              <a href='/login'>
+                <button className='btn-landing btn-left'>
+                  <span>Staff </span>
+                </button>
+              </a>
               <a href='http://localhost:5000/api/auth/google'>
-                <button className='btn btn-light btn-landing btn-right btn-ref'>
+                <button className='btn-landing btn-right'>
                   <span>Student </span>
                 </button>
               </a>
-            </div>
-            <div className='buttons'>
-              <Link to='/testbed' className='btn btn-testbed'>
-                Testbed
-              </Link>
             </div>
           </div>
         </div>

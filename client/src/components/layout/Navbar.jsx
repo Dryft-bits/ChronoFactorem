@@ -21,6 +21,9 @@ const Navbar = props => {
             <li>
               <a href='#'>About Us</a>
             </li>
+            <li>
+              <a href='#'>Logout</a>
+            </li>
           </ul>
         </div>
       </nav>
