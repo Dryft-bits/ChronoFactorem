@@ -52,8 +52,8 @@
     "nodemon": "^1.19.4"
   },
   "scripts": {
-    "server": "nodemon server",
-    "start": "node server",
+    "server": "nodemon server --exec babel-node",
+    "start": "node server --exec babel-node",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
