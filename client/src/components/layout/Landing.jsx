@@ -11,7 +11,7 @@ export const Landing = () => {
             <p className='text-large text-landing description center'>
               Create your own timetable.
             </p>
-            <div className='buttons'>
+            <div>
               <a href='/login'>
                 <button className='btn-landing btn-left'>
                   <span>Staff </span>
