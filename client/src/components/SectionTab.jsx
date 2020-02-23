@@ -17,13 +17,13 @@ class SectionTabs extends Component {
             }}
             className="tabs"
           >
-            <li className="tab col s3">
+            <li className="tab col s6">
               <a href="#Lecture">Lecture</a>
             </li>
-            <li className="tab col s3">
+            <li className="tab col s6">
               <a href="#Tutorial">Tutorial</a>
             </li>
-            <li className="tab col s3">
+            <li className="tab col s6">
               <a href="#Practical">Practical</a>
             </li>
           </ul>
