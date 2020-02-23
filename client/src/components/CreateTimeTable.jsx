@@ -129,7 +129,6 @@ class CreateTimeTable extends Component {
             return item.charAt(0) !== section.charAt(0);
           })
         );
-        console.log(no.length);
         if (!no.length) {
           courseTemp = courseTemp.filter(item => {
             return Object.keys(item.course)[0] !== courseCode[0];
@@ -137,7 +136,6 @@ class CreateTimeTable extends Component {
         } else {
           courseTemp[index].sections = no;
         }
-        console.log(courseTemp);
         this.setState({ myTimeTable: temp, myCourses: courseTemp });
         return;
       }
@@ -168,13 +166,13 @@ class CreateTimeTable extends Component {
     if (
       !courseTemp.length ||
       !courseTemp.find(item => {
-        return item.course === this.state.currentCourse;
+        return Object.keys(item.course)[0] === courseCode[0];
       })
     ) {
       courseTemp.push(new MyCourse(this.state.currentCourse, section));
     } else {
       let index = courseTemp.findIndex(item => {
-        return item.course === this.state.currentCourse;
+        return Object.keys(item.course)[0] === courseCode[0];
       });
       let duplicate = this.checkSection(courseTemp, index, section);
       if (duplicate === section) {
@@ -224,13 +222,25 @@ class CreateTimeTable extends Component {
     if (this.state.view === 0) {
       str = (
         <>
-          <button className="waves-effect waves-light btn" id={1} onClick={this.showView}>
+          <button
+            className="waves-effect waves-light btn"
+            id={1}
+            onClick={this.showView}
+          >
             {this.state.view === 0 ? "Preview" : "Back"}
           </button>
-          <button className="waves-effect waves-light btn" id={2} onClick={this.showView}>
+          <button
+            className="waves-effect waves-light btn"
+            id={2}
+            onClick={this.showView}
+          >
             {this.state.view === 0 ? "Midsem Schedule" : "Back"}
           </button>
-          <button className="waves-effect waves-light btn" id={3} onClick={this.showView}>
+          <button
+            className="waves-effect waves-light btn"
+            id={3}
+            onClick={this.showView}
+          >
             {this.state.view === 0 ? "Compre Schedule" : "Back"}
           </button>
           <button onClick={this.clearAll}>Clear All Entries</button>
@@ -255,7 +265,11 @@ class CreateTimeTable extends Component {
     } else if (this.state.view === 1) {
       str = (
         <>
-          <button className="waves-effect waves-light btn" id={0} onClick={this.showView}>
+          <button
+            className="waves-effect waves-light btn"
+            id={0}
+            onClick={this.showView}
+          >
             {this.state.view === 0 ? "Preview" : "Back"}
           </button>
           <PreviewTT TimeTable={this.state.myTimeTable} />
@@ -264,7 +278,11 @@ class CreateTimeTable extends Component {
     } else if (this.state.view === 2) {
       str = (
         <>
-          <button className="waves-effect waves-light btn" id={0} onClick={this.showView}>
+          <button
+            className="waves-effect waves-light btn"
+            id={0}
+            onClick={this.showView}
+          >
             {this.state.view === 0 ? "Midsem Schedule" : "Back"}
           </button>
           <MidsemSched myCourses={this.state.myCourses} />
@@ -273,7 +291,11 @@ class CreateTimeTable extends Component {
     } else if (this.state.view === 3) {
       str = (
         <>
-          <button className="waves-effect waves-light btn" id={0} onClick={this.showView}>
+          <button
+            className="waves-effect waves-light btn"
+            id={0}
+            onClick={this.showView}
+          >
             {this.state.view === 0 ? "Compre Schedule" : "Back"}
           </button>
           <CompreSched myCourses={this.state.myCourses} />
