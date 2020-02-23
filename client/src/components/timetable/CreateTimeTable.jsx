@@ -1,13 +1,14 @@
 import React, { Component } from "react";
-import TimeTable from "../schemas/TimeTable.js";
-import * as TimeTableData from "../Timetable.json";
+import TimeTable from "../../schemas/TimeTable.js";
+import * as TimeTableData from "../../Timetable.json";
 import AddCourse from "./AddCourse.jsx";
-import Entry from "../schemas/Entry";
-import MyCourse from "../schemas/MyCourse";
+import Entry from "../../schemas/Entry";
+import MyCourse from "../../schemas/MyCourse";
 import PreviewTT from "./PreviewTT.jsx";
 import MidsemSched from "./MidsemSched.jsx";
 import CompreSched from "./CompreSched.jsx";
-import "../styles/CreateTimeTable.css";
+import "../../styles/CreateTimeTable.css";
+import "../../styles/Timetable.css";
 const ntw = require("number-to-words");
 
 const courses = JSON.parse(JSON.stringify(TimeTableData));
@@ -223,27 +224,32 @@ class CreateTimeTable extends Component {
       str = (
         <>
           <button
-            className="waves-effect waves-light btn"
+            className='waves-effect waves-light btn'
             id={1}
             onClick={this.showView}
           >
             {this.state.view === 0 ? "Preview" : "Back"}
           </button>
           <button
-            className="waves-effect waves-light btn"
+            className='waves-effect waves-light btn'
             id={2}
             onClick={this.showView}
           >
             {this.state.view === 0 ? "Midsem Schedule" : "Back"}
           </button>
           <button
-            className="waves-effect waves-light btn"
+            className='waves-effect waves-light btn'
             id={3}
             onClick={this.showView}
           >
             {this.state.view === 0 ? "Compre Schedule" : "Back"}
           </button>
-          <button className="waves-effect waves-light btn" onClick={this.clearAll}>Clear All Entries</button>
+          <button
+            className='waves-effect waves-light btn'
+            onClick={this.clearAll}
+          >
+            Clear All Entries
+          </button>
           <div>
             <div style={{ float: "right", width: "35vw" }}>
               <AddCourse
@@ -266,7 +272,7 @@ class CreateTimeTable extends Component {
       str = (
         <>
           <button
-            className="waves-effect waves-light btn"
+            className='waves-effect waves-light btn'
             id={0}
             onClick={this.showView}
           >
@@ -279,7 +285,7 @@ class CreateTimeTable extends Component {
       str = (
         <>
           <button
-            className="waves-effect waves-light btn"
+            className='waves-effect waves-light btn'
             id={0}
             onClick={this.showView}
           >
@@ -292,7 +298,7 @@ class CreateTimeTable extends Component {
       str = (
         <>
           <button
-            className="waves-effect waves-light btn"
+            className='waves-effect waves-light btn'
             id={0}
             onClick={this.showView}
           >
