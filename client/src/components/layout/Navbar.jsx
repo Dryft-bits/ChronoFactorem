@@ -5,7 +5,7 @@ const Navbar = props => {
     <div>
       <nav className='nav-wraper blue'>
         <div className='container'>
-          <a href='#' class='brand-logo left'>
+          <a href='#' className='brand-logo left'>
             ChronoFactorem
           </a>
           <ul className='right hide-on-med-and-down' onClick={props.action}>
