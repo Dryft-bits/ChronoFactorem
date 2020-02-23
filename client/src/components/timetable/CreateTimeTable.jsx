@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import TimeTable from "../schemas/TimeTable.js";
-import * as TimeTableData from "../Timetable.json";
+import TimeTable from "../../schemas/TimeTable.js";
+import * as TimeTableData from "../../Timetable.json";
 import AddCourse from "./AddCourse.jsx";
-import Entry from "../schemas/Entry";
-import MyCourse from "../schemas/MyCourse";
+import Entry from "../../schemas/Entry";
+import MyCourse from "../../schemas/MyCourse";
 import PreviewTT from "./PreviewTT.jsx";
 import MidsemSched from "./MidsemSched.jsx";
 import CompreSched from "./CompreSched.jsx";
-import "../styles/CreateTimeTable.css";
+import "../../styles/CreateTimeTable.css";
 const ntw = require("number-to-words");
 
 const courses = JSON.parse(JSON.stringify(TimeTableData));

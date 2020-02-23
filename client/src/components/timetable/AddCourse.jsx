@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import Search from "./Search";
+import Search from "../Search";
 import ListCourse from "./ListCourse";
+import CollapsibleList from "./CollapsibleList";
+import ToggleButton from "../ToggleButton";
 import SectionTabs from "./SectionTab";
-import ToggleButton from "./ToggleButton";
 
 class AddCourse extends Component {
   constructor(props) {
@@ -76,7 +77,7 @@ class AddCourse extends Component {
         ) : (
           <div>
             <h3>{Object.keys(this.state.selectedCourse)}</h3>
-            <ToggleButton action={this.changeCourse} title="Change Course" />
+            <ToggleButton action={this.changeCourse} title='Change Course' />
             <SectionTabs
               action={this.props.addSection}
               getSections={this.getSections}
