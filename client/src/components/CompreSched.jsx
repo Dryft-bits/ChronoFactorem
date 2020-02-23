@@ -8,14 +8,14 @@ const CompreSched = props => {
           <div>
             {!(myCourse.course[code].midsem === undefined) ? (
               <h5 key={code}>
-                <div className="courseElement" style={{ fontSize: "medium" }}>
+                <div className="examElement" style={{ fontSize: "medium" }}>
                   <div className="courseItem">{code}</div>
                   <div className="courseItem">{myCourse.course[code].name}</div>
                   <div className="courseItem">
                     {myCourse.course[code].compre.date}
                   </div>
                   <div className="courseItem">
-                    {myCourse.course[code].compre.time}
+                    {myCourse.course[code].compre.session}
                   </div>
                 </div>
               </h5>

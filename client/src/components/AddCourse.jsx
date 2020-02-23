@@ -75,7 +75,7 @@ class AddCourse extends Component {
           </div>
         ) : (
           <div>
-            <h6>{Object.keys(this.state.selectedCourse)}</h6>
+            <h3>{Object.keys(this.state.selectedCourse)}</h3>
             <ToggleButton action={this.changeCourse} title="Change Course" />
             <SectionTabs
               action={this.props.addSection}
