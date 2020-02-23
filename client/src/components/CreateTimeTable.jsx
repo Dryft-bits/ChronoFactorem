@@ -243,7 +243,7 @@ class CreateTimeTable extends Component {
           >
             {this.state.view === 0 ? "Compre Schedule" : "Back"}
           </button>
-          <button onClick={this.clearAll}>Clear All Entries</button>
+          <button className="waves-effect waves-light btn" onClick={this.clearAll}>Clear All Entries</button>
           <div>
             <div style={{ float: "right", width: "35vw" }}>
               <AddCourse

@@ -1,5 +1,6 @@
 import React from 'react';
 import "../styles/Navbar.css";
+import Logo from "../images/logo.png"
 const Navbar = (props) => {
     return ( <div>
         <nav className="nav-wraper blue">
