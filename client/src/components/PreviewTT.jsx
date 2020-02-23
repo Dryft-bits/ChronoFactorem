@@ -1,6 +1,6 @@
 import { Component } from "react";
 import React from "react";
-import "../../styles/Timetable.css";
+import "../styles/Timetable.css";
 
 const ntw = require("number-to-words");
 class PreviewTT extends Component {
@@ -68,7 +68,7 @@ class PreviewTT extends Component {
 
           str = (
             <>
-              <div className='gridItem' style={divStyle}>
+              <div className="gridItem" style={divStyle}>
                 <div style={(divStyle, { fontSize: "xx-small" })}>
                   {section.courseName}
                   <br></br>
@@ -118,7 +118,7 @@ class PreviewTT extends Component {
         }
       }
     }
-    return <div className='gridElement'>{divsToRender}</div>;
+    return <div className="gridElement">{divsToRender}</div>;
   }
 }
 export default PreviewTT;
