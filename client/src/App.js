@@ -11,7 +11,7 @@ import axios from "axios";
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { currentTab: "Dashboard", isLoggedin: false };
+    this.state = { currentTab: "Create TimeTable", isLoggedin: false };
     this.changeTab = this.changeTab.bind(this);
     axios.get("/loggedin").then(res => {
       console.log(res);

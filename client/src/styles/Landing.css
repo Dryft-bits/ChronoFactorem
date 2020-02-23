@@ -83,16 +83,6 @@ img {
   color: #fff;
 }
 
-.btn-light {
-  background: var(--light-color);
-  color: var(--landing-text-color);
-}
-
-.btn-dark {
-  background: var(--dark-color);
-  color: #fff;
-}
-
 .btn-landing {
   display: inline-block;
   background-color: #6699ff;
@@ -168,12 +158,6 @@ img {
 body {
   display: flex;
   flex-direction: column;
-}
-
-buttons {
-  width: 100%;
-  height: 100%;
-  background-color: green;
 }
 
 section {
