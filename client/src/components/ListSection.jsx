@@ -5,7 +5,7 @@ const ListSection = props => {
       {Object.keys(props.sections).map(section => {
         return (
           <div>
-            {!(props.sections[section].sched === undefined) ? (
+            {props.sections[section].sched.length ? (
               <h5 key={section} id={section} onClick={props.action}>
                 <div
                   className="courseElement"
