@@ -15,7 +15,7 @@ class App extends Component {
     this.changeTab = this.changeTab.bind(this);
     axios.get("/loggedin").then(res => {
       console.log(res);
-      if (res.status === 200) {
+      if (res.status === 200 && res.data.name) {
         this.setState({ isLoggedin: true });
       }
     });
@@ -24,7 +24,7 @@ class App extends Component {
   userLoggedIn() {
     axios.get("/loggedin").then(res => {
       console.log(res);
-      if (res.status === 200) {
+      if (res.status === 200 && res.data.name) {
         this.setState({ isLoggedin: true });
       }
     });

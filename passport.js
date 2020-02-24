@@ -1,9 +1,9 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 const User = mongoose.model("users");
-import passport from "passport";
-import GoogleStrategy from "passport-google-oauth20";
+const passport = require("passport");
+const GoogleStrategy = require("passport-google-oauth20");
 
-import config from "config";
+const config = require("config");
 const GOOGLE_CLIENT_ID = config.get("GOOGLE_CLIENT_ID");
 const GOOGLE_CLIENT_SECRET = config.get("GOOGLE_CLIENT_SECRET");
 
@@ -22,7 +22,8 @@ passport.use(
     {
       clientID: GOOGLE_CLIENT_ID,
       clientSecret: GOOGLE_CLIENT_SECRET,
-      callbackURL: "http://localhost:5000/api/auth/google/callback"
+      callbackURL:
+        "https://damp-beach-49773.herokuapp.com/api/auth/google/callback"
     },
     (accessToken, refreshToken, profile, done) => {
       User.findOne({ email: profile.emails[0].value }).then(existingUser => {
@@ -41,5 +42,3 @@ passport.use(
     }
   )
 );
-
-export default passport;
