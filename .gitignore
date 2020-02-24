@@ -125,5 +125,5 @@ sketch
 client/package-lock.json
 
 ### API Keys ###
-config/default.json
+# config/default.json
 # End of https://www.gitignore.io/api/node,react
