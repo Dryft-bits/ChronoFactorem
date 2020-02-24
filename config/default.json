@@ -1,0 +1,5 @@
+{
+  "mongoURI": "mongodb+srv://chronofactorem-admin:ILoveMyTimetable@chronofactorem-uuvaj.mongodb.net/test?retryWrites=true&w=majority",
+  "GOOGLE_CLIENT_ID": "582672263393-olc99m1h1vo4kn7uafdjp5b9kfvvjnhj.apps.googleusercontent.com",
+  "GOOGLE_CLIENT_SECRET": "sg4oGjWOG_UmBa5NoIA_Xp5p"
+}
