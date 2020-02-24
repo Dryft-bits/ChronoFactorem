@@ -17,7 +17,7 @@ export const Landing = () => {
                   <span>Staff </span>
                 </button>
               </a>
-              <a href='https://damp-beach-49773.herokuapp.com/api/auth/google'>
+              <a href='https://chronofactorem.herokuapp.com/api/auth/google'>
                 <button className='btn-landing btn-right'>
                   <span>Student </span>
                 </button>

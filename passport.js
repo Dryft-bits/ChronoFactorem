@@ -23,7 +23,7 @@ passport.use(
       clientID: GOOGLE_CLIENT_ID,
       clientSecret: GOOGLE_CLIENT_SECRET,
       callbackURL:
-        "https://damp-beach-49773.herokuapp.com/api/auth/google/callback"
+        "https://chronofactorem.herokuapp.com/api/auth/google/callback"
     },
     (accessToken, refreshToken, profile, done) => {
       User.findOne({ email: profile.emails[0].value }).then(existingUser => {

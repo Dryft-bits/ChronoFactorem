@@ -26,7 +26,7 @@ authRouter.get(
   "/api/auth/google/callback",
   passport.authenticate("google"),
   (req, res) => {
-    res.redirect("https://damp-beach-49773.herokuapp.com");
+    res.redirect("https://chronofactorem.herokuapp.com");
   }
 );
 
@@ -36,7 +36,7 @@ authRouter.get("/api/logout", (req, res) => {
   res.clearCookie();
   console.log(res);
   console.log(req.session);
-  res.redirect("https://damp-beach-49773.herokuapp.com");
+  res.redirect("https://chronofactorem.herokuapp.com");
 });
 
 authRouter.get("/current_user", (req, res) => {
