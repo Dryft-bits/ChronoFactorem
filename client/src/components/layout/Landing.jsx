@@ -1,5 +1,6 @@
 import React from "react";
 import "../../styles/Landing.css";
+import configuration from "../../config/constants.js";
 
 export const Landing = () => {
   return (
@@ -17,7 +18,7 @@ export const Landing = () => {
                   <span>Staff </span>
                 </button>
               </a>
-              <a href='https://chronofactorem.herokuapp.com/api/auth/google'>
+              <a href={configuration.urls.googleAuth}>
                 <button className='btn-landing btn-right'>
                   <span>Student </span>
                 </button>

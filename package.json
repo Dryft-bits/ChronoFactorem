@@ -54,7 +54,7 @@
     "server": "nodemon server --exec babel-node",
     "start": "node server --exec babel-node",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "dev": "export NODE_ENV=development && concurrently \"npm run server\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "repository": {

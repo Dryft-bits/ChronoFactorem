@@ -8,6 +8,8 @@ const path = require("path");
 
 const auth = require("./routes/api/auth.js");
 
+const configuration = require("./config/constants.js");
+
 const app = express();
 app.use(express.urlencoded({ extended: false }));
 
@@ -19,11 +21,10 @@ app.use(bodyParser.json());
 // Connect to database
 const Student = require("./models/Student.js");
 connectDB();
-
 app.use(
   cookieSession({
     maxAge: 60 * 60 * 1000,
-    keys: ["ilovemytimetable"]
+    keys: [configuration.cookieKey]
   })
 );
 

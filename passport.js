@@ -1,3 +1,5 @@
+const configuration = require("./config/constants.js");
+
 const mongoose = require("mongoose");
 const User = mongoose.model("users");
 const passport = require("passport");
@@ -22,8 +24,7 @@ passport.use(
     {
       clientID: GOOGLE_CLIENT_ID,
       clientSecret: GOOGLE_CLIENT_SECRET,
-      callbackURL:
-        "https://chronofactorem.herokuapp.com/api/auth/google/callback"
+      callbackURL: configuration.urls.googleAuthCallback
     },
     (accessToken, refreshToken, profile, done) => {
       User.findOne({ email: profile.emails[0].value }).then(existingUser => {
