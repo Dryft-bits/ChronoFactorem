@@ -5,7 +5,6 @@ const prod = {
 };
 
 const dev = {
-  //   cookieKey: "ilovemytimetable",
   urls: {
     googleAuth: "http://localhost:5000/api/auth/google"
   }
