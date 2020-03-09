@@ -1,5 +1,8 @@
 const configuration = require("../../config/constants.js");
 
+const dotenv = require("dotenv");
+dotenv.config();
+
 const passport = require("passport");
 const express = require("express");
 const authRouter = express.Router();

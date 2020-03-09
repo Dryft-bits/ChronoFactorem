@@ -1,13 +1,15 @@
 const configuration = require("./config/constants.js");
 
+const dotenv = require("dotenv");
+dotenv.config();
+
 const mongoose = require("mongoose");
 const User = mongoose.model("users");
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20");
 
-const config = require("config");
-const GOOGLE_CLIENT_ID = config.get("GOOGLE_CLIENT_ID");
-const GOOGLE_CLIENT_SECRET = config.get("GOOGLE_CLIENT_SECRET");
+const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
+const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET;
 
 passport.serializeUser((user, done) => {
   done(null, user.id);
