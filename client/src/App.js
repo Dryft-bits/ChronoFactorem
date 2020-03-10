@@ -8,6 +8,11 @@ import AboutUs from "./components/layout/AboutUs";
 import Landing from "./components/layout/Landing";
 import axios from "axios";
 
+/* Redux */
+import { Provider } from "react-redux";
+import store from "./store";
+
+// TODO: Everything returned from App needs to be wrapped in Provider
 class App extends Component {
   constructor(props) {
     super(props);
