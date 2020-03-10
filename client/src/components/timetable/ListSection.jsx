@@ -1,4 +1,5 @@
 import React from "react";
+
 const ListSection = props => {
   return (
     <ol className="courseWindow">
@@ -16,12 +17,14 @@ const ListSection = props => {
                   <div className="courseItem">
                     {props.sections[section].instructors[0]}
                   </div>
-                  <div className="courseItem">
-                    {props.sections[section].sched[0].days}
-                  </div>
-                  <div className="courseItem">
-                    {props.sections[section].sched[0].hours}
-                  </div>
+                  {props.sections[section].sched.map(item => {
+                    return (
+                      <>
+                        <div className="courseItem">{item.days}</div>
+                        <div className="courseItem">{item.hours}</div>
+                      </>
+                    );
+                  })}
                   <div className="courseItem">
                     {props.sections[section].sched[0].room}
                   </div>
