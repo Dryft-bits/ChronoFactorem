@@ -1,11 +1,15 @@
-import mongoose from "mongoose";
-const User = mongoose.model("users");
-import passport from "passport";
-import GoogleStrategy from "passport-google-oauth20";
+const configuration = require("./config/constants.js");
 
-import config from "config";
-const GOOGLE_CLIENT_ID = config.get("GOOGLE_CLIENT_ID");
-const GOOGLE_CLIENT_SECRET = config.get("GOOGLE_CLIENT_SECRET");
+const dotenv = require("dotenv");
+dotenv.config();
+
+const mongoose = require("mongoose");
+const User = mongoose.model("users");
+const passport = require("passport");
+const GoogleStrategy = require("passport-google-oauth20");
+
+const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID;
+const GOOGLE_CLIENT_SECRET = process.env.GOOGLE_CLIENT_SECRET;
 
 passport.serializeUser((user, done) => {
   done(null, user.id);
@@ -22,7 +26,7 @@ passport.use(
     {
       clientID: GOOGLE_CLIENT_ID,
       clientSecret: GOOGLE_CLIENT_SECRET,
-      callbackURL: "http://localhost:5000/api/auth/google/callback"
+      callbackURL: configuration.urls.googleAuthCallback
     },
     (accessToken, refreshToken, profile, done) => {
       User.findOne({ email: profile.emails[0].value }).then(existingUser => {
@@ -41,5 +45,3 @@ passport.use(
     }
   )
 );
-
-export default passport;
