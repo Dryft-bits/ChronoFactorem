@@ -11,6 +11,7 @@ const dev = {
 };
 
 const configuration = {
+  // Add common constants here
   ...(process.env.NODE_ENV === "development" ? dev : prod)
 };
 

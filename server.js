@@ -10,6 +10,7 @@ const auth = require("./routes/api/auth.js");
 
 const configuration = require("./config/constants.js");
 
+/* Express setup */
 const app = express();
 app.use(express.urlencoded({ extended: false }));
 
@@ -18,7 +19,7 @@ app.use(cors({ origin: true, credentials: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// Connect to database
+/* Connect to database */
 const Student = require("./models/Student.js");
 connectDB();
 app.use(
@@ -28,12 +29,12 @@ app.use(
   })
 );
 
-// Passport stuff
+/* Passport stuff */
 const passportJS = require("./passport.js");
 app.use(passport.initialize());
 app.use(passport.session({ saveUninitialized: false, resave: false }));
 
-// Define Routes
+/* Define Routes */
 app.use("/", auth);
 
 if (process.env.NODE_ENV === "production") {
