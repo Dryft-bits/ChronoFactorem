@@ -1,5 +1,13 @@
 import React from "react";
 import "../../styles/Navbar.css";
+import axios from "axios";
+
+const logout = () => {
+  axios.get("/api/logout").then(res => {
+    console.log("logged out");
+  });
+};
+
 const Navbar = props => {
   return (
     <div>
@@ -22,7 +30,9 @@ const Navbar = props => {
               <a href='#'>About Us</a>
             </li>
             <li>
-              <a href='#'>Logout</a>
+              <a href='#' onClick={logout}>
+                Logout
+              </a>
             </li>
           </ul>
         </div>

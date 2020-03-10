@@ -1,9 +1,13 @@
-import passport from "passport";
-import express from "express";
+const configuration = require("../../config/constants.js");
+
+const dotenv = require("dotenv");
+dotenv.config();
+
+const passport = require("passport");
+const express = require("express");
 const authRouter = express.Router();
 
 function loggedIn(req, res, next) {
-  // console.log(req);
   if (req.user) {
     next();
   } else {
@@ -26,7 +30,7 @@ authRouter.get(
   "/api/auth/google/callback",
   passport.authenticate("google"),
   (req, res) => {
-    res.redirect("http://localhost:3000");
+    res.redirect(configuration.urls.homePage);
   }
 );
 
@@ -34,14 +38,11 @@ authRouter.get("/api/logout", (req, res) => {
   req.logout();
   req.session = null;
   res.clearCookie();
-  console.log(res);
-  console.log(req.session);
-  res.redirect("http://localhost:3000");
+  res.redirect(configuration.urls.homePage);
 });
 
 authRouter.get("/current_user", (req, res) => {
-  // console.log(req.user);
   res.send(req.user);
 });
 
-export default authRouter;
+module.exports = authRouter;
