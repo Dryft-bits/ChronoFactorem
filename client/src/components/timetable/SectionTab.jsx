@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import ListSection from "./ListSection";
 import M from "materialize-css";
 import "materialize-css/dist/css/materialize.min.css";
+import ListSection from "./ListSection";
+
 class SectionTabs extends Component {
   componentDidMount() {
     M.Tabs.init(this.Tabs);
@@ -29,22 +30,13 @@ class SectionTabs extends Component {
           </ul>
         </div>
         <div id="Lecture" className="col s12">
-          <ListSection
-            action={this.props.action}
-            sections={this.props.getSections("L")}
-          />
+          <ListSection sections={this.props.getSections("L")} />
         </div>
         <div id="Tutorial" className="col s12">
-          <ListSection
-            action={this.props.action}
-            sections={this.props.getSections("T")}
-          />
+          <ListSection sections={this.props.getSections("T")} />
         </div>
         <div id="Practical" className="col s12">
-          <ListSection
-            action={this.props.action}
-            sections={this.props.getSections("P")}
-          />
+          <ListSection sections={this.props.getSections("P")} />
         </div>
       </>
     );

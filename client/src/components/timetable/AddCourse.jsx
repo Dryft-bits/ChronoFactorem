@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+import { clearCurrentCourse } from "../../actions/UpdateCurrentCourse";
 import Search from "../Search";
 import ListCourse from "./ListCourse";
 import SectionTabs from "./SectionTab";
@@ -9,13 +11,11 @@ class AddCourse extends Component {
     super(props);
     this.state = {
       initial: this.props.allCourses,
-      current: this.props.allCourses,
-      selectedCourse: null
+      current: this.props.allCourses
     };
     this.filterItems = this.filterItems.bind(this);
-    this.handleCourseAddition = this.handleCourseAddition.bind(this);
     this.getSections = this.getSections.bind(this);
-    this.changeCourse = this.changeCourse.bind(this);
+    this.clearCourse = this.clearCourse.bind(this);
   }
 
   filterItems(input) {
@@ -34,53 +34,34 @@ class AddCourse extends Component {
     this.setState({ current: updatedlist });
   }
 
-  handleCourseAddition(input) {
-    let selectedCode = input.target.id;
-    let selectCourse = obj =>
-      Object.keys(obj)
-        .filter(course => course === selectedCode)
-        .reduce((res, key) => ((res[key] = obj[key]), res), {});
-    let selectedCourse = selectCourse(this.state.current);
-    this.props.updateCurrent(selectedCourse);
-    this.setState({
-      selectedCourse: selectedCourse
-    });
-  }
-
   getSections(type) {
-    let course = this.state.selectedCourse;
+    let course = this.props.currentCourse;
     let code = Object.keys(course)[0];
     let selectSections = obj =>
       Object.keys(obj)
         .filter(item => item.charAt(0) === type)
         .reduce((res, key) => ((res[key] = obj[key]), res), {});
-    let list = selectSections(this.state.selectedCourse[code].sections);
-    return list;
+    return selectSections(this.props.currentCourse[code].sections);
   }
 
-  changeCourse() {
-    this.setState({ selectedCourse: null, current: this.props.allCourses });
+  clearCourse() {
+    this.props.clearCurrentCourse();
+    this.setState({ current: this.state.initial });
   }
 
   render() {
     return (
       <div>
-        {!this.state.selectedCourse ? (
+        {!this.props.currentCourse ? (
           <div>
             <Search action={this.filterItems} />
-            <ListCourse
-              courses={this.state.current}
-              action={this.handleCourseAddition}
-            />
+            <ListCourse courses={this.state.current} />
           </div>
         ) : (
           <div>
-            <h3>{Object.keys(this.state.selectedCourse)}</h3>
-            <ToggleButton action={this.changeCourse} title='Change Course' />
-            <SectionTabs
-              action={this.props.addSection}
-              getSections={this.getSections}
-            />
+            <h3>{Object.keys(this.props.currentCourse)}</h3>
+            <ToggleButton action={this.clearCourse} title="Change Course" />
+            <SectionTabs getSections={this.getSections} />
           </div>
         )}
       </div>
@@ -88,4 +69,16 @@ class AddCourse extends Component {
   }
 }
 
-export default AddCourse;
+const mapStateToProps = state => {
+  return {
+    currentCourse: state.updateCC.currentCourse
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    clearCurrentCourse: () => dispatch(clearCurrentCourse())
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(AddCourse);
