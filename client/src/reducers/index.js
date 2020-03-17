@@ -1,5 +1,9 @@
 import { combineReducers } from "redux";
-import test from "./testReducer";
+import updateTTReducer from "./UpdateTimeTable";
+import updateCCReducer from "./UpdateCurentCourse";
 
 /* Add reducers here */
-export default combineReducers({ test });
+export default combineReducers({
+  updateTT: updateTTReducer,
+  updateCC: updateCCReducer
+});

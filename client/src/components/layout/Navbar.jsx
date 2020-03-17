@@ -1,44 +1,59 @@
-import React from "react";
-import "../../styles/Navbar.css";
+import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
 import axios from "axios";
+import "../../styles/Navbar.css";
 
-const logout = () => {
-  axios.get("/api/logout").then(res => {
-    console.log("logged out");
-  });
-};
+class Navbar extends Component {
+  constructor(props) {
+    super(props);
+    this.logout = this.logout.bind(this);
+  }
 
-const Navbar = props => {
-  return (
-    <div>
-      <nav className='nav-wraper blue'>
-        <div className='container'>
-          <a href='#' className='brand-logo left'>
-            ChronoFactorem
-          </a>
-          <ul className='right hide-on-med-and-down' onClick={props.action}>
-            <li>
-              <a href='#'>Dashboard</a>
-            </li>
-            <li>
-              <a href='#'>Create TimeTable</a>
-            </li>
-            <li>
-              <a href='#'>Share TimeTable</a>
-            </li>
-            <li>
-              <a href='#'>About Us</a>
-            </li>
-            <li>
-              <a href='#' onClick={logout}>
-                Logout
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-  );
-};
+  logout() {
+    if (
+      !window.confirm(
+        "All your unsaved Progress will be lost,once you Logout!Are you sure you want to continue?"
+      )
+    ) {
+      return;
+    }
+    axios.get("/api/logout").then(res => {
+      this.props.action();
+    });
+  }
+
+  render() {
+    return (
+      <div>
+        <nav className="nav-wraper blue">
+          <div className="container">
+            <NavLink to="/" className="brand-logo left">
+              ChronoFactorem
+            </NavLink>
+            <ul className="right hide-on-med-and-down">
+              <li>
+                <NavLink to="/Dashboard">Dashboard</NavLink>
+              </li>
+              <li>
+                <NavLink to="/create">Create TimeTable</NavLink>
+              </li>
+              <li>
+                <NavLink to="/share">Share TimeTable</NavLink>
+              </li>
+              <li>
+                <NavLink to="/aboutUs">About Us</NavLink>
+              </li>
+              <li>
+                <NavLink to="/" onClick={this.logout}>
+                  Logout{" "}
+                </NavLink>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    );
+  }
+}
 
 export default Navbar;

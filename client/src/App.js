@@ -1,4 +1,8 @@
 import React, { Component } from "react";
+import { Provider } from "react-redux";
+import store from "./store";
+import axios from "axios";
+import { BrowserRouter, Route } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/layout/Navbar";
 import Dashboard from "./components/layout/Dashboard";
@@ -6,53 +10,23 @@ import CreateTimeTable from "./components/timetable/CreateTimeTable";
 import ShareTimeTable from "./components/layout/ShareTimeTable";
 import AboutUs from "./components/layout/AboutUs";
 import Landing from "./components/layout/Landing";
-import axios from "axios";
 
-/* Redux */
-import { Provider } from "react-redux";
-import store from "./store";
-
-// TODO: Everything returned from App needs to be wrapped in Provider
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { currentTab: "Create TimeTable", isLoggedin: false };
-    this.changeTab = this.changeTab.bind(this);
+    this.state = { isLoggedin: false };
+    this.logout = this.logout.bind(this);
     axios.get("/loggedin").then(res => {
-      console.log(res);
       if (res.status === 200 && res.data.name) {
         this.setState({ isLoggedin: true });
       }
     });
   }
 
-  userLoggedIn() {
-    axios.get("/loggedin").then(res => {
-      console.log(res);
-      if (res.status === 200 && res.data.name) {
-        this.setState({ isLoggedin: true });
-      }
-    });
+  logout() {
+    this.setState({ isLoggedin: false });
   }
 
-  toggleLoggedin() {
-    this.setState({ ...this.state, isLoggedin: false });
-  }
-
-  changeTab(input) {
-    console.log(input.target.text);
-    let selectedTab = input.target.text;
-    if (input.target.text === "Logout" && this.state.isLoggedin) {
-      this.setState({
-        currentTab: selectedTab,
-        isLoggedin: false
-      });
-    } else {
-      this.setState({
-        currentTab: selectedTab
-      });
-    }
-  }
   render() {
     if (!this.state.isLoggedin) {
       return (
@@ -62,24 +36,15 @@ class App extends Component {
       );
     } else {
       return (
-        <div>
-          <Navbar action={this.changeTab} />
-          <div>
-            {this.state.currentTab === "Dashboard" ? (
-              <Dashboard />
-            ) : this.state.currentTab === "Create TimeTable" ? (
-              <CreateTimeTable />
-            ) : this.state.currentTab === "Share TimeTable" ? (
-              <ShareTimeTable />
-            ) : this.state.currentTab === "About Us" ? (
-              <AboutUs />
-            ) : this.state.currentTab === "Logout" ? (
-              <Landing></Landing>
-            ) : (
-              <h1 align='center'>"Page not available"</h1>
-            )}
-          </div>
-        </div>
+        <Provider store={store}>
+          <BrowserRouter>
+            <Navbar action={this.logout} />
+            <Route path="/Dashboard" component={Dashboard} />
+            <Route path="/create" component={CreateTimeTable} />
+            <Route path="/share" component={ShareTimeTable} />
+            <Route path="/aboutUs" component={AboutUs} />
+          </BrowserRouter>
+        </Provider>
       );
     }
   }

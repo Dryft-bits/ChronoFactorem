@@ -1,4 +1,6 @@
 import React from "react";
+import { connect } from "react-redux";
+import { addSection } from "../../actions/UpdateTimeTable";
 
 const ListSection = props => {
   return (
@@ -7,7 +9,13 @@ const ListSection = props => {
         return (
           <div>
             {props.sections[section].sched.length ? (
-              <h5 key={section} id={section} onClick={props.action}>
+              <h5
+                key={section}
+                id={section}
+                onClick={() => {
+                  props.addSection(section);
+                }}
+              >
                 <div
                   className="courseElement"
                   style={{ fontSize: "medium" }}
@@ -38,4 +46,10 @@ const ListSection = props => {
   );
 };
 
-export default ListSection;
+const mapDispatchToProps = dispatch => {
+  return {
+    addSection: section => dispatch(addSection(section))
+  };
+};
+
+export default connect(null, mapDispatchToProps)(ListSection);

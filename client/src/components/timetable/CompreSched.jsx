@@ -1,4 +1,6 @@
 import React from "react";
+import { connect } from "react-redux";
+
 const CompreSched = props => {
   return (
     <ol>
@@ -27,4 +29,10 @@ const CompreSched = props => {
   );
 };
 
-export default CompreSched;
+const mapStateToProps = state => {
+  return {
+    myCourses: state.updateTT.myCourses
+  };
+};
+
+export default connect(mapStateToProps, null)(CompreSched);
