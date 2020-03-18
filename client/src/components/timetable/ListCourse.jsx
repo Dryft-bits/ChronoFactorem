@@ -4,11 +4,11 @@ import { updateCurrentCourse } from "../../actions/UpdateCurrentCourse";
 
 const ListCourse = props => {
   return (
-    <ul className="courseSearch">
+    <ul className='courseSearch'>
       {Object.keys(props.courses).map(course => {
         return (
           <div
-            className="searchItem"
+            className='searchItem'
             key={course}
             id={course}
             onClick={() => {

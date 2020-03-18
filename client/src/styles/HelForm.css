@@ -1,0 +1,18 @@
+.container-helform {
+  display: flex;
+}
+
+.mod-inp .mod-btn {
+  flex: 1;
+}
+
+.form-group {
+  float: "left";
+  width: "60vw";
+}
+
+.left-inp {
+  float: "left";
+  width: "40px";
+  flex: 1;
+}

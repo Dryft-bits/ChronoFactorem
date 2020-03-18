@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const UserSchema = new Schema({
+const StudentSchema = new Schema({
   name: {
     type: String,
     required: true
@@ -9,7 +9,10 @@ const UserSchema = new Schema({
     type: String,
     required: true,
     unique: true
+  },
+  submittedForm: {
+    type: Boolean
   }
 });
 
-module.exports = mongoose.model("users", UserSchema);
+module.exports = mongoose.model("student", StudentSchema);
