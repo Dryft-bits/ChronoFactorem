@@ -11,13 +11,16 @@
     "materialize-css": "^1.0.0-rc.2",
     "number-to-words": "^1.2.4",
     "react": "^16.12.0",
+    "react-axios": "^2.0.3",
     "react-dom": "^16.12.0",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.0",
+    "react-select-tile": "^1.0.10",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "use-axios-react": "^0.2.3"
   },
   "scripts": {
     "start": "react-scripts start",

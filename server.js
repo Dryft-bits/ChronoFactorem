@@ -7,6 +7,7 @@ const cookieSession = require("cookie-session");
 const path = require("path");
 
 const auth = require("./routes/api/auth.js");
+const helForm = require("./routes/api/helForm.js");
 
 const configuration = require("./config/constants.js");
 
@@ -35,7 +36,8 @@ app.use(passport.initialize());
 app.use(passport.session({ saveUninitialized: false, resave: false }));
 
 /* Define Routes */
-app.use("/", auth);
+app.use("/api", auth);
+app.use("/api/helform", helForm);
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));

@@ -10,13 +10,16 @@ import CreateTimeTable from "./components/timetable/CreateTimeTable";
 import ShareTimeTable from "./components/layout/ShareTimeTable";
 import AboutUs from "./components/layout/AboutUs";
 import Landing from "./components/layout/Landing";
+import HelForm from "./components/layout/HelForm";
+import PrivateRoute from "./components/routes/PrivateRoute";
+import SemiPrivateRoute from "./components/routes/SemiPrivateRoute";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = { isLoggedin: false };
     this.logout = this.logout.bind(this);
-    axios.get("/loggedin").then(res => {
+    axios.get("/api/loggedin").then(res => {
       if (res.status === 200 && res.data.name) {
         this.setState({ isLoggedin: true });
       }
@@ -39,10 +42,12 @@ class App extends Component {
         <Provider store={store}>
           <BrowserRouter>
             <Navbar action={this.logout} />
-            <Route path="/Dashboard" component={Dashboard} />
-            <Route path="/create" component={CreateTimeTable} />
-            <Route path="/share" component={ShareTimeTable} />
-            <Route path="/aboutUs" component={AboutUs} />
+            <Route exact path='/' component={Landing} />
+            <SemiPrivateRoute exact path='/helform' component={HelForm} />
+            <PrivateRoute exact path='/Dashboard' component={Dashboard} />
+            <PrivateRoute exact path='/create' component={CreateTimeTable} />
+            <PrivateRoute exact path='/share' component={ShareTimeTable} />
+            <PrivateRoute exact path='/aboutUs' component={AboutUs} />
           </BrowserRouter>
         </Provider>
       );
