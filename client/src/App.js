@@ -4,8 +4,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 
 import store from "./store";
 import { loadUser } from "./actions/auth";
-
-import "./App.css";
+import "./styles/App.css";
 
 import Navbar from "./components/layout/Navbar";
 import Dashboard from "./components/layout/Dashboard";

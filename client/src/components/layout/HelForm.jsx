@@ -104,11 +104,11 @@ const HelForm = ({ submitForm, submitted, user }) => {
   const handleCourseAddition = e => {
     if (!humanitiesCourses.includes(e.target.innerHTML)) {
       if (isEditingRowAtIndex !== -1) {
-        humanitiesCourses[isEditingRowAtIndex] = e.target.innerHTML;
+        humanitiesCourses[isEditingRowAtIndex] = (e.target.innerHTML).toLowerCase();
         setFormData({ ...formData });
       } else {
         addCourseToList();
-        humanitiesCourses[isEditingRowAtIndex] = e.target.innerHTML;
+        humanitiesCourses[isEditingRowAtIndex] = (e.target.innerHTML).toLowerCase();
         setFormData({ ...formData });
       }
     }
@@ -166,7 +166,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
                     type='text'
                     placeholder='Course name'
                     name='courseName'
-                    value={humanitiesCourses[idx]}
+                    value={humanitiesCourses[idx].replace("&amp;","&")}
                     key={"inp" + idx.toString(10)}
                     disabled={isEditingRowAtIndex !== idx}
                     required
