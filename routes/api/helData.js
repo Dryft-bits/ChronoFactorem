@@ -2,8 +2,7 @@ const mongoose = require('mongoose');
 const express = require('express');
 import Hel from "../../models/Hel.js";
 const router = express.Router();
-router.post("/api/helData/searchHEL",[], 
-    async (req, res) => {
+async function a(req, res) {
     console.log(req.body);
     const elective = req.body;
     let hel = await Hel.findOne({ courseName: elective });
@@ -16,5 +15,7 @@ router.post("/api/helData/searchHEL",[],
 
     res.send(studentsInterestedInAllSlots);
     
-    });
+    }
+router.post("/searchHEL", a
+   );
 module.exports = router;
