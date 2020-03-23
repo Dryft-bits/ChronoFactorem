@@ -102,13 +102,15 @@ const HelForm = ({ submitForm, submitted, user }) => {
   };
 
   const handleCourseAddition = e => {
-    if (!humanitiesCourses.includes(e.target.innerHTML)) {
+    let event = (e.target.innerHTML).toLowerCase().split(" ");
+    event = event[0]+" "+event[1];
+    if (!humanitiesCourses.includes()) {
       if (isEditingRowAtIndex !== -1) {
-        humanitiesCourses[isEditingRowAtIndex] = (e.target.innerHTML).toLowerCase();
+        humanitiesCourses[isEditingRowAtIndex] = event;
         setFormData({ ...formData });
       } else {
         addCourseToList();
-        humanitiesCourses[isEditingRowAtIndex] = (e.target.innerHTML).toLowerCase();
+        humanitiesCourses[isEditingRowAtIndex] = event;
         setFormData({ ...formData });
       }
     }
