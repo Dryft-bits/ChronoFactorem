@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import { useGetData } from "use-axios-react";
 import PropTypes from "prop-types";
@@ -11,9 +11,6 @@ const PrivateRoute = ({
   submitted,
   ...rest
 }) => {
-  useEffect(() => {
-    verifyLogin();
-  }, [verifyLogin]);
   const [userInfo, loading] = useGetData("/api/current_user");
 
   return (

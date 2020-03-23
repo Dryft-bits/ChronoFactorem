@@ -1,9 +1,12 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import { Provider } from "react-redux";
-import store from "./store";
-import axios from "axios";
 import { BrowserRouter, Route } from "react-router-dom";
+
+import store from "./store";
+import { loadUser } from "./actions/auth";
+
 import "./App.css";
+
 import Navbar from "./components/layout/Navbar";
 import Dashboard from "./components/layout/Dashboard";
 import CreateTimeTable from "./components/timetable/CreateTimeTable";
@@ -13,46 +16,27 @@ import Landing from "./components/layout/Landing";
 import HelForm from "./components/layout/HelForm";
 import PrivateRoute from "./components/routes/PrivateRoute";
 import SemiPrivateRoute from "./components/routes/SemiPrivateRoute";
+import CheckLoggedIn from "./components/layout/CheckLoggedIn";
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { isLoggedin: false };
-    this.logout = this.logout.bind(this);
-    axios.get("/api/loggedin").then(res => {
-      if (res.status === 200 && res.data.name) {
-        this.setState({ isLoggedin: true });
-      }
-    });
-  }
-
-  logout() {
-    this.setState({ isLoggedin: false });
-  }
-
-  render() {
-    if (!this.state.isLoggedin) {
-      return (
-        <div>
-          <Landing></Landing>
-        </div>
-      );
-    } else {
-      return (
-        <Provider store={store}>
-          <BrowserRouter>
-            <Navbar action={this.logout} />
-            <Route exact path='/' component={Landing} />
-            <SemiPrivateRoute exact path='/helform' component={HelForm} />
-            <PrivateRoute exact path='/Dashboard' component={Dashboard} />
-            <PrivateRoute exact path='/create' component={CreateTimeTable} />
-            <PrivateRoute exact path='/share' component={ShareTimeTable} />
-            <PrivateRoute exact path='/aboutUs' component={AboutUs} />
-          </BrowserRouter>
-        </Provider>
-      );
-    }
-  }
-}
+const App = () => {
+  // Restore user information on refresh
+  useEffect(() => {
+    store.dispatch(loadUser());
+  }, []);
+  return (
+    <Provider store={store}>
+      <BrowserRouter>
+        <Navbar />
+        <Route exact path='/' component={Landing} />
+        <Route exact path='/checkloggedin' component={CheckLoggedIn} />
+        <SemiPrivateRoute exact path='/helform' component={HelForm} />
+        <PrivateRoute exact path='/dashboard' component={Dashboard} />
+        <PrivateRoute exact path='/create' component={CreateTimeTable} />
+        <PrivateRoute exact path='/share' component={ShareTimeTable} />
+        <PrivateRoute exact path='/aboutUs' component={AboutUs} />
+      </BrowserRouter>
+    </Provider>
+  );
+};
 
 export default App;

@@ -4,7 +4,7 @@
  */
 
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { useGetData } from "use-axios-react";
 
@@ -16,7 +16,13 @@ const SemiPrivateRoute = ({ component: Component, ...rest }) => {
       {...rest}
       render={props =>
         // Put a cool animation here
-        loading ? <div>Loading...</div> : <Component {...props} />
+        !userInfo ? (
+          <Redirect to='/'></Redirect>
+        ) : loading ? (
+          <div>Loading...</div>
+        ) : (
+          <Component {...props} />
+        )
       }
     />
   );

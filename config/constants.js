@@ -9,7 +9,7 @@ const prod = {
 const dev = {
   urls: {
     googleAuthCallback: "http://localhost:5000/api/auth/google/callback",
-    homePage: "http://localhost:3000/Dashboard"
+    homePage: "http://localhost:3000/checkloggedin"
   }
 };
 
