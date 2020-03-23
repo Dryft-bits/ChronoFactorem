@@ -5,7 +5,7 @@ import { BrowserRouter, Route } from "react-router-dom";
 import store from "./store";
 import { loadUser } from "./actions/auth";
 import "./styles/App.css";
-
+import HELData from "./components/HELData";
 import Navbar from "./components/layout/Navbar";
 import Dashboard from "./components/layout/Dashboard";
 import CreateTimeTable from "./components/timetable/CreateTimeTable";
@@ -29,7 +29,7 @@ const App = () => {
         <Route exact path='/' component={Landing} />
         <Route exact path='/checkloggedin' component={CheckLoggedIn} />
         <SemiPrivateRoute exact path='/helform' component={HelForm} />
-        <PrivateRoute exact path='/dashboard' component={Dashboard} />
+        <PrivateRoute exact path='/helData' component={HELData} />
         <PrivateRoute exact path='/create' component={CreateTimeTable} />
         <PrivateRoute exact path='/share' component={ShareTimeTable} />
         <PrivateRoute exact path='/aboutUs' component={AboutUs} />
