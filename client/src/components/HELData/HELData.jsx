@@ -1,132 +1,142 @@
-import React from "react";
+import React, { useState } from "react";
 import { Chart } from "react-charts";
 import { searchHEL } from "../../utils/helData";
 import Search from "../Search";
 import ItemList from "../ItemList";
 import * as TimeTableData from "../../Timetable.json";
-class HELData extends React.Component {
-  constructor(props) {
-    super(props);
-    let course = JSON.parse(JSON.stringify(TimeTableData)).default;
-    this.state = {
-      studentData: [],
-      axes: [],
-      courseData: [],
-      humCourses: Object.keys(course)
-        .filter(
-          code =>
+import { useGetData } from "use-axios-react";
+import axios from "axios";
+const course = JSON.parse(JSON.stringify(TimeTableData)).default;
+
+let axes = [];
+let courseData = [];
+let humCourses = Object.keys(course)
+    .filter(
+        code =>
             code.startsWith("GS") ||
             code.startsWith("HSS") ||
             code.startsWith("BITS F214") ||
             code.startsWith("BITS F385") ||
             code.startsWith("BITS F399")
-        )
-        .reduce((res, key) => ((res[key] = course[key]), res), {})
-    };
-    this.HELstats.bind(this);
-    this.filterItems.bind(this);
-  }
-  HELstats(e) {
-  
-    let et = e.target.innerHTML.toLowerCase();
-    let event = et.split(" ");
-    event = event[0]+" "+event[1];
-    console.log(event);
-    let finished = false;
-    let result = [];
-    //searchHEL async
-    searchHEL(event).then((res,err) => {
-      result = res;
-      finished = true;
-    })
-    let intv = setInterval(function()
-    {
-      if(finished === true)
-      {
-        clearInterval(intv);
-      }
-    },100);
-    console.log(result);
-    if (result === []) return false;
-    const a = {
-      label: "Series 1",
-      data: result
-    };
-  
-    this.setState({
-      courseData: et,
-      studentData: result,
-      studentData: a,
-      axes: [
-        { primary: true, type: "ordinal", position: "bottom" },
-        { position: "left", type: "linear", stacked: false }
-      ]
-    });
-    console.log("nice ");
-    return true;
+    )
+    .reduce((res, key) => ((res[key] = course[key]), res), {});
 
-  }
 
-  filterItems(input) {
-    console.log(input.target.value);
-    let courses = JSON.parse(JSON.stringify(TimeTableData)).default;
-    let filterCourses = obj =>
-      Object.keys(obj)
-        .filter(
-          item =>
-            item.toLowerCase().search(input.target.value.toLowerCase()) !==
-              -1 ||
-            obj[item]["name"]
-              .toLowerCase()
-              .search(input.target.value.toLowerCase()) !== -1
-        )
-        .filter(
-          code =>
-            code.startsWith("GS") ||
-            code.startsWith("HSS") ||
-            code.startsWith("BITS F214") ||
-            code.startsWith("BITS F385") ||
-            code.startsWith("BITS F399")
-        )
-        .reduce((res, key) => ((res[key] = obj[key]), res), {});
 
-    this.setState({ humCourses: filterCourses(courses) });
-  }
+const HELData = () => {
+    
+    const [studentData,setStudentData] = useState([]);
+    let result = ""; 
 
-  render() {
-    const renderer = () => {
-      let resp = "";
-      let str = [
+    const HELstats = (e) => {
+        let et = e.target.innerHTML.toLowerCase();
+        let event = et.split(" ");
+        event = event[0] + " " + event[1];
+        console.log(event);
+        let finished = false;
+        
+        
+        try {
+             axios.get("/api/helData/searchHEL", {
+                params: {
+                    "courseData": event
+                }
+            }
+            ).then(res => {
+                result = res.data.studentsInterestedInAllSlots;
+            })
+        }
+        catch (err) {
+            console.log("DB RETRIEVAL ERROR:", err);
+        }
+    
+        console.log("in util "+result);
+    
+        console.log(result);
+        if (result === []) return false;
+        
+        courseData = et;
+        
+        axes = [
+                { primary: true, type: "ordinal", position: "bottom" },
+                { position: "left", type: "linear", stacked: false }
+            ]
+        console.log("nice ");
+        return true;
+    }
+    
+    function filterItems(input) {
+        console.log(input.target.value);
+        let courses = JSON.parse(JSON.stringify(TimeTableData)).default;
+        let filterCourses = obj =>
+            Object.keys(obj)
+                .filter(
+                    item =>
+                        item.toLowerCase().search(input.target.value.toLowerCase()) !==
+                        -1 ||
+                        obj[item]["name"]
+                            .toLowerCase()
+                            .search(input.target.value.toLowerCase()) !== -1
+                )
+                .filter(
+                    code =>
+                        code.startsWith("GS") ||
+                        code.startsWith("HSS") ||
+                        code.startsWith("BITS F214") ||
+                        code.startsWith("BITS F385") ||
+                        code.startsWith("BITS F399")
+                )
+                .reduce((res, key) => ((res[key] = obj[key]), res), {});
+    
+        humCourses = filterCourses(courses);
+    }
+    
+    
+    let resp = "";
+    let str = [
         /*
             <form className='form' onSubmit={e => {resp = this.HELstats(e)}}>
                 <input type="text" placeholder="Get Stats" onChange={this.handleChange.bind(this)}/>
             </form>,
             */
         <>
-          <Search action={this.filterItems.bind(this)} />
-          <ItemList
-            items={this.state.humCourses}
-            action={e => {
-              resp = this.HELstats(e);
-            }}
-          />
+            <Search action={filterItems} />
+            <ItemList
+                items={humCourses}
+                action={e => {
+                    HELstats(e);
+                    const a = {
+                        label: "Series 1",
+                        data: result
+                    };
+                    setStudentData(a);
+                }}
+            />
         </>
-      ];
-      if (resp == true) {
-        console.log("Heldata " +resp);
+    ];
+    const [userInfo, loading] = useGetData("/api/heldata/searchHEL");
+    console.log(loading);
+    console.log(result);
+    if (!loading) {
+        if (resp == true) {
+            console.log("Heldata " + resp);
+            str.push([
+                <Chart data={studentData} axes={axes} />
+            ]);
+        } else if (resp == "") {
+            str.push([
+                <div>
+                    <h2>No data available for this course!</h2>
+                </div>
+            ]);
+        }
+    }
+    else {
         str.push([
-          <Chart data={this.state.studentData} axes={this.state.axes} />
+            <h2>LOADING....</h2>
         ]);
-      } else if (resp === false) {
-        str.push([
-          <div>
-            <h2>No data available for this course!</h2>
-          </div>
-        ]);
-      }
-      return <>{str}</>;
-    };
-    return renderer();
-  }
-}
+    }
+    //console.log("ohshit");
+    return <>{str}</>;
+};
 export default HELData;
