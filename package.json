@@ -7,27 +7,26 @@
   "main": "server.js",
   "dependencies": {
     "body-parser": "^1.18.3",
-    "config": "^3.2.5",
+    "config": "^3.3.0",
     "cookie-session": "^1.4.0",
     "cors": "^2.8.5",
     "debug": "^4.1.0",
     "dotenv": "^6.2.0",
     "express": "^4.17.1",
     "express-validator": "^6.4.0",
-    "mongoose": "^5.8.11",
+    "mongoose": "^5.9.6",
     "node-sass": "^4.5.3",
     "node-sass-middleware": "^0.11.0",
     "passport": "^0.4.1",
     "passport-google-oauth20": "^2.0.0",
-    "react": "^16.6.3",
-    "react-charts": "^2.0.0-beta.6",
-    "react-dom": "^16.6.3",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
-    "@babel/core": "^7.0.0",
-    "@babel/node": "^7.0.0",
+    "@babel/core": "^7.9.0",
+    "@babel/node": "^7.8.7",
     "@babel/plugin-proposal-class-properties": "^7.0.0",
     "@babel/plugin-proposal-decorators": "^7.3.0",
     "@babel/plugin-proposal-do-expressions": "^7.0.0",
@@ -39,13 +38,13 @@
     "@babel/plugin-proposal-logical-assignment-operators": "^7.0.0",
     "@babel/plugin-proposal-nullish-coalescing-operator": "^7.0.0",
     "@babel/plugin-proposal-numeric-separator": "^7.0.0",
-    "@babel/plugin-proposal-optional-chaining": "^7.0.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.9.0",
     "@babel/plugin-proposal-pipeline-operator": "^7.0.0",
     "@babel/plugin-proposal-throw-expressions": "^7.0.0",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/plugin-syntax-import-meta": "^7.0.0",
-    "@babel/preset-env": "^7.0.0",
-    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-react": "^7.9.4",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-react-html-attrs": "^2.0.0",
     "concurrently": "^4.1.2",
@@ -65,5 +64,9 @@
   "license": "SEE LICENSE IN LICENSE",
   "bugs": {
     "url": "https://github.com/Dryft-bits/ChronoFactorem/issues"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
   }
 }
