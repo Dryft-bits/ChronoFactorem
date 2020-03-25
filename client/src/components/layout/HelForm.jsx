@@ -103,7 +103,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
 
   const handleCourseAddition = e => {
     let event = (e.target.innerHTML);
-    if (!humanitiesCourses.includes()) {
+    if (!humanitiesCourses.includes(event)) {
       if (isEditingRowAtIndex !== -1) {
         humanitiesCourses[isEditingRowAtIndex] = event;
         setFormData({ ...formData });

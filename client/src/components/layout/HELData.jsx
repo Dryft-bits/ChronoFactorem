@@ -117,7 +117,7 @@ const HELData = () => {
                         <VictoryAxis
                             tickValues={[1, 2, 3, 4, 5, 6, 7, 8]}
                             tickFormat={['Slot 1', 'Slot 2', 'Slot 3', 'Slot 4', 'Slot 5', 'Slot 6', 'Slot 7', 'Slot 8']} />
-                        <VictoryAxis dependentAxis tickCount = {max+1} tickFormat={(x)=>(x)}/>
+                        <VictoryAxis dependentAxis tickCount = {(max<3)?2:5} tickFormat={(x)=>(x)}/>
                         <VictoryBar data={courseStats}
                                     labels={({ datum }) => {
                                         if(datum.y > 0)
