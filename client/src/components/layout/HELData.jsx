@@ -1,8 +1,5 @@
 import React from "react";
-import * as V from 'victory';
-import { VictoryBar } from 'victory';
-
-//import { searchHEL } from "../../utils/helData";
+import { VictoryBar, VictoryChart, VictoryAxis, VictoryLabel } from 'victory';
 import Search from "../Search";
 import ItemList from "../ItemList";
 import * as TimeTableData from "../../Timetable.json";
@@ -10,10 +7,6 @@ import { useGetData } from "use-axios-react";
 import axios from "axios";
 const course = JSON.parse(JSON.stringify(TimeTableData)).default;
 
-let axes = [
-    { primary: true, type: "ordinal", position: "bottom" },
-    { primary: false, position: "left", type: "linear", stacked: false }
-];
 let courseData = [];
 let humCourses = Object.keys(course)
     .filter(
@@ -25,18 +18,6 @@ let humCourses = Object.keys(course)
             code.startsWith("BITS F399")
     )
     .reduce((res, key) => ((res[key] = course[key]), res), {});
-
-const Chartfunc = (cS, ax) => {
-    console.log(ax);
-    if (cS !== undefined) {
-        return <>
-            <VictoryBar data={courseData} />
-        </>;
-    }
-    else {
-        return <></>;
-    }
-}
 
 const HELData = () => {
 
@@ -51,24 +32,19 @@ const HELData = () => {
         let et = e.target.innerHTML.toLowerCase();
         let event = et.split(" ");
         event = event[0] + " " + event[1];
-        //console.log(event);
 
         try {
             axios
-                .get("/api/helData/searchHEL", {
-                    params: {
-                        courseData: event
-                    }
-                })
+                .get(`/api/helData/searchHEL/${event}`)
                 .then(res => {
-                    // console.log("here");
+
                     resp = true;
                     result = res.data.studentsInterestedInAllSlots;
-                    // console.log(result);
+
                     let newCSarray = [];
                     if (result) {
                         for (let i = 0; i < 8; i++) {
-                            newCSarray.push({ x: i, y: result[i] });
+                            newCSarray.push({ x: i + 1, y: result[i] });
                         }
                     }
                     setStudentData({ ...studentData, courseStats: newCSarray });
@@ -78,31 +54,27 @@ const HELData = () => {
             console.log("DB RETRIEVAL ERROR:", err);
         }
 
-        console.log("in util " + courseStats);
 
-        // console.log(result);
         if (courseStats.length === 0) return false;
 
         courseData = et;
 
 
-
-        // console.log("nice ");
         return true;
     }
 
     function filterItems(input) {
-        console.log(input.target.value);
+        const userInput = input.target.value.toLowerCase();
         let courses = JSON.parse(JSON.stringify(TimeTableData)).default;
         let filterCourses = obj =>
             Object.keys(obj)
                 .filter(
                     item =>
-                        item.toLowerCase().search(input.target.value.toLowerCase()) !==
+                        item.toLowerCase().search(userInput) !==
                         -1 ||
                         obj[item]["name"]
                             .toLowerCase()
-                            .search(input.target.value.toLowerCase()) !== -1
+                            .search(userInput) !== -1
                 )
                 .filter(
                     code =>
@@ -114,49 +86,54 @@ const HELData = () => {
                 )
                 .reduce((res, key) => ((res[key] = obj[key]), res), {});
 
+
         humCourses = filterCourses(courses);
+        setStudentData({ ...studentData }); //force component update
     }
 
 
     let resp = true;
     let str = [
-        /*
-            <form className='form' onSubmit={e => {resp = this.HELstats(e)}}>
-                <input type="text" placeholder="Get Stats" onChange={this.handleChange.bind(this)}/>
-            </form>,
-            */
-        <>
+        <div style={{ float: "right", width: "40 vw" }}>
             <Search action={filterItems} />
             <ItemList
                 items={humCourses}
                 action={e => {
                     HELstats(e);
-                    const a = {
-                        label: "Series 1",
-                        data: result
-                    };
-                    //setStudentData(a);
                 }}
             />
-        </>
+        </div>
     ];
-    const [userInfo, loading] = useGetData("/api/heldata/searchHEL");
-
-
-    let columnChart = <VictoryBar data={courseStats} />;
-
+    const [userInfo, loading] = useGetData("/api/heldata/searchHEL/:name");
     if (!loading) {
         if (resp === true && courseStats.length > 0) {
-            console.log("Heldata " + resp);
+            let max = 0;
+            for(let i of courseStats)
+                max = i['y']>max?i['y']:max;
             str.push([
-                <>
-                    {columnChart}
-                </>
+                <div style={{ float: "left", width: "60vw" }}>
+                    <VictoryChart domainPadding={10}
+                                  animate={{duration: 2000}}>
+                        <VictoryAxis
+                            tickValues={[1, 2, 3, 4, 5, 6, 7, 8]}
+                            tickFormat={['Slot 1', 'Slot 2', 'Slot 3', 'Slot 4', 'Slot 5', 'Slot 6', 'Slot 7', 'Slot 8']} />
+                        <VictoryAxis dependentAxis tickCount = {max+1} tickFormat={(x)=>(x)}/>
+                        <VictoryBar data={courseStats}
+                                    labels={({ datum }) => {
+                                        if(datum.y > 0)
+                                            return Math.round(datum.y);
+                                        else   
+                                            return null
+                                    }}
+                                    style={{ labels: { fill: "black" } }}
+                                    labelComponent = {<VictoryLabel/>}/>
+                    </VictoryChart>
+                </div>
             ]);
-        } else if (resp === false) {
+        } else if (resp === false || courseStats.length === 0) {
             str.push([
                 <div>
-                    <h2>No data available for this course!</h2>
+                    <h3>No data available for this course!</h3>
                 </div>
             ]);
         }
@@ -166,7 +143,6 @@ const HELData = () => {
             <h2>LOADING....</h2>
         ]);
     }
-    //console.log("ohshit");
     return <>{str}</>;
 };
 export default HELData;

@@ -102,8 +102,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
   };
 
   const handleCourseAddition = e => {
-    let event = (e.target.innerHTML).toLowerCase().split(" ");
-    event = event[0]+" "+event[1];
+    let event = (e.target.innerHTML).toLowerCase();
     if (!humanitiesCourses.includes()) {
       if (isEditingRowAtIndex !== -1) {
         humanitiesCourses[isEditingRowAtIndex] = event;
@@ -143,7 +142,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
    * (new user conditions) || (old user conditions)
    */
   if ((!submitted && user && user.submittedForm) || submitted) {
-    return <Redirect to='/dashboard'></Redirect>;
+    return <Redirect to='/helData'></Redirect>;
   }
 
   return (
