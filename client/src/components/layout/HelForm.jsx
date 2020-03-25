@@ -102,7 +102,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
   };
 
   const handleCourseAddition = e => {
-    let event = (e.target.innerHTML).toLowerCase();
+    let event = (e.target.innerHTML);
     if (!humanitiesCourses.includes()) {
       if (isEditingRowAtIndex !== -1) {
         humanitiesCourses[isEditingRowAtIndex] = event;
