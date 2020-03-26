@@ -9,6 +9,7 @@ const PrivateRoute = ({
   component: Component,
   verifyLogin,
   submitted,
+  isAuthenticated,
   ...rest
 }) => {
   const [userInfo, loading] = useGetData("/api/current_user");
@@ -17,7 +18,9 @@ const PrivateRoute = ({
     <Route
       {...rest}
       render={props =>
-        loading ? (
+        !isAuthenticated ? (
+          <Redirect to='/'></Redirect>
+        ) : loading ? (
           // Put a cool animation here
           <div>Loading...</div>
         ) : !((!submitted && userInfo.submittedForm) || submitted) ? (
@@ -32,7 +35,8 @@ const PrivateRoute = ({
 
 const mapStateToProps = state => {
   return {
-    submitted: state.helForm.submitted
+    submitted: state.helForm.submitted,
+    isAuthenticated: state.auth.isAuthenticated
   };
 };
 
