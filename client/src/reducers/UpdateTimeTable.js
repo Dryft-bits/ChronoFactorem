@@ -1,11 +1,21 @@
 import TimeTable from "../schemas/TimeTable.js";
-import { ADD_SECTION, DELETE_SECTION, CLEAR_ALL } from "../actions/types";
+import {
+  ADD_SECTION,
+  DELETE_SECTION,
+  CLEAR_ALL,
+  TIMETABLE_LOADING,
+  EDIT_TIMETABLE,
+  SAVE_TIMETABLE
+} from "../actions/types";
 
 let timetable, courses;
 
 const initialState = {
+  id: null,
+  name: null,
   myTimeTable: new TimeTable(),
-  myCourses: []
+  myCourses: [],
+  loading: false
 };
 
 export default function updateTTReducer(state = initialState, action) {
@@ -32,6 +42,27 @@ export default function updateTTReducer(state = initialState, action) {
         myTimeTable: new TimeTable(),
         myCourses: []
       };
+    case EDIT_TIMETABLE:
+      return {
+        ...state,
+        id: action.payload.id,
+        name: action.payload.name,
+        myTimeTable: action.payload.timetable,
+        myCourses: action.payload.courses
+      };
+    case SAVE_TIMETABLE:
+      return {
+        ...state,
+        id: action.payload.id,
+        name: action.payload.name,
+        loading: false
+      };
+    case TIMETABLE_LOADING:
+      return {
+        ...state,
+        loading: true
+      };
+
     default:
       return state;
   }

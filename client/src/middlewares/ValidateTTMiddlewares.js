@@ -1,5 +1,6 @@
-import { ADD_SECTION } from "../actions/types";
-import { deleteSection } from "../actions/UpdateTimeTable";
+import axios from "axios";
+import { ADD_SECTION, SAVE_TIMETABLE, DELETE_SECTION } from "../actions/types";
+import { deleteSection, setTimeTableLoading } from "../actions/UpdateTimeTable";
 import * as utils from "../utils/CreateTTUtils.js";
 
 let courseCode, temp, courseTemp, sectionDict;
@@ -18,7 +19,10 @@ export const checkSectionSwapMiddleware = store => next => action => {
     [courseCode, temp, courseTemp, sectionDict] = getDetails(store);
     let section = action.payload.section;
     let duplicate = utils.checkSection(courseTemp, courseCode, section);
-    if (
+    if (duplicate === "same section") {
+      window.alert("You have already chosen this Section!");
+      return;
+    } else if (
       duplicate &&
       !window.confirm(
         "You have already chosen a " +
@@ -35,7 +39,9 @@ export const checkSectionSwapMiddleware = store => next => action => {
         sectionDict,
         duplicate
       );
-      store.dispatch(deleteSection(duplicate, temp, courseTemp));
+      store.dispatch(
+        deleteSection(duplicate, courseCode, temp, courseTemp, false)
+      );
     }
   }
   return next(action);
@@ -55,26 +61,11 @@ export const checkClashOrDeleteMiddleWare = store => next => action => {
           utils.getSectionDetails(item)
         );
     });
-    if (clash && clash !== "delete") {
+    if (clash) {
       window.alert(
         "The selected section clashes with an already present course section! Please remove the previous course first!"
       );
       return;
-    } else if (clash === "delete") {
-      if (
-        !window.confirm("Are You Sure That You Want To delete this Section?")
-      ) {
-        return;
-      } else {
-        [temp, courseTemp] = utils.deleteSection(
-          temp,
-          courseTemp,
-          courseCode,
-          sectionDict,
-          section
-        );
-        return store.dispatch(deleteSection(section, temp, courseTemp));
-      }
     }
   }
   return next(action);
@@ -119,4 +110,74 @@ export const addSectionMiddleware = store => next => action => {
     action.payload.courses = courseTemp;
   }
   return next(action);
+};
+
+export const deleteSectionMiddleware = store => next => action => {
+  if (action.type === DELETE_SECTION) {
+    if (action.payload.remove) {
+      if (!window.confirm("Are You Sure That You Want To delete this Section?"))
+        return;
+    }
+    let section = action.payload.section;
+    let tempvar;
+    [tempvar, temp, courseTemp, sectionDict] = getDetails(store);
+    courseCode = action.payload.courseCode;
+    [temp, courseTemp] = utils.deleteSection(
+      temp,
+      courseTemp,
+      courseCode,
+      sectionDict,
+      section
+    );
+    action.payload.TimeTable = temp;
+    action.payload.courses = courseTemp;
+  }
+  return next(action);
+};
+
+export const saveTTMiddleware = store => next => action => {
+  if (action.type === SAVE_TIMETABLE) {
+    let ttname;
+    let id = store.getState().updateTT.id;
+    if (
+      id &&
+      window.confirm(
+        "Click on ok to save as new TimeTable or on cancel to update this one!"
+      )
+    ) {
+      id = null;
+    }
+    if (id) {
+      ttname =
+        prompt("Would you like to change the name of the timetable?") ||
+        store.getState().updateTT.name;
+    } else {
+      ttname = prompt("Would you like to give the timetable a name?");
+    }
+    store.dispatch(setTimeTableLoading());
+    try {
+      axios
+        .post("/api/timetable/save", {
+          id: id,
+          name: ttname,
+          timetable: store.getState().updateTT.myTimeTable,
+          courses: store.getState().updateTT.myCourses
+        })
+        .then(res => {
+          if (res.status !== 200) {
+            throw Error("Couldn't Save The TimeTable! Please Try Again Later.");
+          }
+          action.payload.id = res.data.id;
+          action.payload.name = ttname;
+          action.payload.timetable = store.getState().updateTT.myTimeTable;
+          window.alert("Successfully Saved the TimeTable");
+          return next(action);
+        });
+    } catch (err) {
+      window.alert(err.message);
+      return;
+    }
+  } else {
+    return next(action);
+  }
 };

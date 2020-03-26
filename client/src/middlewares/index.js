@@ -7,7 +7,9 @@ import {
   checkSectionSwapMiddleware,
   checkClashOrDeleteMiddleWare,
   checkLunchHourMiddleware,
-  addSectionMiddleware
+  addSectionMiddleware,
+  deleteSectionMiddleware,
+  saveTTMiddleware
 } from "./ValidateTTMiddlewares";
 
 export const customMiddleware = composeWithDevTools(
@@ -17,6 +19,8 @@ export const customMiddleware = composeWithDevTools(
     checkSectionSwapMiddleware,
     checkLunchHourMiddleware,
     addSectionMiddleware,
+    deleteSectionMiddleware,
+    saveTTMiddleware,
     thunk
   )
 );

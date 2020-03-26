@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 import { addSection } from "../../actions/UpdateTimeTable";
 
 const ListSection = props => {
@@ -50,6 +51,11 @@ const mapDispatchToProps = dispatch => {
   return {
     addSection: section => dispatch(addSection(section))
   };
+};
+
+ListSection.propTypes = {
+  sections: PropTypes.object.isRequired,
+  addSection: PropTypes.func.isRequired
 };
 
 export default connect(null, mapDispatchToProps)(ListSection);

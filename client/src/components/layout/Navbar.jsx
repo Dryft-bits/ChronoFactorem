@@ -11,26 +11,29 @@ export const Navbar = ({ submitted, user, isAuthenticated, logout }) => {
   } else if ((!submitted && user && user.submittedForm) || submitted) {
     return (
       <div>
-        <nav className='nav-wraper blue'>
-          <div className='container'>
-            <NavLink to='/' className='brand-logo left'>
+        <nav className="nav-wraper blue">
+          <div className="container">
+            <NavLink to="/" className="brand-logo left">
               ChronoFactorem
             </NavLink>
-            <ul className='right hide-on-med-and-down'>
+            <ul className="right hide-on-med-and-down">
               <li>
-                <NavLink to='/HELDATA'>HELData</NavLink>
+                <NavLink to="/Dashboard">Dashboard</NavLink>
               </li>
               <li>
-                <NavLink to='/create'>Create TimeTable</NavLink>
+                <NavLink to="/HELDATA">HELData</NavLink>
               </li>
               <li>
-                <NavLink to='/share'>Share TimeTable</NavLink>
+                <NavLink to="/create">Create TimeTable</NavLink>
               </li>
               <li>
-                <NavLink to='/aboutUs'>About Us</NavLink>
+                <NavLink to="/share">Share TimeTable</NavLink>
               </li>
               <li>
-                <NavLink to='/' onClick={logout}>
+                <NavLink to="/aboutUs">About Us</NavLink>
+              </li>
+              <li>
+                <NavLink to="/" onClick={logout}>
                   Logout{" "}
                 </NavLink>
               </li>
@@ -42,14 +45,14 @@ export const Navbar = ({ submitted, user, isAuthenticated, logout }) => {
   } else {
     return (
       <div>
-        <nav className='nav-wraper blue'>
-          <div className='container'>
-            <NavLink to='/' className='brand-logo left'>
+        <nav className="nav-wraper blue">
+          <div className="container">
+            <NavLink to="/" className="brand-logo left">
               ChronoFactorem
             </NavLink>
-            <ul className='right hide-on-med-and-down'>
+            <ul className="right hide-on-med-and-down">
               <li>
-                <NavLink to='/' onClick={logout}>
+                <NavLink to="/" onClick={logout}>
                   Logout{" "}
                 </NavLink>
               </li>

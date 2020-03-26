@@ -8,4 +8,4 @@ class Entry {
   }
 }
 
-export default Entry;
+module.export = Entry;

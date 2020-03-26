@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 const MidsemSched = props => {
   return (
@@ -33,6 +34,10 @@ const mapStateToProps = state => {
   return {
     myCourses: state.updateTT.myCourses
   };
+};
+
+MidsemSched.propTypes = {
+  myCourses: PropTypes.arrayOf(PropTypes.Object).isRequired
 };
 
 export default connect(mapStateToProps, null)(MidsemSched);

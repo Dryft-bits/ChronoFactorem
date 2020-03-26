@@ -1,14 +1,15 @@
 import React from "react";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 import { updateCurrentCourse } from "../../actions/UpdateCurrentCourse";
 
 const ListCourse = props => {
   return (
-    <ul className='courseSearch'>
+    <ul className="courseSearch">
       {Object.keys(props.courses).map(course => {
         return (
           <div
-            className='searchItem'
+            className="searchItem"
             key={course}
             id={course}
             onClick={() => {
@@ -28,6 +29,11 @@ const mapDispatchToProps = dispatch => {
     addCourse: (course, currentCourses) =>
       dispatch(updateCurrentCourse(course, currentCourses))
   };
+};
+
+ListCourse.propTypes = {
+  courses: PropTypes.object.isRequired,
+  addCourse: PropTypes.func.isRequired
 };
 
 export default connect(null, mapDispatchToProps)(ListCourse);

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import M from "materialize-css";
 import "materialize-css/dist/css/materialize.min.css";
 import ListSection from "./ListSection";
@@ -42,5 +43,9 @@ class SectionTabs extends Component {
     );
   }
 }
+
+SectionTabs.propTypes = {
+  getSections: PropTypes.func.isRequired
+};
 
 export default SectionTabs;

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
 import { clearCurrentCourse } from "../../actions/UpdateCurrentCourse";
 import Search from "../Search";
 import ListCourse from "./ListCourse";
@@ -60,7 +61,7 @@ class AddCourse extends Component {
         ) : (
           <div>
             <h3>{Object.keys(this.props.currentCourse)}</h3>
-            <ToggleButton action={this.clearCourse} title='Change Course' />
+            <ToggleButton action={this.clearCourse} title="Change Course" />
             <SectionTabs getSections={this.getSections} />
           </div>
         )}
@@ -79,6 +80,12 @@ const mapDispatchToProps = dispatch => {
   return {
     clearCurrentCourse: () => dispatch(clearCurrentCourse())
   };
+};
+
+AddCourse.propTypes = {
+  allCourses: PropTypes.object.isRequired,
+  clearCurrentCourse: PropTypes.func.isRequired,
+  currentCourse: PropTypes.object.isRequired
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddCourse);

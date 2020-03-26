@@ -1,6 +1,8 @@
 import { Component } from "react";
 import React from "react";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { deleteSection } from "../../actions/UpdateTimeTable";
 import "../../styles/Timetable.css";
 
 const ntw = require("number-to-words");
@@ -69,7 +71,13 @@ class PreviewTT extends Component {
 
           str = (
             <>
-              <div className="gridItem" style={divStyle}>
+              <div
+                className="gridItem"
+                style={divStyle}
+                onClick={() =>
+                  this.props.onRemove(section.section, section.courseCode)
+                }
+              >
                 <div style={(divStyle, { fontSize: "xx-small" })}>
                   {section.courseName}
                   <br></br>
@@ -130,4 +138,16 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, null)(PreviewTT);
+const mapDispatchToProps = dispatch => {
+  return {
+    onRemove: (section, courseCode) =>
+      dispatch(deleteSection(section, courseCode))
+  };
+};
+
+PreviewTT.propTypes = {
+  TimeTable: PropTypes.object.isRequired,
+  onRemove: PropTypes.func.isRequired
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(PreviewTT);

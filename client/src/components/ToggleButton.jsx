@@ -1,10 +1,11 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const ToggleButton = props => {
   return (
     <div>
       <button
-        className='waves-effect waves-light btn'
+        className="waves-effect waves-light btn"
         name={props.title}
         onClick={props.action}
       >
@@ -12,6 +13,11 @@ const ToggleButton = props => {
       </button>
     </div>
   );
+};
+
+ToggleButton.propTypes = {
+  title: PropTypes.string,
+  action: PropTypes.func.isRequired
 };
 
 export default ToggleButton;
