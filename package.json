@@ -47,7 +47,10 @@
     "@babel/preset-react": "^7.9.4",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-react-html-attrs": "^2.0.0",
+    "chai": "^4.2.0",
     "concurrently": "^4.1.2",
+    "cypress": "^4.2.0",
+    "mocha": "^7.1.1",
     "nodemon": "^1.19.4"
   },
   "scripts": {
@@ -55,6 +58,8 @@
     "start": "node server --exec babel-node",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "test": "mocha || true",
+    "cypress:open": "cypress open",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "repository": {
