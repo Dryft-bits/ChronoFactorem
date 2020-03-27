@@ -131,8 +131,7 @@ export function updateTT(
           courseCode,
           current[courseCode].name,
           room,
-          hours.length,
-          section
+          hours.length
         );
         temp[day][ntw.toWords(hour)] = entry;
       }
