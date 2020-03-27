@@ -9,6 +9,7 @@
     "@types/number-to-words": "^1.2.0",
     "axios": "^0.19.2",
     "html2canvas": "^1.0.0-rc.5",
+    "jspdf": "^1.5.3",
     "materialize-css": "^1.0.0-rc.2",
     "number-to-words": "^1.2.4",
     "react": "^16.12.0",
