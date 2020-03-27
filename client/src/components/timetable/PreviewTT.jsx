@@ -2,6 +2,7 @@ import { Component } from "react";
 import React from "react";
 import { connect } from "react-redux";
 import "../../styles/Timetable.css";
+import { addSection } from "../../actions/UpdateTimeTable";
 
 const ntw = require("number-to-words");
 class PreviewTT extends Component {
@@ -10,6 +11,8 @@ class PreviewTT extends Component {
     this.populateTimetable.bind(this);
     this.gridArray = [];
   }
+
+
   populateTimetable() {
     var gridList = [
       ["Time", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
@@ -69,7 +72,7 @@ class PreviewTT extends Component {
 
           str = (
             <>
-              <div className="gridItem" style={divStyle}>
+              <div className="gridItem" style={divStyle} onClick={() => this.props.onRemove(section.section)}>
                 <div style={(divStyle, { fontSize: "xx-small" })}>
                   {section.courseName}
                   <br></br>
@@ -130,4 +133,10 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, null)(PreviewTT);
+const mapDispatchToProps = dispatch => {
+  return {
+    onRemove: (section) =>
+      dispatch(addSection(section))
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(PreviewTT);
