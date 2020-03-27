@@ -1,8 +1,14 @@
 import React from "react";
 import "../../styles/Landing.css";
 import configuration from "../../config/constants.js";
+import { connect } from "react-redux";
+import { Redirect } from "react-router-dom";
 
-export const Landing = () => {
+export const Landing = ({ isAuthenticated }) => {
+  if (isAuthenticated) {
+    return <Redirect to='/checkloggedin'></Redirect>;
+  }
+
   return (
     <section className='landing body'>
       <div className='dark-overlay'>
@@ -31,4 +37,10 @@ export const Landing = () => {
   );
 };
 
-export default Landing;
+const mapStateToProps = state => {
+  return {
+    isAuthenticated: state.auth.isAuthenticated
+  };
+};
+
+export default connect(mapStateToProps, null)(Landing);

@@ -2,7 +2,7 @@ const prod = {
   urls: {
     googleAuthCallback:
       "https://chronofactorem.herokuapp.com/api/auth/google/callback",
-    homePage: "https://chronofactorem.herokuapp.com/Dashboard"
+    homePage: "https://chronofactorem.herokuapp.com/helData"
   }
 };
 

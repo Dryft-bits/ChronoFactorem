@@ -21,7 +21,9 @@ router.post(
 
     const { slotNumber, humanitiesElectives } = req.body;
     try {
-      for (const elective of humanitiesElectives) {
+      for (const elec of humanitiesElectives) {
+        let elective = (elec).toLowerCase().split(" ");
+            elective = elective[0]+" "+elective[1];
         let hel = await Hel.findOne({ courseName: elective });
         if (!hel) {
           hel = new Hel({
