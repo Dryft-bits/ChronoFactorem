@@ -16,14 +16,14 @@ router.post(
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
+      return res.status(422).json({ errors: errors.array() });
     }
 
     const { slotNumber, humanitiesElectives } = req.body;
     try {
       for (const elec of humanitiesElectives) {
-        let elective = (elec).toLowerCase().split(" ");
-            elective = elective[0]+" "+elective[1];
+        let elective = elec.toLowerCase().split(" ");
+        elective = elective[0] + " " + elective[1];
         let hel = await Hel.findOne({ courseName: elective });
         if (!hel) {
           hel = new Hel({
@@ -51,7 +51,7 @@ router.post(
           { studentsInterestedInSlot: courseSlots }
         );
       }
-      res.json({ msg: "Submitted!" });
+      res.status(201).json({ msg: "Submitted!" });
     } catch (err) {
       console.error(err.message);
       res.status(500).send("Server error");
@@ -59,15 +59,31 @@ router.post(
   }
 );
 
-router.post("/firstlogin", [], async (req, res) => {
-  const { email } = req.body;
-  try {
-    await Student.updateOne({ email: email }, { submittedForm: true });
-    res.json({ msg: "Updated in db!" });
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).send("Server error");
+router.post(
+  "/firstlogin",
+  [
+    [
+      check("email", "Email is required")
+        .not()
+        .isEmpty(),
+      check("email", "Invalid email").isEmail()
+    ]
+  ],
+  async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(422).json({ errors: errors.array() });
+    }
+
+    const { email } = req.body;
+    try {
+      await Student.updateOne({ email: email }, { submittedForm: true });
+      res.status(201).json({ msg: "Updated in db!" });
+    } catch (err) {
+      console.error(err.message);
+      res.status(500).send("Server error");
+    }
   }
-});
+);
 
 module.exports = router;

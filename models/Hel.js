@@ -7,7 +7,8 @@ const helSchema = new Schema({
   },
   studentsInterestedInSlot: {
     type: Map,
-    of: Number
+    of: Number,
+    required: true
   }
 });
 
