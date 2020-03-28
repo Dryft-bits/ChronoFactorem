@@ -1,10 +1,10 @@
-import React from "react";
-import { connect } from "react-redux";
-import { useGetData } from "use-axios-react";
-import axios from "axios";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
-import { editTT } from "../../actions/UpdateTimeTable";
+import React from 'react';
+import { connect } from 'react-redux';
+import { useGetData } from 'use-axios-react';
+import axios from 'axios';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import { editTT } from '../../actions/UpdateTimeTable';
 
 const Dashboard = props => {
   const [TTData, setTTData] = React.useState({
@@ -20,7 +20,7 @@ const Dashboard = props => {
     try {
       axios.delete(`/api/timetable/delete/${id}`).then(res => {
         if (res.status === 200) {
-          window.alert("Successfully Deleted the Timetable");
+          window.alert('Successfully Deleted the Timetable');
         } else {
           window.alert(res.data.msg);
         }
@@ -36,7 +36,7 @@ const Dashboard = props => {
     try {
       axios.get(`/api/timetable/toggleShare/${id}`).then(res => {
         if (res.status === 200) {
-          window.alert("Successfully " + action + " the Timetable");
+          window.alert('Successfully ' + action + ' the Timetable');
         } else {
           window.alert(res.data.msg);
         }
@@ -51,16 +51,16 @@ const Dashboard = props => {
       });
     } catch (err) {
       window.alert(
-        "The TimeTable Couldn't be " + action + "! Please Try Again Later."
+        "The TimeTable Couldn't be " + action + '! Please Try Again Later.'
       );
     }
   }
-  let [data, loading] = useGetData("/api/timetable/getTT");
+  let [data, loading] = useGetData('/api/timetable/getTT');
 
   if (!loading) {
     return (
-      <div style={{ float: "left", width: "40 vw" }}>
-        {" "}
+      <div style={{ float: 'left', width: '40 vw' }}>
+        {' '}
         {(TTData.savedTT || data).map(item => {
           return (
             <>
@@ -85,7 +85,7 @@ const Dashboard = props => {
               {item.isShared ? (
                 <button
                   onClick={() => {
-                    toggleShare(item._id, "Unshared");
+                    toggleShare(item._id, 'Unshared');
                   }}
                 >
                   Unshare
@@ -93,7 +93,7 @@ const Dashboard = props => {
               ) : (
                 <button
                   onClick={() => {
-                    toggleShare(item._id, "Shared");
+                    toggleShare(item._id, 'Shared');
                   }}
                 >
                   Share

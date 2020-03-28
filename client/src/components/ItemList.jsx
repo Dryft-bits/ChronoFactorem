@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const ItemList = props => {
   return (
@@ -12,7 +12,7 @@ const ItemList = props => {
             id={item}
             onClick={props.action}
           >
-            {item} {props.items[item]["name"]}
+            {item} {props.items[item]['name']}
           </div>
         );
       })}

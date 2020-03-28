@@ -1,4 +1,4 @@
-import { SUBMIT_SUCCESS, SUBMIT_FAIL } from "../actions/types";
+import { SUBMIT_SUCCESS, SUBMIT_FAIL } from '../actions/types';
 
 const initialState = {
   submitted: false

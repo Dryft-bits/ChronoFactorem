@@ -1,9 +1,9 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import "../../styles/Navbar.css";
-import { logout } from "../../actions/auth";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import '../../styles/Navbar.css';
+import { logout } from '../../actions/auth';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
 export const Navbar = ({ submitted, user, isAuthenticated, logout }) => {
   if (!isAuthenticated) {
@@ -34,7 +34,7 @@ export const Navbar = ({ submitted, user, isAuthenticated, logout }) => {
               </li>
               <li>
                 <NavLink to="/" onClick={logout}>
-                  Logout{" "}
+                  Logout{' '}
                 </NavLink>
               </li>
             </ul>
@@ -53,7 +53,7 @@ export const Navbar = ({ submitted, user, isAuthenticated, logout }) => {
             <ul className="right hide-on-med-and-down">
               <li>
                 <NavLink to="/" onClick={logout}>
-                  Logout{" "}
+                  Logout{' '}
                 </NavLink>
               </li>
             </ul>

@@ -1,17 +1,17 @@
-const express = require("express");
-const connectDB = require("./config/db.js");
-const cors = require("cors");
-const passport = require("passport");
-const bodyParser = require("body-parser");
-const cookieSession = require("cookie-session");
-const path = require("path");
+const express = require('express');
+const connectDB = require('./config/db.js');
+const cors = require('cors');
+const passport = require('passport');
+const bodyParser = require('body-parser');
+const cookieSession = require('cookie-session');
+const path = require('path');
 
-const auth = require("./routes/api/auth.js");
-const helForm = require("./routes/api/helForm.js");
-const helData = require("./routes/api/helData.js");
-const timetable = require("./routes/api/timetable.js");
+const auth = require('./routes/api/auth.js');
+const helForm = require('./routes/api/helForm.js');
+const helData = require('./routes/api/helData.js');
+const timetable = require('./routes/api/timetable.js');
 
-const configuration = require("./config/constants.js");
+const configuration = require('./config/constants.js');
 
 /* Express setup */
 const app = express();
@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 /* Connect to database */
-const Student = require("./models/Student.js");
+const Student = require('./models/Student.js');
 connectDB();
 app.use(
   cookieSession({
@@ -33,21 +33,21 @@ app.use(
 );
 
 /* Passport stuff */
-const passportJS = require("./passport.js");
+const passportJS = require('./passport.js');
 app.use(passport.initialize());
 app.use(passport.session({ saveUninitialized: false, resave: false }));
 
 /* Define Routes */
-app.use("/api", auth);
-app.use("/api/helform", helForm);
-app.use("/api/helData", helData);
-app.use("/api/timetable", timetable);
+app.use('/api', auth);
+app.use('/api/helform', helForm);
+app.use('/api/helData', helData);
+app.use('/api/timetable', timetable);
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
 
-  app.get("*", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 }
 

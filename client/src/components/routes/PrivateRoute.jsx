@@ -1,9 +1,9 @@
-import React from "react";
-import { Route, Redirect } from "react-router-dom";
-import { useGetData } from "use-axios-react";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { verifyLogin } from "../../actions/auth";
+import React from 'react';
+import { Route, Redirect } from 'react-router-dom';
+import { useGetData } from 'use-axios-react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { verifyLogin } from '../../actions/auth';
 
 const PrivateRoute = ({
   component: Component,
@@ -12,14 +12,14 @@ const PrivateRoute = ({
   isAuthenticated,
   ...rest
 }) => {
-  const [userInfo, loading] = useGetData("/api/current_user");
+  const [userInfo, loading] = useGetData('/api/current_user');
 
   return (
     <Route
       {...rest}
       render={props =>
         !isAuthenticated ? (
-          <Redirect to='/'></Redirect>
+          <Redirect to="/"></Redirect>
         ) : loading ? (
           // Put a cool animation here
           <div>Loading...</div>

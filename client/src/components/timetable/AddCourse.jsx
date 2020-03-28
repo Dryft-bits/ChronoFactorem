@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import { clearCurrentCourse } from "../../actions/UpdateCurrentCourse";
-import Search from "../Search";
-import ListCourse from "./ListCourse";
-import SectionTabs from "./SectionTab";
-import ToggleButton from "../ToggleButton";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { clearCurrentCourse } from '../../actions/UpdateCurrentCourse';
+import Search from '../Search';
+import ListCourse from './ListCourse';
+import SectionTabs from './SectionTab';
+import ToggleButton from '../ToggleButton';
 
 class AddCourse extends Component {
   constructor(props) {
@@ -26,7 +26,7 @@ class AddCourse extends Component {
           item =>
             item.toLowerCase().search(input.target.value.toLowerCase()) !==
               -1 ||
-            obj[item]["name"]
+            obj[item]['name']
               .toLowerCase()
               .search(input.target.value.toLowerCase()) !== -1
         )

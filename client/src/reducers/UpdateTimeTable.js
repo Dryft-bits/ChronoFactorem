@@ -1,4 +1,4 @@
-import TimeTable from "../schemas/TimeTable.js";
+import TimeTable from '../schemas/TimeTable.js';
 import {
   ADD_SECTION,
   DELETE_SECTION,
@@ -6,7 +6,7 @@ import {
   TIMETABLE_LOADING,
   EDIT_TIMETABLE,
   SAVE_TIMETABLE
-} from "../actions/types";
+} from '../actions/types';
 
 let timetable, courses;
 

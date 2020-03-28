@@ -3,13 +3,13 @@
  * Using the PrivateRoute puts it in an infinite route loop
  */
 
-import React from "react";
-import { Route, Redirect } from "react-router-dom";
-import { connect } from "react-redux";
-import { useGetData } from "use-axios-react";
+import React from 'react';
+import { Route, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { useGetData } from 'use-axios-react';
 
 const SemiPrivateRoute = ({ component: Component, ...rest }) => {
-  const [userInfo, loading] = useGetData("/api/current_user");
+  const [userInfo, loading] = useGetData('/api/current_user');
 
   return (
     <Route
@@ -17,7 +17,7 @@ const SemiPrivateRoute = ({ component: Component, ...rest }) => {
       render={props =>
         // Put a cool animation here
         !userInfo ? (
-          <Redirect to='/'></Redirect>
+          <Redirect to="/"></Redirect>
         ) : loading ? (
           <div>Loading...</div>
         ) : (

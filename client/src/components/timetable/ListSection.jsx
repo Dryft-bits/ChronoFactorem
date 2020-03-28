@@ -1,7 +1,7 @@
-import React from "react";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import { addSection } from "../../actions/UpdateTimeTable";
+import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { addSection } from '../../actions/UpdateTimeTable';
 
 const ListSection = props => {
   return (
@@ -19,7 +19,7 @@ const ListSection = props => {
               >
                 <div
                   className="courseElement"
-                  style={{ fontSize: "medium" }}
+                  style={{ fontSize: 'medium' }}
                   id={section}
                 >
                   <div className="courseItem">{section}</div>

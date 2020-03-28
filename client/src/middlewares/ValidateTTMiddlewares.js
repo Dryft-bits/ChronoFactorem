@@ -1,7 +1,7 @@
-import axios from "axios";
-import { ADD_SECTION, SAVE_TIMETABLE, DELETE_SECTION } from "../actions/types";
-import { deleteSection, setTimeTableLoading } from "../actions/UpdateTimeTable";
-import * as utils from "../utils/CreateTTUtils.js";
+import axios from 'axios';
+import { ADD_SECTION, SAVE_TIMETABLE, DELETE_SECTION } from '../actions/types';
+import { deleteSection, setTimeTableLoading } from '../actions/UpdateTimeTable';
+import * as utils from '../utils/CreateTTUtils.js';
 
 let courseCode, temp, courseTemp, sectionDict;
 
@@ -19,15 +19,15 @@ export const checkSectionSwapMiddleware = store => next => action => {
     [courseCode, temp, courseTemp, sectionDict] = getDetails(store);
     let section = action.payload.section;
     let duplicate = utils.checkSection(courseTemp, courseCode, section);
-    if (duplicate === "same section") {
-      window.alert("You have already chosen this Section!");
+    if (duplicate === 'same section') {
+      window.alert('You have already chosen this Section!');
       return;
     } else if (
       duplicate &&
       !window.confirm(
-        "You have already chosen a " +
+        'You have already chosen a ' +
           utils.mapSection[section.charAt(0)] +
-          " for this course.Click ok to swap it with the selected section"
+          ' for this course.Click ok to swap it with the selected section'
       )
     ) {
       return;
@@ -63,7 +63,7 @@ export const checkClashOrDeleteMiddleWare = store => next => action => {
     });
     if (clash) {
       window.alert(
-        "The selected section clashes with an already present course section! Please remove the previous course first!"
+        'The selected section clashes with an already present course section! Please remove the previous course first!'
       );
       return;
     }
@@ -83,9 +83,9 @@ export const checkLunchHourMiddleware = store => next => action => {
     if (
       checkLunch &&
       !window.confirm(
-        "Upon chosing this section you are not left with any lunch hour on " +
+        'Upon chosing this section you are not left with any lunch hour on ' +
           utils.mapDay[checkLunch] +
-          " Click ok to proceed anyway"
+          ' Click ok to proceed anyway'
       )
     ) {
       return;
@@ -115,7 +115,7 @@ export const addSectionMiddleware = store => next => action => {
 export const deleteSectionMiddleware = store => next => action => {
   if (action.type === DELETE_SECTION) {
     if (action.payload.remove) {
-      if (!window.confirm("Are You Sure That You Want To delete this Section?"))
+      if (!window.confirm('Are You Sure That You Want To delete this Section?'))
         return;
     }
     let section = action.payload.section;
@@ -142,22 +142,22 @@ export const saveTTMiddleware = store => next => action => {
     if (
       id &&
       window.confirm(
-        "Click on ok to save as new TimeTable or on cancel to update this one!"
+        'Click on ok to save as new TimeTable or on cancel to update this one!'
       )
     ) {
       id = null;
     }
     if (id) {
       ttname =
-        prompt("Would you like to change the name of the timetable?") ||
+        prompt('Would you like to change the name of the timetable?') ||
         store.getState().updateTT.name;
     } else {
-      ttname = prompt("Would you like to give the timetable a name?");
+      ttname = prompt('Would you like to give the timetable a name?');
     }
     store.dispatch(setTimeTableLoading());
     try {
       axios
-        .post("/api/timetable/save", {
+        .post('/api/timetable/save', {
           id: id,
           name: ttname,
           timetable: store.getState().updateTT.myTimeTable,
@@ -170,7 +170,7 @@ export const saveTTMiddleware = store => next => action => {
           action.payload.id = res.data.id;
           action.payload.name = ttname;
           action.payload.timetable = store.getState().updateTT.myTimeTable;
-          window.alert("Successfully Saved the TimeTable");
+          window.alert('Successfully Saved the TimeTable');
           return next(action);
         });
     } catch (err) {

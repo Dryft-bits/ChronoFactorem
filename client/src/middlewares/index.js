@@ -1,7 +1,7 @@
-import { applyMiddleware } from "redux";
-import { composeWithDevTools } from "redux-devtools-extension";
-import { getSelectedCourseMiddleware } from "./SelectCourseMiddlewares";
-import thunk from "redux-thunk";
+import { applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import { getSelectedCourseMiddleware } from './SelectCourseMiddlewares';
+import thunk from 'redux-thunk';
 
 import {
   checkSectionSwapMiddleware,
@@ -10,7 +10,7 @@ import {
   addSectionMiddleware,
   deleteSectionMiddleware,
   saveTTMiddleware
-} from "./ValidateTTMiddlewares";
+} from './ValidateTTMiddlewares';
 
 export const customMiddleware = composeWithDevTools(
   applyMiddleware(

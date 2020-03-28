@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const helSchema = new Schema({
   courseName: {
@@ -12,4 +12,4 @@ const helSchema = new Schema({
   }
 });
 
-module.exports = mongoose.model("hels-prevsem", helSchema);
+module.exports = mongoose.model('hels-prevsem', helSchema);

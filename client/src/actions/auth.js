@@ -1,15 +1,15 @@
-import axios from "axios";
+import axios from 'axios';
 import {
   LOGIN_FAILURE,
   LOGIN_SUCCESS,
   LOGOUT,
   USER_LOADED,
   NO_USER
-} from "./types";
+} from './types';
 
 export const verifyLogin = () => async dispatch => {
   try {
-    const res = await axios.get("/api/loggedin");
+    const res = await axios.get('/api/loggedin');
     if (res.status === 200 && res.data.name) {
       return new Promise((resolve, _) => {
         dispatch({
@@ -41,7 +41,7 @@ export const verifyLogin = () => async dispatch => {
 
 export const loadUser = () => async dispatch => {
   try {
-    const res = await axios.get("/api/loggedin");
+    const res = await axios.get('/api/loggedin');
     if (res.status === 200 && res.data.name) {
       return new Promise((resolve, _) => {
         dispatch({
@@ -68,11 +68,11 @@ export const loadUser = () => async dispatch => {
 
 export const logout = () => async dispatch => {
   if (
-    !window.confirm("All your unsaved progress will be lost once you logout!")
+    !window.confirm('All your unsaved progress will be lost once you logout!')
   ) {
     return;
   }
-  await axios.get("/api/logout");
+  await axios.get('/api/logout');
   return new Promise((resolve, _) => {
     dispatch({
       type: LOGOUT

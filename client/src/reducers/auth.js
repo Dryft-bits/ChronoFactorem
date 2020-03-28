@@ -4,7 +4,7 @@ import {
   LOGOUT,
   USER_LOADED,
   NO_USER
-} from "../actions/types";
+} from '../actions/types';
 
 const initialState = {
   isAuthenticated: null,
