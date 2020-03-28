@@ -156,6 +156,10 @@ const HelForm = ({ submitForm, submitted, user }) => {
           value={slotNumber}
           options={options}
           onItemClick={handleSlotChange}
+          containerStyle={{ backgroundColor: "#f9e3b4" }}
+          menuStyle={{ backgroundColor: "#f9e3b4" }}
+          menuItemStyle={{ backgroundColor: "#ffffff" }}
+          activeItemStyle={{ backgroundColor: "#fecb6e" }}
         />
         <div className='form-group'>
           <div className='form-courses'>
