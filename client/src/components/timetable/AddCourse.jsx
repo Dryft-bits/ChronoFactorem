@@ -85,7 +85,7 @@ const mapDispatchToProps = dispatch => {
 AddCourse.propTypes = {
   allCourses: PropTypes.object.isRequired,
   clearCurrentCourse: PropTypes.func.isRequired,
-  currentCourse: PropTypes.object.isRequired
+  currentCourse: PropTypes.object
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddCourse);
