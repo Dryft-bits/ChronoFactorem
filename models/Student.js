@@ -11,7 +11,8 @@ const StudentSchema = new Schema({
     unique: true
   },
   submittedForm: {
-    type: Boolean
+    type: Boolean,
+    required: true
   }
 });
 

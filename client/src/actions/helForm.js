@@ -14,18 +14,22 @@ export const submitForm = (
   const helData = JSON.stringify({ slotNumber, humanitiesElectives });
 
   try {
-    await axios.post("/api/helform/submit", helData, config);
+    await axios
+      .post("/api/helform/submit", helData, config)
+      .then(function(response) {
+        if (response.status !== 201) {
+          throw "Could not submit form.";
+        }
+      });
     const res = await axios.get("api/current_user");
     const email = res.data.email;
     const studentEmail = JSON.stringify({ email });
     await axios
       .post("/api/helform/firstlogin", studentEmail, config)
       .then(function(response) {
-        if (response.status !== 200) {
-          console.log("Update failed" + response.status);
-          dispatch({
-            type: SUBMIT_FAIL
-          });
+        if (response.status !== 201) {
+          console.log("Update failed: " + response.status);
+          throw "Could not submit form.";
         } else {
           dispatch({
             type: SUBMIT_SUCCESS
@@ -34,6 +38,7 @@ export const submitForm = (
       });
   } catch (err) {
     console.log(err);
+    window.alert(err);
     dispatch({
       type: SUBMIT_FAIL
     });

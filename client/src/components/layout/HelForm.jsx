@@ -102,7 +102,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
   };
 
   const handleCourseAddition = e => {
-    let event = (e.target.innerHTML);
+    let event = e.target.innerHTML;
     if (!humanitiesCourses.includes(event)) {
       if (isEditingRowAtIndex !== -1) {
         humanitiesCourses[isEditingRowAtIndex] = event;
@@ -150,31 +150,35 @@ const HelForm = ({ submitForm, submitted, user }) => {
       <p className='title'>
         Hi! We would like to know a few things before you continue.
       </p>
-      <form className='form' onSubmit={e => onSubmit(e)}>
+      <form className='form-whole' onSubmit={e => onSubmit(e)}>
+        <Select
+          placeholder='Please select slot'
+          value={slotNumber}
+          options={options}
+          onItemClick={handleSlotChange}
+          containerStyle={{ backgroundColor: "#f9e3b4" }}
+          menuStyle={{ backgroundColor: "#f9e3b4" }}
+          menuItemStyle={{ backgroundColor: "#ffffff" }}
+          activeItemStyle={{ backgroundColor: "#fecb6e" }}
+        />
         <div className='form-group'>
-          <Select
-            placeholder='Please select slot'
-            value={slotNumber}
-            options={options}
-            onItemClick={handleSlotChange}
-          />
-          <div className='form-group'>
+          <div className='form-courses'>
             {humanitiesCourses.map((course, idx) => {
               return (
                 <div className='container-helform' key={idx}>
                   <input
-                    className='left-inp'
+                    className='course-inp'
                     type='text'
                     placeholder='Course name'
                     name='courseName'
-                    value={humanitiesCourses[idx].replace("&amp;","&")}
+                    value={humanitiesCourses[idx].replace("&amp;", "&")}
                     key={"inp" + idx.toString(10)}
                     disabled={isEditingRowAtIndex !== idx}
                     required
                     readOnly
                   ></input>
                   <button
-                    className='mod-btn'
+                    className='btn btn-hf btn-mod'
                     type='button'
                     onClick={e => deleteRow(e, idx)}
                     key={"bdelete" + idx.toString(10)}
@@ -183,7 +187,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
                   </button>
                   <button
                     type='button'
-                    className='mod-btn'
+                    className='btn btn-hf btn-mod'
                     onClick={e => editRow(e, idx)}
                     key={"bedit" + idx.toString(10)}
                   >
@@ -192,18 +196,22 @@ const HelForm = ({ submitForm, submitted, user }) => {
                 </div>
               );
             })}
-            <button
-              type='button'
-              className='btn btn-primary'
-              onClick={e => addCourse(e)}
-            >
-              Add
-            </button>
           </div>
+          <button
+            type='button'
+            className='btn btn-primary btn-big'
+            onClick={e => addCourse(e)}
+          >
+            Add
+          </button>
+          <input
+            type='submit'
+            className='btn btn-primary btn-hf btn-big'
+            value='Submit'
+          />
         </div>
-        <input type='submit' className='btn btn-primary' value='Submit' />
       </form>
-      <div style={{ float: "right", width: "35vw" }}>
+      <div className='course-disp'>
         <Search action={filterItems} />
         <ItemList
           items={currentlyShowingCourses}

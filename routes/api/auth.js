@@ -23,7 +23,7 @@ authRouter.get(
 );
 
 authRouter.get("/loggedin", loggedIn, function(req, res, next) {
-  res.send(req.user);
+  res.status(200).send(req.user);
 });
 
 authRouter.get(
@@ -42,7 +42,7 @@ authRouter.get("/logout", (req, res) => {
 });
 
 authRouter.get("/current_user", (req, res) => {
-  res.send(req.user);
+  res.status(200).send(req.user);
 });
 
 module.exports = authRouter;
