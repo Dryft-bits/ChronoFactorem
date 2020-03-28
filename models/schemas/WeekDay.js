@@ -1,4 +1,4 @@
-import Entry from "./Entry";
+const Entry = require("./Entry");
 
 class WeekDay {
   constructor() {

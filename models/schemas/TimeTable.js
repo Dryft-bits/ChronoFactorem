@@ -1,4 +1,4 @@
-import WeekDay from "./WeekDay";
+const WeekDay = require("./WeekDay");
 
 class TimeTable {
   constructor() {

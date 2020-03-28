@@ -8,7 +8,7 @@ const express = require("express");
 const authRouter = express.Router();
 
 function loggedIn(req, res, next) {
-  if (req.user) {
+  if (req.isAuthenticated()) {
     next();
   } else {
     res.redirect("/");
@@ -41,8 +41,8 @@ authRouter.get("/logout", (req, res) => {
   res.json({ msg: "Logged out" });
 });
 
-authRouter.get("/current_user", (req, res) => {
-  res.status(200).send(req.user);
+authRouter.get("/current_user", loggedIn, (req, res) => {
+  res.send(req.user);
 });
 
 module.exports = authRouter;
