@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.2.1",
     "@types/number-to-words": "^1.2.0",
     "axios": "^0.19.2",
+    "html2canvas": "^1.0.0-rc.5",
     "materialize-css": "^1.0.0",
     "number-to-words": "^1.2.4",
     "react": "^16.13.1",

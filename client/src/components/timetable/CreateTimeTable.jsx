@@ -6,6 +6,7 @@ import AddCourse from "./AddCourse.jsx";
 import PreviewTT from "./PreviewTT.jsx";
 import MidsemSched from "./MidsemSched.jsx";
 import CompreSched from "./CompreSched.jsx";
+import ExportPage from "./ExportPage.jsx";
 
 const courses = JSON.parse(JSON.stringify(TimeTableData));
 
@@ -44,6 +45,7 @@ class CreateTimeTable extends Component {
             {this.CustomButton("Preview", 1)}
             {this.CustomButton("Midsem Schedule", 2)}
             {this.CustomButton("Compre Schedule", 3)}
+            {this.CustomButton("Export As Pdf", 4)}
             <button
               className="waves-effect waves-light btn"
               onClick={() => {
@@ -75,6 +77,11 @@ class CreateTimeTable extends Component {
           <>
             {this.CustomButton("Compre Schedule", 0)}
             <CompreSched />
+          </>
+        ) : this.state.view === 4 ? (
+          <>
+            {this.CustomButton("Export As PDF", 0)}
+            <ExportPage />
           </>
         ) : null}
       </>
