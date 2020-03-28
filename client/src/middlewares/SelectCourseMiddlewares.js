@@ -1,4 +1,4 @@
-import { UPDATE_CURRENT_COURSE } from '../actions/types';
+import { UPDATE_CURRENT_COURSE } from "../actions/types";
 
 export const getSelectedCourseMiddleware = () => next => action => {
   if (action.type === UPDATE_CURRENT_COURSE) {

@@ -1,4 +1,4 @@
-import WeekDay from './WeekDay';
+import WeekDay from "./WeekDay";
 
 class TimeTable {
   constructor() {

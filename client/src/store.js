@@ -2,10 +2,10 @@
  * Create redux store
  */
 
-import { createStore } from 'redux';
-import { customMiddleware } from './middlewares/index';
+import { createStore } from "redux";
+import { customMiddleware } from "./middlewares/index";
 //import thunk from "redux-thunk";
-import rootReducer from './reducers';
+import rootReducer from "./reducers";
 
 const initialState = {};
 

@@ -1,17 +1,17 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const { check, validationResult } = require('express-validator');
+const { check, validationResult } = require("express-validator");
 
-const Hel = require('../../models/Hel');
-const Student = require('../../models/Student');
+const Hel = require("../../models/Hel");
+const Student = require("../../models/Student");
 
 router.post(
-  '/submit',
+  "/submit",
   [
-    check('slotNumber', 'Slot is required')
+    check("slotNumber", "Slot is required")
       .not()
       .isEmpty(),
-    check('humanitiesElectives').isArray()
+    check("humanitiesElectives").isArray()
   ],
   async (req, res) => {
     const errors = validationResult(req);
@@ -22,8 +22,8 @@ router.post(
     const { slotNumber, humanitiesElectives } = req.body;
     try {
       for (const elec of humanitiesElectives) {
-        let elective = elec.toLowerCase().split(' ');
-        elective = elective[0] + ' ' + elective[1];
+        let elective = elec.toLowerCase().split(" ");
+        elective = elective[0] + " " + elective[1];
         let hel = await Hel.findOne({ courseName: elective });
         if (!hel) {
           hel = new Hel({
@@ -51,22 +51,22 @@ router.post(
           { studentsInterestedInSlot: courseSlots }
         );
       }
-      res.status(201).json({ msg: 'Submitted!' });
+      res.status(201).json({ msg: "Submitted!" });
     } catch (err) {
       console.error(err.message);
-      res.status(500).send('Server error');
+      res.status(500).send("Server error");
     }
   }
 );
 
 router.post(
-  '/firstlogin',
+  "/firstlogin",
   [
     [
-      check('email', 'Email is required')
+      check("email", "Email is required")
         .not()
         .isEmpty(),
-      check('email', 'Invalid email').isEmail()
+      check("email", "Invalid email").isEmail()
     ]
   ],
   async (req, res) => {
@@ -78,10 +78,10 @@ router.post(
     const { email } = req.body;
     try {
       await Student.updateOne({ email: email }, { submittedForm: true });
-      res.status(201).json({ msg: 'Updated in db!' });
+      res.status(201).json({ msg: "Updated in db!" });
     } catch (err) {
       console.error(err.message);
-      res.status(500).send('Server error');
+      res.status(500).send("Server error");
     }
   }
 );

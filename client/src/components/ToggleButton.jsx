@@ -1,11 +1,11 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
 const ToggleButton = props => {
   return (
     <div>
       <button
-        className="waves-effect waves-light btn"
+        className='waves-effect waves-light btn'
         name={props.title}
         onClick={props.action}
       >

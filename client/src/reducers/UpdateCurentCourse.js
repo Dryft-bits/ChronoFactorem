@@ -1,4 +1,4 @@
-import { UPDATE_CURRENT_COURSE, CLEAR_CURRENT_COURSE } from '../actions/types';
+import { UPDATE_CURRENT_COURSE, CLEAR_CURRENT_COURSE } from "../actions/types";
 
 const initialState = {
   currentCourse: null

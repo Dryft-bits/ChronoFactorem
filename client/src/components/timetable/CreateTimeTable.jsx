@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import { clearAll, saveTimeTable } from '../../actions/UpdateTimeTable';
-import * as TimeTableData from '../../Timetable.json';
-import AddCourse from './AddCourse.jsx';
-import PreviewTT from './PreviewTT.jsx';
-import MidsemSched from './MidsemSched.jsx';
-import CompreSched from './CompreSched.jsx';
-import ExportPage from './ExportPage.jsx';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { clearAll, saveTimeTable } from "../../actions/UpdateTimeTable";
+import * as TimeTableData from "../../Timetable.json";
+import AddCourse from "./AddCourse.jsx";
+import PreviewTT from "./PreviewTT.jsx";
+import MidsemSched from "./MidsemSched.jsx";
+import CompreSched from "./CompreSched.jsx";
+import ExportPage from "./ExportPage.jsx";
 
 const courses = JSON.parse(JSON.stringify(TimeTableData));
 
@@ -29,11 +29,11 @@ class CreateTimeTable extends Component {
   CustomButton(type, id) {
     return (
       <button
-        className="waves-effect waves-light btn"
+        className='waves-effect waves-light btn'
         id={id}
         onClick={this.showView}
       >
-        {this.state.view === 0 ? type : 'Back'}
+        {this.state.view === 0 ? type : "Back"}
       </button>
     );
   }
@@ -44,12 +44,12 @@ class CreateTimeTable extends Component {
         {this.props.loading ? <h2>Loading...</h2> : null}
         {this.state.view === 0 ? (
           <>
-            {this.CustomButton('Preview', 1)}
-            {this.CustomButton('Midsem Schedule', 2)}
-            {this.CustomButton('Compre Schedule', 3)}
-            {this.CustomButton('Export As Pdf', 4)}
+            {this.CustomButton("Preview", 1)}
+            {this.CustomButton("Midsem Schedule", 2)}
+            {this.CustomButton("Compre Schedule", 3)}
+            {this.CustomButton("Export As Pdf", 4)}
             <button
-              className="waves-effect waves-light btn"
+              className='waves-effect waves-light btn'
               onClick={() => {
                 this.props.clearAll();
               }}
@@ -57,7 +57,7 @@ class CreateTimeTable extends Component {
               Clear All Entries
             </button>
             <button
-              className="waves-effect waves-light btn"
+              className='waves-effect waves-light btn'
               onClick={() => {
                 this.props.save();
               }}
@@ -65,32 +65,32 @@ class CreateTimeTable extends Component {
               Save TimeTable
             </button>
             <div>
-              <div style={{ float: 'right', width: '35vw' }}>
+              <div style={{ float: "right", width: "35vw" }}>
                 <AddCourse allCourses={courses.default} />
               </div>
-              <div style={{ float: 'left', width: '60vw' }}>
-                <PreviewTT style={{ float: 'left' }} />
+              <div style={{ float: "left", width: "60vw" }}>
+                <PreviewTT style={{ float: "left" }} />
               </div>
             </div>
           </>
         ) : this.state.view === 1 ? (
           <>
-            {this.CustomButton('Preview', 0)}
+            {this.CustomButton("Preview", 0)}
             <PreviewTT />
           </>
         ) : this.state.view === 2 ? (
           <>
-            {this.CustomButton('Midsem Schedule', 0)}
+            {this.CustomButton("Midsem Schedule", 0)}
             <MidsemSched />
           </>
         ) : this.state.view === 3 ? (
           <>
-            {this.CustomButton('Compre Schedule', 0)}
+            {this.CustomButton("Compre Schedule", 0)}
             <CompreSched />
           </>
         ) : this.state.view === 4 ? (
           <>
-            {this.CustomButton('Export As PDF', 0)}
+            {this.CustomButton("Export As PDF", 0)}
             <ExportPage />
           </>
         ) : null}

@@ -1,5 +1,5 @@
-import axios from 'axios';
-import { SUBMIT_SUCCESS, SUBMIT_FAIL } from './types';
+import axios from "axios";
+import { SUBMIT_SUCCESS, SUBMIT_FAIL } from "./types";
 
 export const submitForm = (
   slotNumber,
@@ -7,7 +7,7 @@ export const submitForm = (
 ) => async dispatch => {
   const config = {
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json"
     }
   };
 
@@ -15,21 +15,21 @@ export const submitForm = (
 
   try {
     await axios
-      .post('/api/helform/submit', helData, config)
+      .post("/api/helform/submit", helData, config)
       .then(function(response) {
         if (response.status !== 201) {
-          throw 'Could not submit form.';
+          throw "Could not submit form.";
         }
       });
-    const res = await axios.get('api/current_user');
+    const res = await axios.get("api/current_user");
     const email = res.data.email;
     const studentEmail = JSON.stringify({ email });
     await axios
-      .post('/api/helform/firstlogin', studentEmail, config)
+      .post("/api/helform/firstlogin", studentEmail, config)
       .then(function(response) {
         if (response.status !== 201) {
-          console.log('Update failed: ' + response.status);
-          throw 'Could not submit form.';
+          console.log("Update failed: " + response.status);
+          throw "Could not submit form.";
         } else {
           dispatch({
             type: SUBMIT_SUCCESS

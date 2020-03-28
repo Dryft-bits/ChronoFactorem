@@ -1,4 +1,4 @@
-import { UPDATE_CURRENT_COURSE, CLEAR_CURRENT_COURSE } from './types';
+import { UPDATE_CURRENT_COURSE, CLEAR_CURRENT_COURSE } from "./types";
 
 export const updateCurrentCourse = (course, currentCourses) => {
   return {

@@ -1,6 +1,6 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import React from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 const MidsemSched = props => {
   return (
@@ -11,13 +11,13 @@ const MidsemSched = props => {
           <div>
             {!(myCourse.course[code].midsem === undefined) ? (
               <h5 key={code}>
-                <div className="examElement" style={{ fontSize: 'medium' }}>
-                  <div className="courseItem">{code}</div>
-                  <div className="courseItem">{myCourse.course[code].name}</div>
-                  <div className="courseItem">
+                <div className='examElement' style={{ fontSize: "medium" }}>
+                  <div className='courseItem'>{code}</div>
+                  <div className='courseItem'>{myCourse.course[code].name}</div>
+                  <div className='courseItem'>
                     {myCourse.course[code].midsem.date}
                   </div>
-                  <div className="courseItem">
+                  <div className='courseItem'>
                     {myCourse.course[code].midsem.time}
                   </div>
                 </div>

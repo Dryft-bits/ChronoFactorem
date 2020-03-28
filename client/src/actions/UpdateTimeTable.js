@@ -5,8 +5,8 @@ import {
   SAVE_TIMETABLE,
   TIMETABLE_LOADING,
   EDIT_TIMETABLE
-} from './types';
-import store from '../store';
+} from "./types";
+import store from "../store";
 
 export const addSection = section => {
   return {

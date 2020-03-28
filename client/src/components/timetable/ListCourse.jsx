@@ -1,22 +1,22 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import { updateCurrentCourse } from '../../actions/UpdateCurrentCourse';
+import React from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { updateCurrentCourse } from "../../actions/UpdateCurrentCourse";
 
 const ListCourse = props => {
   return (
-    <ul className="courseSearch">
+    <ul className='courseSearch'>
       {Object.keys(props.courses).map(course => {
         return (
           <div
-            className="searchItem"
+            className='searchItem'
             key={course}
             id={course}
             onClick={() => {
               props.addCourse(course, props.courses);
             }}
           >
-            {course} {props.courses[course]['name']}
+            {course} {props.courses[course]["name"]}
           </div>
         );
       })}
