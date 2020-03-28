@@ -1,18 +1,46 @@
+/* Containers */
 .container-helform {
   display: flex;
+  width: 100%;
 }
 
-.mod-inp .mod-btn {
-  flex: 1;
+/* Form */
+.course-disp {
+  float: right;
+  width: 40%;
+}
+
+.form-whole {
+  width: 100%;
 }
 
 .form-group {
-  float: "left";
-  width: "60vw";
+  float: left;
+  width: 59.5%;
+  padding-top: 1.25%;
+  padding-left: 0.5%;
 }
 
-.left-inp {
-  float: "left";
-  width: "40px";
-  flex: 1;
+.course-inp {
+  width: 74%;
+}
+
+/* Buttons */
+.btn-mod {
+  width: 10%;
+  height: 5vh;
+  padding-left: 1.5%;
+}
+
+.btn-hf {
+  cursor: pointer;
+}
+.btn-big {
+  width: 50%;
+  height: 5vh;
+}
+
+/* Select component styling */
+.select-container {
+  background-color: #fecb6e;
 }
