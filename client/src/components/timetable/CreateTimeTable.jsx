@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { clearAll } from "../../actions/UpdateTimeTable";
+import PropTypes from "prop-types";
+import { clearAll, saveTimeTable } from "../../actions/UpdateTimeTable";
 import * as TimeTableData from "../../Timetable.json";
 import AddCourse from "./AddCourse.jsx";
 import PreviewTT from "./PreviewTT.jsx";
@@ -28,7 +29,7 @@ class CreateTimeTable extends Component {
   CustomButton(type, id) {
     return (
       <button
-        className="waves-effect waves-light btn"
+        className='waves-effect waves-light btn'
         id={id}
         onClick={this.showView}
       >
@@ -40,6 +41,7 @@ class CreateTimeTable extends Component {
   render() {
     return (
       <>
+        {this.props.loading ? <h2>Loading...</h2> : null}
         {this.state.view === 0 ? (
           <>
             {this.CustomButton("Preview", 1)}
@@ -47,12 +49,20 @@ class CreateTimeTable extends Component {
             {this.CustomButton("Compre Schedule", 3)}
             {this.CustomButton("Export As Pdf", 4)}
             <button
-              className="waves-effect waves-light btn"
+              className='waves-effect waves-light btn'
               onClick={() => {
                 this.props.clearAll();
               }}
             >
               Clear All Entries
+            </button>
+            <button
+              className='waves-effect waves-light btn'
+              onClick={() => {
+                this.props.save();
+              }}
+            >
+              Save TimeTable
             </button>
             <div>
               <div style={{ float: "right", width: "35vw" }}>
@@ -89,10 +99,23 @@ class CreateTimeTable extends Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapStateToProps = state => {
   return {
-    clearAll: () => dispatch(clearAll())
+    loading: state.updateTT.loading
   };
 };
 
-export default connect(null, mapDispatchToProps)(CreateTimeTable);
+const mapDispatchToProps = dispatch => {
+  return {
+    clearAll: () => dispatch(clearAll()),
+    save: () => dispatch(saveTimeTable())
+  };
+};
+
+CreateTimeTable.propTypes = {
+  loading: PropTypes.bool.isRequired,
+  clearAll: PropTypes.func.isRequired,
+  save: PropTypes.func.isRequired
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CreateTimeTable);

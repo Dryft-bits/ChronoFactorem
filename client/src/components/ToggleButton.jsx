@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const ToggleButton = props => {
   return (
@@ -12,6 +13,11 @@ const ToggleButton = props => {
       </button>
     </div>
   );
+};
+
+ToggleButton.propTypes = {
+  title: PropTypes.string,
+  action: PropTypes.func.isRequired
 };
 
 export default ToggleButton;

@@ -15,29 +15,34 @@ class ExportPage extends Component {
   componentDidMount() {
     const pageToExport = document.getElementById("export-page");
     html2canvas(pageToExport)
-      .then((canvas) => {
-        const imgData = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream');
+      .then(canvas => {
+        const imgData = canvas
+          .toDataURL("image/png")
+          .replace("image/png", "image/octet-stream");
         window.open(imgData, "_blank");
-        document.getElementById('image').href = imgData;
-        document.getElementById('image').download = 'time.png';
-        document.getElementById('image').click()
-      }).then(() => {
-        document.getElementById('0').click();
+        document.getElementById("image").href = imgData;
+        document.getElementById("image").download = "time.png";
+        document.getElementById("image").click();
+      })
+      .then(() => {
+        document.getElementById("0").click();
       });
   }
 
   render() {
-    return <>
-      <div id="export-page">
-        <div id="myMm" style={{ height: "1mm" }} />
-        <PreviewTT />
-        <h3>MidSem</h3>
-        <MidsemSched />
-        <h3>Compre</h3>
-        <CompreSched />
-      </div>
-      <a id="image"></a>
-    </>
+    return (
+      <>
+        <div id='export-page'>
+          <div id='myMm' style={{ height: "1mm" }} />
+          <PreviewTT />
+          <h3>MidSem</h3>
+          <MidsemSched />
+          <h3>Compre</h3>
+          <CompreSched />
+        </div>
+        <a id='image'></a>
+      </>
+    );
   }
 }
 

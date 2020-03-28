@@ -18,6 +18,9 @@ export const Navbar = ({ submitted, user, isAuthenticated, logout }) => {
             </NavLink>
             <ul className='right hide-on-med-and-down'>
               <li>
+                <NavLink to='/Dashboard'>Dashboard</NavLink>
+              </li>
+              <li>
                 <NavLink to='/HELDATA'>HELData</NavLink>
               </li>
               <li>

@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 const ItemList = props => {
   return (
     <ul className='courseSearch'>
@@ -16,6 +18,10 @@ const ItemList = props => {
       })}
     </ul>
   );
+};
+
+ItemList.propTypes = {
+  items: PropTypes.object.isRequired
 };
 
 export default ItemList;
