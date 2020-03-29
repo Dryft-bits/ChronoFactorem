@@ -1,7 +1,8 @@
 import {
   LOGIN_FAILURE,
   LOGIN_SUCCESS,
-  LOGOUT,
+  LOGOUT_SUCCESS,
+  LOGOUT_FAILURE,
   USER_LOADED,
   NO_USER
 } from "../actions/types";
@@ -23,7 +24,7 @@ export default function(state = initialState, action) {
       };
 
     case NO_USER:
-    case LOGOUT:
+    case LOGOUT_SUCCESS:
     case LOGIN_FAILURE:
       return {
         ...state,
@@ -31,6 +32,7 @@ export default function(state = initialState, action) {
         user: null
       };
 
+    case LOGOUT_FAILURE:
     default:
       return state;
   }

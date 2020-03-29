@@ -33,7 +33,7 @@ export const Navbar = ({ submitted, user, isAuthenticated, logout }) => {
                 <NavLink to='/aboutUs'>About Us</NavLink>
               </li>
               <li>
-                <NavLink to='/' onClick={logout}>
+                <NavLink to='#!' onClick={logout}>
                   Logout{" "}
                 </NavLink>
               </li>
