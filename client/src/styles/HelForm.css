@@ -3,6 +3,9 @@
   display: flex;
   width: 100%;
 }
+.half-width {
+  width: 50%;
+}
 
 /* Form */
 .course-disp {

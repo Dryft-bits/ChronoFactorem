@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from "react";
 import { Select } from "react-select-tile";
+import SelectOptions from "react-select";
 import { connect } from "react-redux";
 import { submitForm } from "../../actions/helForm";
 import PropTypes from "prop-types";
@@ -36,6 +37,22 @@ const options = [
   { value: "6", label: "4:30 - 5:00 PM" },
   { value: "7", label: "5:30 - 5:30 PM" }
 ];
+const branches = [
+  { value: "BIO", label: "Biological Sciences" },
+  { value: "CHE", label: "Chemical Engineering" },
+  { value: "CHEM", label: "Chemistry" },
+  { value: "CE", label: "Civil Engineering" },
+  { value: "CS", label: "Computer Science" },
+  { value: "ECO", label: "Economics & Finance" },
+  { value: "ECE", label: "Electrical & Communication Engineering" },
+  { value: "EEE", label: "Electrical & Electronics Engineering" },
+  { value: "INSTR", label: "Electronics & Instrumentation Engineering" },
+  { value: "MATH", label: "Mathematics" },
+  { value: "ME", label: "Mechanical Engineering" },
+  { value: "PHA", label: "Pharmacy" },
+  { value: "PHY", label: "Physics" }
+];
+
 const copyObjectProps = (source, keys) => {
   let newObject = {};
   keys.forEach(function(key) {
@@ -48,15 +65,22 @@ let currentlyShowingCourses = copyObjectProps(courses, humanitiesCodes);
 const HelForm = ({ submitForm, submitted, user }) => {
   const [formData, setFormData] = useState({
     slotNumber: "",
+    branch: "",
     humanitiesCourses: []
   });
 
-  const { slotNumber, humanitiesCourses } = formData;
+  const { slotNumber, branch, humanitiesCourses } = formData;
 
   const handleSlotChange = value => {
     setFormData({
       ...formData,
       slotNumber: value
+    });
+  };
+  const handleBranchChange = newBranch => {
+    setFormData({
+      ...formData,
+      branch: newBranch
     });
   };
 
@@ -160,6 +184,14 @@ const HelForm = ({ submitForm, submitted, user }) => {
           menuStyle={{ backgroundColor: "#f9e3b4" }}
           menuItemStyle={{ backgroundColor: "#ffffff" }}
           activeItemStyle={{ backgroundColor: "#fecb6e" }}
+        />
+        <SelectOptions
+          value={branch}
+          onChange={handleBranchChange}
+          options={branches}
+          className='half-width'
+          isMulti='true'
+          placeholder='Select branch (select 2 for dual)'
         />
         <div className='form-group'>
           <div className='form-courses'>
