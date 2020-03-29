@@ -5,6 +5,7 @@
 }
 .half-width {
   width: 50%;
+  white-space: nowrap;
 }
 
 /* Form */
@@ -28,6 +29,27 @@
   width: 74%;
 }
 
+.branch-inp {
+  padding-top: 5px;
+}
+
+.wide-menu-row {
+  height: 30px;
+  text-align: center;
+  color: gray;
+}
+
+.label-mod {
+  padding-left: 2%;
+  width: 10%;
+  padding-top: 3vh;
+  height: 4vh;
+}
+
+.left-width {
+  width: 59.5%;
+}
+
 /* Buttons */
 .btn-mod {
   width: 10%;
@@ -46,4 +68,15 @@
 /* Select component styling */
 .select-container {
   background-color: #fecb6e;
+}
+
+/* Radio group */
+.radio-grp {
+  padding-top: 2vh;
+  height: 4vh;
+}
+
+/* Text */
+.text-black {
+  color: black;
 }

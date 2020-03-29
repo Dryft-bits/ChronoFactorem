@@ -37,7 +37,9 @@ passport.use(
             googleId: profile.id,
             name: profile.displayName,
             email: profile.emails[0].value,
-            submittedForm: false
+            submittedForm: false,
+            branch: [],
+            year: 0
           })
             .save()
             .then(user => done(null, user));

@@ -3,7 +3,9 @@ import { SUBMIT_SUCCESS, SUBMIT_FAIL } from "./types";
 
 export const submitForm = (
   slotNumber,
-  humanitiesElectives
+  humanitiesElectives,
+  branch,
+  year
 ) => async dispatch => {
   const config = {
     headers: {
@@ -18,18 +20,23 @@ export const submitForm = (
       .post("/api/helform/submit", helData, config)
       .then(function(response) {
         if (response.status !== 201) {
-          throw "Could not submit form.";
+          throw new Error("Could not submit form.");
         }
       });
     const res = await axios.get("api/current_user");
     const email = res.data.email;
-    const studentEmail = JSON.stringify({ email });
+
+    let studentBranch = [];
+    branch.forEach(element => {
+      studentBranch.push(element["value"]);
+    });
+    const studentData = JSON.stringify({ email, studentBranch, year });
     await axios
-      .post("/api/helform/firstlogin", studentEmail, config)
+      .post("/api/helform/firstlogin", studentData, config)
       .then(function(response) {
         if (response.status !== 201) {
           console.log("Update failed: " + response.status);
-          throw "Could not submit form.";
+          throw new Error("Could not submit form.");
         } else {
           dispatch({
             type: SUBMIT_SUCCESS
