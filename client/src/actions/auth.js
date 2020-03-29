@@ -87,7 +87,7 @@ export const logout = () => async dispatch => {
     })
     .catch(err => {
       // TODO: Can choose to pass error and show alert. For when alerts are implemented.
-      // dispatch({ type: 'SIGNUP_ERROR', err});
+      // dispatch({ type: 'LOGOUT_FAILURE', err});
       dispatch({ type: LOGOUT_FAILURE });
     });
 };
