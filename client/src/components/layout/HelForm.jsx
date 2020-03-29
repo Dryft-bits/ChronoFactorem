@@ -142,7 +142,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
    * (new user conditions) || (old user conditions)
    */
   if ((!submitted && user && user.submittedForm) || submitted) {
-    return <Redirect to='/helData'></Redirect>;
+    return <Redirect to='/dashboard'></Redirect>;
   }
 
   return (

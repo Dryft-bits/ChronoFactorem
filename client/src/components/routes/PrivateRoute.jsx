@@ -24,7 +24,7 @@ const PrivateRoute = ({
           // Put a cool animation here
           <div>Loading...</div>
         ) : !((!submitted && userInfo.submittedForm) || submitted) ? (
-          <Redirect to='/Dashboard'></Redirect>
+          <Redirect to='/helform'></Redirect>
         ) : (
           <Component {...props} />
         )

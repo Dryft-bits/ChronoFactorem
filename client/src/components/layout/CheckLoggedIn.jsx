@@ -15,7 +15,7 @@ const CheckLoggedIn = ({ verifyLogin }) => {
   } else if (!userInfo) {
     return <Redirect to='/'></Redirect>;
   } else {
-    return <Redirect to='/heldata'></Redirect>;
+    return <Redirect to='/dashboard'></Redirect>;
   }
 };
 
