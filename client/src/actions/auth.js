@@ -14,30 +14,18 @@ export const verifyLogin = () => async dispatch => {
   try {
     const res = await axios.get("/api/loggedin");
     if (res.status === 200 && res.data.name) {
-      return new Promise((resolve, _) => {
-        dispatch({
-          type: LOGIN_SUCCESS,
-          payload: res.data
-        });
-
-        resolve();
+      dispatch({
+        type: LOGIN_SUCCESS,
+        payload: res.data
       });
     } else {
-      return new Promise((resolve, _) => {
-        dispatch({
-          type: LOGIN_FAILURE
-        });
-
-        resolve();
-      });
-    }
-  } catch (err) {
-    return new Promise((resolve, _) => {
       dispatch({
         type: LOGIN_FAILURE
       });
-
-      resolve();
+    }
+  } catch (err) {
+    dispatch({
+      type: LOGIN_FAILURE
     });
   }
 };
@@ -46,20 +34,13 @@ export const loadUser = () => async dispatch => {
   try {
     const res = await axios.get("/api/loggedin");
     if (res.status === 200 && res.data.name) {
-      return new Promise((resolve, _) => {
-        dispatch({
-          type: USER_LOADED,
-          payload: res.data
-        });
-        resolve();
+      dispatch({
+        type: USER_LOADED,
+        payload: res.data
       });
     } else {
-      return new Promise((resolve, _) => {
-        dispatch({
-          type: NO_USER
-        });
-
-        resolve();
+      dispatch({
+        type: NO_USER
       });
     }
   } catch (err) {
