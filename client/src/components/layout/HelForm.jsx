@@ -327,6 +327,11 @@ const HelForm = ({ submitForm, submitted, user }) => {
               );
             })}
           </div>
+          <input
+            type='submit'
+            className='btn btn-primary btn-hf btn-big'
+            value='Submit'
+          />
           <button
             type='button'
             className='btn btn-primary btn-big'
@@ -334,11 +339,6 @@ const HelForm = ({ submitForm, submitted, user }) => {
           >
             Add
           </button>
-          <input
-            type='submit'
-            className='btn btn-primary btn-hf btn-big'
-            value='Submit'
-          />
         </div>
       </form>
       <div className='course-disp'>
