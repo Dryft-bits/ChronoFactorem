@@ -17,6 +17,10 @@ import PrivateRoute from "./components/routes/PrivateRoute";
 import SemiPrivateRoute from "./components/routes/SemiPrivateRoute";
 import CheckLoggedIn from "./components/layout/CheckLoggedIn";
 
+import createBrowserHistory from "./history";
+
+export const history = createBrowserHistory({ forceRefresh: true });
+
 const App = () => {
   // Restore user information on refresh
   useEffect(() => {
@@ -24,7 +28,7 @@ const App = () => {
   }, []);
   return (
     <Provider store={store}>
-      <BrowserRouter>
+      <BrowserRouter history={history}>
         <Navbar />
         <Route exact path='/' component={Landing} />
         <Route exact path='/checkloggedin' component={CheckLoggedIn} />

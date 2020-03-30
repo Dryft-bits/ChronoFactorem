@@ -13,6 +13,12 @@ const StudentSchema = new Schema({
   submittedForm: {
     type: Boolean,
     required: true
+  },
+  year: {
+    type: Number
+  },
+  branch: {
+    type: Array
   }
 });
 

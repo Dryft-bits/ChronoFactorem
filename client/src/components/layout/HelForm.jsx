@@ -1,5 +1,12 @@
 import React, { Fragment, useState } from "react";
 import { Select } from "react-select-tile";
+import Creatable from "react-select";
+import { components } from "react-select";
+import Radio from "@material-ui/core/Radio";
+import RadioGroup from "@material-ui/core/RadioGroup";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import FormControl from "@material-ui/core/FormControl";
+
 import { connect } from "react-redux";
 import { submitForm } from "../../actions/helForm";
 import PropTypes from "prop-types";
@@ -26,7 +33,7 @@ var humanitiesCodes = Object.keys(courses).filter(
 // Might need to add other BITS prefixed courses if more are added to the catalog at a later stage
 // Currently, these are the only ones offered across all semesters
 
-const options = [
+const slots = [
   { value: "0", label: "1:30 - 2:00 PM" },
   { value: "1", label: "2:00 - 2:30 PM" },
   { value: "2", label: "2:30 - 3:00 PM" },
@@ -36,6 +43,23 @@ const options = [
   { value: "6", label: "4:30 - 5:00 PM" },
   { value: "7", label: "5:30 - 5:30 PM" }
 ];
+const branches = [
+  { value: "BIO", label: "Biological Sciences" },
+  { value: "CHE", label: "Chemical Engineering" },
+  { value: "CHEM", label: "Chemistry" },
+  { value: "CE", label: "Civil Engineering" },
+  { value: "CS", label: "Computer Science" },
+  { value: "ECO", label: "Economics & Finance" },
+  { value: "ECE", label: "Electrical & Communication Engineering" },
+  { value: "EEE", label: "Electrical & Electronics Engineering" },
+  { value: "INSTR", label: "Electronics & Instrumentation Engineering" },
+  { value: "MANU", label: "Manufacturing Engineering" },
+  { value: "MATH", label: "Mathematics" },
+  { value: "ME", label: "Mechanical Engineering" },
+  { value: "PHA", label: "Pharmacy" },
+  { value: "PHY", label: "Physics" }
+];
+
 const copyObjectProps = (source, keys) => {
   let newObject = {};
   keys.forEach(function(key) {
@@ -47,17 +71,33 @@ let currentlyShowingCourses = copyObjectProps(courses, humanitiesCodes);
 
 const HelForm = ({ submitForm, submitted, user }) => {
   const [formData, setFormData] = useState({
+    branch: [],
+    year: "",
     slotNumber: "",
     humanitiesCourses: []
   });
 
-  const { slotNumber, humanitiesCourses } = formData;
+  const { branch, year, slotNumber, humanitiesCourses } = formData;
 
   const handleSlotChange = value => {
     setFormData({
       ...formData,
       slotNumber: value
     });
+  };
+  const handleBranchChange = newBranch => {
+    setFormData({
+      ...formData,
+      branch: newBranch
+    });
+  };
+  const handleYearChange = e => {
+    if (e.target.checked) {
+      setFormData({
+        ...formData,
+        year: e.target.value
+      });
+    }
   };
 
   const deleteRow = (e, idx) => {
@@ -89,12 +129,16 @@ const HelForm = ({ submitForm, submitted, user }) => {
       window.alert("Please fill out all courses, or remove empty ones");
     } else if (slotNumber === "") {
       window.alert("Please enter your slot");
+    } else if (!branch || branch.length === 0) {
+      window.alert("Please enter your branch");
+    } else if (year === "") {
+      window.alert("Please enter your year");
     } else {
-      submitForm(slotNumber, humanitiesCourses);
+      submitForm(slotNumber, humanitiesCourses, branch, year);
     }
   };
 
-  const addCourse = e => {
+  const addCourse = () => {
     addCourseToList();
     setFormData({
       ...formData
@@ -145,6 +189,23 @@ const HelForm = ({ submitForm, submitted, user }) => {
     return <Redirect to='/dashboard'></Redirect>;
   }
 
+  const Menu = props => {
+    const optionSelectedLength = props.getValue().length || 0;
+    return (
+      <components.Menu {...props}>
+        {optionSelectedLength < 2 ? (
+          props.children
+        ) : (
+          <div className='wide-menu-row'>
+            You cannot select more than 2 branches
+          </div>
+        )}
+      </components.Menu>
+    );
+  };
+  const isValidNewOption = (inputValue, selectValue) =>
+    inputValue.length > 0 && selectValue.length < 5;
+
   return (
     <Fragment>
       <p className='title'>
@@ -153,17 +214,85 @@ const HelForm = ({ submitForm, submitted, user }) => {
       <form className='form-whole' onSubmit={e => onSubmit(e)}>
         <Select
           placeholder='Please select slot'
+          className='hf-width'
           value={slotNumber}
-          options={options}
+          options={slots}
           onItemClick={handleSlotChange}
           containerStyle={{ backgroundColor: "#f9e3b4" }}
           menuStyle={{ backgroundColor: "#f9e3b4" }}
           menuItemStyle={{ backgroundColor: "#ffffff" }}
           activeItemStyle={{ backgroundColor: "#fecb6e" }}
         />
+        <div className='container-helform'>
+          <Creatable
+            components={{ Menu }}
+            onChange={handleBranchChange}
+            value={branch}
+            isMulti
+            isValidNewOption={isValidNewOption}
+            options={branch && branch.length >= 2 ? branch : branches}
+            className='left-width branch-inp'
+            placeholder='Select branch (select 2 for dual degree)'
+            theme={theme => ({
+              ...theme,
+              borderRadius: 2,
+              colors: {
+                ...theme.colors,
+                primary25: "#fecb6e",
+                neutral0: "#f9e3b4"
+              }
+            })}
+          />
+          <p className='label-mod branch-inp'>Select year: </p>
+          <FormControl component='fieldset' className='radio-grp'>
+            <RadioGroup
+              row
+              aria-label='position'
+              name='position'
+              defaultValue='End'
+              className='radio-grp'
+            >
+              <FormControlLabel
+                value='1'
+                control={<Radio color='primary' />}
+                label='First'
+                className='text-black'
+                onChange={handleYearChange}
+              />
+              <FormControlLabel
+                value='2'
+                control={<Radio color='primary' />}
+                label='Second'
+                className='text-black'
+                onChange={handleYearChange}
+              />
+              <FormControlLabel
+                value='3'
+                control={<Radio color='primary' />}
+                label='Third'
+                className='text-black'
+                onChange={handleYearChange}
+              />
+              <FormControlLabel
+                value='4'
+                control={<Radio color='primary' />}
+                label='Fourth'
+                className='text-black'
+                onChange={handleYearChange}
+              />
+              <FormControlLabel
+                value='5'
+                control={<Radio color='primary' />}
+                label='Fifth'
+                className='text-black'
+                onChange={handleYearChange}
+              />
+            </RadioGroup>
+          </FormControl>
+        </div>
         <div className='form-group'>
           <div className='form-courses'>
-            {humanitiesCourses.map((course, idx) => {
+            {humanitiesCourses.map((_, idx) => {
               return (
                 <div className='container-helform' key={idx}>
                   <input
@@ -197,6 +326,11 @@ const HelForm = ({ submitForm, submitted, user }) => {
               );
             })}
           </div>
+          <input
+            type='submit'
+            className='btn btn-primary btn-hf btn-big'
+            value='Submit'
+          />
           <button
             type='button'
             className='btn btn-primary btn-big'
@@ -204,11 +338,6 @@ const HelForm = ({ submitForm, submitted, user }) => {
           >
             Add
           </button>
-          <input
-            type='submit'
-            className='btn btn-primary btn-hf btn-big'
-            value='Submit'
-          />
         </div>
       </form>
       <div className='course-disp'>

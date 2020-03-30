@@ -66,18 +66,29 @@ router.post(
       check("email", "Email is required")
         .not()
         .isEmpty(),
-      check("email", "Invalid email").isEmail()
+      check("email", "Invalid email").isEmail(),
+      check("studentBranch", "Invalid branch type").isArray(),
+      check("studentBranch", "Branch is required")
+        .not()
+        .isEmpty(),
+      check("year", "Year is required")
+        .not()
+        .isEmpty()
     ]
   ],
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
+      console.log(errors);
       return res.status(422).json({ errors: errors.array() });
     }
 
-    const { email } = req.body;
+    const { email, studentBranch, year } = req.body;
     try {
-      await Student.updateOne({ email: email }, { submittedForm: true });
+      await Student.updateOne(
+        { email: email },
+        { submittedForm: true, branch: studentBranch, year: year }
+      );
       res.status(201).json({ msg: "Updated in db!" });
     } catch (err) {
       console.error(err.message);

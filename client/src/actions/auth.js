@@ -2,39 +2,30 @@ import axios from "axios";
 import {
   LOGIN_FAILURE,
   LOGIN_SUCCESS,
-  LOGOUT,
+  LOGOUT_SUCCESS,
+  LOGOUT_FAILURE,
   USER_LOADED,
   NO_USER
 } from "./types";
+
+import { history } from "../App";
 
 export const verifyLogin = () => async dispatch => {
   try {
     const res = await axios.get("/api/loggedin");
     if (res.status === 200 && res.data.name) {
-      return new Promise((resolve, _) => {
-        dispatch({
-          type: LOGIN_SUCCESS,
-          payload: res.data
-        });
-
-        resolve();
+      dispatch({
+        type: LOGIN_SUCCESS,
+        payload: res.data
       });
     } else {
-      return new Promise((resolve, _) => {
-        dispatch({
-          type: LOGIN_FAILURE
-        });
-
-        resolve();
-      });
-    }
-  } catch (err) {
-    return new Promise((resolve, _) => {
       dispatch({
         type: LOGIN_FAILURE
       });
-
-      resolve();
+    }
+  } catch (err) {
+    dispatch({
+      type: LOGIN_FAILURE
     });
   }
 };
@@ -43,20 +34,13 @@ export const loadUser = () => async dispatch => {
   try {
     const res = await axios.get("/api/loggedin");
     if (res.status === 200 && res.data.name) {
-      return new Promise((resolve, _) => {
-        dispatch({
-          type: USER_LOADED,
-          payload: res.data
-        });
-        resolve();
+      dispatch({
+        type: USER_LOADED,
+        payload: res.data
       });
     } else {
-      return new Promise((resolve, _) => {
-        dispatch({
-          type: NO_USER
-        });
-
-        resolve();
+      dispatch({
+        type: NO_USER
       });
     }
   } catch (err) {
@@ -72,12 +56,19 @@ export const logout = () => async dispatch => {
   ) {
     return;
   }
-  await axios.get("/api/logout");
-  return new Promise((resolve, _) => {
-    dispatch({
-      type: LOGOUT
+  await axios
+    .get("/api/logout")
+    .then(() => {
+      dispatch({
+        type: LOGOUT_SUCCESS
+      });
+    })
+    .then(() => {
+      history.push("/");
+    })
+    .catch(err => {
+      // TODO: Can choose to pass error and show alert. For when alerts are implemented.
+      // dispatch({ type: 'LOGOUT_FAILURE', err});
+      dispatch({ type: LOGOUT_FAILURE });
     });
-
-    resolve();
-  });
 };
