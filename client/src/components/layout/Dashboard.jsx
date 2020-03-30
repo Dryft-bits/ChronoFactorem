@@ -5,16 +5,12 @@ import axios from "axios";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { editTT } from "../../actions/UpdateTimeTable";
-
+import ShareTimeTable from "./ShareTimeTable";
 const Dashboard = props => {
   const [TTData, setTTData] = React.useState({
     savedTT: null
   });
   const { savedTT } = TTData;
-
-  function edit(tt) {
-    props.editTT(tt);
-  }
 
   function deleteTT(id) {
     try {
@@ -59,18 +55,19 @@ const Dashboard = props => {
 
   if (!loading) {
     return (
-      <div style={{ float: "left", width: "40 vw" }}>
+      <>
+      <div>
         {" "}
         {(TTData.savedTT || data).map(item => {
           return (
             <>
-              <div className='courseItem' key={item} id={item}>
+              <div className='courseItem' key={item} id={item} style={{alignItems: "left"}}>
                 {item.name}
               </div>
               <Link
                 to='/create'
                 onClick={() => {
-                  edit(item);
+                  props.editTT(item);
                 }}
               >
                 Edit
@@ -103,6 +100,11 @@ const Dashboard = props => {
           );
         })}
       </div>
+      <div>
+        <h2>Shared TimeTables</h2>
+      </div>
+      <ShareTimeTable />
+      </>
     );
   } else {
     return <h3>FETCHING LATEST DATA....</h3>;
