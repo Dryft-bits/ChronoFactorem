@@ -53,6 +53,7 @@ const branches = [
   { value: "ECE", label: "Electrical & Communication Engineering" },
   { value: "EEE", label: "Electrical & Electronics Engineering" },
   { value: "INSTR", label: "Electronics & Instrumentation Engineering" },
+  { value: "MANU", label: "Manufacturing Engineering" },
   { value: "MATH", label: "Mathematics" },
   { value: "ME", label: "Mechanical Engineering" },
   { value: "PHA", label: "Pharmacy" },
