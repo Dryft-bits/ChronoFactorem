@@ -47,7 +47,7 @@ describe("Database Tests", function() {
   describe("Test Database read/write", function() {
     it("New hel saving completes", function(done) {
       this.timeout(5000);
-      var testHel = Hel({
+      let testHel = Hel({
         courseName: "TestHel",
         studentsInterestedInSlot: {
           0: 0,
