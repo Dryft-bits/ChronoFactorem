@@ -7,6 +7,8 @@ const passport = require("passport");
 const express = require("express");
 const authRouter = express.Router();
 
+const loggedIn = require("../../middleware/auth");
+
 authRouter.get(
   "/auth/google",
   passport.authenticate("google", {
@@ -14,7 +16,7 @@ authRouter.get(
   })
 );
 
-authRouter.get("/loggedin", function(req, res) {
+authRouter.get("/loggedin", loggedIn, function(req, res) {
   res.status(200).send(req.user);
 });
 

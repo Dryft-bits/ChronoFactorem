@@ -26,8 +26,8 @@ describe("Auth api tests", function() {
       .request(server)
       .get("/api/loggedin")
       .end(function(err, res) {
-        expect(res.status).to.be.equal(404);
-        expect(res.body).to.eql({});
+        expect(res.status).to.be.equal(401);
+        expect(res.body).to.eql({ msg: "Login failed" });
       });
   });
 
@@ -52,7 +52,7 @@ describe("Auth api tests", function() {
       });
   });
 
-  it("/logout clears expected data", async function() {
+  it("/logout logs out", async function() {
     chai
       .request(server)
       .get("/api/logout")
