@@ -5,9 +5,12 @@ const { check, validationResult } = require("express-validator");
 const Hel = require("../../models/Hel");
 const Student = require("../../models/Student");
 
+const loggedIn = require("../../middleware/auth");
+
 router.post(
   "/submit",
   [
+    loggedIn,
     check("slotNumber", "Slot is required")
       .not()
       .isEmpty(),
@@ -62,6 +65,7 @@ router.post(
 router.post(
   "/firstlogin",
   [
+    loggedIn,
     [
       check("email", "Email is required")
         .not()

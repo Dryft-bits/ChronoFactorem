@@ -24,7 +24,9 @@ app.use(bodyParser.json());
 
 /* Connect to database */
 const Student = require("./models/Student.js");
-connectDB();
+if (process.env.NODE_ENV !== "test") {
+  connectDB();
+}
 app.use(
   cookieSession({
     maxAge: 60 * 60 * 1000,
@@ -51,4 +53,13 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-app.listen(PORT, () => console.log(`Server is listening on port ${PORT}`));
+const server = app.listen(PORT, () =>
+  console.log(`Server is listening on port ${PORT}`)
+);
+
+function stop() {
+  server.close();
+}
+
+module.exports = app;
+module.exports.stop = stop;

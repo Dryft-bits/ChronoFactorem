@@ -7,13 +7,7 @@ const passport = require("passport");
 const express = require("express");
 const authRouter = express.Router();
 
-function loggedIn(req, res, next) {
-  if (req.user) {
-    next();
-  } else {
-    res.redirect("/");
-  }
-}
+const loggedIn = require("../../middleware/auth");
 
 authRouter.get(
   "/auth/google",
@@ -22,7 +16,7 @@ authRouter.get(
   })
 );
 
-authRouter.get("/loggedin", loggedIn, function(req, res, next) {
+authRouter.get("/loggedin", loggedIn, function(req, res) {
   res.status(200).send(req.user);
 });
 
