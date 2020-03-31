@@ -3,9 +3,9 @@ const express = require("express");
 const Hel = require("../../models/Hel");
 const router = express.Router();
 
-router.get("/searchHEL/:event", async (req, res) => {
+router.get("/searchHEL/:courseName", async (req, res) => {
   try {
-    const elective = req.params.event;
+    const elective = req.params.courseName;
     let courseSlots = "";
     let result = await Hel.findOne({ courseName: elective });
     if (result == null) {

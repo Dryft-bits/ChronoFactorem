@@ -7,14 +7,6 @@ const passport = require("passport");
 const express = require("express");
 const authRouter = express.Router();
 
-function loggedIn(req, res, next) {
-  if (req.isAuthenticated()) {
-    next();
-  } else {
-    res.redirect("/");
-  }
-}
-
 authRouter.get(
   "/auth/google",
   passport.authenticate("google", {
@@ -22,7 +14,7 @@ authRouter.get(
   })
 );
 
-authRouter.get("/loggedin", loggedIn, function(req, res, next) {
+authRouter.get("/loggedin", function(req, res) {
   res.status(200).send(req.user);
 });
 
@@ -41,8 +33,8 @@ authRouter.get("/logout", (req, res) => {
   res.json({ msg: "Logged out" });
 });
 
-authRouter.get("/current_user", loggedIn, (req, res) => {
-  res.send(req.user);
+authRouter.get("/current_user", (req, res) => {
+  res.status(200).send(req.user);
 });
 
 module.exports = authRouter;

@@ -1,9 +1,11 @@
 const express = require("express");
 const router = express.Router();
 
+const loggedIn = require("../../middleware/auth");
+
 const TimeTable = require("../../models/TimeTable");
 
-router.post("/save", async (req, res) => {
+router.post("/save", loggedIn, async (req, res) => {
   const { id, name, timetable, courses } = req.body;
   try {
     let tt = await TimeTable.findOne({ _id: id, ownerId: req.user.id });
@@ -27,7 +29,7 @@ router.post("/save", async (req, res) => {
   }
 });
 
-router.get("/getTT", async (req, res) => {
+router.get("/getTT", loggedIn, async (req, res) => {
   try {
     let tt = await TimeTable.find({ ownerId: req.user.id }).sort({
       date: -1
@@ -39,7 +41,7 @@ router.get("/getTT", async (req, res) => {
   }
 });
 
-router.delete("/delete/:id", async (req, res) => {
+router.delete("/delete/:id", loggedIn, async (req, res) => {
   try {
     const tt = await TimeTable.findOne({
       _id: req.params.id,
@@ -57,7 +59,7 @@ router.delete("/delete/:id", async (req, res) => {
   }
 });
 
-router.get("/toggleShare/:id", async (req, res) => {
+router.get("/toggleShare/:id", loggedIn, async (req, res) => {
   try {
     const tt = await TimeTable.findOne({
       _id: req.params.id,
@@ -72,7 +74,7 @@ router.get("/toggleShare/:id", async (req, res) => {
   }
 });
 
-router.get("/viewShared/:id", async (req, res) => {
+router.get("/viewShared/:id", loggedIn, async (req, res) => {
   try {
     const ownerId = await Student.findOne({
       email: req.params.id.append("@hyderabad.bits-pilani.ac.in")
