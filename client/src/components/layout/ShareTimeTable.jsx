@@ -56,23 +56,31 @@ const ShareTimeTable = props => {
         .then(response => {
 
           if (response.status !== 200) {
-            throw new Error("Could not submit query.");
-          } else {
 
+            throw new Error("Could not submit query.");
+          }
+          else if (response.data.length === 0) {
+            TTData = [];
+            setFormData({ ...formData, TTs: TTData });
+          }
+          else {
             axios.get("/api/ttshare/sharett", {
               params: {
                 id: response["data"]
               }
-            }).then(resp =>{
-              if (resp.status !== 200) {
-                throw new Error("Could not submit query.");
+            }).then(resp => {
+              if (resp.status === 422 || resp.data.length === 0) {
+                TTData = [];
+              }
+              else if (resp.status !== 200) {
+                throw new Error("Could not submit query");
               }
               else {
                 TTData = JSON.parse(JSON.stringify(resp["data"]));
-                setFormData({ ...formData, TTs: TTData });
               }
+              setFormData({ ...formData, TTs: TTData });
             })
-            
+
           }
         });
     } catch (err) {

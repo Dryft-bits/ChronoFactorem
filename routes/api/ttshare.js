@@ -1,67 +1,44 @@
-import Student from "../../models/Student";
 import express from 'express';
 import TimeTable from "../../models/TimeTable";
 import mongoose from 'mongoose';
-//import { check, validationResult } from "express-validator";
+import { query, validationResult } from "express-validator";
 const router = express.Router();
-
-
-let ObjectId = mongoose.Types.ObjectId;
-router.get("/shareTT", async (req, res) => {
-    let StudentIDs = req.query.id;
-    //console.log(StudentIDs);
-    //console.log(isNaN(StudentIDs));
-    if (StudentIDs === undefined || StudentIDs.length === 0) {
-        res.send(null);
-    }
-    //let year = req.query.year;
-    else {
-        if (StudentIDs === null) {
-
-            console.log("m8, null");
-            res.send(null);
+router.get("/shareTT",
+    [
+        query("id")
+            .not()
+            .isEmpty(),
+        query("id")
+            .isArray()
+    ],
+    async (req, res) => {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            res.status(422).json({ errors: errors.array() });
         }
         else {
+            let StudentIDs = req.query.id;
             let ownerIds = [];
-            /*
-            StudentIDs.forEach(item => {
-                ownerIds.push(new ObjectId(item));
-            })
-            */
-            //console.log(StudentIDs)
             for (let item of StudentIDs) {
-                ownerIds.push(ObjectId(item));
+                ownerIds.push(mongoose.Types.ObjectId(item));
             }
             try {
                 await TimeTable.find({ ownerId: { $in: ownerIds }, isShared: true }, (error, docs) => {
-
                     if (error) { res.status(500).send(err); }
                     else {
                         let TTList = [];
                         for (let TT of docs) {
                             TTList.push(TT);
                         }
-
-                        
-                        if (TTList.length === 0) {
-                            
-                            res.status(501).send("Server issue in fetching");
-                        }
-                        else {
-
-                            res.json(TTList);
-                        }
+                        res.json(TTList);
                     }
                 });
-
             }
             catch (err) {
                 console.error(err.message);
                 res.status(500).send("Server error");
             }
-
         }
-    }
-})
+    })
 
 module.exports = router;
