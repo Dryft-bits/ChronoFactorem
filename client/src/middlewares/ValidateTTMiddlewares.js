@@ -2,15 +2,21 @@ import axios from "axios";
 import { ADD_SECTION, SAVE_TIMETABLE, DELETE_SECTION } from "../actions/types";
 import { deleteSection, setTimeTableLoading } from "../actions/UpdateTimeTable";
 import * as utils from "../utils/CreateTTUtils.js";
+import * as TimeTableData from "../Timetable.json";
 
+const courses = JSON.parse(JSON.stringify(TimeTableData));
 let courseCode, temp, courseTemp, sectionDict;
 
-function getDetails(store) {
-  let courseCode = Object.keys(store.getState().updateCC.currentCourse);
+function getDetails(store, remove = false) {
+  if (remove) {
+    sectionDict = courses.default[courseCode].sections;
+  } else {
+    courseCode = Object.keys(store.getState().updateCC.currentCourse);
+    sectionDict = store.getState().updateCC.currentCourse[courseCode].sections;
+  }
   let temp = store.getState().updateTT.myTimeTable;
   let courseTemp = store.getState().updateTT.myCourses;
-  let sectionDict = store.getState().updateCC.currentCourse[courseCode]
-    .sections;
+
   return [courseCode, temp, courseTemp, sectionDict];
 }
 
@@ -119,9 +125,9 @@ export const deleteSectionMiddleware = store => next => action => {
         return;
     }
     let section = action.payload.section;
-    let tempvar;
-    [tempvar, temp, courseTemp, sectionDict] = getDetails(store);
     courseCode = action.payload.courseCode;
+    let tempvar;
+    [tempvar, temp, courseTemp, sectionDict] = getDetails(store, true);
     [temp, courseTemp] = utils.deleteSection(
       temp,
       courseTemp,
