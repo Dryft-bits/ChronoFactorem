@@ -1,13 +1,12 @@
 import Student from "../../models/Student";
 import express from 'express';
-import mongoose from 'mongoose';
 import { query, validationResult } from "express-validator";
+const loggedIn = require("../../middleware/auth");
 const router = express.Router();
 
-
-let ObjectId = mongoose.Types.ObjectId;
 router.get("/shareTT",
     [
+        loggedIn,
         query("branch").not().isEmpty(),
         query("branch").isArray(),
         query("year").not().isEmpty()

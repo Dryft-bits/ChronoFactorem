@@ -3,8 +3,10 @@ import TimeTable from "../../models/TimeTable";
 import mongoose from 'mongoose';
 import { query, validationResult } from "express-validator";
 const router = express.Router();
+const loggedIn = require("../../middleware/auth");
 router.get("/shareTT",
     [
+        loggedIn,
         query("id")
             .not()
             .isEmpty(),
