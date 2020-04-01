@@ -1,4 +1,4 @@
-import { validationResult } from "express-validator";
+const validationResult = require("express-validator");
 const mongoose = require("mongoose");
 const express = require("express");
 const Hel = require("../../models/Hel");

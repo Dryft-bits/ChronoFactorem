@@ -1,6 +1,6 @@
-import Student from "../../models/Student";
-import express from 'express';
-import { query, validationResult } from "express-validator";
+const Student = require("../../models/Student");
+const express = require('express');
+const { query, validationResult } = require("express-validator");
 const loggedIn = require("../../middleware/auth");
 const router = express.Router();
 

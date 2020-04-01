@@ -1,7 +1,7 @@
-import express from 'express';
-import TimeTable from "../../models/TimeTable";
-import mongoose from 'mongoose';
-import { query, validationResult } from "express-validator";
+const express = require('express');
+const TimeTable = require("../../models/TimeTable");
+const mongoose = require('mongoose');
+const { query, validationResult } = require("express-validator");
 const router = express.Router();
 const loggedIn = require("../../middleware/auth");
 router.get("/shareTT",
