@@ -54,11 +54,12 @@ export const saveTimeTable = () => {
   };
 };
 
-export const editTT = tt => {
+export const editTT = (tt, sharedTT = false) => {
+  let id = sharedTT ? null : tt._id;
   return {
     type: EDIT_TIMETABLE,
     payload: {
-      id: tt._id,
+      id: id,
       name: tt.name,
       timetable: tt.TimeTable,
       courses: tt.Courses

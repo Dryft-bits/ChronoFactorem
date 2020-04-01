@@ -47,7 +47,7 @@ class CreateTimeTable extends Component {
             {this.CustomButton("Preview", 1)}
             {this.CustomButton("Midsem Schedule", 2)}
             {this.CustomButton("Compre Schedule", 3)}
-            {this.CustomButton("Export As Pdf", 4)}
+            {this.CustomButton("Export As PNG", 4)}
             <button
               className='waves-effect waves-light btn'
               onClick={() => {
@@ -90,7 +90,7 @@ class CreateTimeTable extends Component {
           </>
         ) : this.state.view === 4 ? (
           <>
-            {this.CustomButton("Export As PDF", 0)}
+            {this.CustomButton("Export As PNG", 0)}
             <ExportPage />
           </>
         ) : null}

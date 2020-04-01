@@ -209,7 +209,9 @@ const HelForm = ({ submitForm, submitted, user }) => {
   return (
     <Fragment>
       <p className='title'>
-        Hi! We would like to know a few things before you continue.
+        Hi!
+        We would like to know a few things before you continue
+        Please Enter your Branch, year and select your Humanities Courses of the previous semester below:
       </p>
       <form className='form-whole' onSubmit={e => onSubmit(e)}>
         <Select
@@ -232,7 +234,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
             isValidNewOption={isValidNewOption}
             options={branch && branch.length >= 2 ? branch : branches}
             className='left-width branch-inp'
-            placeholder='Select branch (select 2 for dual degree)'
+            placeholder='Select branch (select 2 branches for dual degree)'
             theme={theme => ({
               ...theme,
               borderRadius: 2,
