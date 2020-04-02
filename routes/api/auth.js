@@ -7,8 +7,6 @@ const passport = require("passport");
 const express = require("express");
 const authRouter = express.Router();
 
-const Student = require("../../models/Student");
-
 const loggedIn = require("../../middleware/auth");
 
 authRouter.get(
