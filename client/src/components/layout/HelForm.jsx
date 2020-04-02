@@ -71,8 +71,10 @@ let currentlyShowingCourses = copyObjectProps(courses, humanitiesCodes);
 
 const HelForm = ({ submitForm, submitted, user }) => {
   const [formData, setFormData] = useState({
-    branch: [],
-    year: "",
+    branch: user
+      ? branches.filter(branch => user.branch.includes(branch["value"]))
+      : [],
+    year: user ? user.year.toString() : "",
     slotNumber: "",
     humanitiesCourses: []
   });
@@ -209,9 +211,9 @@ const HelForm = ({ submitForm, submitted, user }) => {
   return (
     <Fragment>
       <p className='title'>
-        Hi!
-        We would like to know a few things before you continue
-        Please Enter your Branch, year and select your Humanities Courses of the previous semester below:
+        Hi! We would like to know a few things before you continue Please Enter
+        your Branch, year and select your Humanities Courses of the previous
+        semester below:
       </p>
       <form className='form-whole' onSubmit={e => onSubmit(e)}>
         <Select
@@ -260,6 +262,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
                 label='First'
                 className='text-black'
                 onChange={handleYearChange}
+                checked={year === "1"}
               />
               <FormControlLabel
                 value='2'
@@ -267,6 +270,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
                 label='Second'
                 className='text-black'
                 onChange={handleYearChange}
+                checked={year === "2"}
               />
               <FormControlLabel
                 value='3'
@@ -274,6 +278,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
                 label='Third'
                 className='text-black'
                 onChange={handleYearChange}
+                checked={year === "3"}
               />
               <FormControlLabel
                 value='4'
@@ -281,6 +286,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
                 label='Fourth'
                 className='text-black'
                 onChange={handleYearChange}
+                checked={year === "4"}
               />
               <FormControlLabel
                 value='5'
@@ -288,6 +294,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
                 label='Fifth'
                 className='text-black'
                 onChange={handleYearChange}
+                checked={year === "5"}
               />
             </RadioGroup>
           </FormControl>

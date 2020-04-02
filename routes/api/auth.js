@@ -7,6 +7,8 @@ const passport = require("passport");
 const express = require("express");
 const authRouter = express.Router();
 
+const Student = require("../../models/Student");
+
 const loggedIn = require("../../middleware/auth");
 
 authRouter.get(
@@ -35,7 +37,7 @@ authRouter.get("/logout", (req, res) => {
   res.json({ msg: "Logged out" });
 });
 
-authRouter.get("/current_user", (req, res) => {
+authRouter.get("/current_user", loggedIn, (req, res) => {
   res.status(200).send(req.user);
 });
 
