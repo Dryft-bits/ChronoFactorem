@@ -35,7 +35,7 @@ authRouter.get("/logout", (req, res) => {
   res.json({ msg: "Logged out" });
 });
 
-authRouter.get("/current_user", (req, res) => {
+authRouter.get("/current_user", loggedIn, (req, res) => {
   res.status(200).send(req.user);
 });
 
