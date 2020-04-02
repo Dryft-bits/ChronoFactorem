@@ -140,13 +140,6 @@ const HelForm = ({ submitForm, submitted, user }) => {
     }
   };
 
-  const addCourse = () => {
-    addCourseToList();
-    setFormData({
-      ...formData
-    });
-  };
-
   const handleCourseAddition = e => {
     let event = e.target.innerHTML;
     if (!humanitiesCourses.includes(event)) {
@@ -335,27 +328,26 @@ const HelForm = ({ submitForm, submitted, user }) => {
               );
             })}
           </div>
-          <input
-            type='submit'
-            className='btn btn-primary btn-hf btn-big'
-            value='Submit'
-          />
-          <button
-            type='button'
-            className='btn btn-primary btn-big'
-            onClick={e => addCourse(e)}
-          >
-            Add
-          </button>
         </div>
-      </form>
-      <div className='course-disp'>
+        <br></br>
+        <div className='course-disp'>
         <Search action={filterItems} />
         <ItemList
           items={currentlyShowingCourses}
           action={handleCourseAddition}
         ></ItemList>
       </div>
+      <br></br>
+      <div className='submit-button'>
+        <input
+            type='submit'
+            className='btn btn-primary btn-hf btn-big'
+            value='Submit'
+          />
+        </div>
+      </form>
+            
+      
     </Fragment>
   );
 };

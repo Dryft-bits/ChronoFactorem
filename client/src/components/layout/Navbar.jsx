@@ -1,10 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "../../styles/Navbar.css";
 import { logout } from "../../actions/auth";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-
+import image from "../../images/default.png";
 export const Navbar = ({ submitted, user, isAuthenticated, logout }) => {
   if (!isAuthenticated) {
     return null;
@@ -14,7 +13,7 @@ export const Navbar = ({ submitted, user, isAuthenticated, logout }) => {
         <nav className='nav-wraper blue'>
           <div className='container'>
             <NavLink to='/' className='brand-logo left'>
-              ChronoFactorem
+              <img src={image} height="64px" id='logo'/>
             </NavLink>
             <ul className='right hide-on-med-and-down'>
               <li>
