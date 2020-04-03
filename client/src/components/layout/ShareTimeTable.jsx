@@ -31,11 +31,10 @@ const branches = [
 ];
 
 const ShareTimeTable = (props) => {
-  //const user = useSelector(store => store.user.auth);
   const [formData, setFormData] = useState({
     branch: props.user
-    ? branches.filter(branch => props.user["branch"].includes(branch["value"]))
-    : [],
+      ? branches.filter(branch => props.user["branch"].includes(branch["value"]))
+      : [],
     year: props.user ? props.user.year.toString() : "",
     TTs: []
   });
@@ -49,28 +48,28 @@ const ShareTimeTable = (props) => {
       branch.forEach(item => {
         br.push(item["value"]);
       });
-      console.log(br, year);
+
       axios
-        .get("/api/ttshare/shareTT", {
+        .get("/api/timetable/viewshared", {
           params: {
             branch: br,
             year: year
           }
         })
         .then(resp => {
-              if (resp.status === 422 || resp.data.length === 0) {
-                TTData = [];
-              }
-              else if (resp.status !== 200) {
-                throw new Error("Could not submit query");
-              }
-              else {
-                TTData = JSON.parse(JSON.stringify(resp["data"]));
-              }
-              setFormData({ ...formData, TTs: TTData });
-            })
+          if (resp.status === 422 || resp.data.length === 0) {
+            TTData = [];
           }
-       catch (err) {
+          else if (resp.status !== 200) {
+            throw new Error("Could not submit query");
+          }
+          else {
+            TTData = JSON.parse(JSON.stringify(resp["data"]));
+          }
+          setFormData({ ...formData, TTs: TTData });
+        })
+    }
+    catch (err) {
       window.alert(err.message);
     }
   };
@@ -119,8 +118,8 @@ const ShareTimeTable = (props) => {
   const isValidNewOption = (inputValue, selectValue) =>
     inputValue.length > 0 && selectValue.length < 5;
 
-  const [userInfo, loading] = useGetData("/api/ttshare/shareTT");
-  console.log(branch,year);
+  const [userInfo, loading] = useGetData("/api/timetable/viewshared");
+  console.log(branch, year);
   return (
     <>
       <p className='title'>
@@ -162,7 +161,7 @@ const ShareTimeTable = (props) => {
                 label='First'
                 className='text-black'
                 onChange={handleYearChange}
-                checked ={year === '1'}
+                checked={year === '1'}
               />
               <FormControlLabel
                 value='2'
@@ -170,7 +169,7 @@ const ShareTimeTable = (props) => {
                 label='Second'
                 className='text-black'
                 onChange={handleYearChange}
-                checked ={year === '2'}
+                checked={year === '2'}
               />
               <FormControlLabel
                 value='3'
@@ -178,7 +177,7 @@ const ShareTimeTable = (props) => {
                 label='Third'
                 className='text-black'
                 onChange={handleYearChange}
-                checked ={year === '3'}
+                checked={year === '3'}
               />
               <FormControlLabel
                 value='4'
@@ -186,7 +185,7 @@ const ShareTimeTable = (props) => {
                 label='Fourth'
                 className='text-black'
                 onChange={handleYearChange}
-                checked ={year === '4'}
+                checked={year === '4'}
               />
               <FormControlLabel
                 value='5'
@@ -194,7 +193,7 @@ const ShareTimeTable = (props) => {
                 label='Fifth'
                 className='text-black'
                 onChange={handleYearChange}
-                checked ={year === '5'}
+                checked={year === '5'}
               />
             </RadioGroup>
           </FormControl>
@@ -213,9 +212,9 @@ const ShareTimeTable = (props) => {
             <>
               <div key={item._id}>
                 <p>TT name: {item.name}</p>
-                <p>{item.ownerId === null?"Student name unavailable":"By: "+item.ownerId.name}</p>
-                <p>Date: {item.date.substr(0,item.date.indexOf('T'))}</p>
-                <p>Time: {item.date.substr(item.date.indexOf('T')+1,9)}</p>
+                <p>{item.ownerId === null ? "Student name unavailable" : "By: " + item.ownerId.name}</p>
+                <p>Date: {item.date.substr(0, item.date.indexOf('T'))}</p>
+                <p>Time: {item.date.substr(item.date.indexOf('T') + 1, 9)}</p>
                 <Link
                   to='/create'
                   onClick={() => {
