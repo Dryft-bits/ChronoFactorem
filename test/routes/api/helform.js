@@ -62,7 +62,7 @@ describe("Helform api tests", function () {
       branch: ["your head", "my foot"],
       year: 1
     };
-    submissionData = JSON.parse('{"slotNumber": "4", "humanitiesElectives": "fjdfbdf"}');
+    submissionData = JSON.parse('{"slotNumber": 4, "humanitiesElectives": "fjdfbdf"}');
     server.request.user = testUser;
     chai
       .request(server)
@@ -72,6 +72,91 @@ describe("Helform api tests", function () {
         expect(res.status).to.be.equal(422);
       });
   });
+
+  it("/firstlogin works for correct request", async function () {
+    server.request.isAuthenticated = function () {
+      return true;
+    };
+    testUser = {
+      name: "Why you wanna know it?",
+      email: "secret@secret.com",
+      branch: ["your head", "my foot"],
+      year: 1
+    };
+    submissionData = JSON.parse('{"email": "foo.bar@baz.com", "studentBranch": ["CS"], "year": 2020}');
+    server.request.user = testUser;
+    chai
+      .request(server)
+      .post("/api/helform/firstlogin")
+      .send(submissionData)
+      .end(function (err, res) {
+        expect(res.status).to.be.equal(201);
+      });
+  });
+
+  it("/firstlogin does not allow malformed emails", async function () {
+    server.request.isAuthenticated = function () {
+      return true;
+    };
+    testUser = {
+      name: "Why you wanna know it?",
+      email: "secret@secret.com",
+      branch: ["your head", "my foot"],
+      year: 1
+    };
+    submissionData = JSON.parse('{"email": "foo.bar@", "studentBranch": ["CS"], "year": 2020}');
+    server.request.user = testUser;
+    chai
+      .request(server)
+      .post("/api/helform/firstlogin")
+      .send(submissionData)
+      .end(function (err, res) {
+        expect(res.status).to.be.equal(422);
+      });
+  });
+
+  it("/firstlogin does not allow non array branches", async function () {
+    server.request.isAuthenticated = function () {
+      return true;
+    };
+    testUser = {
+      name: "Why you wanna know it?",
+      email: "secret@secret.com",
+      branch: ["your head", "my foot"],
+      year: 1
+    };
+    submissionData = JSON.parse('{"email": "foo.bar@baz.com", "studentBranch": "CS", "year": 2020}');
+    server.request.user = testUser;
+    chai
+      .request(server)
+      .post("/api/helform/firstlogin")
+      .send(submissionData)
+      .end(function (err, res) {
+        expect(res.status).to.be.equal(422);
+      });
+  });
+
+  it("/firstlogin does not allow non numerical years", async function () {
+    server.request.isAuthenticated = function () {
+      return true;
+    };
+    testUser = {
+      name: "Why you wanna know it?",
+      email: "secret@secret.com",
+      branch: ["your head", "my foot"],
+      year: 1
+    };
+    submissionData = JSON.parse('{"email": "foo.bar@baz.com", "studentBranch": ["CS"], "year": abcd}');
+    server.request.user = testUser;
+    chai
+      .request(server)
+      .post("/api/helform/firstlogin")
+      .send(submissionData)
+      .end(function (err, res) {
+        expect(res.status).to.be.equal(422);
+      });
+  });
+
   // After all tests are stop the server
   after(async () => {
     server.stop();
