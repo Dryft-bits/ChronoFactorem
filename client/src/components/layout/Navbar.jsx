@@ -10,7 +10,7 @@ export const Navbar = ({ submitted, user, isAuthenticated, logout }) => {
   } else if ((!submitted && user && user.submittedForm) || submitted) {
     return (
       <div>
-        <nav className='nav-wraper blue'>
+        <nav className='nav-wraper indigo darken-4'>
           <div className='container'>
             <NavLink to='/' className='brand-logo left'>
               <img src={image} height="64px" id='logo'/>

@@ -203,11 +203,9 @@ const HelForm = ({ submitForm, submitted, user }) => {
 
   return (
     <Fragment>
-      <p className='title'>
-        Hi! We would like to know a few things before you continue Please Enter
-        your Branch, year and select your Humanities Courses of the previous
-        semester below:
-      </p>
+      <h5 className='title'>
+        Please Enter your Branch, year and select your Humanities Courses of the previous semester below:
+      </h5>
       <form className='form-whole' onSubmit={e => onSubmit(e)}>
         <Select
           placeholder='Please select slot'
@@ -338,16 +336,14 @@ const HelForm = ({ submitForm, submitted, user }) => {
         ></ItemList>
       </div>
       <br></br>
-      <div className='submit-button'>
+      <div style={{ float: "right", width: "35vw" }}>
         <input
             type='submit'
-            className='btn btn-primary btn-hf btn-big'
+            className='btn btn-primary btn-hf btn-big submit-btn'
             value='Submit'
           />
         </div>
-      </form>
-            
-      
+      </form> 
     </Fragment>
   );
 };

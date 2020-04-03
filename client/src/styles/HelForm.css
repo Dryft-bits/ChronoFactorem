@@ -62,7 +62,7 @@
 }
 .btn-big {
   width: 25%;
-  height: 20vh;
+  height: 10%;
 }
 
 /* Select component styling */
@@ -75,9 +75,11 @@
   padding-top: 2vh;
   height: 4vh;
 }
-.submit-btn{
-  float: right;
-  width:  35 vw;
+.submit-btn
+{
+  position: absolute;
+  top: 70%;
+  right: 10%;
 }
 /* Text */
 .text-black {

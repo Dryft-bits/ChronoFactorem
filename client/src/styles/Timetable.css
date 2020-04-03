@@ -6,7 +6,7 @@
 
 body
 {
-    background-color: #fdcb6e;
+    background-color: #d2dae2;
 }
 .gridElement
 {
@@ -14,7 +14,7 @@ body
     grid-template-columns: 7% 15% 15% 15% 15% 15% 15%;
     row-gap: 0.75vh;
     column-gap:0.5%;
-    background-color: #ffd32a;
+    background-color: #0984e3;
     padding: 3px;
     border-radius: 5px;
     grid-template-rows: 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh ;
@@ -111,7 +111,7 @@ body
     margin:5px;
     padding:5px;
     background-color: #f7d794;
-    height: 68vh;
+    height: 45vh;
     overflow: auto;
     text-align:justify;
 }
@@ -122,6 +122,6 @@ body
     background-color: #ffa801;
 }
 .input-field ::placeholder{
-    color: #3d3d3d;
-    opacity: 1;
+    color: black;
+    
 }
