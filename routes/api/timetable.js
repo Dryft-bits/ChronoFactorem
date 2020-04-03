@@ -1,11 +1,18 @@
 const express = require("express");
 const router = express.Router();
+const { check, validationResult } = require("express-validator");
 
 const loggedIn = require("../../middleware/auth");
 
 const TimeTable = require("../../models/TimeTable");
 
-router.post("/save", loggedIn, async (req, res) => {
+router.post("/save", [loggedIn, check("timetable").exists(), check("courses").isArray()], async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    console.log(errors);
+    return res.status(422).json({ errors: errors.array() });
+  }
+
   const { id, name, timetable, courses } = req.body;
   try {
     let tt = await TimeTable.findOne({ _id: id, ownerId: req.user.id });
