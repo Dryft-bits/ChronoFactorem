@@ -1,5 +1,4 @@
-const validationResult = require("express-validator");
-const mongoose = require("mongoose");
+const {query, validationResult} = require("express-validator");
 const express = require("express");
 const Hel = require("../../models/Hel");
 const router = express.Router();
