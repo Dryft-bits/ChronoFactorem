@@ -15,4 +15,3 @@ class WeekDay {
   }
 }
 
-module.export = WeekDay;

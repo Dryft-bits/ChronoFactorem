@@ -8,7 +8,7 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
 import axios from "axios";
 import PropTypes from "prop-types";
-import { connect } from "react-redux";
+import { connect, useSelector } from "react-redux";
 import { useGetData } from "use-axios-react";
 import "../../styles/ShareTT.css";
 import { editTT } from "../../actions/UpdateTimeTable";
@@ -30,10 +30,13 @@ const branches = [
   { value: "PHY", label: "Physics" }
 ];
 
-const ShareTimeTable = props => {
+const ShareTimeTable = (props) => {
+  //const user = useSelector(store => store.user.auth);
   const [formData, setFormData] = useState({
-    branch: [],
-    year: "",
+    branch: props.user
+    ? branches.filter(branch => props.user["branch"].includes(branch["value"]))
+    : [],
+    year: props.user ? props.user.year.toString() : "",
     TTs: []
   });
 
@@ -133,6 +136,7 @@ const ShareTimeTable = props => {
     inputValue.length > 0 && selectValue.length < 5;
 
   const [userInfo, loading] = useGetData("/api/ttshare/shareTT");
+  console.log(branch,year);
   return (
     <>
       <p className='title'>
@@ -174,6 +178,7 @@ const ShareTimeTable = props => {
                 label='First'
                 className='text-black'
                 onChange={handleYearChange}
+                checked ={year === '1'}
               />
               <FormControlLabel
                 value='2'
@@ -181,6 +186,7 @@ const ShareTimeTable = props => {
                 label='Second'
                 className='text-black'
                 onChange={handleYearChange}
+                checked ={year === '2'}
               />
               <FormControlLabel
                 value='3'
@@ -188,6 +194,7 @@ const ShareTimeTable = props => {
                 label='Third'
                 className='text-black'
                 onChange={handleYearChange}
+                checked ={year === '3'}
               />
               <FormControlLabel
                 value='4'
@@ -195,6 +202,7 @@ const ShareTimeTable = props => {
                 label='Fourth'
                 className='text-black'
                 onChange={handleYearChange}
+                checked ={year === '4'}
               />
               <FormControlLabel
                 value='5'
@@ -202,6 +210,7 @@ const ShareTimeTable = props => {
                 label='Fifth'
                 className='text-black'
                 onChange={handleYearChange}
+                checked ={year === '5'}
               />
             </RadioGroup>
           </FormControl>
@@ -239,6 +248,11 @@ const ShareTimeTable = props => {
   );
 };
 
+const mapStateToProps = state => {
+  return {
+    user: state.auth.user
+  };
+};
 const mapDispatchToProps = dispatch => {
   return {
     editTT: tt => dispatch(editTT(tt, true))
@@ -249,4 +263,4 @@ ShareTimeTable.propTypes = {
   editTT: PropTypes.func.isRequired
 };
 
-export default connect(null, mapDispatchToProps)(ShareTimeTable);
+export default connect(mapStateToProps, mapDispatchToProps)(ShareTimeTable);
