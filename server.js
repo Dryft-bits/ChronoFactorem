@@ -10,8 +10,6 @@ const auth = require("./routes/api/auth.js");
 const helForm = require("./routes/api/helForm.js");
 const helData = require("./routes/api/helData.js");
 const timetable = require("./routes/api/timetable.js");
-const share = require("./routes/api/share.js");
-const ttshare  = require("./routes/api/ttshare.js");
 const configuration = require("./config/constants.js");
 
 /* Express setup */
@@ -45,8 +43,6 @@ app.use("/api", auth);
 app.use("/api/helform", helForm);
 app.use("/api/helData", helData);
 app.use("/api/timetable", timetable);
-app.use("/api/share", share);
-app.use("/api/ttshare",ttshare);
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 
