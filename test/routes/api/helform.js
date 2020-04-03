@@ -146,7 +146,7 @@ describe("Helform api tests", function () {
       branch: ["your head", "my foot"],
       year: 1
     };
-    submissionData = JSON.parse('{"email": "foo.bar@baz.com", "studentBranch": ["CS"], "year": abcd}');
+    submissionData = JSON.parse('{"email": "foo.bar@baz.com", "studentBranch": ["CS"], "year": "abcd"}');
     server.request.user = testUser;
     chai
       .request(server)
