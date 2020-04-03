@@ -31,7 +31,7 @@ describe("Helform api tests", function () {
       });
   });
 
-  it("/submit does not allow incorrect requests", async function () {
+  it("/submit does not allow non-numerical slot number", async function () {
     server.request.isAuthenticated = function () {
       return true;
     };
@@ -52,6 +52,26 @@ describe("Helform api tests", function () {
       });
   });
 
+  it("/submit does not allow non-array humanities electives", async function () {
+    server.request.isAuthenticated = function () {
+      return true;
+    };
+    testUser = {
+      name: "Why you wanna know it?",
+      email: "secret@secret.com",
+      branch: ["your head", "my foot"],
+      year: 1
+    };
+    submissionData = JSON.parse('{"slotNumber": "4", "humanitiesElectives": "fjdfbdf"}');
+    server.request.user = testUser;
+    chai
+      .request(server)
+      .post("/api/helform/submit")
+      .send(submissionData)
+      .end(function (err, res) {
+        expect(res.status).to.be.equal(422);
+      });
+  });
   // After all tests are stop the server
   after(async () => {
     server.stop();
