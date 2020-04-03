@@ -14,6 +14,7 @@ router.post(
     check("slotNumber", "Slot is required")
       .not()
       .isEmpty(),
+    check("slotNumber", "Slot should be a number").isNumeric(),
     check("humanitiesElectives").isArray()
   ],
   async (req, res) => {
@@ -77,7 +78,8 @@ router.post(
         .isEmpty(),
       check("year", "Year is required")
         .not()
-        .isEmpty()
+        .isEmpty(),
+      check("year", "Year should be a number").isNumeric()
     ]
   ],
   async (req, res) => {

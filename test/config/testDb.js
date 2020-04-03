@@ -8,10 +8,10 @@ let chai = require("chai"),
   should = chai.should(),
   expect = chai.expect;
 
-describe("Database Tests", function () {
+describe("Database Tests", function() {
   //Before starting the test, create a sandboxed database connection
   //Once a connection is established invoke done()
-  before(function (done) {
+  before(function(done) {
     this.timeout(10000);
     mongoose.connect(process.env.mongoURITest, {
       // Change deprecated settings to resolve warnings
@@ -22,7 +22,7 @@ describe("Database Tests", function () {
     });
     const db = mongoose.connection;
     db.on("error", console.error.bind(console, "connection error"));
-    db.once("open", function () {
+    db.once("open", function() {
       console.log("Connected to test database!");
       for (let i = 0; i < 50; i++) {
         let testHel = Hel({
@@ -44,8 +44,8 @@ describe("Database Tests", function () {
     });
   });
 
-  describe("Test Database read/write", function () {
-    it("New hel saving completes", function (done) {
+  describe("Test Database read/write", function() {
+    it("New hel saving completes", function(done) {
       this.timeout(5000);
       let testHel = Hel({
         courseName: "TestHel",
@@ -63,19 +63,19 @@ describe("Database Tests", function () {
       testHel.save(done);
     });
 
-    it("All hels are stored", async function () {
+    it("All hels are stored", async function() {
       let hels = await Hel.find();
       expect(hels.length).to.be.equal(51);
     });
 
-    it("Valid/invalid searches return expected value", async function () {
+    it("Valid/invalid searches return expected value", async function() {
       let hel1 = await Hel.findOne({ courseName: "TestHel1" });
       hel1.courseName.should.be.eql("TestHel1");
       let helNone = await Hel.findOne({ courseName: "TestHel120" });
       expect(helNone).to.equal(null);
     });
 
-    it("Object validation works", function (done) {
+    it("Object validation works", function(done) {
       //Attempt to save with wrong info. An error should trigger
       let testHel = Hel({
         studentsInterestedInSlot: {
@@ -89,18 +89,18 @@ describe("Database Tests", function () {
           7: 0
         }
       });
-      testHel.save(function (err) {
+      testHel.save(function(err) {
         if (err) {
           done();
         } else {
-          throw new Error("Hi");
+          throw new Error("Should have thrown error");
         }
       });
     });
 
     // After all tests are finished drop database and close connection
-    after(function (done) {
-      mongoose.connection.db.dropDatabase(function () {
+    after(function(done) {
+      mongoose.connection.db.dropDatabase(function() {
         mongoose.connection.close(done);
       });
     });

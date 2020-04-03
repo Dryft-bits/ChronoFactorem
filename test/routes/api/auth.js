@@ -8,11 +8,11 @@ var server = require("../../../server.js");
 
 chai.use(chaiHttp);
 
-describe("Auth api tests", function () {
+describe("Auth api tests", function() {
   // [DEP0066] DeprecationWarning: OutgoingMessage.prototype._headers is deprecated : is expected, and an issue with node
-  it("/loggedin does not allow unauthenticated user", async function () {
+  it("/loggedin does not allow unauthenticated user", async function() {
     // Force middleware to think we're not authenticated
-    server.request.isAuthenticated = function () {
+    server.request.isAuthenticated = function() {
       return false;
     };
     testUser = {
@@ -25,15 +25,15 @@ describe("Auth api tests", function () {
     chai
       .request(server)
       .get("/api/loggedin")
-      .end(function (err, res) {
+      .end(function(err, res) {
         expect(res.status).to.be.equal(401);
         expect(res.body).to.eql({ msg: "Login failed" });
       });
   });
 
-  it("/loggedin returns correct user", async function () {
+  it("/loggedin returns correct user", async function() {
     // Force the middleware to think we're already authenticated.
-    server.request.isAuthenticated = function () {
+    server.request.isAuthenticated = function() {
       return true;
     };
     testUser = {
@@ -46,24 +46,19 @@ describe("Auth api tests", function () {
     chai
       .request(server)
       .get("/api/loggedin")
-      .end(function (err, res) {
+      .end(function(err, res) {
         expect(res.status).to.be.equal(200);
         expect(res.body).to.eql(testUser);
       });
   });
 
-  it("/logout logs out", async function () {
+  it("/logout logs out", async function() {
     chai
       .request(server)
       .get("/api/logout")
-      .end(function (err, res) {
+      .end(function(err, res) {
         expect(res.status).to.be.equal(200);
         expect(res.body).to.eql({ msg: "Logged out" });
       });
-  });
-
-  // After all tests are stop the server
-  after(async () => {
-    server.stop();
   });
 });
