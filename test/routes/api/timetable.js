@@ -45,7 +45,7 @@ describe("TimeTable api tests", function () {
       .request(server)
       .post("/api/timetable/save")
       .end(function (err, res) {
-        expect(res.status).to.be.equal(400);
+        expect(res.status).to.be.equal(422);
       });
   });
 
@@ -66,7 +66,7 @@ describe("TimeTable api tests", function () {
       .post("/api/timetable/save")
       .send(requestData)
       .end(function (err, res) {
-        expect(res.status).to.be.equal(400);
+        expect(res.status).to.be.equal(422);
       });
   });
 
@@ -88,7 +88,7 @@ describe("TimeTable api tests", function () {
       .send(requestData)
       .end(function (err, res) {
         console.log(res);
-        expect(res.status).to.be.equal(400);
+        expect(res.status).to.be.equal(422);
       });
   });
 
