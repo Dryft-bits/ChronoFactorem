@@ -9,7 +9,6 @@ import HELData from "./components/layout/HELData";
 import Navbar from "./components/layout/Navbar";
 import Dashboard from "./components/layout/Dashboard";
 import CreateTimeTable from "./components/timetable/CreateTimeTable";
-import ShareTimeTable from "./components/layout/ShareTimeTable";
 import AboutUs from "./components/layout/AboutUs";
 import Landing from "./components/layout/Landing";
 import HelForm from "./components/layout/HelForm";

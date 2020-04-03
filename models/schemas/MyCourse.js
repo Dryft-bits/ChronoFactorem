@@ -5,4 +5,3 @@ class MyCourse {
   }
 }
 
-module.export = MyCourse;
