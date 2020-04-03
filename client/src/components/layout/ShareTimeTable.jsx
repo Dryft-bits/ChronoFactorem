@@ -49,29 +49,15 @@ const ShareTimeTable = (props) => {
       branch.forEach(item => {
         br.push(item["value"]);
       });
+      console.log(br, year);
       axios
-        .get("/api/share/sharett", {
+        .get("/api/ttshare/shareTT", {
           params: {
             branch: br,
             year: year
           }
         })
-        .then(response => {
-
-          if (response.status !== 200) {
-
-            throw new Error("Could not submit query.");
-          }
-          else if (response.data.length === 0) {
-            TTData = [];
-            setFormData({ ...formData, TTs: TTData });
-          }
-          else {
-            axios.get("/api/ttshare/sharett", {
-              params: {
-                id: response["data"]
-              }
-            }).then(resp => {
+        .then(resp => {
               if (resp.status === 422 || resp.data.length === 0) {
                 TTData = [];
               }
@@ -83,10 +69,8 @@ const ShareTimeTable = (props) => {
               }
               setFormData({ ...formData, TTs: TTData });
             })
-
           }
-        });
-    } catch (err) {
+       catch (err) {
       window.alert(err.message);
     }
   };
@@ -228,7 +212,10 @@ const ShareTimeTable = (props) => {
           return (
             <>
               <div key={item._id}>
-                <p> {item.name}</p>
+                <p>TT name: {item.name}</p>
+                <p>{item.ownerId === null?"Student name unavailable":"By: "+item.ownerId.name}</p>
+                <p>Date: {item.date.substr(0,item.date.indexOf('T'))}</p>
+                <p>Time: {item.date.substr(item.date.indexOf('T')+1,9)}</p>
                 <Link
                   to='/create'
                   onClick={() => {
