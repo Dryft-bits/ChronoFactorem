@@ -119,7 +119,6 @@ const ShareTimeTable = (props) => {
     inputValue.length > 0 && selectValue.length < 5;
 
   const [userInfo, loading] = useGetData("/api/timetable/viewshared");
-  console.log(branch, year);
   return (
     <>
       <p className='title'>
