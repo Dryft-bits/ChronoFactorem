@@ -31,10 +31,10 @@ const App = () => {
         <Navbar />
         <Route exact path='/' component={Landing} />
         <Route exact path='/checkloggedin' component={CheckLoggedIn} />
-        <SemiPrivateRoute exact path='/helform' component={HelForm} />
+        <Route exact path='/helform' component={HelForm} />
         <PrivateRoute exact path='/Dashboard' component={Dashboard} />
         <PrivateRoute exact path='/helData' component={HELData} />
-        <PrivateRoute exact path='/create' component={CreateTimeTable} />
+        <Route exact path='/create' component={CreateTimeTable} />
         <PrivateRoute exact path='/aboutUs' component={AboutUs} />
       </BrowserRouter>
     </Provider>
