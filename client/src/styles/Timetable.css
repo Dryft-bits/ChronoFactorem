@@ -8,6 +8,7 @@ body
 {
     background-color: #d2dae2;
 }
+
 .gridElement
 {
     display: grid;
@@ -117,7 +118,6 @@ body
 }
 
 .courseSearch :hover{
-    font-size: medium;
     cursor: pointer;
     background-color: #ffa801;
 }
