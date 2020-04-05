@@ -13,14 +13,7 @@ describe("Helform api tests", function() {
     server.request.isAuthenticated = function() {
       return true;
     };
-    testUser = {
-      name: "Why you wanna know it?",
-      email: "secret@secret.com",
-      branch: ["your head", "my foot"],
-      year: 1
-    };
     submissionData = JSON.parse('{"slotNumber": 2, "humanitiesElectives": []}');
-    server.request.user = testUser;
     chai
       .request(server)
       .post("/api/helform/submit")
@@ -35,16 +28,9 @@ describe("Helform api tests", function() {
     server.request.isAuthenticated = function() {
       return true;
     };
-    testUser = {
-      name: "Why you wanna know it?",
-      email: "secret@secret.com",
-      branch: ["your head", "my foot"],
-      year: 1
-    };
     submissionData = JSON.parse(
       '{"slotNumber": "45edfd", "humanitiesElectives": []}'
     );
-    server.request.user = testUser;
     chai
       .request(server)
       .post("/api/helform/submit")
@@ -58,16 +44,9 @@ describe("Helform api tests", function() {
     server.request.isAuthenticated = function() {
       return true;
     };
-    testUser = {
-      name: "Why you wanna know it?",
-      email: "secret@secret.com",
-      branch: ["your head", "my foot"],
-      year: 1
-    };
     submissionData = JSON.parse(
       '{"slotNumber": 4, "humanitiesElectives": "fjdfbdf"}'
     );
-    server.request.user = testUser;
     chai
       .request(server)
       .post("/api/helform/submit")
@@ -81,16 +60,9 @@ describe("Helform api tests", function() {
     server.request.isAuthenticated = function() {
       return true;
     };
-    testUser = {
-      name: "Why you wanna know it?",
-      email: "secret@secret.com",
-      branch: ["your head", "my foot"],
-      year: 1
-    };
     submissionData = JSON.parse(
       '{"email": "foo.bar@baz.com", "studentBranch": ["CS"], "year": 2020}'
     );
-    server.request.user = testUser;
     chai
       .request(server)
       .post("/api/helform/firstlogin")
@@ -104,16 +76,9 @@ describe("Helform api tests", function() {
     server.request.isAuthenticated = function() {
       return true;
     };
-    testUser = {
-      name: "Why you wanna know it?",
-      email: "secret@secret.com",
-      branch: ["your head", "my foot"],
-      year: 1
-    };
     submissionData = JSON.parse(
       '{"email": "foo.bar@", "studentBranch": ["CS"], "year": 2020}'
     );
-    server.request.user = testUser;
     chai
       .request(server)
       .post("/api/helform/firstlogin")
@@ -127,16 +92,9 @@ describe("Helform api tests", function() {
     server.request.isAuthenticated = function() {
       return true;
     };
-    testUser = {
-      name: "Why you wanna know it?",
-      email: "secret@secret.com",
-      branch: ["your head", "my foot"],
-      year: 1
-    };
     submissionData = JSON.parse(
       '{"email": "foo.bar@baz.com", "studentBranch": "CS", "year": 2020}'
     );
-    server.request.user = testUser;
     chai
       .request(server)
       .post("/api/helform/firstlogin")
@@ -150,16 +108,9 @@ describe("Helform api tests", function() {
     server.request.isAuthenticated = function() {
       return true;
     };
-    testUser = {
-      name: "Why you wanna know it?",
-      email: "secret@secret.com",
-      branch: ["your head", "my foot"],
-      year: 1
-    };
     submissionData = JSON.parse(
       '{"email": "foo.bar@baz.com", "studentBranch": ["CS"], "year": "abcd"}'
     );
-    server.request.user = testUser;
     chai
       .request(server)
       .post("/api/helform/firstlogin")
