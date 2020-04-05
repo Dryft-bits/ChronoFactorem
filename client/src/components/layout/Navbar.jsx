@@ -41,10 +41,10 @@ export const Navbar = ({ submitted, user, isAuthenticated, logout }) => {
   } else {
     return (
       <div>
-        <nav className='nav-wraper blue'>
+        <nav className='nav-wraper indigo darken-4' >
           <div className='container'>
             <NavLink to='/' className='brand-logo left'>
-              ChronoFactorem
+              <img src={image} height="64px" id='logo'/>
             </NavLink>
             <ul className='right hide-on-med-and-down'>
               <li>

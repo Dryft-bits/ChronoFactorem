@@ -10,7 +10,7 @@
 
 /* Form */
 .course-disp {
-  float: left;
+  float: right;
   width: 50%;
 }
 
@@ -77,9 +77,39 @@
 }
 .submit-btn
 {
-  position: absolute;
-  top: 70%;
-  right: 10%;
+  position: relative;
+  top: 20vh;
+  left: 10vw;
+  height: 10vh;
+  width: 30vw;
+}
+.title
+{
+  font-variant: small-caps;
+  
+}
+.slot-title
+{
+  width: 50vw;
+  position: relative;
+  left: 20vw;
+}
+.branch-title
+{
+  position: relative;
+  left: 20vw;
+  display: inline;
+}
+.year-title
+{
+  width: 50vw;
+  position: relative;
+  left: 20vw;
+}
+.hel-title
+{
+  position: relative;
+  left: 30vw;
 }
 /* Text */
 .text-black {

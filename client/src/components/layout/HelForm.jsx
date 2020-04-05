@@ -206,6 +206,10 @@ const HelForm = ({ submitForm, submitted, user }) => {
       <h5 className='title'>
         Please Enter your Branch, year and select your Humanities Courses of the previous semester below:
       </h5>
+      <h5 className='title' style={{"text-align":"center"}}>
+        Slot
+      </h5>
+      <br></br>
       <form className='form-whole' onSubmit={e => onSubmit(e)}>
         <Select
           placeholder='Please select slot'
@@ -218,6 +222,8 @@ const HelForm = ({ submitForm, submitted, user }) => {
           menuItemStyle={{ backgroundColor: "#ffffff" }}
           activeItemStyle={{ backgroundColor: "#fecb6e" }}
         />
+        <h5 className="title" style={{float: "left", width: "50%","text-align": "center"}}>Branch</h5>
+        <h5 className="title" style={{float: "right", width: "50%", "text-align": "center"}}>Year</h5>
         <div className='container-helform'>
           <Creatable
             components={{ Menu }}
@@ -238,6 +244,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
               }
             })}
           />
+          <br></br>
           <p className='label-mod branch-inp'>Select year: </p>
           <FormControl component='fieldset' className='radio-grp'>
             <RadioGroup
@@ -290,6 +297,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
             </RadioGroup>
           </FormControl>
         </div>
+        
         <div className='form-group'>
           <div className='form-courses'>
             {humanitiesCourses.map((_, idx) => {
@@ -327,16 +335,16 @@ const HelForm = ({ submitForm, submitted, user }) => {
             })}
           </div>
         </div>
-        <br></br>
+        <h5 className="title" style={{textAlign:"center"}}>Humanities</h5>
         <div className='course-disp'>
-        <Search action={filterItems} />
-        <ItemList
-          items={currentlyShowingCourses}
-          action={handleCourseAddition}
-        ></ItemList>
-      </div>
-      <br></br>
-      <div style={{ float: "right", width: "35vw" }}>
+          <Search action={filterItems} />
+          <ItemList
+            items={currentlyShowingCourses}
+            action={handleCourseAddition}
+          >
+          </ItemList>
+        </div>
+      <div style={{ float: "left", width: "35vw" }}>
         <input
             type='submit'
             className='btn btn-primary btn-hf btn-big submit-btn'
