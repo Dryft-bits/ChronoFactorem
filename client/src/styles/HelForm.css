@@ -11,7 +11,7 @@
 /* Form */
 .course-disp {
   float: left;
-  width: 50%;
+  width: 55%;
 }
 .selected-courses{
   display: flex;
@@ -81,11 +81,10 @@
 }
 .submit-btn
 {
-  position: relative;
-  top: 20vh;
-  left: 10vw;
-  height: 10vh;
-  width: 30vw;
+
+  display: flex;
+  height: 7vh;
+  width: 100vw;
 }
 .title
 {
