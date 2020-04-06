@@ -25,10 +25,6 @@ context('Save TimeTable', () => {
     cy.get('.gridItem').should('have.length', 1);
   })
 
-  it('empty timetable should save', () => {
-    cy.contains('Save TimeTable');
-  })
-
   it('timetable should save', () => {
     cy.get('[id="BIO F110"]').click();
     cy.get('h5[id="L1"]').click();
