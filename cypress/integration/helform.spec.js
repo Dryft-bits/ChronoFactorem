@@ -14,7 +14,16 @@ context('Helform', () => {
 
   it('should select 1 branch', () => {
     cy.get('div[class*="control"]').click();
-    cy.get('div[class*="menu"]').children().first().click();
+    cy.get('div[class*="menu"]').children().children().eq(0).click();
+  })
+
+  it('should not select more than 2 branchs', () => {
+    cy.get('div[class*="control"]').click();
+    cy.get('div[class*="menu"]').children().children().eq(0).click();
+    cy.get('div[class*="control"]').click();
+    cy.get('div[class*="menu"]').children().children().eq(1).click();
+    cy.get('div[class*="control"]').click();
+    cy.get('div[class*="menu"]').children().contains('You cannot select more than 2 branches');
   })
 
   it('should select 1 hel course', () => {
