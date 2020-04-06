@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-context('Actions', () => {
+context('Save TimeTable', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/create', {
       onBeforeLoad(win) {
