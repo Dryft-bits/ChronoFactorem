@@ -1,9 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { check, query, validationResult } = require("express-validator");
-
 const loggedIn = require("../../middleware/auth");
-
 const TimeTable = require("../../models/TimeTable");
 
 router.post(
@@ -100,10 +98,10 @@ router.get(
       res.status(422).json({ errors: errors.array() });
     } else {
       try {
-        await TimeTable.find({ isShared: true })
+        await TimeTable.find({ isShared: true, ownerId: {$not: { $eq: req.user.id}} })
           .populate({
             path: "ownerId",
-            match: { branch: { $in: req.query.branch }, year: req.query.year },
+            match: { branch:  req.query.branch, year: req.query.year },
             select: "name"
           })
           .exec((error, docs) => {
@@ -112,7 +110,8 @@ router.get(
             } else {
               let TTList = [];
               for (let TT of docs) {
-                TTList.push(TT);
+                if(TT.ownerId !== null)
+                  TTList.push(TT);
               }
               res.json(TTList);
             }
