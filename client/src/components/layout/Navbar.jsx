@@ -13,14 +13,17 @@ export const Navbar = ({ submitted, user, isAuthenticated, logout }) => {
         <nav className='nav-wraper indigo darken-4' >
           <div className='container'>
             <NavLink to='/' className='brand-logo left'>
-              <img src={image} height="64px" id='logo'/>
+              <div style ={{height:"64px",width:"238.633px"}}>
+              <img src={image} height="64px" width="238.633px" id='logo'/>
+              </div>
+              
             </NavLink>
             <ul className='right hide-on-med-and-down'>
               <li>
                 <NavLink to='/Dashboard'>Dashboard</NavLink>
               </li>
               <li>
-                <NavLink to='/HELDATA'>HELData</NavLink>
+                <NavLink to='/HELDATA'>Statistics</NavLink>
               </li>
               <li>
                 <NavLink to='/create'>Create TimeTable</NavLink>
@@ -44,7 +47,9 @@ export const Navbar = ({ submitted, user, isAuthenticated, logout }) => {
         <nav className='nav-wraper indigo darken-4' >
           <div className='container'>
             <NavLink to='/' className='brand-logo left'>
-              <img src={image} height="64px" id='logo'/>
+              <div style ={{height:"64px",width:"238.633px"}}>
+              <img src={image} height="64px" width="238.633px" id='logo'/>
+              </div>
             </NavLink>
             <ul className='right hide-on-med-and-down'>
               <li>

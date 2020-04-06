@@ -10,23 +10,27 @@
 
 /* Form */
 .course-disp {
-  float: right;
+  float: left;
   width: 50%;
 }
-
+.selected-courses{
+  display: flex;
+}
 .form-whole {
   width: 100%;
 }
 
 .form-group {
-  float: left;
-  width: 59.5%;
+  position: relative;
+  top: 4vh;
+  float: right;
+  width: 40.5%;
   padding-top: 1.25%;
   padding-left: 0.5%;
 }
 
 .course-inp {
-  width: 74%;
+  width: 50%;
 }
 
 .branch-inp {
@@ -52,7 +56,7 @@
 
 /* Buttons */
 .btn-mod {
-  width: 10%;
+  width: 15%;
   height: 5vh;
   padding-left: 1.5%;
 }

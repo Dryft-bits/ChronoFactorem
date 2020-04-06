@@ -6,7 +6,7 @@ import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
-
+import Container from '@material-ui/core/Container';
 import { connect } from "react-redux";
 import { submitForm } from "../../actions/helForm";
 import PropTypes from "prop-types";
@@ -206,9 +206,6 @@ const HelForm = ({ submitForm, submitted, user }) => {
       <h5 className='title'>
         Please Enter your Branch, year and select your Humanities Courses of the previous semester below:
       </h5>
-      <h5 className='title' style={{"text-align":"center"}}>
-        Slot
-      </h5>
       <br></br>
       <form className='form-whole' onSubmit={e => onSubmit(e)}>
         <Select
@@ -222,8 +219,6 @@ const HelForm = ({ submitForm, submitted, user }) => {
           menuItemStyle={{ backgroundColor: "#ffffff" }}
           activeItemStyle={{ backgroundColor: "#fecb6e" }}
         />
-        <h5 className="title" style={{float: "left", width: "50%","text-align": "center"}}>Branch</h5>
-        <h5 className="title" style={{float: "right", width: "50%", "text-align": "center"}}>Year</h5>
         <div className='container-helform'>
           <Creatable
             components={{ Menu }}
@@ -297,12 +292,11 @@ const HelForm = ({ submitForm, submitted, user }) => {
             </RadioGroup>
           </FormControl>
         </div>
-        
         <div className='form-group'>
           <div className='form-courses'>
             {humanitiesCourses.map((_, idx) => {
               return (
-                <div className='container-helform' key={idx}>
+                <div className='selected-courses' key={idx}>
                   <input
                     className='course-inp'
                     type='text'
@@ -335,7 +329,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
             })}
           </div>
         </div>
-        <h5 className="title" style={{textAlign:"center"}}>Humanities</h5>
+       
         <div className='course-disp'>
           <Search action={filterItems} />
           <ItemList
@@ -344,7 +338,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
           >
           </ItemList>
         </div>
-      <div style={{ float: "left", width: "35vw" }}>
+      <div style={{  width: "35vw" }}>
         <input
             type='submit'
             className='btn btn-primary btn-hf btn-big submit-btn'
