@@ -93,7 +93,6 @@ router.get(
       .isEmpty()
   ],
   async (req, res) => {
-    //const UserID= req.query.id;
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       res.status(422).json({ errors: errors.array() });
