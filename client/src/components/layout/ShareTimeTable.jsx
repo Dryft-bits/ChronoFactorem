@@ -211,7 +211,7 @@ const ShareTimeTable = (props) => {
             <>
               <div key={item._id}>
                 <p>TT name: {item.name}</p>
-                <p>{item.ownerId === null ? "Student name unavailable" : "By: " + item.ownerId.name}</p>
+                <p>{"By: " + item.ownerId.name}</p>
                 <p>Date: {item.date.substr(0, item.date.indexOf('T'))}</p>
                 <p>Time: {item.date.substr(item.date.indexOf('T') + 1, 9)}</p>
                 <Link
