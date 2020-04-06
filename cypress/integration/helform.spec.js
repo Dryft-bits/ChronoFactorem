@@ -16,4 +16,24 @@ context('Helform', () => {
     cy.get('div[class*="control"]').click();
     cy.get('div[class*="menu"]').children().first().click();
   })
+
+  it('should select 1 hel course', () => {
+    cy.get('ul[class="courseSearch"]').within(() => {
+      cy.get('div[id="BITS F214"]').click();
+    });
+    cy.get('div[class="container-helform"]').within(() => {
+      cy.get('input[value="BITS F214 Science Tech & Modernity"]');
+    });
+  })
+
+  it('should delete add hel course', () => {
+    cy.get('ul[class="courseSearch"]').within(() => {
+      cy.get('div[id="BITS F214"]').click();
+    });
+    cy.get('div[class="container-helform"]').within(() => {
+      cy.get('input[value="BITS F214 Science Tech & Modernity"]');
+      cy.get('button').first().click();
+    });
+    cy.get('div[class="form-courses"]').children().should('have.length', 0);
+  })
 })
