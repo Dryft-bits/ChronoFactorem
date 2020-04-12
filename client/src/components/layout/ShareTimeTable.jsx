@@ -243,7 +243,6 @@ const ShareTimeTable = (props) => {
           <CssBaseline />
           <div className={classes.cardcontainer}>
             <Container maxWidth="sm">
-              <Typography component="div" style={{ backgroundColor: '#cfe8fc', height: '100vh' }} >
                 {!loading && TTs.length !== 0 ? (
                   TTs.map(item => {
                     return (
@@ -287,10 +286,9 @@ const ShareTimeTable = (props) => {
                       </>
                     );
                   })
-                ) : (loading ? <h3>Loading</h3> :
-                  <h3 className="title" style={{textAlign:"center"}}>No Shared Timetables</h3>
+                ) : (loading ? <h4>Loading</h4> :
+                  <h4 className="title" style={{textAlign:"center"}}>No Shared Timetables</h4>
                   )}
-              </Typography>
             </Container>
           </div>
    </>
