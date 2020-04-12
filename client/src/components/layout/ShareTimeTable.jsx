@@ -20,9 +20,16 @@ import { connect, useSelector } from "react-redux";
 import { useGetData } from "use-axios-react";
 import "../../styles/ShareTT.css";
 import { editTT } from "../../actions/UpdateTimeTable";
+import { Context } from "mocha";
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
+  },
+  cardcontainer: {
+    width: '100%',
+    maxWidth: "65vw",
+    maxHeight: "65vh",
+    overflow: "auto",
   },
   bullet: {
     display: "inline-block",
@@ -147,9 +154,9 @@ const ShareTimeTable = (props) => {
   const classes = useStyles();
   return (
     <>
-      <p className='title'>
+      <h5 className='title' style={{textAlign:"center"}}>
         Please Enter your Branch and year below:
-      </p>
+      </h5>
       <form className='form-whole' onSubmit={onSubmit}>
         <div className='container-helform'>
           <Creatable
@@ -223,72 +230,70 @@ const ShareTimeTable = (props) => {
             </RadioGroup>
           </FormControl>
         </div>
-        <div className='form-group'>
+        <br></br>
+        <div style={{position: "relative",left:"5vw"}}>
           <input
             type='submit'
             className='btn btn-primary btn-hf btn-big'
-            value='Submit'
+            value='GO'
           />
         </div>
+        <br></br>
       </form>
-      {!loading && TTs.length !== 0 ? (
-        TTs.map(item => {
-          return (
-            <>
-              <div key={item._id}>
-              <Card className={classes.root}>
-                <CardContent>
-                  <Typography
-                    className={classes.title}
-                    color="textSecondary"
-                    gutterBottom
-                  >
-                    Timetable Name
-                  </Typography>
-                  <Typography variant="h5" component="h2">
-                    {item.name}
-                  </Typography>
-                  <Typography color="textSecondary">Shared by</Typography>
-                  <Typography variant="h6" component="h6">
-                    {item.ownerId.name}
-                  </Typography>
-                  <Typography variant="body2" color="textSecondary" component="p">
-                    Date: {item.date.substr(0, item.date.indexOf('T'))}
-                    <br />
-                    {"Time: "} + {item.date.substr(item.date.indexOf('T') + 1, 9)}
-                  </Typography>
-                </CardContent>
-                <CardActions>
-                  <Link
-                    to='/create'
-                    onClick={() => {
-                      props.editTT(item);
-                    }}
-                  >
-                    <Button variant="contained" color="primary" size="large">View/Edit</Button>
-                  </Link>
-                </CardActions>
-              </Card>
-                {/* <p>TT name: {item.name}</p>
-                <p>{"By: " + item.ownerId.name}</p>
-                <p>Date: {item.date.substr(0, item.date.indexOf('T'))}</p>
-                <p>Time: {item.date.substr(item.date.indexOf('T') + 1, 9)}</p>
-                <Link
-                  to='/create'
-                  onClick={() => {
-                    props.editTT(item);
-                  }}
-                >
-                  <button>View/Edit</button>
-                </Link> */}
-              </div>
-            </>
-          );
-        })
-      ) : (loading ? <h3>Loading</h3> :
-        <h3>NO TT</h3>
-        )}
-    </>
+          <CssBaseline />
+          <div className={classes.cardcontainer}>
+            <Container maxWidth="sm">
+              <Typography component="div" style={{ backgroundColor: '#cfe8fc', height: '100vh' }} >
+                {!loading && TTs.length !== 0 ? (
+                  TTs.map(item => {
+                    return (
+                      <>
+                        <div key={item._id} id={item._id} style={{textAlign:"center"}}>
+                          <Card className={classes.root}>
+                            <CardContent>
+                              <Typography
+                                className={classes.title}
+                                color="textSecondary"
+                                gutterBottom
+                              >
+                                Timetable Name
+                              </Typography>
+                              <Typography variant="h5" component="h2">
+                                {item.name}
+                              </Typography>
+                              <Typography color="textSecondary">Shared by</Typography>
+                              <Typography variant="h6" component="h6">
+                                {item.ownerId.name}
+                              </Typography>
+                              <Typography variant="body2" color="textSecondary" component="p">
+                                Date: {item.date.substr(0, item.date.indexOf('T'))}
+                                <br />
+                                {"Time: "} + {item.date.substr(item.date.indexOf('T') + 1, 9)}
+                              </Typography>
+                            </CardContent>
+                            <CardActions>
+                              <Link
+                                to='/create'
+                                onClick={() => {
+                                  props.editTT(item);
+                                }}
+                              >
+                                <Button variant="contained" color="primary" size="large">View/Edit</Button>
+                              </Link>
+                            </CardActions>
+                          </Card>
+                          <br></br>
+                        </div>
+                      </>
+                    );
+                  })
+                ) : (loading ? <h3>Loading</h3> :
+                  <h3 className="title" style={{textAlign:"center"}}>No Shared Timetables</h3>
+                  )}
+              </Typography>
+            </Container>
+          </div>
+   </>
   );
 };
 

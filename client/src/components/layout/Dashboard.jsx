@@ -56,6 +56,7 @@ const Dashboard = props => {
   if (!loading) {
     return (
       <>
+      <h3 className="title">Saved Timetables</h3>
       <div>
         {" "}
         {(TTData.savedTT || data).map(item => {
@@ -100,9 +101,8 @@ const Dashboard = props => {
           );
         })}
       </div>
-      <div>
-        <h2>Shared TimeTables</h2>
-      </div>
+      <h3 className="title">Publicily Shared Timetables</h3>
+      
       <ShareTimeTable />
       </>
     );
