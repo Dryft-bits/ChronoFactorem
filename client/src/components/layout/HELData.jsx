@@ -79,7 +79,7 @@ const HELData = () => {
 
   let resp = true;
   let str = [
-    <div style={{ float: "right", width: "40 vw" }}>
+    <div style={{float:"right", width: "35%" }}>
       <Search action={filterItems} />
       <ItemList
         items={humCourses}
@@ -95,7 +95,7 @@ const HELData = () => {
       let max = 0;
       for (let i of courseStats) max = i["y"] > max ? i["y"] : max;
       str.push([
-        <div style={{ float: "left", width: "60vw" }}>
+        <div style={{ float: "left", width: "64%" }}>
           <VictoryChart domainPadding={10} animate={{ duration: 2000 }}>
             <VictoryAxis
               tickValues={[1, 2, 3, 4, 5, 6, 7, 8]}
