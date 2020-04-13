@@ -63,10 +63,13 @@
 
 .btn-hf {
   cursor: pointer;
+  text-align: center;
 }
 .btn-big {
   width: 25%;
   height: 10%;
+  cursor: pointer;
+  text-align: center;
 }
 
 /* Select component styling */
@@ -81,10 +84,11 @@
 }
 .submit-btn
 {
-
-  display: flex;
   height: 7vh;
-  width: 100vw;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  text-align: center;
 }
 .title
 {

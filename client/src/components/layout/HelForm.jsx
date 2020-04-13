@@ -310,7 +310,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
                     readOnly
                   ></input>
                   <button
-                    className='btn btn-hf btn-mod'
+                    className='btn btn-hf'
                     type='button'
                     onClick={e => deleteRow(e, idx)}
                     key={"bdelete" + idx.toString(10)}
@@ -319,7 +319,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
                   </button>
                   <button
                     type='button'
-                    className='btn btn-hf btn-mod'
+                    className='btn btn-hf'
                     onClick={e => editRow(e, idx)}
                     key={"bedit" + idx.toString(10)}
                   >
@@ -339,13 +339,14 @@ const HelForm = ({ submitForm, submitted, user }) => {
           >
           </ItemList>
         </div>
-      <div style={{  width: "35vw" }}>
-        <input
-            type='submit'
-            className='btn btn-primary btn-hf btn-big submit-btn'
+        <div>
+          <input
+            type='button'
+            className='btn submit-btn'
             value='Submit'
           />
         </div>
+        
       </form> 
     </Fragment>
   );
