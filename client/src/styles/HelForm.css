@@ -1,0 +1,124 @@
+/* Containers */
+.container-helform {
+  display: flex;
+  width: 100%;
+}
+.hf-width {
+  width: 35%;
+  white-space: nowrap;
+}
+
+/* Form */
+.course-disp {
+  float: left;
+  width: 55%;
+}
+.selected-courses{
+  display: flex;
+}
+.form-whole {
+  width: 100%;
+}
+
+.form-group {
+  position: relative;
+  top: 4vh;
+  float: right;
+  width: 40.5%;
+  padding-top: 1.25%;
+  padding-left: 0.5%;
+}
+
+.course-inp {
+  width: 50%;
+}
+
+.branch-inp {
+  padding-top: 5px;
+}
+
+.wide-menu-row {
+  height: 30px;
+  text-align: center;
+  color: gray;
+}
+
+.label-mod {
+  padding-left: 2%;
+  width: 10%;
+  padding-top: 3vh;
+  height: 4vh;
+}
+
+.left-width {
+  width: 55%;
+}
+
+/* Buttons */
+.btn-mod {
+  width: 15%;
+  height: 5vh;
+  padding-left: 1.5%;
+}
+
+.btn-hf {
+  cursor: pointer;
+  text-align: center;
+}
+.btn-big {
+  width: 25%;
+  height: 10%;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* Select component styling */
+.select-container {
+  background-color: #fecb6e;
+}
+
+/* Radio group */
+.radio-grp {
+  padding-top: 2vh;
+  height: 4vh;
+}
+.submit-btn
+{
+  height: 7vh;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  text-align: center;
+}
+.title
+{
+  font-variant: small-caps;
+  
+}
+.slot-title
+{
+  width: 50vw;
+  position: relative;
+  left: 20vw;
+}
+.branch-title
+{
+  position: relative;
+  left: 20vw;
+  display: inline;
+}
+.year-title
+{
+  width: 50vw;
+  position: relative;
+  left: 20vw;
+}
+.hel-title
+{
+  position: relative;
+  left: 30vw;
+}
+/* Text */
+.text-black {
+  color: black;
+}

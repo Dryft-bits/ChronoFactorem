@@ -7,7 +7,9 @@ const cookieSession = require("cookie-session");
 const path = require("path");
 
 const auth = require("./routes/api/auth.js");
-
+const helForm = require("./routes/api/helForm.js");
+const helData = require("./routes/api/helData.js");
+const timetable = require("./routes/api/timetable.js");
 const configuration = require("./config/constants.js");
 
 /* Express setup */
@@ -21,7 +23,9 @@ app.use(bodyParser.json());
 
 /* Connect to database */
 const Student = require("./models/Student.js");
-connectDB();
+if (process.env.NODE_ENV !== "test") {
+  connectDB();
+}
 app.use(
   cookieSession({
     maxAge: 60 * 60 * 1000,
@@ -35,8 +39,10 @@ app.use(passport.initialize());
 app.use(passport.session({ saveUninitialized: false, resave: false }));
 
 /* Define Routes */
-app.use("/", auth);
-
+app.use("/api", auth);
+app.use("/api/helform", helForm);
+app.use("/api/helData", helData);
+app.use("/api/timetable", timetable);
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 
@@ -45,4 +51,13 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-app.listen(PORT, () => console.log(`Server is listening on port ${PORT}`));
+const server = app.listen(PORT, () =>
+  console.log(`Server is listening on port ${PORT}`)
+);
+
+function stop() {
+  server.close();
+}
+
+module.exports = app;
+module.exports.stop = stop;

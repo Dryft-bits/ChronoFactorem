@@ -6,15 +6,16 @@
 
 body
 {
-    background-color: #fdcb6e;
+    background-color: #cadcfc;
 }
+
 .gridElement
 {
     display: grid;
     grid-template-columns: 7% 15% 15% 15% 15% 15% 15%;
     row-gap: 0.75vh;
     column-gap:0.5%;
-    background-color: #ffd32a;
+    background-color: #0984e3;
     padding: 3px;
     border-radius: 5px;
     grid-template-rows: 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh ;
@@ -56,25 +57,15 @@ body
 .courseElement
 {
     display: grid;
-    grid-template-columns: 5% 60% 5% 5% 10%;
-    column-gap: 0.5vh;
-    /* column-gap:0.5%; */
-    /* background-color: #fed330; */
-    /* padding: 7px; */
-    /* border-radius: 5px; */
+    grid-template-columns: 5% 45% 10% 10% 10% 10% 10%;
     grid-template-rows: 5vh;
 }
 .courseElement:hover
 {
     display: grid;
-    grid-template-columns: 5% 60% 5% 5% 10%;
-    column-gap: 0.5vh;
-    /* column-gap:0.5%; */
-    /* background-color: #fed330; */
-    /* padding: 7px; */
-    /* border-radius: 5px; */
+    grid-template-columns: 5% 45% 10% 10% 10% 10% 10%;
     grid-template-rows: 5vh;
-    background-color: #ffa801;
+    background-color: #0984e3;
     cursor: pointer;
 }
 .examElement
@@ -82,10 +73,6 @@ body
     display: grid;
     grid-template-columns: 10% 60% 15% 15%;
     column-gap: 0.5vh;
-    /* column-gap:0.5%; */
-    /* background-color: #fed330; */
-    /* padding: 7px; */
-    /* border-radius: 5px; */
     grid-template-rows: 5vh;
 }
 
@@ -94,34 +81,34 @@ body
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 14;
 }
 
 .courseWindow
 {
     margin:5px;
     padding:5px;
-    background-color: #f7d794;
+    background-color: rgba(116, 185, 255,1);
     height: 45vh;
     overflow: auto;
-    font-size: medium;
+    font-size: 14px;
     text-align:justify;
 }
 .courseSearch
 {
     margin:5px;
     padding:5px;
-    background-color: #f7d794;
-    height: 68vh;
+    background-color: rgba(116, 185, 255,1);
+    height: 65vh;
     overflow: auto;
     text-align:justify;
 }
 
 .courseSearch :hover{
-    font-size: medium;
     cursor: pointer;
-    background-color: #ffa801;
+    background-color: #0984e3;
 }
 .input-field ::placeholder{
-    color: #3d3d3d;
-    opacity: 1;
+    color: black;
+    
 }

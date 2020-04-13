@@ -1,5 +1,8 @@
 import { Component } from "react";
 import React from "react";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
+import { deleteSection } from "../../actions/UpdateTimeTable";
 import "../../styles/Timetable.css";
 
 const ntw = require("number-to-words");
@@ -9,7 +12,7 @@ class PreviewTT extends Component {
     this.populateTimetable.bind(this);
     this.gridArray = [];
   }
-  populateTimetable(coursesAdded) {
+  populateTimetable() {
     var gridList = [
       ["Time", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
       ["Monday", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -43,7 +46,7 @@ class PreviewTT extends Component {
           str = (
             <div
               style={{
-                backgroundColor: "#444444",
+                backgroundColor: "#black",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center"
@@ -68,7 +71,13 @@ class PreviewTT extends Component {
 
           str = (
             <>
-              <div className='gridItem' style={divStyle}>
+              <div
+                className='gridItem'
+                style={divStyle}
+                onClick={() =>
+                  this.props.onRemove(section.section, section.courseCode)
+                }
+              >
                 <div style={(divStyle, { fontSize: "xx-small" })}>
                   {section.courseName}
                   <br></br>
@@ -107,6 +116,7 @@ class PreviewTT extends Component {
     }
     return gridList;
   }
+
   render() {
     this.gridArray = this.populateTimetable();
     let divsToRender = [];
@@ -121,4 +131,23 @@ class PreviewTT extends Component {
     return <div className='gridElement'>{divsToRender}</div>;
   }
 }
-export default PreviewTT;
+
+const mapStateToProps = state => {
+  return {
+    TimeTable: state.updateTT.myTimeTable
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onRemove: (section, courseCode) =>
+      dispatch(deleteSection(section, courseCode))
+  };
+};
+
+PreviewTT.propTypes = {
+  TimeTable: PropTypes.object.isRequired,
+  onRemove: PropTypes.func.isRequired
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(PreviewTT);

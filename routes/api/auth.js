@@ -7,42 +7,36 @@ const passport = require("passport");
 const express = require("express");
 const authRouter = express.Router();
 
-function loggedIn(req, res, next) {
-  if (req.user) {
-    next();
-  } else {
-    res.redirect("/");
-  }
-}
+const loggedIn = require("../../middleware/auth");
 
 authRouter.get(
-  "/api/auth/google",
+  "/auth/google",
   passport.authenticate("google", {
     scope: ["profile", "email"]
   })
 );
 
-authRouter.get("/loggedin", loggedIn, function(req, res, next) {
-  res.send(req.user);
+authRouter.get("/loggedin", loggedIn, function(req, res) {
+  res.status(200).send(req.user);
 });
 
 authRouter.get(
-  "/api/auth/google/callback",
+  "/auth/google/callback",
   passport.authenticate("google"),
   (req, res) => {
     res.redirect(configuration.urls.homePage);
   }
 );
 
-authRouter.get("/api/logout", (req, res) => {
+authRouter.get("/logout", (req, res) => {
   req.logout();
   req.session = null;
   res.clearCookie();
-  res.redirect(configuration.urls.homePage);
+  res.json({ msg: "Logged out" });
 });
 
-authRouter.get("/current_user", (req, res) => {
-  res.send(req.user);
+authRouter.get("/current_user", loggedIn, (req, res) => {
+  res.status(200).send(req.user);
 });
 
 module.exports = authRouter;

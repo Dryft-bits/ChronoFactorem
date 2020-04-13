@@ -33,7 +33,7 @@ export function checkClashOrDelete(tt, courseCode, sched) {
   for (let day of days) {
     for (let hour of hours) {
       if (tt[day][ntw.toWords(hour)].sectionRoom === room) {
-        return "delete";
+        return false;
       } else if (
         String(tt[day][ntw.toWords(hour)].courseCode) === courseCode[0]
       ) {
@@ -76,7 +76,13 @@ export function checkSection(courseTemp, courseCode, section) {
     return false;
   }
   let duplicate = courseTemp[index].sections.find(item => {
-    return item.charAt(0) === section.charAt(0);
+    return item === section;
+  });
+  if (duplicate) {
+    return "same section";
+  }
+  duplicate = courseTemp[index].sections.find(item => {
+    return item === section || item.charAt(0) === section.charAt(0);
   });
   if (duplicate) {
     return duplicate;
@@ -131,7 +137,8 @@ export function updateTT(
           courseCode,
           current[courseCode].name,
           room,
-          hours.length
+          hours.length,
+          section
         );
         temp[day][ntw.toWords(hour)] = entry;
       }

@@ -4,7 +4,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const mongoose = require("mongoose");
-const User = mongoose.model("users");
+const Student = mongoose.model("student");
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20");
 
@@ -16,7 +16,7 @@ passport.serializeUser((user, done) => {
 });
 
 passport.deserializeUser((id, done) => {
-  User.findById(id).then(user => {
+  Student.findById(id).then(user => {
     done(null, user);
   });
 });
@@ -29,14 +29,17 @@ passport.use(
       callbackURL: configuration.urls.googleAuthCallback
     },
     (accessToken, refreshToken, profile, done) => {
-      User.findOne({ email: profile.emails[0].value }).then(existingUser => {
+      Student.findOne({ email: profile.emails[0].value }).then(existingUser => {
         if (existingUser) {
           done(null, existingUser);
         } else {
-          new User({
+          new Student({
             googleId: profile.id,
             name: profile.displayName,
-            email: profile.emails[0].value
+            email: profile.emails[0].value,
+            submittedForm: false,
+            branch: [],
+            year: 0
           })
             .save()
             .then(user => done(null, user));
