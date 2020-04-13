@@ -3,30 +3,34 @@
   display: flex;
   width: 100%;
 }
-.half-width {
-  width: 50%;
+.hf-width {
+  width: 35%;
   white-space: nowrap;
 }
 
 /* Form */
 .course-disp {
-  float: right;
-  width: 40%;
+  float: left;
+  width: 55%;
 }
-
+.selected-courses{
+  display: flex;
+}
 .form-whole {
   width: 100%;
 }
 
 .form-group {
-  float: left;
-  width: 59.5%;
+  position: relative;
+  top: 4vh;
+  float: right;
+  width: 40.5%;
   padding-top: 1.25%;
   padding-left: 0.5%;
 }
 
 .course-inp {
-  width: 74%;
+  width: 50%;
 }
 
 .branch-inp {
@@ -47,22 +51,25 @@
 }
 
 .left-width {
-  width: 59.5%;
+  width: 55%;
 }
 
 /* Buttons */
 .btn-mod {
-  width: 10%;
+  width: 15%;
   height: 5vh;
   padding-left: 1.5%;
 }
 
 .btn-hf {
   cursor: pointer;
+  text-align: center;
 }
 .btn-big {
-  width: 50%;
-  height: 5vh;
+  width: 25%;
+  height: 10%;
+  cursor: pointer;
+  text-align: center;
 }
 
 /* Select component styling */
@@ -75,7 +82,42 @@
   padding-top: 2vh;
   height: 4vh;
 }
-
+.submit-btn
+{
+  height: 7vh;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  text-align: center;
+}
+.title
+{
+  font-variant: small-caps;
+  
+}
+.slot-title
+{
+  width: 50vw;
+  position: relative;
+  left: 20vw;
+}
+.branch-title
+{
+  position: relative;
+  left: 20vw;
+  display: inline;
+}
+.year-title
+{
+  width: 50vw;
+  position: relative;
+  left: 20vw;
+}
+.hel-title
+{
+  position: relative;
+  left: 30vw;
+}
 /* Text */
 .text-black {
   color: black;

@@ -6,7 +6,27 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { editTT } from "../../actions/UpdateTimeTable";
 import ShareTimeTable from "./ShareTimeTable";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import Typography from "@material-ui/core/Typography";
+import Container from "@material-ui/core/Container";
+import { makeStyles } from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import Button from "@material-ui/core/Button";
+import "../../styles/Dashboard.css";
+const useStyles= makeStyles({
+  root:{
+    minWidth: 250
+  },
+  cardcontainer: {
+    maxWidth: "95vw",
+    maxHeight: "27vh",
+    overflow: "auto",
+  }
+})
 const Dashboard = props => {
+  const classes = useStyles();
   const [TTData, setTTData] = React.useState({
     savedTT: null
   });
@@ -56,58 +76,71 @@ const Dashboard = props => {
   if (!loading) {
     return (
       <>
-      <div>
+      <h4 className="title">Saved Timetables</h4>
+      <br></br>
+      <div className={classes.cardcontainer}>
         {" "}
-        {(TTData.savedTT || data).map(item => {
-          return (
-            <>
-              <div className='courseItem' key={item} id={item} style={{alignItems: "left"}}>
-                {item.name}
-              </div>
-              <Link
-                to='/create'
-                onClick={() => {
-                  props.editTT(item);
-                }}
-              >
-                Edit
-              </Link>
-              <button
-                onClick={() => {
-                  deleteTT(item._id);
-                }}
-              >
-                Delete
-              </button>
-              {item.isShared ? (
-                <button
-                  onClick={() => {
-                    toggleShare(item._id, "Unshared");
-                  }}
-                >
-                  Unshare
-                </button>
-              ) : (
-                <button
-                  onClick={() => {
-                    toggleShare(item._id, "Shared");
-                  }}
-                >
-                  Share
-                </button>
-              )}
-            </>
-          );
-        })}
+            <Container maxWidth="sm">
+            {(TTData.savedTT || data).map(item => {
+              return (
+                <>
+                <Card className={classes.root}>
+                  <CardContent>
+                    <Typography className={classes.root} color="textSecondary" gutterBottom>
+                      Name
+                    </Typography>
+                    <Typography variant="h5" component="h2">
+                      {item.name}
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Link
+                      to='/create'
+                      onClick={() => {
+                        props.editTT(item);
+                      }}
+                    >
+                      <Button variant="contained" color = "primary" size="small">Edit</Button>
+                    </Link>
+                    
+                    <Button onClick={() => {
+                      deleteTT(item._id);
+                    }} 
+                    variant="contained" color = "secondary" size="small">
+                    Delete
+                    </Button>
+                    {item.isShared ? (
+                      <Button variant="contained" size="small"
+                        onClick={() => {
+                          toggleShare(item._id, "Unshared");
+                        }}
+                      >
+                        Unshare
+                      </Button>
+                    ) : (
+                      <Button variant="contained" size="small"
+                        onClick={() => {
+                          toggleShare(item._id, "Shared");
+                        }}
+                      >
+                        Share
+                      </Button>
+                    )}
+                  </CardActions>
+                </Card>
+                <br></br>
+                </>
+              );
+            })}
+          </Container>
       </div>
-      <div>
-        <h2>Shared TimeTables</h2>
-      </div>
+      <h4 className="title">Publicily Shared Timetables</h4>
+      
       <ShareTimeTable />
       </>
     );
   } else {
-    return <h3>FETCHING LATEST DATA....</h3>;
+    return <h4>FETCHING LATEST DATA....</h4>;
   }
 };
 

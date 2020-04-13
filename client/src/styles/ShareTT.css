@@ -67,7 +67,7 @@
   
   /* Select component styling */
   .select-container {
-    background-color: #fecb6e;
+    background-color: rgba(116, 185, 255,1);
   }
   
   /* Radio group */
@@ -80,4 +80,3 @@
   .text-black {
     color: black;
   }
-  

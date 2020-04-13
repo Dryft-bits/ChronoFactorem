@@ -6,7 +6,7 @@ import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
-
+import Container from '@material-ui/core/Container';
 import { connect } from "react-redux";
 import { submitForm } from "../../actions/helForm";
 import PropTypes from "prop-types";
@@ -140,13 +140,6 @@ const HelForm = ({ submitForm, submitted, user }) => {
     }
   };
 
-  const addCourse = () => {
-    addCourseToList();
-    setFormData({
-      ...formData
-    });
-  };
-
   const handleCourseAddition = e => {
     let event = e.target.innerHTML;
     if (!humanitiesCourses.includes(event)) {
@@ -210,11 +203,10 @@ const HelForm = ({ submitForm, submitted, user }) => {
 
   return (
     <Fragment>
-      <p className='title'>
-        Hi! We would like to know a few things before you continue Please Enter
-        your Branch, year and select your Humanities Courses of the previous
-        semester below:
-      </p>
+      <h5 className='title'>
+        Please Enter your Branch, year and select your Humanities Courses of the previous semester below:
+      </h5>
+      <br></br>
       <form className='form-whole' onSubmit={e => onSubmit(e)}>
         <Select
           placeholder='Please select slot'
@@ -222,10 +214,10 @@ const HelForm = ({ submitForm, submitted, user }) => {
           value={slotNumber}
           options={slots}
           onItemClick={handleSlotChange}
-          containerStyle={{ backgroundColor: "#f9e3b4" }}
-          menuStyle={{ backgroundColor: "#f9e3b4" }}
+          containerStyle={{ backgroundColor: "rgba(116, 185, 255,1)" }}
+          menuStyle={{ backgroundColor: "rgba(116, 185, 255,1)"}}
           menuItemStyle={{ backgroundColor: "#ffffff" }}
-          activeItemStyle={{ backgroundColor: "#fecb6e" }}
+          activeItemStyle={{ backgroundColor: "#0984e3" }}
         />
         <div className='container-helform'>
           <Creatable
@@ -242,11 +234,13 @@ const HelForm = ({ submitForm, submitted, user }) => {
               borderRadius: 2,
               colors: {
                 ...theme.colors,
-                primary25: "#fecb6e",
-                neutral0: "#f9e3b4"
+                primary25: "#0984e3",
+                text: "#353b48",
+                neutral0: "rgba(116, 185, 255,1)"
               }
             })}
           />
+          <br></br>
           <p className='label-mod branch-inp'>Select year: </p>
           <FormControl component='fieldset' className='radio-grp'>
             <RadioGroup
@@ -303,7 +297,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
           <div className='form-courses'>
             {humanitiesCourses.map((_, idx) => {
               return (
-                <div className='container-helform' key={idx}>
+                <div className='selected-courses' key={idx}>
                   <input
                     className='course-inp'
                     type='text'
@@ -316,7 +310,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
                     readOnly
                   ></input>
                   <button
-                    className='btn btn-hf btn-mod'
+                    className='btn btn-hf'
                     type='button'
                     onClick={e => deleteRow(e, idx)}
                     key={"bdelete" + idx.toString(10)}
@@ -325,7 +319,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
                   </button>
                   <button
                     type='button'
-                    className='btn btn-hf btn-mod'
+                    className='btn btn-hf'
                     onClick={e => editRow(e, idx)}
                     key={"bedit" + idx.toString(10)}
                   >
@@ -335,27 +329,25 @@ const HelForm = ({ submitForm, submitted, user }) => {
               );
             })}
           </div>
+        </div>
+       
+        <div className='course-disp'>
+          <Search action={filterItems} />
+          <ItemList
+            items={currentlyShowingCourses}
+            action={handleCourseAddition}
+          >
+          </ItemList>
+        </div>
+        <div>
           <input
-            type='submit'
-            className='btn btn-primary btn-hf btn-big'
+            type='button'
+            className='btn submit-btn'
             value='Submit'
           />
-          <button
-            type='button'
-            className='btn btn-primary btn-big'
-            onClick={e => addCourse(e)}
-          >
-            Add
-          </button>
         </div>
-      </form>
-      <div className='course-disp'>
-        <Search action={filterItems} />
-        <ItemList
-          items={currentlyShowingCourses}
-          action={handleCourseAddition}
-        ></ItemList>
-      </div>
+        
+      </form> 
     </Fragment>
   );
 };

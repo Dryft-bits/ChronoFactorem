@@ -46,7 +46,7 @@ class PreviewTT extends Component {
           str = (
             <div
               style={{
-                backgroundColor: "#444444",
+                backgroundColor: "#black",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center"

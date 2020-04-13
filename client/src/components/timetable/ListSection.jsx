@@ -10,7 +10,7 @@ const ListSection = props => {
         return (
           <div>
             {props.sections[section].sched.length ? (
-              <h5
+              <div
                 key={section}
                 id={section}
                 onClick={() => {
@@ -19,7 +19,7 @@ const ListSection = props => {
               >
                 <div
                   className='courseElement'
-                  style={{ fontSize: "medium" }}
+                  style={{ fontSize: "small"}}
                   id={section}
                 >
                   <div className='courseItem'>{section}</div>
@@ -28,7 +28,7 @@ const ListSection = props => {
                   </div>
                   {props.sections[section].sched.map(item => {
                     return (
-                      <>
+                      <> 
                         <div className='courseItem'>{item.days}</div>
                         <div className='courseItem'>{item.hours}</div>
                       </>
@@ -38,7 +38,7 @@ const ListSection = props => {
                     {props.sections[section].sched[0].room}
                   </div>
                 </div>
-              </h5>
+              </div>
             ) : null}
           </div>
         );

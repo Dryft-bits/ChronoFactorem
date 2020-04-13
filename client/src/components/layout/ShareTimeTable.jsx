@@ -6,12 +6,44 @@ import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import Typography from "@material-ui/core/Typography";
+import Container from "@material-ui/core/Container";
+import { makeStyles } from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import Button from "@material-ui/core/Button";
 import axios from "axios";
 import PropTypes from "prop-types";
 import { connect, useSelector } from "react-redux";
 import { useGetData } from "use-axios-react";
 import "../../styles/ShareTT.css";
 import { editTT } from "../../actions/UpdateTimeTable";
+import { Context } from "mocha";
+const useStyles = makeStyles({
+  root: {
+    minWidth: 275,
+  },
+  cardcontainer: {
+    width: '100%',
+    maxWidth: "95vw",
+    maxHeight: "65vh",
+    overflow: "auto",
+  },
+  bullet: {
+    display: "inline-block",
+    margin: "0 2px",
+    transform: "scale(0.8)"
+  },
+  title: {
+    fontSize: 14
+  },
+  pos: {
+    marginBottom: 12
+  }
+});
+
 
 const branches = [
   { value: "BIO", label: "Biological Sciences" },
@@ -117,13 +149,14 @@ const ShareTimeTable = (props) => {
   };
   const isValidNewOption = (inputValue, selectValue) =>
     inputValue.length > 0 && selectValue.length < 5;
-
+  
   const [userInfo, loading] = useGetData("/api/timetable/viewshared");
+  const classes = useStyles();
   return (
     <>
-      <p className='title'>
+      <h5 className='title' style={{textAlign:"center"}}>
         Please Enter your Branch and year below:
-      </p>
+      </h5>
       <form className='form-whole' onSubmit={onSubmit}>
         <div className='container-helform'>
           <Creatable
@@ -140,8 +173,8 @@ const ShareTimeTable = (props) => {
               borderRadius: 2,
               colors: {
                 ...theme.colors,
-                primary25: "#fecb6e",
-                neutral0: "#f9e3b4"
+                primary25: "#0984e3",
+                neutral0: "rgba(116, 185, 255,1)"
               }
             })}
           />
@@ -197,39 +230,67 @@ const ShareTimeTable = (props) => {
             </RadioGroup>
           </FormControl>
         </div>
-        <div className='form-group'>
+        <br></br>
+        <div style={{position: "relative",left:"5vw"}}>
           <input
             type='submit'
             className='btn btn-primary btn-hf btn-big'
-            value='Submit'
+            value='GO'
           />
         </div>
+        <br></br>
       </form>
-      {!loading && TTs.length !== 0 ? (
-        TTs.map(item => {
-          return (
-            <>
-              <div key={item._id}>
-                <p>TT name: {item.name}</p>
-                <p>{"By: " + item.ownerId.name}</p>
-                <p>Date: {item.date.substr(0, item.date.indexOf('T'))}</p>
-                <p>Time: {item.date.substr(item.date.indexOf('T') + 1, 9)}</p>
-                <Link
-                  to='/create'
-                  onClick={() => {
-                    props.editTT(item);
-                  }}
-                >
-                  <button>View/Edit</button>
-                </Link>
-              </div>
-            </>
-          );
-        })
-      ) : (loading ? <h3>Loading</h3> :
-        <h3>NO TT</h3>
-        )}
-    </>
+          <div className={classes.cardcontainer}>
+            <Container maxWidth="sm">
+                {!loading && TTs.length !== 0 ? (
+                  TTs.map(item => {
+                    return (
+                      <>
+                        <div key={item._id} id={item._id} style={{textAlign:"center"}}>
+                          <Card className={classes.root}>
+                            <CardContent>
+                              <Typography
+                                className={classes.title}
+                                color="textSecondary"
+                                gutterBottom
+                              >
+                                Timetable Name
+                              </Typography>
+                              <Typography variant="h5" component="h2">
+                                {item.name}
+                              </Typography>
+                              <Typography color="textSecondary">Shared by</Typography>
+                              <Typography variant="h6" component="h6">
+                                {item.ownerId.name}
+                              </Typography>
+                              <Typography variant="body2" color="textSecondary" component="p">
+                                Date: {item.date.substr(0, item.date.indexOf('T'))}
+                                <br />
+                                {"Time: "}  {item.date.substr(item.date.indexOf('T') + 1, 9)}
+                              </Typography>
+                            </CardContent>
+                            <CardActions>
+                              <Link
+                                to='/create'
+                                onClick={() => {
+                                  props.editTT(item);
+                                }}
+                              >
+                                <Button variant="contained" color="primary" size="large">View/Edit</Button>
+                              </Link>
+                            </CardActions>
+                          </Card>
+                          <br></br>
+                        </div>
+                      </>
+                    );
+                  })
+                ) : (loading ? <h4>Loading</h4> :
+                  <h4 className="title" style={{textAlign:"center"}}>No Shared Timetables</h4>
+                  )}
+            </Container>
+          </div>
+   </>
   );
 };
 
