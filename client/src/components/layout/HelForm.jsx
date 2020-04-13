@@ -41,7 +41,7 @@ const slots = [
   { value: "4", label: "3:30 - 4:00 PM" },
   { value: "5", label: "4:00 - 4:30 PM" },
   { value: "6", label: "4:30 - 5:00 PM" },
-  { value: "7", label: "5:30 - 5:30 PM" },
+  { value: "7", label: "5:30 - 5:30 PM" }
 ];
 const branches = [
   { value: "BIO", label: "Biological Sciences" },
@@ -57,7 +57,7 @@ const branches = [
   { value: "MATH", label: "Mathematics" },
   { value: "ME", label: "Mechanical Engineering" },
   { value: "PHA", label: "Pharmacy" },
-  { value: "PHY", label: "Physics" },
+  { value: "PHY", label: "Physics" }
 ];
 
 const copyObjectProps = (source, keys) => {
@@ -76,7 +76,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
       : [],
     year: user ? user.year.toString() : "",
     slotNumber: "",
-    humanitiesCourses: [],
+    humanitiesCourses: []
   });
 
   const { branch, year, slotNumber, humanitiesCourses } = formData;
@@ -84,20 +84,20 @@ const HelForm = ({ submitForm, submitted, user }) => {
   const handleSlotChange = (value) => {
     setFormData({
       ...formData,
-      slotNumber: value,
+      slotNumber: value
     });
   };
   const handleBranchChange = (newBranch) => {
     setFormData({
       ...formData,
-      branch: newBranch,
+      branch: newBranch
     });
   };
   const handleYearChange = (e) => {
     if (e.target.checked) {
       setFormData({
         ...formData,
-        year: e.target.value,
+        year: e.target.value
       });
     }
   };
@@ -237,8 +237,8 @@ const HelForm = ({ submitForm, submitted, user }) => {
                 ...theme.colors,
                 primary25: "#0984e3",
                 text: "#353b48",
-                neutral0: "rgba(116, 185, 255,1)",
-              },
+                neutral0: "rgba(116, 185, 255,1)"
+              }
             })}
           />
           <br></br>
@@ -352,14 +352,14 @@ const HelForm = ({ submitForm, submitted, user }) => {
 const mapStateToProps = (state) => {
   return {
     submitted: state.helForm.submitted,
-    user: state.auth.user,
+    user: state.auth.user
   };
 };
 
 HelForm.propTypes = {
   submitForm: PropTypes.func.isRequired,
   submitted: PropTypes.bool.isRequired,
-  user: PropTypes.object,
+  user: PropTypes.object
 };
 
 export default connect(mapStateToProps, { submitForm })(HelForm);
