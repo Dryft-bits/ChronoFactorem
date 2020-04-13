@@ -19,8 +19,8 @@ const useStyles= makeStyles({
     minWidth: 250
   },
   cardcontainer: {
-    maxWidth: "65vw",
-    maxHeight: "25vh",
+    maxWidth: "95vw",
+    maxHeight: "27vh",
     overflow: "auto",
   }
 })

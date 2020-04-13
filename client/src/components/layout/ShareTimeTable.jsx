@@ -27,7 +27,7 @@ const useStyles = makeStyles({
   },
   cardcontainer: {
     width: '100%',
-    maxWidth: "65vw",
+    maxWidth: "95vw",
     maxHeight: "65vh",
     overflow: "auto",
   },
@@ -173,8 +173,8 @@ const ShareTimeTable = (props) => {
               borderRadius: 2,
               colors: {
                 ...theme.colors,
-                primary25: "#fecb6e",
-                neutral0: "#f9e3b4"
+                primary25: "#0984e3",
+                neutral0: "rgba(116, 185, 255,0.5)"
               }
             })}
           />

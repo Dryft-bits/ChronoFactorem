@@ -214,10 +214,10 @@ const HelForm = ({ submitForm, submitted, user }) => {
           value={slotNumber}
           options={slots}
           onItemClick={handleSlotChange}
-          containerStyle={{ backgroundColor: "#f9e3b4" }}
-          menuStyle={{ backgroundColor: "#f9e3b4" }}
+          containerStyle={{ backgroundColor: "rgba(116, 185, 255,0.5)" }}
+          menuStyle={{ backgroundColor: "rgba(116, 185, 255,0.5)"}}
           menuItemStyle={{ backgroundColor: "#ffffff" }}
-          activeItemStyle={{ backgroundColor: "#fecb6e" }}
+          activeItemStyle={{ backgroundColor: "#0984e3" }}
         />
         <div className='container-helform'>
           <Creatable
@@ -234,8 +234,9 @@ const HelForm = ({ submitForm, submitted, user }) => {
               borderRadius: 2,
               colors: {
                 ...theme.colors,
-                primary25: "#fecb6e",
-                neutral0: "#f9e3b4"
+                primary25: "#0984e3",
+                text: "#353b48",
+                neutral0: "rgba(116, 185, 255,0.5)"
               }
             })}
           />
