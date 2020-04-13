@@ -174,7 +174,7 @@ const ShareTimeTable = (props) => {
               colors: {
                 ...theme.colors,
                 primary25: "#0984e3",
-                neutral0: "rgba(116, 185, 255,0.5)"
+                neutral0: "rgba(116, 185, 255,1)"
               }
             })}
           />

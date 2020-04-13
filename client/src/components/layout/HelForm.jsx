@@ -214,8 +214,8 @@ const HelForm = ({ submitForm, submitted, user }) => {
           value={slotNumber}
           options={slots}
           onItemClick={handleSlotChange}
-          containerStyle={{ backgroundColor: "rgba(116, 185, 255,0.5)" }}
-          menuStyle={{ backgroundColor: "rgba(116, 185, 255,0.5)"}}
+          containerStyle={{ backgroundColor: "rgba(116, 185, 255,1)" }}
+          menuStyle={{ backgroundColor: "rgba(116, 185, 255,1)"}}
           menuItemStyle={{ backgroundColor: "#ffffff" }}
           activeItemStyle={{ backgroundColor: "#0984e3" }}
         />
@@ -236,7 +236,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
                 ...theme.colors,
                 primary25: "#0984e3",
                 text: "#353b48",
-                neutral0: "rgba(116, 185, 255,0.5)"
+                neutral0: "rgba(116, 185, 255,1)"
               }
             })}
           />
