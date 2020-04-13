@@ -240,7 +240,6 @@ const ShareTimeTable = (props) => {
         </div>
         <br></br>
       </form>
-          <CssBaseline />
           <div className={classes.cardcontainer}>
             <Container maxWidth="sm">
                 {!loading && TTs.length !== 0 ? (
@@ -267,7 +266,7 @@ const ShareTimeTable = (props) => {
                               <Typography variant="body2" color="textSecondary" component="p">
                                 Date: {item.date.substr(0, item.date.indexOf('T'))}
                                 <br />
-                                {"Time: "} + {item.date.substr(item.date.indexOf('T') + 1, 9)}
+                                {"Time: "}  {item.date.substr(item.date.indexOf('T') + 1, 9)}
                               </Typography>
                             </CardContent>
                             <CardActions>
