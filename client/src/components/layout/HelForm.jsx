@@ -6,7 +6,7 @@ import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
-import Container from '@material-ui/core/Container';
+import Container from "@material-ui/core/Container";
 import { connect } from "react-redux";
 import { submitForm } from "../../actions/helForm";
 import PropTypes from "prop-types";
@@ -23,7 +23,7 @@ let isEditingRowAtIndex = -1;
 
 const courses = JSON.parse(JSON.stringify(TimeTableData)).default;
 var humanitiesCodes = Object.keys(courses).filter(
-  code =>
+  (code) =>
     code.startsWith("GS") ||
     code.startsWith("HSS") ||
     code.startsWith("BITS F214") ||
@@ -62,7 +62,7 @@ const branches = [
 
 const copyObjectProps = (source, keys) => {
   let newObject = {};
-  keys.forEach(function(key) {
+  keys.forEach(function (key) {
     newObject[key] = source[key];
   });
   return newObject;
@@ -72,7 +72,7 @@ let currentlyShowingCourses = copyObjectProps(courses, humanitiesCodes);
 const HelForm = ({ submitForm, submitted, user }) => {
   const [formData, setFormData] = useState({
     branch: user
-      ? branches.filter(branch => user.branch.includes(branch["value"]))
+      ? branches.filter((branch) => user.branch.includes(branch["value"]))
       : [],
     year: user ? user.year.toString() : "",
     slotNumber: "",
@@ -81,19 +81,19 @@ const HelForm = ({ submitForm, submitted, user }) => {
 
   const { branch, year, slotNumber, humanitiesCourses } = formData;
 
-  const handleSlotChange = value => {
+  const handleSlotChange = (value) => {
     setFormData({
       ...formData,
       slotNumber: value
     });
   };
-  const handleBranchChange = newBranch => {
+  const handleBranchChange = (newBranch) => {
     setFormData({
       ...formData,
       branch: newBranch
     });
   };
-  const handleYearChange = e => {
+  const handleYearChange = (e) => {
     if (e.target.checked) {
       setFormData({
         ...formData,
@@ -118,7 +118,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
     setFormData({ ...formData });
   };
 
-  const onSubmit = async e => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     var courseNotFilled = false;
     for (const course of humanitiesCourses) {
@@ -140,7 +140,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
     }
   };
 
-  const handleCourseAddition = e => {
+  const handleCourseAddition = (e) => {
     let event = e.target.innerHTML;
     if (!humanitiesCourses.includes(event)) {
       if (isEditingRowAtIndex !== -1) {
@@ -159,11 +159,11 @@ const HelForm = ({ submitForm, submitted, user }) => {
     isEditingRowAtIndex = humanitiesCourses.length - 1;
   };
 
-  const filterItems = input => {
-    let filterCourses = obj =>
+  const filterItems = (input) => {
+    let filterCourses = (obj) =>
       Object.keys(obj)
         .filter(
-          item =>
+          (item) =>
             item.toLowerCase().search(input.target.value.toLowerCase()) !==
               -1 ||
             obj[item]["name"]
@@ -184,7 +184,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
     return <Redirect to='/dashboard'></Redirect>;
   }
 
-  const Menu = props => {
+  const Menu = (props) => {
     const optionSelectedLength = props.getValue().length || 0;
     return (
       <components.Menu {...props}>
@@ -204,10 +204,11 @@ const HelForm = ({ submitForm, submitted, user }) => {
   return (
     <Fragment>
       <h5 className='title'>
-        Please Enter your Branch, year and select your Humanities Courses of the previous semester below:
+        Please Enter your Branch, year and select your Humanities Courses of the
+        previous semester below:
       </h5>
       <br></br>
-      <form className='form-whole' onSubmit={e => onSubmit(e)}>
+      <form className='form-whole' onSubmit={(e) => onSubmit(e)}>
         <Select
           placeholder='Please select slot'
           className='hf-width'
@@ -215,7 +216,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
           options={slots}
           onItemClick={handleSlotChange}
           containerStyle={{ backgroundColor: "rgba(116, 185, 255,1)" }}
-          menuStyle={{ backgroundColor: "rgba(116, 185, 255,1)"}}
+          menuStyle={{ backgroundColor: "rgba(116, 185, 255,1)" }}
           menuItemStyle={{ backgroundColor: "#ffffff" }}
           activeItemStyle={{ backgroundColor: "#0984e3" }}
         />
@@ -229,7 +230,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
             options={branch && branch.length >= 2 ? branch : branches}
             className='left-width branch-inp'
             placeholder='Select branch (select 2 branches for dual degree)'
-            theme={theme => ({
+            theme={(theme) => ({
               ...theme,
               borderRadius: 2,
               colors: {
@@ -312,7 +313,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
                   <button
                     className='btn btn-hf'
                     type='button'
-                    onClick={e => deleteRow(e, idx)}
+                    onClick={(e) => deleteRow(e, idx)}
                     key={"bdelete" + idx.toString(10)}
                   >
                     Delete
@@ -320,7 +321,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
                   <button
                     type='button'
                     className='btn btn-hf'
-                    onClick={e => editRow(e, idx)}
+                    onClick={(e) => editRow(e, idx)}
                     key={"bedit" + idx.toString(10)}
                   >
                     {isEditingRowAtIndex !== idx ? "Edit" : "Done"}
@@ -330,29 +331,25 @@ const HelForm = ({ submitForm, submitted, user }) => {
             })}
           </div>
         </div>
-       
+
         <div className='course-disp'>
           <Search action={filterItems} />
           <ItemList
             items={currentlyShowingCourses}
             action={handleCourseAddition}
-          >
-          </ItemList>
+          ></ItemList>
         </div>
-        <div>
-          <input
-            type='button'
-            className='btn submit-btn'
-            value='Submit'
-          />
-        </div>
-        
-      </form> 
+        {/* <div> */}
+        <button type='submit' className='btn submit-btn'>
+          Submit
+        </button>
+        {/* </div> */}
+      </form>
     </Fragment>
   );
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     submitted: state.helForm.submitted,
     user: state.auth.user
