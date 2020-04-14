@@ -71,11 +71,11 @@ const ShareTimeTable = props => {
 
   const { branch, year, TTs } = formData;
 
-  const submitToMongo = (branch, year) => {
+  const submitToMongo = (branchItem, yearItem) => {
     let TTData = [];
     try {
       let br = [];
-      branch.forEach(item => {
+      branchItem.forEach(item => {
         br.push(item["value"]);
       });
 
@@ -83,7 +83,7 @@ const ShareTimeTable = props => {
         .get("/api/timetable/viewshared", {
           params: {
             branch: br,
-            year: year
+            year: yearItem
           }
         })
         .then(resp => {
@@ -125,12 +125,12 @@ const ShareTimeTable = props => {
     }
   };
 
-  const Menu = props => {
-    const optionSelectedLength = props.getValue().length || 0;
+  const Menu = branchEntry => {
+    const optionSelectedLength = branchEntry.getValue().length || 0;
     return (
-      <components.Menu {...props}>
+      <components.Menu {...branchEntry}>
         {optionSelectedLength < 2 ? (
-          props.children
+          branchEntry.children
         ) : (
           <div className='wide-menu-row'>
             You cannot select more than 2 branches

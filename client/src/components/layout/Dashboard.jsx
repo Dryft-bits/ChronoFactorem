@@ -6,7 +6,6 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import { editTT } from "../../actions/UpdateTimeTable";
 import ShareTimeTable from "./ShareTimeTable";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import { makeStyles } from "@material-ui/core/styles";
@@ -30,7 +29,6 @@ const Dashboard = props => {
   const [TTData, setTTData] = React.useState({
     savedTT: null
   });
-  const { savedTT } = TTData;
 
   function deleteTT(id) {
     try {

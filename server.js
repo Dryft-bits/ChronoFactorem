@@ -10,8 +10,9 @@ const auth = require("./routes/api/auth.js");
 const helForm = require("./routes/api/helForm.js");
 const helData = require("./routes/api/helData.js");
 const timetable = require("./routes/api/timetable.js");
-const configuration = require("./config/constants.js");
+const staff = require("./routes/api/staff.js");
 
+const configuration = require("./config/constants.js");
 /* Express setup */
 const app = express();
 app.use(express.urlencoded({ extended: false }));
@@ -44,6 +45,8 @@ app.use("/api", auth);
 app.use("/api/helform", helForm);
 app.use("/api/helData", helData);
 app.use("/api/timetable", timetable);
+app.use("/api/staffLogin", staff);
+
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 
