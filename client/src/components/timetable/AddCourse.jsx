@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { clearCurrentCourse } from "../../actions/UpdateCurrentCourse";
 import SearchTabs from "./SearchTabs";
-import ListCourse from "./ListCourse";
 import SectionTabs from "./SectionTab";
 import ToggleButton from "../ToggleButton";
 
@@ -28,7 +27,9 @@ const AddCourse = (props) => {
         <div>
           <h3>{Object.keys(props.currentCourse)}</h3>
           <ToggleButton
-            action={props.clearCurrentCourse()}
+            action={() => {
+              props.clearCurrentCourse();
+            }}
             title='Change Course'
           />
           <SectionTabs getSections={getSections} />

@@ -55,7 +55,7 @@ class SearchTabs extends Component {
           </ul>
         </div>
         <div id='SearchAll' className='col s12'>
-          <Search action={this.props.filterItems} />
+          <Search action={this.filterItems} />
           <ListCourse courses={this.state.current} />
         </div>
         <div id='SearchHel' className='col s12'>
