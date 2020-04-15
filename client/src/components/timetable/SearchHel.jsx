@@ -34,28 +34,29 @@ let humCourses = Object.keys(course)
 
 const SearchHel = (props) => {
   const [searchResults, setSearchResults] = React.useState({
-    initial: humCourses,
-    current: humCourses,
+    selected: humCourses,
     selectedDay: null,
     selectedHour: null,
   });
-  const { initial, current, selectedDay, selectedHour } = searchResults;
+  const { selected, selectedDay, selectedHour } = searchResults;
 
   function filterItems(input) {
-    console.log(input);
+    let key = input.value;
+    let removeCourses = (obj) =>
+      Object.keys(obj)
+        .filter((item) => obj[item]["sections"]["L1"].sched.length)
+        .reduce((res, key) => ((res[key] = obj[key]), res), {});
     let filterCourses = (obj) =>
       Object.keys(obj)
         .filter(
           (item) =>
-            item.toLowerCase().search(input.target.value.toLowerCase()) !==
-              -1 ||
-            obj[item]["name"]
-              .toLowerCase()
-              .search(input.target.value.toLowerCase()) !== -1
+            obj[item]["sections"]["L1"]["sched"][0].days[0] === key ||
+            obj[item]["sections"]["L1"]["sched"][0].hours[0] === key
         )
         .reduce((res, key) => ((res[key] = obj[key]), res), {});
-    let updatedlist = filterCourses(searchResults.initial);
-    setSearchResults({ current: updatedlist });
+    let filteredlist = removeCourses(searchResults.selected);
+    let updatedlist = filterCourses(filteredlist);
+    setSearchResults({ selected: updatedlist });
   }
   return (
     <>
@@ -69,7 +70,7 @@ const SearchHel = (props) => {
         onChange={filterItems}
         options={hours}
       />
-      <ListCourse courses={searchResults.current} />
+      <ListCourse courses={searchResults.selected} />
     </>
   );
 };
