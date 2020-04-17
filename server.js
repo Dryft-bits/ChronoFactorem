@@ -23,6 +23,7 @@ app.use(bodyParser.json());
 
 /* Connect to database */
 const Student = require("./models/Student.js");
+const Login = require("./models/Login.js");
 if (process.env.NODE_ENV !== "test") {
   connectDB();
 }

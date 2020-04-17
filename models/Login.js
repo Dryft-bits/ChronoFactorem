@@ -6,7 +6,11 @@ const LoginSchema = new Schema({
     required: true,
     ref: "student"
   },
-  createdAt: { type: Date, expires: "262800m", default: Date.now }
+  createdAt: {
+    type: Date,
+    default: Date.now,
+    index: { expires: "262800m" }
+  }
 });
 
 module.exports = mongoose.model("login", LoginSchema);

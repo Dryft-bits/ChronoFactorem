@@ -5,6 +5,7 @@ dotenv.config();
 
 const mongoose = require("mongoose");
 const Student = mongoose.model("student");
+const Login = mongoose.model("login");
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20");
 
@@ -16,7 +17,7 @@ passport.serializeUser((user, done) => {
 });
 
 passport.deserializeUser((id, done) => {
-  Student.findById(id).then(user => {
+  Student.findById(id).then((user) => {
     done(null, user);
   });
 });
@@ -29,22 +30,32 @@ passport.use(
       callbackURL: configuration.urls.googleAuthCallback
     },
     (accessToken, refreshToken, profile, done) => {
-      Student.findOne({ email: profile.emails[0].value }).then(existingUser => {
-        if (existingUser) {
-          done(null, existingUser);
-        } else {
-          new Student({
-            googleId: profile.id,
-            name: profile.displayName,
-            email: profile.emails[0].value,
-            submittedForm: false,
-            branch: [],
-            year: 0
-          })
-            .save()
-            .then(user => done(null, user));
+      Student.findOne({ email: profile.emails[0].value }).then(
+        (existingUser) => {
+          if (existingUser) {
+            new Login({
+              userId: existingUser._id
+            }).save();
+            done(null, existingUser);
+          } else {
+            new Student({
+              googleId: profile.id,
+              name: profile.displayName,
+              email: profile.emails[0].value,
+              submittedForm: false,
+              branch: [],
+              year: 0
+            })
+              .save()
+              .then((user) => {
+                new Login({
+                  userId: user._id
+                }).save();
+                done(null, user);
+              });
+          }
         }
-      });
+      );
     }
   )
 );
