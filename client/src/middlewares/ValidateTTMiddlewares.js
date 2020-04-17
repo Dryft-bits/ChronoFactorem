@@ -20,7 +20,7 @@ function getDetails(store, remove = false) {
   return [courseCode, temp, courseTemp, sectionDict];
 }
 
-export const checkSectionSwapMiddleware = store => next => action => {
+export const checkSectionSwapMiddleware = (store) => (next) => (action) => {
   if (action.type === ADD_SECTION) {
     [courseCode, temp, courseTemp, sectionDict] = getDetails(store);
     let section = action.payload.section;
@@ -53,12 +53,12 @@ export const checkSectionSwapMiddleware = store => next => action => {
   return next(action);
 };
 
-export const checkClashOrDeleteMiddleWare = store => next => action => {
+export const checkClashOrDeleteMiddleWare = (store) => (next) => (action) => {
   if (action.type === ADD_SECTION) {
     [courseCode, temp, courseTemp, sectionDict] = getDetails(store);
     let clash = false;
     let section = action.payload.section;
-    sectionDict[section].sched.forEach(item => {
+    sectionDict[section].sched.forEach((item) => {
       clash =
         clash ||
         utils.checkClashOrDelete(
@@ -77,12 +77,12 @@ export const checkClashOrDeleteMiddleWare = store => next => action => {
   return next(action);
 };
 
-export const checkLunchHourMiddleware = store => next => action => {
+export const checkLunchHourMiddleware = (store) => (next) => (action) => {
   if (action.type === ADD_SECTION) {
     [courseCode, temp, courseTemp, sectionDict] = getDetails(store);
     let section = action.payload.section;
     let checkLunch = false;
-    sectionDict[section].sched.forEach(item => {
+    sectionDict[section].sched.forEach((item) => {
       checkLunch =
         checkLunch || utils.checkLunchHour(temp, utils.getSectionDetails(item));
     });
@@ -100,7 +100,7 @@ export const checkLunchHourMiddleware = store => next => action => {
   return next(action);
 };
 
-export const addSectionMiddleware = store => next => action => {
+export const addSectionMiddleware = (store) => (next) => (action) => {
   if (action.type === ADD_SECTION) {
     let section = action.payload.section;
     [courseCode, temp, courseTemp, sectionDict] = getDetails(store);
@@ -118,7 +118,7 @@ export const addSectionMiddleware = store => next => action => {
   return next(action);
 };
 
-export const deleteSectionMiddleware = store => next => action => {
+export const deleteSectionMiddleware = (store) => (next) => (action) => {
   if (action.type === DELETE_SECTION) {
     if (action.payload.remove) {
       if (!window.confirm("Are You Sure That You Want To delete this Section?"))
@@ -126,8 +126,7 @@ export const deleteSectionMiddleware = store => next => action => {
     }
     let section = action.payload.section;
     courseCode = action.payload.courseCode;
-    let tempvar;
-    [tempvar, temp, courseTemp, sectionDict] = getDetails(store, true);
+    [, temp, courseTemp, sectionDict] = getDetails(store, true);
     [temp, courseTemp] = utils.deleteSection(
       temp,
       courseTemp,
@@ -141,7 +140,7 @@ export const deleteSectionMiddleware = store => next => action => {
   return next(action);
 };
 
-export const saveTTMiddleware = store => next => action => {
+export const saveTTMiddleware = (store) => (next) => (action) => {
   if (action.type === SAVE_TIMETABLE) {
     let ttname;
     let id = store.getState().updateTT.id;
@@ -169,7 +168,7 @@ export const saveTTMiddleware = store => next => action => {
           timetable: store.getState().updateTT.myTimeTable,
           courses: store.getState().updateTT.myCourses
         })
-        .then(res => {
+        .then((res) => {
           if (res.status !== 200) {
             throw Error("Couldn't Save The TimeTable! Please Try Again Later.");
           }
