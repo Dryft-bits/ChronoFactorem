@@ -12,7 +12,6 @@ import { history } from "../App";
 
 export const verifyLogin = () => async (dispatch) => {
   try {
-    console.log("hi");
     const res = await axios.get("/api/loggedin");
     if (res.status === 200 && res.data.name) {
       localStorage.setItem("loggedIn", true);
