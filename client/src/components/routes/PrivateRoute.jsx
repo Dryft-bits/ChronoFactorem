@@ -17,8 +17,8 @@ const PrivateRoute = ({
   return (
     <Route
       {...rest}
-      render={props =>
-        !isAuthenticated ? (
+      render={(props) =>
+        !localStorage.getItem("loggedIn") ? (
           <Redirect to='/'></Redirect>
         ) : loading ? (
           // Put a cool animation here
@@ -33,7 +33,7 @@ const PrivateRoute = ({
   );
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     submitted: state.helForm.submitted,
     isAuthenticated: state.auth.isAuthenticated

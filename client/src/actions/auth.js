@@ -11,10 +11,10 @@ import {
 import { history } from "../App";
 
 export const verifyLogin = () => async (dispatch) => {
-  console.log("Hi");
   try {
     const res = await axios.get("/api/loggedin");
     if (res.status === 200 && res.data.name) {
+      localStorage.setItem("loggedIn", true);
       dispatch({
         type: LOGIN_SUCCESS,
         payload: res.data
@@ -34,6 +34,7 @@ export const verifyLogin = () => async (dispatch) => {
 export const loadUser = () => async (dispatch) => {
   try {
     const res = await axios.get("/api/loggedin");
+    localStorage.setItem("loggedIn", true);
     if (res.status === 200 && res.data.name) {
       dispatch({
         type: USER_LOADED,
@@ -60,6 +61,7 @@ export const logout = () => async (dispatch) => {
   await axios
     .get("/api/logout")
     .then(() => {
+      localStorage.removeItem("loggedIn");
       dispatch({
         type: LOGOUT_SUCCESS
       });
