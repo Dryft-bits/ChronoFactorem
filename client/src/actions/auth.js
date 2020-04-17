@@ -12,6 +12,7 @@ import { history } from "../App";
 
 export const verifyLogin = () => async (dispatch) => {
   try {
+    console.log("hi");
     const res = await axios.get("/api/loggedin");
     if (res.status === 200 && res.data.name) {
       localStorage.setItem("loggedIn", true);
@@ -61,13 +62,15 @@ export const logout = () => async (dispatch) => {
   await axios
     .get("/api/logout")
     .then(() => {
-      localStorage.removeItem("loggedIn");
       dispatch({
         type: LOGOUT_SUCCESS
       });
     })
     .then(() => {
       history.push("/");
+    })
+    .then(() => {
+      localStorage.removeItem("loggedIn");
     })
     .catch((err) => {
       // TODO: Can choose to pass error and show alert. For when alerts are implemented.
