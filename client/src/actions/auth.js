@@ -10,7 +10,7 @@ import {
 
 import { history } from "../App";
 
-export const verifyLogin = () => async (dispatch) => {
+export const verifyLogin = () => async dispatch => {
   try {
     const res = await axios.get("/api/loggedin");
     if (res.status === 200 && res.data.name) {
@@ -31,7 +31,7 @@ export const verifyLogin = () => async (dispatch) => {
   }
 };
 
-export const loadUser = () => async (dispatch) => {
+export const loadUser = () => async dispatch => {
   try {
     const res = await axios.get("/api/loggedin");
     localStorage.setItem("loggedIn", true);
@@ -52,7 +52,7 @@ export const loadUser = () => async (dispatch) => {
   }
 };
 
-export const logout = () => async (dispatch) => {
+export const logout = () => async dispatch => {
   if (
     !window.confirm("All your unsaved progress will be lost once you logout!")
   ) {
@@ -71,7 +71,7 @@ export const logout = () => async (dispatch) => {
     .then(() => {
       localStorage.removeItem("loggedIn");
     })
-    .catch((err) => {
+    .catch(err => {
       // TODO: Can choose to pass error and show alert. For when alerts are implemented.
       // dispatch({ type: 'LOGOUT_FAILURE', err});
       dispatch({ type: LOGOUT_FAILURE });

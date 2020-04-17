@@ -10,7 +10,7 @@ const course = JSON.parse(JSON.stringify(TimeTableData)).default;
 let courseData = [];
 let humCourses = Object.keys(course)
   .filter(
-    (code) =>
+    code =>
       code.startsWith("GS") ||
       code.startsWith("HSS") ||
       code.startsWith("BITS F214") ||
@@ -26,14 +26,14 @@ const HELData = () => {
   const { courseStats } = studentData;
   let result = "";
 
-  const HELstats = (e) => {
+  const HELstats = e => {
     e.preventDefault();
     let et = e.target.innerHTML.toLowerCase();
     let event = et.split(" ");
     event = event[0] + " " + event[1];
 
     try {
-      axios.get(`/api/helData/searchHEL/${event}`).then((res) => {
+      axios.get(`/api/helData/searchHEL/${event}`).then(res => {
         resp = true;
         result = res.data.studentsInterestedInAllSlots;
 
@@ -56,15 +56,15 @@ const HELData = () => {
   function filterItems(input) {
     const userInput = input.target.value.toLowerCase();
     let courses = JSON.parse(JSON.stringify(TimeTableData)).default;
-    let filterCourses = (obj) =>
+    let filterCourses = obj =>
       Object.keys(obj)
         .filter(
-          (item) =>
+          item =>
             item.toLowerCase().search(userInput) !== -1 ||
             obj[item]["name"].toLowerCase().search(userInput) !== -1
         )
         .filter(
-          (code) =>
+          code =>
             code.startsWith("GS") ||
             code.startsWith("HSS") ||
             code.startsWith("BITS F214") ||
@@ -83,7 +83,7 @@ const HELData = () => {
       <Search action={filterItems} />
       <ItemList
         items={humCourses}
-        action={(e) => {
+        action={e => {
           HELstats(e);
         }}
       />
@@ -113,7 +113,7 @@ const HELData = () => {
             <VictoryAxis
               dependentAxis
               tickCount={max < 3 ? 2 : 5}
-              tickFormat={(x) => x}
+              tickFormat={x => x}
             />
             <VictoryBar
               data={courseStats}

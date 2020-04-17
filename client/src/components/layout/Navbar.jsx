@@ -80,7 +80,7 @@ Navbar.propTypes = {
   logout: PropTypes.func.isRequired
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     submitted: state.helForm.submitted,
     user: state.auth.user,

@@ -14,7 +14,7 @@ const SemiPrivateRoute = ({ component: Component, ...rest }) => {
   return (
     <Route
       {...rest}
-      render={(props) =>
+      render={props =>
         // Put a cool animation here
         !userInfo && !localStorage.getItem("loggedIn") ? (
           <Redirect to='/'></Redirect>
