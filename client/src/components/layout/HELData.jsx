@@ -89,7 +89,7 @@ const HELData = () => {
       />
     </div>
   ];
-  const [userInfo, loading] = useGetData("/api/heldata/searchHEL/:name");
+  const [, loading] = useGetData("/api/heldata/searchHEL/:name");
   if (!loading) {
     if (resp === true && courseStats.length > 0) {
       let max = 0;
