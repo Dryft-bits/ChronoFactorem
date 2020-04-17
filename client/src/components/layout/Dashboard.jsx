@@ -25,7 +25,7 @@ const useStyles = makeStyles({
     overflow: "auto"
   }
 });
-const Dashboard = (props) => {
+const Dashboard = props => {
   const classes = useStyles();
   const [TTData, setTTData] = React.useState({
     savedTT: null
@@ -34,15 +34,13 @@ const Dashboard = (props) => {
 
   function deleteTT(id) {
     try {
-      axios.delete(`/api/timetable/delete/${id}`).then((res) => {
+      axios.delete(`/api/timetable/delete/${id}`).then(res => {
         if (res.status === 200) {
           window.alert("Successfully Deleted the Timetable");
         } else {
           window.alert(res.data.msg);
         }
-        let newData = (TTData.savedTT || data).filter(
-          (item) => item._id !== id
-        );
+        let newData = (TTData.savedTT || data).filter(item => item._id !== id);
         setTTData({ savedTT: newData });
       });
     } catch (err) {
@@ -52,7 +50,7 @@ const Dashboard = (props) => {
 
   function toggleShare(id, action) {
     try {
-      axios.get(`/api/timetable/toggleShare/${id}`).then((res) => {
+      axios.get(`/api/timetable/toggleShare/${id}`).then(res => {
         if (res.status === 200) {
           window.alert("Successfully " + action + " the Timetable");
         } else {
@@ -83,7 +81,7 @@ const Dashboard = (props) => {
         <div className={classes.cardcontainer}>
           {" "}
           <Container maxWidth='sm'>
-            {(TTData.savedTT || data).map((item) => {
+            {(TTData.savedTT || data).map(item => {
               return (
                 <>
                   <Card className={classes.root}>
@@ -164,9 +162,9 @@ const Dashboard = (props) => {
   }
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    editTT: (tt) => dispatch(editTT(tt))
+    editTT: tt => dispatch(editTT(tt))
   };
 };
 

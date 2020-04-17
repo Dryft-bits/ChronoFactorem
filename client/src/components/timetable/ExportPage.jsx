@@ -11,7 +11,7 @@ class ExportPage extends Component {
   componentDidMount() {
     const pageToExport = document.getElementById("export-page");
     html2canvas(pageToExport)
-      .then((canvas) => {
+      .then(canvas => {
         const imgData = canvas
           .toDataURL("image/png")
           .replace("image/png", "image/octet-stream");

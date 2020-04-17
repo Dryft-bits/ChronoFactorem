@@ -59,10 +59,10 @@ const branches = [
   { value: "PHY", label: "Physics" }
 ];
 
-const ShareTimeTable = (props) => {
+const ShareTimeTable = props => {
   const [formData, setFormData] = useState({
     branch: props.user
-      ? branches.filter((branch) =>
+      ? branches.filter(branch =>
           props.user["branch"].includes(branch["value"])
         )
       : [],
@@ -76,7 +76,7 @@ const ShareTimeTable = (props) => {
     let TTData = [];
     try {
       let br = [];
-      branch.forEach((item) => {
+      branch.forEach(item => {
         br.push(item["value"]);
       });
 
@@ -87,7 +87,7 @@ const ShareTimeTable = (props) => {
             year: year
           }
         })
-        .then((resp) => {
+        .then(resp => {
           if (resp.status === 422 || resp.data.length === 0) {
             TTData = [];
           } else if (resp.status !== 200) {
@@ -102,13 +102,13 @@ const ShareTimeTable = (props) => {
     }
   };
 
-  const handleBranchChange = (newBranch) => {
+  const handleBranchChange = newBranch => {
     setFormData({
       ...formData,
       branch: newBranch
     });
   };
-  const handleYearChange = (e) => {
+  const handleYearChange = e => {
     if (e.target.checked) {
       setFormData({
         ...formData,
@@ -117,7 +117,7 @@ const ShareTimeTable = (props) => {
     }
   };
 
-  const onSubmit = async (e) => {
+  const onSubmit = async e => {
     e.preventDefault();
     if (!branch || branch.length === 0) {
       window.alert("Please enter your branch");
@@ -128,7 +128,7 @@ const ShareTimeTable = (props) => {
     }
   };
 
-  const Menu = (props) => {
+  const Menu = props => {
     const optionSelectedLength = props.getValue().length || 0;
     return (
       <components.Menu {...props}>
@@ -163,7 +163,7 @@ const ShareTimeTable = (props) => {
             options={branch && branch.length >= 2 ? branch : branches}
             className='left-width branch-inp'
             placeholder='Select branch (select 2 branches for dual degree)'
-            theme={(theme) => ({
+            theme={theme => ({
               ...theme,
               borderRadius: 2,
               colors: {
@@ -238,7 +238,7 @@ const ShareTimeTable = (props) => {
       <div className={classes.cardcontainer}>
         <Container maxWidth='sm'>
           {!loading && TTs.length !== 0 ? (
-            TTs.map((item) => {
+            TTs.map(item => {
               return (
                 <>
                   <div
@@ -308,14 +308,14 @@ const ShareTimeTable = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     user: state.auth.user
   };
 };
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    editTT: (tt) => dispatch(editTT(tt, true))
+    editTT: tt => dispatch(editTT(tt, true))
   };
 };
 
