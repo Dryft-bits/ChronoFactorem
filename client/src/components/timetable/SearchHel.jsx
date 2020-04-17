@@ -5,6 +5,7 @@ import * as TimeTableData from "../../Timetable.json";
 
 const course = JSON.parse(JSON.stringify(TimeTableData)).default;
 const hours = [
+  { value: null, label: "None" },
   { value: 1, label: "1" },
   { value: 2, label: "2" },
   { value: 3, label: "3" },
@@ -17,9 +18,13 @@ const hours = [
   { value: 10, label: "10" },
 ];
 const days = [
+  { value: null, label: "None" },
   { value: "M", label: "M W F" },
   { value: "T", label: "T Th S" },
 ];
+
+let selectedDay = null;
+let selectedHour = null;
 
 let humCourses = Object.keys(course)
   .filter(
@@ -32,45 +37,57 @@ let humCourses = Object.keys(course)
   )
   .reduce((res, key) => ((res[key] = course[key]), res), {});
 
-const SearchHel = (props) => {
+const SearchHel = () => {
   const [searchResults, setSearchResults] = React.useState({
-    selected: humCourses,
-    selectedDay: null,
-    selectedHour: null,
+    initial: humCourses,
+    current: humCourses,
   });
-  const { selected, selectedDay, selectedHour } = searchResults;
+  const { initial, current } = searchResults;
 
-  function filterItems(input) {
-    let key = input.value;
+  function filterItems() {
+    console.log(selectedDay, selectedHour);
     let removeCourses = (obj) =>
       Object.keys(obj)
         .filter((item) => obj[item]["sections"]["L1"].sched.length)
         .reduce((res, key) => ((res[key] = obj[key]), res), {});
     let filterCourses = (obj) =>
       Object.keys(obj)
-        .filter(
-          (item) =>
-            obj[item]["sections"]["L1"]["sched"][0].days[0] === key ||
-            obj[item]["sections"]["L1"]["sched"][0].hours[0] === key
+        .filter((item) =>
+          selectedHour
+            ? selectedDay
+              ? selectedDay ===
+                  obj[item]["sections"]["L1"]["sched"][0].days[0] &&
+                selectedHour ===
+                  obj[item]["sections"]["L1"]["sched"][0].hours[0]
+              : selectedHour ===
+                obj[item]["sections"]["L1"]["sched"][0].hours[0]
+            : selectedDay
+            ? selectedDay === obj[item]["sections"]["L1"]["sched"][0].days[0]
+            : true
         )
         .reduce((res, key) => ((res[key] = obj[key]), res), {});
-    let filteredlist = removeCourses(searchResults.selected);
+    let filteredlist = removeCourses(searchResults.initial);
     let updatedlist = filterCourses(filteredlist);
-    setSearchResults({ selected: updatedlist });
+    setSearchResults({ ...searchResults, current: updatedlist });
   }
+
   return (
     <>
       <Select
-        value={searchResults.selectedDay}
-        onChange={filterItems}
+        onChange={(input) => {
+          selectedDay = input.value;
+          filterItems();
+        }}
         options={days}
       />
       <Select
-        value={searchResults.selectedHour}
-        onChange={filterItems}
+        onChange={(input) => {
+          selectedHour = input.value;
+          filterItems();
+        }}
         options={hours}
       />
-      <ListCourse courses={searchResults.selected} />
+      <ListCourse courses={searchResults.current} />
     </>
   );
 };
