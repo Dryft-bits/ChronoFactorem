@@ -19,6 +19,9 @@ import { connect } from "react-redux";
 import { useGetData } from "use-axios-react";
 import "../../styles/ShareTT.css";
 import { editTT } from "../../actions/UpdateTimeTable";
+import "./YearSelector";
+import YearSelector from "./YearSelector";
+
 const useStyles = makeStyles({
   root: {
     minWidth: 275
@@ -108,13 +111,11 @@ const ShareTimeTable = props => {
       branch: newBranch
     });
   };
-  const handleYearChange = e => {
-    if (e.target.checked) {
-      setFormData({
-        ...formData,
-        year: e.target.value
-      });
-    }
+  const handleYearChange = newYear => {
+    setFormData({
+      ...formData,
+      year: newYear
+    });
   };
 
   const onSubmit = async e => {
@@ -173,57 +174,10 @@ const ShareTimeTable = props => {
               }
             })}
           />
-          <p className='label-mod branch-inp'>Select year: </p>
-          <FormControl component='fieldset' className='radio-grp'>
-            <RadioGroup
-              row
-              aria-label='position'
-              name='position'
-              defaultValue='End'
-              className='radio-grp'
-            >
-              <FormControlLabel
-                value='1'
-                control={<Radio color='primary' />}
-                label='First'
-                className='text-black'
-                onChange={handleYearChange}
-                checked={year === "1"}
-              />
-              <FormControlLabel
-                value='2'
-                control={<Radio color='primary' />}
-                label='Second'
-                className='text-black'
-                onChange={handleYearChange}
-                checked={year === "2"}
-              />
-              <FormControlLabel
-                value='3'
-                control={<Radio color='primary' />}
-                label='Third'
-                className='text-black'
-                onChange={handleYearChange}
-                checked={year === "3"}
-              />
-              <FormControlLabel
-                value='4'
-                control={<Radio color='primary' />}
-                label='Fourth'
-                className='text-black'
-                onChange={handleYearChange}
-                checked={year === "4"}
-              />
-              <FormControlLabel
-                value='5'
-                control={<Radio color='primary' />}
-                label='Fifth'
-                className='text-black'
-                onChange={handleYearChange}
-                checked={year === "5"}
-              />
-            </RadioGroup>
-          </FormControl>
+          <YearSelector
+            onYearChange={handleYearChange}
+            initialYear={year}
+          ></YearSelector>
         </div>
         <br></br>
         <div style={{ position: "relative", left: "5vw" }}>
