@@ -39,6 +39,7 @@ const YearSelector = props => {
         checked={year === Year[0]}
       />
     );
+    return 0;
   });
   return (
     <Fragment>
