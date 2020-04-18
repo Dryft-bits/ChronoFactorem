@@ -28,8 +28,6 @@ const AddCourse = (props) => {
   }
 
   function changeHels(input) {
-    console.log("add");
-    console.log("Fea", input);
     setState({ currentHels: input });
   }
 
