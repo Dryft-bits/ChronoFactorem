@@ -11,7 +11,7 @@ const AddCourse = (props) => {
     current: "all",
     currentHels: null,
   });
-  const { current } = state;
+  const { current, currentHels } = state;
 
   function getSections(type) {
     let course = props.currentCourse;
@@ -39,9 +39,9 @@ const AddCourse = (props) => {
         <div>
           <SearchTabs
             allCourses={props.allCourses}
-            current={state.current}
+            current={current}
             onChangeTab={changeCurrent}
-            currentHels={state.currentHels}
+            currentHels={currentHels}
             onSelectOption={changeHels}
           />
         </div>
