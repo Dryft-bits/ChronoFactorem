@@ -78,7 +78,7 @@ const SearchHel = (props) => {
             : true
         )
         .reduce((res, key) => ((res[key] = obj[key]), res), {});
-    let filteredlist = removeCourses(searchResults.initial);
+    let filteredlist = removeCourses(initial);
     let updatedlist = filterCourses(filteredlist);
     props.onSelect(updatedlist);
     setSearchResults({ ...searchResults, current: updatedlist });
@@ -104,7 +104,7 @@ const SearchHel = (props) => {
         styles={customStyles}
         placeholder='Select Hour'
       />
-      <ListCourse courses={searchResults.current} />
+      <ListCourse courses={current} />
     </>
   );
 };
