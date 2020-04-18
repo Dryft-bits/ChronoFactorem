@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import SearchHel from "./SearchHel.jsx";
 import Search from "../Search.jsx";
 import ListCourse from "./ListCourse.jsx";
-import M from "materialize-css";
-import "materialize-css/dist/css/materialize.min.css";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
 
 class SearchTabs extends Component {
   constructor(props) {
@@ -32,35 +32,25 @@ class SearchTabs extends Component {
     this.setState({ current: updatedlist });
   }
 
-  componentDidMount() {
-    M.Tabs.init(this.Tabs);
-  }
-
   render() {
     return (
       <>
-        <div className='col s12'>
-          <ul
-            ref={(Tabs) => {
-              this.Tabs = Tabs;
-            }}
-            className='tabs'
-          >
-            <li className='tab col s6'>
-              <a href='#SearchAll'>Browse All Courses</a>
-            </li>
-            <li className='tab col s6'>
-              <a href='#SearchHel'>Browse Humanities</a>
-            </li>
-          </ul>
-        </div>
-        <div id='SearchAll' className='col s12'>
-          <Search action={this.filterItems} />
-          <ListCourse courses={this.state.current} />
-        </div>
-        <div id='SearchHel' className='col s12'>
-          <SearchHel />
-        </div>
+        <Tabs>
+          <TabList>
+            <Tab onClick={this.props.onChangeTab}>Browse All Courses</Tab>
+            <Tab onClick={this.props.onChangeTab}>
+              Browse Humanity Electives
+            </Tab>
+          </TabList>
+
+          <TabPanel>
+            <Search action={this.filterItems} />
+            <ListCourse courses={this.state.current} />
+          </TabPanel>
+          <TabPanel>
+            <SearchHel />
+          </TabPanel>
+        </Tabs>
       </>
     );
   }
