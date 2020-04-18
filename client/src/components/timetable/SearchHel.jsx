@@ -23,6 +23,25 @@ const days = [
   { value: "T", label: "T Th S" },
 ];
 
+const customStyles = {
+  option: (provided, state) => ({
+    ...provided,
+    borderBottom: "1px dotted pink",
+    color: state.isSelected ? "pink" : "blue",
+    padding: 20,
+  }),
+  control: (provided) => ({
+    ...provided,
+    height: "4vw",
+  }),
+  singleValue: (provided, state) => {
+    const opacity = state.isDisabled ? 0.5 : 1;
+    const transition = "opacity 300ms";
+
+    return { ...provided, opacity, transition };
+  },
+};
+
 let selectedDay = null;
 let selectedHour = null;
 
@@ -79,6 +98,8 @@ const SearchHel = () => {
           filterItems();
         }}
         options={days}
+        styles={customStyles}
+        placeholder='Select Day'
       />
       <Select
         onChange={(input) => {
@@ -86,6 +107,8 @@ const SearchHel = () => {
           filterItems();
         }}
         options={hours}
+        styles={customStyles}
+        placeholder='Select Hour'
       />
       <ListCourse courses={searchResults.current} />
     </>
