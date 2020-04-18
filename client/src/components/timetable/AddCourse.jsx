@@ -9,6 +9,7 @@ import ToggleButton from "../ToggleButton";
 const AddCourse = (props) => {
   const [state, setState] = React.useState({
     current: "all",
+    currentHels: null,
   });
   const { current } = state;
 
@@ -23,7 +24,13 @@ const AddCourse = (props) => {
   }
 
   function changeCurrent(input) {
-    setState({ current: input });
+    setState({ ...state, current: input });
+  }
+
+  function changeHels(input) {
+    console.log("add");
+    console.log("Fea", input);
+    setState({ currentHels: input });
   }
 
   return (
@@ -34,6 +41,8 @@ const AddCourse = (props) => {
             allCourses={props.allCourses}
             current={state.current}
             onChangeTab={changeCurrent}
+            currentHels={state.currentHels}
+            onSelectOption={changeHels}
           />
         </div>
       ) : (
