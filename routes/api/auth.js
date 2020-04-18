@@ -24,6 +24,7 @@ authRouter.get("/loggedin", loggedIn, function (req, res) {
   }
 });
 
+
 authRouter.get(
   "/auth/google/callback",
   passport.authenticate("google"),
