@@ -1,10 +1,10 @@
 import React, { Component } from "react";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
 import PropTypes from "prop-types";
 import SearchHel from "./SearchHel.jsx";
 import Search from "../Search.jsx";
 import ListCourse from "./ListCourse.jsx";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import "react-tabs/style/react-tabs.css";
 
 class SearchTabs extends Component {
   constructor(props) {
@@ -58,12 +58,23 @@ class SearchTabs extends Component {
             <ListCourse courses={this.state.current} />
           </TabPanel>
           <TabPanel>
-            <SearchHel />
+            <SearchHel
+              currentHels={this.props.currentHels}
+              onSelect={this.props.onSelectOption}
+            />
           </TabPanel>
         </Tabs>
       </>
     );
   }
 }
+
+SearchTabs.propTypes = {
+  allCourses: PropTypes.object.isRequired,
+  current: PropTypes.string.isRequired,
+  onChangeTab: PropTypes.func.isRequired,
+  currentHels: PropTypes.object.isRequired,
+  onSelectOption: PropTypes.func.isRequired,
+};
 
 export default SearchTabs;
