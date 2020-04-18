@@ -1,4 +1,5 @@
 import axios from "axios";
+import Professor from "../schemas/Professor";
 import {
   LOGIN_FAILURE,
   LOGIN_SUCCESS,
@@ -31,6 +32,27 @@ export const verifyLogin = () => async dispatch => {
   }
 };
 
+/*
+export const loadProf = () => async dispatch => {
+  try {
+    const res = await axios.get("/api/profAuth");
+    if (res.status === 200 && res.data.name) {
+      dispatch({
+        type: USER_LOADED,
+        payload: new Professor(res.data.username, res.data.name, res.data.department)
+      });
+    } else {
+      dispatch({
+        type: NO_USER
+      });
+    }
+  } catch (err) {
+    dispatch({
+      type: NO_USER
+    });
+  }
+}
+*/
 export const loadUser = () => async dispatch => {
   try {
     const res = await axios.get("/api/loggedin");
