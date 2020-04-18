@@ -1,5 +1,5 @@
 import axios from "axios";
-import { SUBMIT_SUCCESS, SUBMIT_FAIL } from "./types";
+import { SUBMIT_SUCCESS, SUBMIT_FAIL, UPDATE_INFO } from "./types";
 
 export const submitForm = (
   slotNumber,
@@ -18,7 +18,7 @@ export const submitForm = (
   try {
     await axios
       .post("/api/helform/submit", helData, config)
-      .then(function(response) {
+      .then(function (response) {
         if (response.status !== 201) {
           throw new Error("Could not submit form.");
         }
@@ -33,13 +33,17 @@ export const submitForm = (
     const studentData = JSON.stringify({ email, studentBranch, year });
     await axios
       .post("/api/helform/firstlogin", studentData, config)
-      .then(function(response) {
+      .then(function (response) {
         if (response.status !== 201) {
           console.log("Update failed: " + response.status);
           throw new Error("Could not submit form.");
         } else {
           dispatch({
             type: SUBMIT_SUCCESS
+          });
+          dispatch({
+            type: UPDATE_INFO,
+            payload: { branch: studentBranch, year: year }
           });
         }
       });
