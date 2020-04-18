@@ -35,10 +35,20 @@ class SearchTabs extends Component {
   render() {
     return (
       <>
-        <Tabs>
+        <Tabs defaultIndex={this.props.current === "all" ? 0 : 1}>
           <TabList>
-            <Tab onClick={this.props.onChangeTab}>Browse All Courses</Tab>
-            <Tab onClick={this.props.onChangeTab}>
+            <Tab
+              onClick={() => {
+                this.props.onChangeTab("all");
+              }}
+            >
+              Browse All Courses
+            </Tab>
+            <Tab
+              onClick={() => {
+                this.props.onChangeTab("hum");
+              }}
+            >
               Browse Humanity Electives
             </Tab>
           </TabList>

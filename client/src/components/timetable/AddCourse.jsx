@@ -7,6 +7,11 @@ import SectionTabs from "./SectionTab";
 import ToggleButton from "../ToggleButton";
 
 const AddCourse = (props) => {
+  const [state, setState] = React.useState({
+    current: "all",
+  });
+  const { current } = state;
+
   function getSections(type) {
     let course = props.currentCourse;
     let code = Object.keys(course)[0];
@@ -17,11 +22,19 @@ const AddCourse = (props) => {
     return selectSections(props.currentCourse[code].sections);
   }
 
+  function changeCurrent(input) {
+    setState({ current: input });
+  }
+
   return (
     <div>
       {!props.currentCourse ? (
         <div>
-          <SearchTabs allCourses={props.allCourses} />
+          <SearchTabs
+            allCourses={props.allCourses}
+            current={state.current}
+            onChangeTab={changeCurrent}
+          />
         </div>
       ) : (
         <div>
