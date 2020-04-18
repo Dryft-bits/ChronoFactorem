@@ -126,8 +126,7 @@ export const deleteSectionMiddleware = store => next => action => {
     }
     let section = action.payload.section;
     courseCode = action.payload.courseCode;
-    let tempvar;
-    [tempvar, temp, courseTemp, sectionDict] = getDetails(store, true);
+    [, temp, courseTemp, sectionDict] = getDetails(store, true);
     [temp, courseTemp] = utils.deleteSection(
       temp,
       courseTemp,

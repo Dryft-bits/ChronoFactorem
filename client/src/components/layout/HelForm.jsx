@@ -6,10 +6,10 @@ import Radio from "@material-ui/core/Radio";
 import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
-import Container from "@material-ui/core/Container";
 import { connect } from "react-redux";
 import { submitForm } from "../../actions/helForm";
 import PropTypes from "prop-types";
+import "./YearSelector.jsx";
 
 import ItemList from "../ItemList";
 import Search from "../Search";
@@ -18,12 +18,13 @@ import * as TimeTableData from "../../Timetable.json";
 import "../../styles/HelForm.css";
 
 import { Redirect } from "react-router-dom";
+import YearSelector from "./YearSelector.jsx";
 
 let isEditingRowAtIndex = -1;
 
 const courses = JSON.parse(JSON.stringify(TimeTableData)).default;
 var humanitiesCodes = Object.keys(courses).filter(
-  (code) =>
+  code =>
     code.startsWith("GS") ||
     code.startsWith("HSS") ||
     code.startsWith("BITS F214") ||
@@ -72,7 +73,7 @@ let currentlyShowingCourses = copyObjectProps(courses, humanitiesCodes);
 const HelForm = ({ submitForm, submitted, user }) => {
   const [formData, setFormData] = useState({
     branch: user
-      ? branches.filter((branch) => user.branch.includes(branch["value"]))
+      ? branches.filter(branch => user.branch.includes(branch["value"]))
       : [],
     year: user ? user.year.toString() : "",
     slotNumber: "",
@@ -81,25 +82,23 @@ const HelForm = ({ submitForm, submitted, user }) => {
 
   const { branch, year, slotNumber, humanitiesCourses } = formData;
 
-  const handleSlotChange = (value) => {
+  const handleSlotChange = value => {
     setFormData({
       ...formData,
       slotNumber: value
     });
   };
-  const handleBranchChange = (newBranch) => {
+  const handleBranchChange = newBranch => {
     setFormData({
       ...formData,
       branch: newBranch
     });
   };
-  const handleYearChange = (e) => {
-    if (e.target.checked) {
-      setFormData({
-        ...formData,
-        year: e.target.value
-      });
-    }
+  const handleYearChange = newYear => {
+    setFormData({
+      ...formData,
+      year: newYear
+    });
   };
 
   const deleteRow = (e, idx) => {
@@ -118,7 +117,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
     setFormData({ ...formData });
   };
 
-  const onSubmit = async (e) => {
+  const onSubmit = async e => {
     e.preventDefault();
     var courseNotFilled = false;
     for (const course of humanitiesCourses) {
@@ -140,7 +139,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
     }
   };
 
-  const handleCourseAddition = (e) => {
+  const handleCourseAddition = e => {
     let event = e.target.innerHTML;
     if (!humanitiesCourses.includes(event)) {
       if (isEditingRowAtIndex !== -1) {
@@ -159,11 +158,11 @@ const HelForm = ({ submitForm, submitted, user }) => {
     isEditingRowAtIndex = humanitiesCourses.length - 1;
   };
 
-  const filterItems = (input) => {
-    let filterCourses = (obj) =>
+  const filterItems = input => {
+    let filterCourses = obj =>
       Object.keys(obj)
         .filter(
-          (item) =>
+          item =>
             item.toLowerCase().search(input.target.value.toLowerCase()) !==
               -1 ||
             obj[item]["name"]
@@ -184,7 +183,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
     return <Redirect to='/dashboard'></Redirect>;
   }
 
-  const Menu = (props) => {
+  const Menu = props => {
     const optionSelectedLength = props.getValue().length || 0;
     return (
       <components.Menu {...props}>
@@ -208,7 +207,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
         previous semester below:
       </h5>
       <br></br>
-      <form className='form-whole' onSubmit={(e) => onSubmit(e)}>
+      <form className='form-whole' onSubmit={e => onSubmit(e)}>
         <Select
           placeholder='Please select slot'
           className='hf-width'
@@ -230,7 +229,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
             options={branch && branch.length >= 2 ? branch : branches}
             className='left-width branch-inp'
             placeholder='Select branch (select 2 branches for dual degree)'
-            theme={(theme) => ({
+            theme={theme => ({
               ...theme,
               borderRadius: 2,
               colors: {
@@ -242,57 +241,10 @@ const HelForm = ({ submitForm, submitted, user }) => {
             })}
           />
           <br></br>
-          <p className='label-mod branch-inp'>Select year: </p>
-          <FormControl component='fieldset' className='radio-grp'>
-            <RadioGroup
-              row
-              aria-label='position'
-              name='position'
-              defaultValue='End'
-              className='radio-grp'
-            >
-              <FormControlLabel
-                value='1'
-                control={<Radio color='primary' />}
-                label='First'
-                className='text-black'
-                onChange={handleYearChange}
-                checked={year === "1"}
-              />
-              <FormControlLabel
-                value='2'
-                control={<Radio color='primary' />}
-                label='Second'
-                className='text-black'
-                onChange={handleYearChange}
-                checked={year === "2"}
-              />
-              <FormControlLabel
-                value='3'
-                control={<Radio color='primary' />}
-                label='Third'
-                className='text-black'
-                onChange={handleYearChange}
-                checked={year === "3"}
-              />
-              <FormControlLabel
-                value='4'
-                control={<Radio color='primary' />}
-                label='Fourth'
-                className='text-black'
-                onChange={handleYearChange}
-                checked={year === "4"}
-              />
-              <FormControlLabel
-                value='5'
-                control={<Radio color='primary' />}
-                label='Fifth'
-                className='text-black'
-                onChange={handleYearChange}
-                checked={year === "5"}
-              />
-            </RadioGroup>
-          </FormControl>
+          <YearSelector
+            onYearChange={handleYearChange}
+            initialYear={year}
+          ></YearSelector>
         </div>
         <div className='form-group'>
           <div className='form-courses'>
@@ -313,7 +265,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
                   <button
                     className='btn btn-hf'
                     type='button'
-                    onClick={(e) => deleteRow(e, idx)}
+                    onClick={e => deleteRow(e, idx)}
                     key={"bdelete" + idx.toString(10)}
                   >
                     Delete
@@ -321,7 +273,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
                   <button
                     type='button'
                     className='btn btn-hf'
-                    onClick={(e) => editRow(e, idx)}
+                    onClick={e => editRow(e, idx)}
                     key={"bedit" + idx.toString(10)}
                   >
                     {isEditingRowAtIndex !== idx ? "Edit" : "Done"}
@@ -349,7 +301,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     submitted: state.helForm.submitted,
     user: state.auth.user

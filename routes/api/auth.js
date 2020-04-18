@@ -16,8 +16,12 @@ authRouter.get(
   })
 );
 
-authRouter.get("/loggedin", loggedIn, function(req, res) {
-  res.status(200).send(req.user);
+authRouter.get("/loggedin", loggedIn, function (req, res) {
+  if (req.user) {
+    res.status(200).send(req.user);
+  } else {
+    res.status(401).json({ msg: "Unauthorized" });
+  }
 });
 
 authRouter.get(
@@ -36,7 +40,11 @@ authRouter.get("/logout", (req, res) => {
 });
 
 authRouter.get("/current_user", loggedIn, (req, res) => {
-  res.status(200).send(req.user);
+  if (req.user) {
+    res.status(200).send(req.user);
+  } else {
+    res.status(401).json({ msg: "Unauthorized" });
+  }
 });
 
 module.exports = authRouter;

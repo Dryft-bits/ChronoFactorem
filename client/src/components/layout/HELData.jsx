@@ -79,7 +79,7 @@ const HELData = () => {
 
   let resp = true;
   let str = [
-    <div style={{float:"right", width: "35%" }}>
+    <div style={{ float: "right", width: "35%" }}>
       <Search action={filterItems} />
       <ItemList
         items={humCourses}
@@ -89,7 +89,7 @@ const HELData = () => {
       />
     </div>
   ];
-  const [userInfo, loading] = useGetData("/api/heldata/searchHEL/:name");
+  const [, loading] = useGetData("/api/heldata/searchHEL/:name");
   if (!loading) {
     if (resp === true && courseStats.length > 0) {
       let max = 0;

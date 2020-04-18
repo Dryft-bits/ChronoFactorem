@@ -10,13 +10,18 @@ export const Navbar = ({ submitted, user, isAuthenticated, logout }) => {
   } else if ((!submitted && user && user.submittedForm) || submitted) {
     return (
       <div>
-        <nav className='nav-wraper indigo darken-4' >
+        <nav className='nav-wraper indigo darken-4'>
           <div className='container'>
             <NavLink to='/' className='brand-logo left'>
-              <div style ={{height:"64px",width:"238.633px"}}>
-              <img src={image} height="64px" width="238.633px" id='logo'/>
+              <div style={{ height: "64px", width: "238.633px" }}>
+                <img
+                  src={image}
+                  height='64px'
+                  width='238.633px'
+                  id='logo'
+                  alt='Logo'
+                />
               </div>
-              
             </NavLink>
             <ul className='right hide-on-med-and-down'>
               <li>
@@ -44,11 +49,17 @@ export const Navbar = ({ submitted, user, isAuthenticated, logout }) => {
   } else {
     return (
       <div>
-        <nav className='nav-wraper indigo darken-4' >
+        <nav className='nav-wraper indigo darken-4'>
           <div className='container'>
             <NavLink to='/' className='brand-logo left'>
-              <div style ={{height:"64px",width:"238.633px"}}>
-              <img src={image} height="64px" width="238.633px" id='logo'/>
+              <div style={{ height: "64px", width: "238.633px" }}>
+                <img
+                  src={image}
+                  height='64px'
+                  width='238.633px'
+                  id='logo'
+                  alt='Logo'
+                />
               </div>
             </NavLink>
             <ul className='right hide-on-med-and-down'>

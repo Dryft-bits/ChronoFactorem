@@ -5,6 +5,7 @@ dotenv.config();
 
 const mongoose = require("mongoose");
 const Student = mongoose.model("student");
+const Login = mongoose.model("login");
 const passport = require("passport");
 const GoogleStrategy = require("passport-google-oauth20");
 
@@ -31,6 +32,9 @@ passport.use(
     (accessToken, refreshToken, profile, done) => {
       Student.findOne({ email: profile.emails[0].value }).then(existingUser => {
         if (existingUser) {
+          new Login({
+            userId: existingUser._id
+          }).save();
           done(null, existingUser);
         } else {
           new Student({
@@ -42,7 +46,12 @@ passport.use(
             year: 0
           })
             .save()
-            .then(user => done(null, user));
+            .then(user => {
+              new Login({
+                userId: user._id
+              }).save();
+              done(null, user);
+            });
         }
       });
     }

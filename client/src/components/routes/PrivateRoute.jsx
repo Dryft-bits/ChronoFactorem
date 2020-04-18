@@ -18,7 +18,7 @@ const PrivateRoute = ({
     <Route
       {...rest}
       render={props =>
-        !isAuthenticated ? (
+        !localStorage.getItem("loggedIn") ? (
           <Redirect to='/'></Redirect>
         ) : loading ? (
           // Put a cool animation here

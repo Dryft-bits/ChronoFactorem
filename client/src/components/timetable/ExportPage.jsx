@@ -8,10 +8,6 @@ import CompreSched from "./CompreSched.jsx";
 import html2canvas from "html2canvas";
 
 class ExportPage extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     const pageToExport = document.getElementById("export-page");
     html2canvas(pageToExport)

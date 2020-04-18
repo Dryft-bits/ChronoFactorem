@@ -15,16 +15,16 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import "../../styles/Dashboard.css";
-const useStyles= makeStyles({
-  root:{
+const useStyles = makeStyles({
+  root: {
     minWidth: 250
   },
   cardcontainer: {
     maxWidth: "95vw",
     maxHeight: "27vh",
-    overflow: "auto",
+    overflow: "auto"
   }
-})
+});
 const Dashboard = props => {
   const classes = useStyles();
   const [TTData, setTTData] = React.useState({
@@ -76,67 +76,85 @@ const Dashboard = props => {
   if (!loading) {
     return (
       <>
-      <h4 className="title">Saved Timetables</h4>
-      <br></br>
-      <div className={classes.cardcontainer}>
-        {" "}
-            <Container maxWidth="sm">
+        <h4 className='title'>Saved Timetables</h4>
+        <br></br>
+        <div className={classes.cardcontainer}>
+          {" "}
+          <Container maxWidth='sm'>
             {(TTData.savedTT || data).map(item => {
               return (
                 <>
-                <Card className={classes.root}>
-                  <CardContent>
-                    <Typography className={classes.root} color="textSecondary" gutterBottom>
-                      Name
-                    </Typography>
-                    <Typography variant="h5" component="h2">
-                      {item.name}
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Link
-                      to='/create'
-                      onClick={() => {
-                        props.editTT(item);
-                      }}
-                    >
-                      <Button variant="contained" color = "primary" size="small">Edit</Button>
-                    </Link>
-                    
-                    <Button onClick={() => {
-                      deleteTT(item._id);
-                    }} 
-                    variant="contained" color = "secondary" size="small">
-                    Delete
-                    </Button>
-                    {item.isShared ? (
-                      <Button variant="contained" size="small"
+                  <Card className={classes.root}>
+                    <CardContent>
+                      <Typography
+                        className={classes.root}
+                        color='textSecondary'
+                        gutterBottom
+                      >
+                        Name
+                      </Typography>
+                      <Typography variant='h5' component='h2'>
+                        {item.name}
+                      </Typography>
+                    </CardContent>
+                    <CardActions>
+                      <Link
+                        to='/create'
                         onClick={() => {
-                          toggleShare(item._id, "Unshared");
+                          props.editTT(item);
                         }}
                       >
-                        Unshare
-                      </Button>
-                    ) : (
-                      <Button variant="contained" size="small"
+                        <Button
+                          variant='contained'
+                          color='primary'
+                          size='small'
+                        >
+                          Edit
+                        </Button>
+                      </Link>
+
+                      <Button
                         onClick={() => {
-                          toggleShare(item._id, "Shared");
+                          deleteTT(item._id);
                         }}
+                        variant='contained'
+                        color='secondary'
+                        size='small'
                       >
-                        Share
+                        Delete
                       </Button>
-                    )}
-                  </CardActions>
-                </Card>
-                <br></br>
+                      {item.isShared ? (
+                        <Button
+                          variant='contained'
+                          size='small'
+                          onClick={() => {
+                            toggleShare(item._id, "Unshared");
+                          }}
+                        >
+                          Unshare
+                        </Button>
+                      ) : (
+                        <Button
+                          variant='contained'
+                          size='small'
+                          onClick={() => {
+                            toggleShare(item._id, "Shared");
+                          }}
+                        >
+                          Share
+                        </Button>
+                      )}
+                    </CardActions>
+                  </Card>
+                  <br></br>
                 </>
               );
             })}
           </Container>
-      </div>
-      <h4 className="title">Publicily Shared Timetables</h4>
-      
-      <ShareTimeTable />
+        </div>
+        <h4 className='title'>Publicily Shared Timetables</h4>
+
+        <ShareTimeTable />
       </>
     );
   } else {
