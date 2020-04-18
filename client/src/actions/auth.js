@@ -1,11 +1,14 @@
 import axios from "axios";
+import Professor from "../schemas/Professor";
 import {
   LOGIN_FAILURE,
   LOGIN_SUCCESS,
   LOGOUT_SUCCESS,
   LOGOUT_FAILURE,
   USER_LOADED,
-  NO_USER
+  NO_USER,
+  PROF_LOADED,
+  NO_PROF,
 } from "./types";
 
 import { history } from "../App";
@@ -30,6 +33,29 @@ export const verifyLogin = () => async dispatch => {
     });
   }
 };
+
+export const addProf = (prof) => async dispatch => {
+  if (prof) {
+    let res = await axios.get("/api/profAuth/profLoggedIn", {
+      params: {
+        token: prof
+      }
+    })
+    if (!res.data) {
+      localStorage.setItem('prof', false);
+      dispatch({
+        type: NO_PROF
+      })
+    }
+    else{
+    localStorage.setItem('prof', true);
+    dispatch({
+      type: PROF_LOADED,
+      payload: new Professor(res.data.username, res.data.name, res.data.department, res.data.email)
+    })
+  }
+  }
+}
 
 export const loadUser = () => async dispatch => {
   try {
