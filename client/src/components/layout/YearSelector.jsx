@@ -20,6 +20,27 @@ const YearSelector = props => {
     setYear({ ...yearData, year: e.target.value });
   };
 
+  let yearList = [
+    ["1", "First"],
+    ["2", "Second"],
+    ["3", "Third"],
+    ["4", "Fourth"],
+    ["5", "Fifth"]
+  ];
+  let str = [];
+  yearList.map(Year => {
+    str.push(
+      <FormControlLabel
+        value={Year[0]}
+        control={<Radio color='primary' />}
+        label={Year[1]}
+        className='text-black'
+        onChange={handleYearChange}
+        checked={year === Year[0]}
+      />
+    );
+    return 0;
+  });
   return (
     <Fragment>
       <p className='label-mod branch-inp'>Select year: </p>
@@ -31,46 +52,7 @@ const YearSelector = props => {
           defaultValue='End'
           className='radio-grp'
         >
-          <FormControlLabel
-            value='1'
-            control={<Radio color='primary' />}
-            label='First'
-            className='text-black'
-            onChange={handleYearChange}
-            checked={year === "1"}
-          />
-          <FormControlLabel
-            value='2'
-            control={<Radio color='primary' />}
-            label='Second'
-            className='text-black'
-            onChange={handleYearChange}
-            checked={year === "2"}
-          />
-          <FormControlLabel
-            value='3'
-            control={<Radio color='primary' />}
-            label='Third'
-            className='text-black'
-            onChange={handleYearChange}
-            checked={year === "3"}
-          />
-          <FormControlLabel
-            value='4'
-            control={<Radio color='primary' />}
-            label='Fourth'
-            className='text-black'
-            onChange={handleYearChange}
-            checked={year === "4"}
-          />
-          <FormControlLabel
-            value='5'
-            control={<Radio color='primary' />}
-            label='Fifth'
-            className='text-black'
-            onChange={handleYearChange}
-            checked={year === "5"}
-          />
+          {str}
         </RadioGroup>
       </FormControl>
     </Fragment>
