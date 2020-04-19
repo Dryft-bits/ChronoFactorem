@@ -12,10 +12,15 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import axios from 'axios';
-const bcrypt = require('bcryptjs');
-
+import Cookies from 'js-cookie';
+import { addProf } from '../../actions/auth';
+import CreateAccount from './CreateAccount';
+import { useGetData } from "use-axios-react";
 
 export const Landing = ({ isAuthenticated }) => {
+
+  const token = Cookies.get("token") ? Cookies.get("token") : null;
+  const [userInfo, loading] = useGetData("/api/profAuth/profloggedIn", { token: token });
 
   const [open, setOpen] = useState({
     isOpen: false,
@@ -23,8 +28,15 @@ export const Landing = ({ isAuthenticated }) => {
     password: "",
     incorrectUsername: false,
     incorrectPassword: false,
-    profAuthenticated: false
+    profAuthenticated: false,
+    isCreate: false,
   });
+  const handleCreate = () => {
+    setOpen({
+      ...open,
+      isCreate: true
+    });
+  }
   const handleClickOpen = () => {
     setOpen({ ...open, isOpen: true });
   };
@@ -49,24 +61,38 @@ export const Landing = ({ isAuthenticated }) => {
       incorrectPassword: false,
     });
   }
+  const config = {
+    headers: {
+      "Content-Type": "application/json"
+    }
+  };
   const submit = (e) => {
-    let iu = true, ip = false;
+    let iu = false, ip = false;
     e.preventDefault();
-    axios.get("/api/ProfAuth", {
-      username: open.username
-    }).then(
+    console.log(JSON.stringify({
+      username: open.username,
+      password: open.password
+    }));
+    axios.post("/api/ProfAuth", JSON.stringify({
+      username: open.username,
+      password: open.password
+    }), config).then(
       (res, err) => {
         if (err) {
           console.log(err);
         }
-        if (res === null || res.token.password === undefined) {
-          iu = false;
+        if (res === null || res === undefined || res.status === 204) {
+          iu = true;
         }
-        else if (bcrypt.compareSync(open.password, res.token.password) === true) {
-          iu = true
-          ip = true;
+        else {
+          iu = false
+          if(res.status === 205)
+            ip = true;
+          else 
+            ip = false;
           open.profAuthenticated = true;
-          localStorage.setItem(res.token.username,res.token);
+          //store the token in HTTP cookie
+          Cookies.set('token', res.token, { expires: 1 });
         }
 
       }
@@ -82,8 +108,19 @@ export const Landing = ({ isAuthenticated }) => {
     return <Redirect to='/checkloggedin'></Redirect>;
   }
 
-  if (open.profAuthenticated) {
-    return;//return to dashboard here
+
+  if (open.isOpen) {
+
+    if (!token) {
+    }
+    else {
+
+      if (!loading && userInfo) {
+        addProf(userInfo);
+        return /*redirect to admin dashboard here */;
+      }
+    }
+
   }
 
   return (
@@ -112,7 +149,7 @@ export const Landing = ({ isAuthenticated }) => {
       <div>
         <Dialog open={open.isOpen} onClose={handleClose} aria-labelledby="form-dialog-title">
           <form onSubmit={submit}>
-            <DialogTitle id="form-dialog-title">Subscribe</DialogTitle>
+            <DialogTitle id="form-dialog-title">Login</DialogTitle>
             <DialogContent>
               <DialogContentText>
                 Enter your username and password
@@ -126,7 +163,7 @@ export const Landing = ({ isAuthenticated }) => {
                 type="text"
                 fullWidth
                 onChange={editUsername}
-                helperText={open.incorrectUsername?"Username does not exist":""}
+                helperText={open.incorrectUsername ? "Username does not exist" : ""}
               />
               <TextField
                 error={open.incorrectPassword}
@@ -137,7 +174,7 @@ export const Landing = ({ isAuthenticated }) => {
                 type="password"
                 fullWidth
                 onChange={editPassword}
-                helperText={open.incorrectPassword?"Incorrect Password for given username":""}
+                helperText={open.incorrectPassword ? "Incorrect Password for given username" : ""}
               />
             </DialogContent>
 
@@ -148,10 +185,13 @@ export const Landing = ({ isAuthenticated }) => {
               <Button type='submit' color="primary">
                 Login
           </Button>
+              <Button onClick={handleCreate} color="primary">
+                Create new
+          </Button>
             </DialogActions>
           </form>
         </Dialog>
-
+        <CreateAccount {...open.isCreate} />
       </div>
     </section>);
 
@@ -163,4 +203,10 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, null)(Landing);
+const mapDispatchToProps = dispatch => {
+  return {
+    addProf: dispatch(prof => addProf(prof))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Landing);

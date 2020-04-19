@@ -6,7 +6,9 @@ import {
   LOGOUT_SUCCESS,
   LOGOUT_FAILURE,
   USER_LOADED,
-  NO_USER
+  NO_USER,
+  PROF_LOADED,
+  NO_PROF,
 } from "./types";
 
 import { history } from "../App";
@@ -31,28 +33,60 @@ export const verifyLogin = () => async dispatch => {
     });
   }
 };
-
 /*
+export const checkProf = () => async dispatch => {
+  try{
+    const res = await axios.get("/api/profAuth/profLoggedIn");
+    if(res.status === 200 && res.data.username)
+    {
+      localStorage.setItem("profIn", true);
+      dispatch({
+        type: PROF_LOADED,
+        payload: res.data
+      });
+    }
+    else {
+      dispatch({
+        type: LOGIN_FAILURE
+      });
+  }
+}
+  catch (err) {
+    dispatch({
+      type: LOGIN_FAILURE
+    });
+}
+}
+*/
+export const addProf = (prof) => {
+  localStorage.setItem('prof',true);
+  return {
+    type: PROF_LOADED,
+    payload: new Professor(prof.username, prof.name, prof.department, prof.email)
+  }
+}
+
 export const loadProf = () => async dispatch => {
   try {
     const res = await axios.get("/api/profAuth");
+    localStorage.setItem('prof',true);
     if (res.status === 200 && res.data.name) {
       dispatch({
-        type: USER_LOADED,
-        payload: new Professor(res.data.username, res.data.name, res.data.department)
+        type: PROF_LOADED,
+        payload: new Professor(res.data.username, res.data.name, res.data.department, res.data.email)
       });
     } else {
       dispatch({
-        type: NO_USER
+        type: NO_PROF
       });
     }
   } catch (err) {
     dispatch({
-      type: NO_USER
+      type: NO_PROF
     });
   }
 }
-*/
+
 export const loadUser = () => async dispatch => {
   try {
     const res = await axios.get("/api/loggedin");

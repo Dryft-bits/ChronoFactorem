@@ -5,12 +5,16 @@ import {
   UPDATE_INFO,
   LOGOUT_FAILURE,
   USER_LOADED,
-  NO_USER
+  NO_USER,
+  PROF_LOADED,
+  NO_PROF,
 } from "../actions/types";
 
 const initialState = {
   isAuthenticated: null,
-  user: null
+  isProfAuthenticated: null,
+  user: null,
+  prof: null
 };
 
 export default function (state = initialState, action) {
@@ -31,16 +35,28 @@ export default function (state = initialState, action) {
       };
 
     case NO_USER:
+    case NO_PROF:
     case LOGOUT_SUCCESS:
     case LOGIN_FAILURE:
       return {
         ...state,
         isAuthenticated: false,
-        user: null
+        user: null,
+        profAuthenticated: false,
+        prof: null
+      };
+
+    case PROF_LOADED:
+      return {
+        ...state,
+        isProfAuthenticated: true,
+        prof: payload
       };
 
     case LOGOUT_FAILURE:
     default:
       return state;
+
+    
   }
 }
