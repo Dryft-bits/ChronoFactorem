@@ -5,16 +5,16 @@ import { BrowserRouter, Route } from "react-router-dom";
 import store from "./store";
 import { loadUser } from "./actions/auth";
 import "./styles/App.css";
-import HELData from "./components/layout/HELData";
-import Navbar from "./components/layout/Navbar";
-import Dashboard from "./components/layout/Dashboard";
+import HELData from "./components/tabs/HELData";
+import Navbar from "./components/utils/Navbar";
+import Dashboard from "./components/tabs/Dashboard";
 import CreateTimeTable from "./components/timetable/CreateTimeTable";
-import AboutUs from "./components/layout/AboutUs";
-import Landing from "./components/layout/Landing";
-import HelForm from "./components/layout/HelForm";
+import AboutUs from "./components/tabs/AboutUs";
+import Landing from "./components/tabs/Landing";
+import HelForm from "./components/forms/HelForm";
 import PrivateRoute from "./components/routes/PrivateRoute";
 import SemiPrivateRoute from "./components/routes/SemiPrivateRoute";
-import CheckLoggedIn from "./components/layout/CheckLoggedIn";
+import CheckLoggedIn from "./components/authorization/CheckLoggedIn";
 
 import createBrowserHistory from "./history";
 
