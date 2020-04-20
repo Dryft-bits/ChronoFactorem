@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Redirect } from "react-router-dom";
 import { useGetData } from "use-axios-react";
 import { connect } from "react-redux";
-import { verifyLogin } from "../../actions/auth";
+import { verifyLogin } from "../../redux/actions/auth";
 
 const CheckLoggedIn = ({ verifyLogin }) => {
   useEffect(() => {

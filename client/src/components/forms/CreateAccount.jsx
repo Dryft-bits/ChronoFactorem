@@ -5,8 +5,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import { Redirect } from 'react-router-dom';
-import React, { useEffect } from "react";
+import React from "react";
 import "../../styles/Landing.css";
 import { useState } from "react";
 import InputLabel from '@material-ui/core/InputLabel';
@@ -30,12 +29,13 @@ const depts = [
 ];
 const CreateAccount = (props) => {
     const [open, setOpen] = useState({
-        isOpen:  props['open'],
         username: "",
         password: "",
         name: "",
+        department: "",
         email: "",
         confPass: "",
+        invalidEmail: false,
         existingUsername: false,
         weakPassword: false,
         matchPass: true,
@@ -44,8 +44,34 @@ const CreateAccount = (props) => {
         emptyNameField: true,
         emptyDeptField: true,
         emptyEmailField: true,
+        hitSubmit: false,
     });
-   
+    const {
+        username,
+        password,
+        name,
+        department,
+        email,
+        confPass,
+        invalidEmail,
+        existingUsername,
+        weakPassword,
+        matchPass,
+        emptyUserField,
+        emptyPassField,
+        emptyNameField,
+        emptyDeptField,
+        emptyEmailField,
+        hitSubmit
+    } = open;
+
+    const handleClose = () => {
+        props.action();
+        setOpen({
+            ...open,
+            hitSubmit: false
+        });
+    }
     const editUsername = (e) => {
         e.preventDefault();
         setOpen({
@@ -65,7 +91,7 @@ const CreateAccount = (props) => {
         });
     }
     const editConf = (e) => {
-        const eq = (e.target.value === open.password);
+        const eq = (e.target.value === password);
         e.preventDefault();
         setOpen({
             ...open,
@@ -102,50 +128,65 @@ const CreateAccount = (props) => {
     const submit = (e) => {
         let iu = false, io = true;
         e.preventDefault();
-        if (open.confPass === open.password
-            && !open.invalidEmail
-            && !open.weakPassword
-            && open.matchPass
-            && !open.emptyDeptField
-            && !open.emptyEmailField
-            && !open.emptyNameField
-            && !open.emptyUserField
-            && !open.emptyPassField
+        if (confPass === password
+            && !invalidEmail
+            && !weakPassword
+            && matchPass
+            && !emptyDeptField
+            && !emptyEmailField
+            && !emptyNameField
+            && !emptyUserField
+            && !emptyPassField
             /*lol too tired to think better */) {
-            axios.get("/api/profAuth/createAcc", {
-                params: {
-                    username: open.username,
-                    password: open.password,
-                    name: open.name,
-                    email: open.email,
-                    department: open.department
+            const config = {
+                headers: {
+                    "Content-Type": "application/json",
+                    "Access-Control-Allow-Origin": "*",
+
                 }
-            }).then(
+            };
+            axios.post("/api/profAuth/createAcc", {
+                username: username,
+                password: password,
+                name: name,
+                email: email,
+                department: department
+            },config).then(
                 (res, err) => {
                     if (err) {
                         console.log(err);
 
                     }
-                    if (res.status === 400) {
+                    else if (res.status === 206) {
                         iu = true;
 
                     }
-                    if (!res) {
+                    else if (!res) {
                         iu = false;
                     }
                     else {
                         iu = false;
                         io = false;
-                        window.alert("Submitted!");
+                        window.alert("Submitted!"); //change the window.alert to something better, or just remove this
                     }
-
+                    setOpen({
+                        ...open,
+                        existingUsername: iu,
+                        isOpen: io,
+                        hitSubmit: true
+                    });
                 }
+            ).catch((err) => {
+                console.log("Server error: ", err);
+            }
             );
+
+        }
+        else{
             setOpen({
                 ...open,
-                existingUsername: iu,
-                isOpen: io
-            });
+                hitSubmit: true,
+            })
         }
     }
     return (
@@ -158,17 +199,17 @@ const CreateAccount = (props) => {
           </DialogContentText>
                     <TextField
                         autoFocus
-                        error={open.existingUsername || open.emptyUserField}
+                        error={hitSubmit &&(existingUsername || emptyUserField)}
                         margin="dense"
                         id="username"
                         label="Username"
                         type="text"
                         fullWidth
                         onChange={editUsername}
-                        helperText={open.existingUsername ? "Username already exists" : (open.emptyUserField ? "Empty" : "")}
+                        helperText={existingUsername ? "Username already exists" : (emptyUserField ? "Empty" : "")}
                     />
                     <TextField
-                        error={open.weakPassword || open.emptyPassField}
+                        error={hitSubmit && (weakPassword || emptyPassField)}
                         autoFocus
                         margin="dense"
                         id="pass"
@@ -176,10 +217,10 @@ const CreateAccount = (props) => {
                         type="password"
                         fullWidth
                         onChange={editPassword}
-                        helperText={open.weakPassword ? "pass should be 8 chars long" : (open.emptyPassField ? "Empty" : "")}
+                        helperText={weakPassword ? "pass should be 8 chars long" : (emptyPassField ? "Empty" : "")}
                     />
                     <TextField
-                        error={!open.matchPass || open.emptyPassField}
+                        error={hitSubmit && (!matchPass || emptyPassField)}
                         autoFocus
                         margin="dense"
                         id="confpass"
@@ -187,10 +228,10 @@ const CreateAccount = (props) => {
                         type="password"
                         fullWidth
                         onChange={editConf}
-                        helperText={!open.matchPass ? "passwords do not match" : (open.emptyPassField ? "Empty" : "")}
+                        helperText={!matchPass ? "passwords do not match" : (emptyPassField ? "Empty" : "")}
                     />
                     <TextField
-                        error={open.emptyNameField}
+                        error={hitSubmit && emptyNameField}
                         autoFocus
                         margin="dense"
                         id="name"
@@ -198,10 +239,10 @@ const CreateAccount = (props) => {
                         type="text"
                         fullWidth
                         onChange={editName}
-                        helperText={(open.emptyNameField ? "Empty" : "")}
+                        helperText={(emptyNameField ? "Empty" : "")}
                     />
                     <TextField
-                        error={open.invalidEmail || open.emptyEmailField}
+                        error={hitSubmit && (invalidEmail || emptyEmailField)}
                         autoFocus
                         margin="dense"
                         id="email"
@@ -209,7 +250,7 @@ const CreateAccount = (props) => {
                         type="email"
                         fullWidth
                         onChange={editEmail}
-                        helperText={open.invalidEmail ? "Invalid Email" : (open.emptyEmailField ? "Empty" : "")}
+                        helperText={invalidEmail ? "Invalid Email" : (emptyEmailField ? "Empty" : "")}
                     />
                     <FormControl >
                         <InputLabel id="demo-simple-select-label">Department</InputLabel>
@@ -217,18 +258,18 @@ const CreateAccount = (props) => {
                             labelId="demo-simple-select-helper-label"
                             id="demo-simple-select-helper"
                             onChange={editDept}
-                            error={open.emptyDeptField}
+                            error={hitSubmit && emptyDeptField}
                             helperText="Empty Field"
                         >
                             {depts.map(dept => {
-                                return <MenuItem value={dept}>{dept}</MenuItem>
+                                return <MenuItem key={dept} value={dept}>{dept}</MenuItem>
                             })}
                         </Select>
                     </FormControl>
                 </DialogContent>
 
                 <DialogActions>
-                    <Button onClick={props.action} color="primary">
+                    <Button onClick={handleClose} color="primary">
                         Cancel
           </Button>
                     <Button type='submit' color="primary">

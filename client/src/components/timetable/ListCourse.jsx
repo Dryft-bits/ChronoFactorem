@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { updateCurrentCourse } from "../../actions/UpdateCurrentCourse";
+import { updateCurrentCourse } from "../../redux/actions/UpdateCurrentCourse";
 
 const ListCourse = props => {
   return (

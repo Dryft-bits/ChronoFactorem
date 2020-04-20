@@ -58,8 +58,8 @@
     "nodemon": "^2.0.3"
   },
   "scripts": {
-    "server": "nodemon server --exec babel-node",
-    "start": "node server --exec babel-node",
+    "server": "nodemon server/server --exec babel-node",
+    "start": "node server/server --exec babel-node",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "test": "NODE_ENV=test mocha --exit --recursive || true",

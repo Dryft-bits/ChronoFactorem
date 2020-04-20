@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { clearCurrentCourse } from "../../actions/UpdateCurrentCourse";
+import { clearCurrentCourse } from "../../redux/actions/UpdateCurrentCourse";
 import SearchTabs from "./SearchTabs";
 import SectionTabs from "./SectionTab";
 import ToggleButton from "../utils/ToggleButton";

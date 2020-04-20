@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { Provider } from "react-redux";
 import { BrowserRouter, Route } from "react-router-dom";
 
-import store from "./store";
-import { loadUser } from "./actions/auth";
+import store from "./redux/store";
+import { loadUser } from "./redux/actions/auth";
 import "./styles/App.css";
 import HELData from "./components/tabs/HELData";
 import Navbar from "./components/utils/Navbar";
