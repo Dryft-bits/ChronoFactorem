@@ -5,16 +5,16 @@ import { components } from "react-select";
 import { connect } from "react-redux";
 import { submitForm } from "../../actions/helForm";
 import PropTypes from "prop-types";
-import "./YearSelector.jsx";
+import "../utils/YearSelector.jsx";
 
-import ItemList from "../ItemList";
-import Search from "../Search";
+import ItemList from "../utils/ItemList";
+import Search from "../utils/Search";
 import * as TimeTableData from "../../Timetable.json";
 
 import "../../styles/HelForm.css";
 
 import { Redirect } from "react-router-dom";
-import YearSelector from "./YearSelector.jsx";
+import YearSelector from "../utils/YearSelector.jsx";
 
 let isEditingRowAtIndex = -1;
 
