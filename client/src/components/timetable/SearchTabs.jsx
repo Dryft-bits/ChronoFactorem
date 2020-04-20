@@ -3,7 +3,7 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import PropTypes from "prop-types";
 import SearchHel from "./SearchHel.jsx";
-import Search from "../Search.jsx";
+import Search from "../utils/Search.jsx";
 import ListCourse from "./ListCourse.jsx";
 
 class SearchTabs extends Component {

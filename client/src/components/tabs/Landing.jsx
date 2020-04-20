@@ -14,8 +14,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import axios from 'axios';
 import Cookies from 'js-cookie';
 import { addProf } from '../../actions/auth';
-import CreateAccount from './CreateAccount';
-import { useGetData } from "use-axios-react";
+import CreateAccount from '../forms/CreateAccount';
 
 export const Landing = ({ isAuthenticated,profAuthenticated,addProf }) => {
 
@@ -35,7 +34,7 @@ export const Landing = ({ isAuthenticated,profAuthenticated,addProf }) => {
   const handleCreate = () => {
     setOpen({
       ...open,
-      isCreate: true
+      isCreate: !open.isCreate
     });
   }
   const handleClickOpen = () => {
@@ -183,7 +182,7 @@ return (
           </DialogActions>
         </form>
       </Dialog>
-      <CreateAccount {...open.isCreate} />
+      <CreateAccount open={open.isCreate} action={handleCreate}/>
     </div>
   </section>);
 
