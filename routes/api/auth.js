@@ -8,7 +8,6 @@ const express = require("express");
 const authRouter = express.Router();
 
 const loggedIn = require("../../middleware/auth");
-//const profloggedIn = require("../../middleware/profAuth");
 
 authRouter.get(
   "/auth/google",
@@ -49,7 +48,4 @@ authRouter.get("/current_user", loggedIn, (req, res) => {
   }
 });
 
-//authRouter.get("/current_prof",profloggedIn, (req,res) => {
-//  res.status(200).send(req.user);
-//})
 module.exports = authRouter;

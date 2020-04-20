@@ -1,4 +1,3 @@
-//^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$ - regexp for email
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
@@ -42,7 +41,7 @@ const CreateAccount = (props) => {
         matchPass: true,
         emptyUserField: true,
         emptyPassField: true,
-        emptyNameField: true, 
+        emptyNameField: true,
         emptyDeptField: true,
         emptyEmailField: true,
     });
@@ -111,38 +110,37 @@ const CreateAccount = (props) => {
     }
     const submit = (e) => {
         let iu = false, io = true;
-        //window.alert("here");
         e.preventDefault();
         if (open.confPass === open.password
             && !open.invalidEmail
             && !open.weakPassword
-            &&  open.matchPass
-            && !open.emptyDeptField 
-            && !open.emptyEmailField 
-            && !open.emptyNameField 
-            && !open.emptyUserField 
+            && open.matchPass
+            && !open.emptyDeptField
+            && !open.emptyEmailField
+            && !open.emptyNameField
+            && !open.emptyUserField
             && !open.emptyPassField
             /*lol too tired to think better */) {
-            console.log("shit");
-            axios.get("/api/profAuth/createAcc", {params: {
-                username: open.username,
-                password: open.password,
-                name: open.name,
-                email: open.email,
-                department: open.department
-            }}).then(
+            axios.get("/api/profAuth/createAcc", {
+                params: {
+                    username: open.username,
+                    password: open.password,
+                    name: open.name,
+                    email: open.email,
+                    department: open.department
+                }
+            }).then(
                 (res, err) => {
                     if (err) {
                         console.log(err);
-                        window.alert("oof")
+
                     }
                     if (res.status === 400) {
                         iu = true;
-                        window.alert("oof")
+
                     }
-                    if (res === null || res === undefined) {
+                    if (!res) {
                         iu = false;
-                        window.alert("oof")
                     }
                     else {
                         iu = false;
@@ -159,95 +157,94 @@ const CreateAccount = (props) => {
             });
         }
     }
-    console.log("oof",props['true']);
     return (
-    <Dialog open={props['true']} aria-labelledby="form-dialog-title">
-        <form onSubmit={submit}>
-            <DialogTitle id="form-dialog-title">Login</DialogTitle>
-            <DialogContent>
-                <DialogContentText>
-                    Enter your username and password
+        <Dialog open={props['true']} aria-labelledby="form-dialog-title">
+            <form onSubmit={submit}>
+                <DialogTitle id="form-dialog-title">Login</DialogTitle>
+                <DialogContent>
+                    <DialogContentText>
+                        Enter your username and password
           </DialogContentText>
-                <TextField
-                    autoFocus
-                    error={open.existingUsername || open.emptyUserField}
-                    margin="dense"
-                    id="username"
-                    label="Username"
-                    type="text"
-                    fullWidth
-                    onChange={editUsername}
-                    helperText={open.existingUsername ? "Username already exists" : (open.emptyUserField ? "Empty" : "")}
-                />
-                <TextField
-                    error={open.weakPassword || open.emptyPassField}
-                    autoFocus
-                    margin="dense"
-                    id="pass"
-                    label="Password"
-                    type="password"
-                    fullWidth
-                    onChange={editPassword}
-                    helperText={open.weakPassword ? "pass should be 8 chars long" :(open.emptyPassField?"Empty":"")}
-              />
-              <TextField
-                    error={!open.matchPass || open.emptyPassField}
-                    autoFocus
-                    margin="dense"
-                    id="confpass"
-                    label="Confirm Password"
-                    type="password"
-                    fullWidth
-                    onChange={editConf}
-                    helperText={!open.matchPass ? "passwords do not match" : (open.emptyPassField ? "Empty" : "")}
-                />
-                <TextField
-                    error={open.emptyNameField}
-                    autoFocus
-                    margin="dense"
-                    id="name"
-                    label="name"
-                    type="text"
-                    fullWidth
-                    onChange={editName}
-                    helperText={(open.emptyNameField ? "Empty" : "")}
-                />
-                <TextField
-                    error={open.invalidEmail || open.emptyEmailField}
-                    autoFocus
-                    margin="dense"
-                    id="email"
-                    label="email"
-                    type="email"
-                    fullWidth
-                    onChange={editEmail}
-                    helperText={open.invalidEmail ? "Invalid Email" : (open.emptyEmailField ? "Empty" : "")}
-                />
-                <FormControl >
-                    <InputLabel id="demo-simple-select-label">Department</InputLabel>
-                    <Select
-                        labelId="demo-simple-select-helper-label"
-                        id="demo-simple-select-helper"
-                        onChange={editDept}
-                        error={open.emptyDeptField}
-                        helperText="Empty Field"
-                    >
-                        {depts.map(dept => {
-                            return <MenuItem value={dept}>{dept}</MenuItem>
-                        })}
-                    </Select>
-                </FormControl>
-            </DialogContent>
+                    <TextField
+                        autoFocus
+                        error={open.existingUsername || open.emptyUserField}
+                        margin="dense"
+                        id="username"
+                        label="Username"
+                        type="text"
+                        fullWidth
+                        onChange={editUsername}
+                        helperText={open.existingUsername ? "Username already exists" : (open.emptyUserField ? "Empty" : "")}
+                    />
+                    <TextField
+                        error={open.weakPassword || open.emptyPassField}
+                        autoFocus
+                        margin="dense"
+                        id="pass"
+                        label="Password"
+                        type="password"
+                        fullWidth
+                        onChange={editPassword}
+                        helperText={open.weakPassword ? "pass should be 8 chars long" : (open.emptyPassField ? "Empty" : "")}
+                    />
+                    <TextField
+                        error={!open.matchPass || open.emptyPassField}
+                        autoFocus
+                        margin="dense"
+                        id="confpass"
+                        label="Confirm Password"
+                        type="password"
+                        fullWidth
+                        onChange={editConf}
+                        helperText={!open.matchPass ? "passwords do not match" : (open.emptyPassField ? "Empty" : "")}
+                    />
+                    <TextField
+                        error={open.emptyNameField}
+                        autoFocus
+                        margin="dense"
+                        id="name"
+                        label="name"
+                        type="text"
+                        fullWidth
+                        onChange={editName}
+                        helperText={(open.emptyNameField ? "Empty" : "")}
+                    />
+                    <TextField
+                        error={open.invalidEmail || open.emptyEmailField}
+                        autoFocus
+                        margin="dense"
+                        id="email"
+                        label="email"
+                        type="email"
+                        fullWidth
+                        onChange={editEmail}
+                        helperText={open.invalidEmail ? "Invalid Email" : (open.emptyEmailField ? "Empty" : "")}
+                    />
+                    <FormControl >
+                        <InputLabel id="demo-simple-select-label">Department</InputLabel>
+                        <Select
+                            labelId="demo-simple-select-helper-label"
+                            id="demo-simple-select-helper"
+                            onChange={editDept}
+                            error={open.emptyDeptField}
+                            helperText="Empty Field"
+                        >
+                            {depts.map(dept => {
+                                return <MenuItem value={dept}>{dept}</MenuItem>
+                            })}
+                        </Select>
+                    </FormControl>
+                </DialogContent>
 
-            <DialogActions>
-                <Button onClick={handleClose} color="primary">
-                    Cancel
+                <DialogActions>
+                    <Button onClick={handleClose} color="primary">
+                        Cancel
           </Button>
-                <Button type='submit' color="primary">
-                    Register
+                    <Button type='submit' color="primary">
+                        Register
           </Button>
-            </DialogActions>
-        </form>
-    </Dialog>);
+                </DialogActions>
+            </form>
+        </Dialog>);
 }
 export default CreateAccount;

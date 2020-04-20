@@ -3,7 +3,7 @@ import "../../styles/Landing.css";
 import configuration from "../../config/constants.js";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
@@ -17,10 +17,11 @@ import { addProf } from '../../actions/auth';
 import CreateAccount from './CreateAccount';
 import { useGetData } from "use-axios-react";
 
-export const Landing = ({ isAuthenticated }) => {
+export const Landing = ({ isAuthenticated,profAuthenticated,addProf }) => {
 
-  const token = Cookies.get("token") ? Cookies.get("token") : null;
-  const [userInfo, loading] = useGetData("/api/profAuth/profloggedIn", { token: token });
+  let token = Cookies.get("token") ? Cookies.get("token") : null;
+  
+  addProf(token);
 
   const [open, setOpen] = useState({
     isOpen: false,
@@ -63,150 +64,138 @@ export const Landing = ({ isAuthenticated }) => {
   }
   const config = {
     headers: {
-      "Content-Type": "application/json"
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+
     }
   };
-  const submit = (e) => {
-    let iu = false, ip = false;
+  const submit = async (e) => {
+    let iu = false, ip = false, pa = false;
     e.preventDefault();
-    console.log(JSON.stringify({
-      username: open.username,
-      password: open.password
-    }));
-    axios.post("/api/ProfAuth", JSON.stringify({
-      username: open.username,
-      password: open.password
-    }), config).then(
-      (res, err) => {
-        if (err) {
-          console.log(err);
-        }
-        if (res === null || res === undefined || res.status === 204) {
+    await axios.post("/api/ProfAuth",
+      {
+        username: open.username,
+        password: open.password
+      }, config).then(function (res) {
+        
+        if (!res || res.status === 204) {
           iu = true;
         }
         else {
           iu = false
-          if(res.status === 205)
-            ip = true;
-          else 
+          if (res.status === 206) { ip = true; }
+          else {
             ip = false;
-          open.profAuthenticated = true;
-          //store the token in HTTP cookie
-          Cookies.set('token', res.token, { expires: 1 });
+            pa = true;
+            //store the token in HTTP cookie
+            Cookies.set('token', res.data.token, { expires: 1 });
+            window.alert("welcome");
+            addProf(res.data.token);
+          }
         }
-
+        setOpen({
+          ...open,
+          incorrectUsername: iu,
+          incorrectPassword: ip,
+          profAuthenticated: pa,
+        });
       }
-    );
-    setOpen({
-      ...open,
-      incorrectUsername: iu,
-      incorrectPassword: ip
-    });
+      ).catch((err) => { console.log('Axios Error:', err); });
+  }
+  
+  if(profAuthenticated)
+  {
+    //redirect to dash here
   }
 
   if (isAuthenticated) {
     return <Redirect to='/checkloggedin'></Redirect>;
   }
+  
+  
 
 
-  if (open.isOpen) {
+return (
 
-    if (!token) {
-    }
-    else {
-
-      if (!loading && userInfo) {
-        addProf(userInfo);
-        return /*redirect to admin dashboard here */;
-      }
-    }
-
-  }
-
-  return (
-
-    <section className='landing body'>
-      <div className='dark-overlay'>
-        <div className='landing-inner'>
-          <div className='main'>
-            <h1 className='text-x-large text-landing'>ChronoFactorem</h1>
-            <p className='text-large text-landing description center'>
-              Create your own timetable.
+  <section className='landing body'>
+    <div className='dark-overlay'>
+      <div className='landing-inner'>
+        <div className='main'>
+          <h1 className='text-x-large text-landing'>ChronoFactorem</h1>
+          <p className='text-large text-landing description center'>
+            Create your own timetable.
             </p>
-            <div>
-              <button className='btn-landing btn-left' onClick={handleClickOpen}>
-                <span>Staff </span>
+          <div>
+            <button className='btn-landing btn-left' onClick={handleClickOpen}>
+              <span>Staff </span>
+            </button>
+            <a href={configuration.urls.googleAuth}>
+              <button className='btn-landing btn-right'>
+                <span>Student </span>
               </button>
-              <a href={configuration.urls.googleAuth}>
-                <button className='btn-landing btn-right'>
-                  <span>Student </span>
-                </button>
-              </a>
-            </div>
+            </a>
           </div>
         </div>
       </div>
-      <div>
-        <Dialog open={open.isOpen} onClose={handleClose} aria-labelledby="form-dialog-title">
-          <form onSubmit={submit}>
-            <DialogTitle id="form-dialog-title">Login</DialogTitle>
-            <DialogContent>
-              <DialogContentText>
-                Enter your username and password
+    </div>
+    <div>
+      <Dialog open={open.isOpen} onClose={handleClose} aria-labelledby="form-dialog-title">
+        <form onSubmit={submit}>
+          <DialogTitle id="form-dialog-title">Login</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              Enter your username and password
           </DialogContentText>
-              <TextField
-                autoFocus
-                error={open.incorrectUsername}
-                margin="dense"
-                id="name"
-                label="Username"
-                type="text"
-                fullWidth
-                onChange={editUsername}
-                helperText={open.incorrectUsername ? "Username does not exist" : ""}
-              />
-              <TextField
-                error={open.incorrectPassword}
-                autoFocus
-                margin="dense"
-                id="name"
-                label="Password"
-                type="password"
-                fullWidth
-                onChange={editPassword}
-                helperText={open.incorrectPassword ? "Incorrect Password for given username" : ""}
-              />
-            </DialogContent>
+            <TextField
+              autoFocus
+              error={open.incorrectUsername}
+              margin="dense"
+              id="name"
+              label="Username"
+              type="text"
+              fullWidth
+              onChange={editUsername}
+              helperText={open.incorrectUsername ? "Username does not exist" : ""}
+            />
+            <TextField
+              error={open.incorrectPassword}
+              autoFocus
+              margin="dense"
+              id="name"
+              label="Password"
+              type="password"
+              fullWidth
+              onChange={editPassword}
+              helperText={open.incorrectPassword ? "Incorrect Password for given username" : ""}
+            />
+          </DialogContent>
 
-            <DialogActions>
-              <Button onClick={handleClose} color="primary">
-                Cancel
+          <DialogActions>
+            <Button onClick={handleClose} color="primary">
+              Cancel
           </Button>
-              <Button type='submit' color="primary">
-                Login
+            <Button type='submit' color="primary">
+              Login
           </Button>
-              <Button onClick={handleCreate} color="primary">
-                Create new
+            <Button onClick={handleCreate} color="primary">
+              Create new
           </Button>
-            </DialogActions>
-          </form>
-        </Dialog>
-        <CreateAccount {...open.isCreate} />
-      </div>
-    </section>);
+          </DialogActions>
+        </form>
+      </Dialog>
+      <CreateAccount {...open.isCreate} />
+    </div>
+  </section>);
 
 };
 
 const mapStateToProps = state => {
   return {
-    isAuthenticated: state.auth.isAuthenticated
+    isAuthenticated: state.auth.isAuthenticated,
+    profAuthenticated: state.auth.profAuthenticated
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    addProf: dispatch(prof => addProf(prof))
-  }
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(Landing);
+
+export default connect(mapStateToProps, {addProf})(Landing);

@@ -12,7 +12,7 @@ import {
 
 const initialState = {
   isAuthenticated: null,
-  isProfAuthenticated: null,
+  profAuthenticated: null,
   user: null,
   prof: null
 };
@@ -28,6 +28,14 @@ export default function (state = initialState, action) {
         user: payload
       };
 
+    case PROF_LOADED:
+      return {
+        ...state,
+        profAuthenticated: true,
+        prof: payload
+      };
+
+
     case UPDATE_INFO:
       return {
         ...state,
@@ -42,21 +50,14 @@ export default function (state = initialState, action) {
         ...state,
         isAuthenticated: false,
         user: null,
-        profAuthenticated: false,
-        prof: null
       };
 
-    case PROF_LOADED:
-      return {
-        ...state,
-        isProfAuthenticated: true,
-        prof: payload
-      };
+
 
     case LOGOUT_FAILURE:
     default:
       return state;
 
-    
+
   }
 }
