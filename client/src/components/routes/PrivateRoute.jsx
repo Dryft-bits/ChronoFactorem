@@ -3,7 +3,7 @@ import { Route, Redirect } from "react-router-dom";
 import { useGetData } from "use-axios-react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { verifyLogin } from "../../actions/auth";
+import { verifyLogin } from "../../redux/actions/auth";
 
 const PrivateRoute = ({
   component: Component,

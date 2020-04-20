@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { clearAll, saveTimeTable } from "../../actions/UpdateTimeTable";
+import { clearAll, saveTimeTable } from "../../redux/actions/UpdateTimeTable";
 import * as TimeTableData from "../../Timetable.json";
 import AddCourse from "./AddCourse.jsx";
 import PreviewTT from "./PreviewTT.jsx";

@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { addSection } from "../../actions/UpdateTimeTable";
+import { addSection } from "../../redux/actions/UpdateTimeTable";
 
 const ListSection = props => {
   return (

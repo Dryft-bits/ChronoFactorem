@@ -4,8 +4,6 @@ import { connect } from "react-redux";
 
 const ProtectedRoute = ({
   component: Component,
-  checkProf,
-  profAuthenticated,
   ...rest
 }) => {
   return (
@@ -22,11 +20,7 @@ const ProtectedRoute = ({
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    profAuthenticated: state.auth.profAuthenticated
-  };
-};
 
 
-export default connect(mapStateToProps, null)(PrivateRoute);
+
+export default PrivateRoute;
