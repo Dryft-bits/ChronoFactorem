@@ -14,7 +14,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { useGetData } from "use-axios-react";
 import "../../styles/ShareTT.css";
-import { editTT } from "../../actions/UpdateTimeTable";
+import { editTT } from "../../redux/actions/UpdateTimeTable";
 import "../utils/YearSelector";
 import YearSelector from "../utils/YearSelector";
 

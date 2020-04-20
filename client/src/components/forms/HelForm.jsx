@@ -3,7 +3,7 @@ import { Select } from "react-select-tile";
 import Creatable from "react-select";
 import { components } from "react-select";
 import { connect } from "react-redux";
-import { submitForm } from "../../actions/helForm";
+import { submitForm } from "../../redux/actions/helForm";
 import PropTypes from "prop-types";
 import "../utils/YearSelector.jsx";
 

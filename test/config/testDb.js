@@ -2,7 +2,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const mongoose = require("mongoose");
-const Hel = require("../../models/Hel");
+const Hel = require("../../server/models/Hel");
 
 let chai = require("chai"),
   should = chai.should(),

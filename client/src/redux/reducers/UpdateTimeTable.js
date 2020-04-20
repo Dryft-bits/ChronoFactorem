@@ -1,4 +1,4 @@
-import TimeTable from "../schemas/TimeTable.js";
+import TimeTable from "../../schemas/TimeTable.js";
 import {
   ADD_SECTION,
   DELETE_SECTION,

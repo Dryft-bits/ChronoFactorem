@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const ProfAuth = new Schema({
+const Professor = new Schema({
   name: {
     type: String,
     required: true
@@ -24,4 +24,4 @@ const ProfAuth = new Schema({
   }
 });
 
-module.exports = mongoose.model("professorAuth", ProfAuth);
+module.exports = mongoose.model("professor", Professor);

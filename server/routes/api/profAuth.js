@@ -1,12 +1,12 @@
 const express = require('express');
 const { check, validationResult } = require("express-validator");
 const router = express.Router();
-const ProfAuth = require('../../models/ProfAuth');
+const Professor = require('../../models/Professor');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 router.post("/", [
-    check("username").not().isEmpty(),
-    check("password").not().isEmpty()
+    check("username","username is required").not().isEmpty(),
+    check("password","password is required").not().isEmpty()
 ],
     async (req, res) => {
         const errors = validationResult(req);
@@ -16,7 +16,7 @@ router.post("/", [
         const username = req.body.username;
         const password = req.body.password;
         try {
-            let prof = await ProfAuth.findOne({ username: username });
+            let prof = await Professor.findOne({ username: username });
             if (!prof) {
                 return res.status(204).json({ msg: "user does not exist" });
             }
@@ -43,14 +43,14 @@ router.post("/", [
             res.status(500).send("Server Error" + err);
         }
     });
-router.get("/profLoggedIn", [
-    check('token').not().isEmpty()
+router.post("/profLoggedIn", [
+    check('token',"token is required").not().isEmpty(),
 ], async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         return res.status(412).json({ errors: errors.array() }); //412: precondition failed
     }
-    const token = req.query.token;
+    const token = req.body.token;
     jwt.verify(token, process.env.SECRET_KEY_BCRYPT, (err, data) => {
         if (err) {
             return res.json(null);
@@ -68,27 +68,27 @@ router.get("/profLoggedIn", [
     });
 });
 
-router.get("/createAcc", [
-    check('username').not().isEmpty(),
-    check('name').not().isEmpty(),
-    check('email').isEmail(),
-    check('password').not().isEmpty(),
-    check('department').not().isEmpty(),
+router.post("/createAcc", [
+    check('username',"username is required").not().isEmpty(),
+    check('name',"name is required").not().isEmpty(),
+    check('email',"email is either empty or is invalid").isEmail(),
+    check('password',"password is required").not().isEmpty(),
+    check('department',"department is required").not().isEmpty(),
 ], async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         return res.status(412).json({ errors: errors.array() });
     }
 
-    const username = req.query.username;
-    const password = req.query.password;
-    const name = req.query.name;
-    const email = req.query.email;
-    const department = req.query.department;
+    const username = req.body.username;
+    const password = req.body.password;
+    const name = req.body.name;
+    const email = req.body.email;
+    const department = req.body.department;
     try {
-        let prof = await ProfAuth.findOne({ username: username });
+        let prof = await Professor.findOne({ username: username });
         if (prof) {
-            return res.status(400).send("User already exists");
+            return res.status(206).send("User already exists");
         }
         const saltRounds = 12;
         bcrypt.hash(password, saltRounds, (err, hash) => {
@@ -96,7 +96,7 @@ router.get("/createAcc", [
                 return res.status(500).send("Internal server error");
             }
             else {
-                prof = new ProfAuth({
+                prof = new Professor({
                     username: username,
                     hash: hash,
                     email: email,

@@ -3,7 +3,7 @@ import "../../styles/Landing.css";
 import configuration from "../../config/constants.js";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
-import { useState,useEffect } from "react";
+import { useState } from "react";
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
@@ -13,13 +13,13 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import axios from 'axios';
 import Cookies from 'js-cookie';
-import { addProf } from '../../actions/auth';
+import { addProf } from '../../redux/actions/auth';
 import CreateAccount from '../forms/CreateAccount';
 
-export const Landing = ({ isAuthenticated,profAuthenticated,addProf }) => {
+export const Landing = ({ isAuthenticated, profAuthenticated, addProf }) => {
 
   let token = Cookies.get("token") ? Cookies.get("token") : null;
-  
+
   addProf(token);
 
   const [open, setOpen] = useState({
@@ -28,13 +28,13 @@ export const Landing = ({ isAuthenticated,profAuthenticated,addProf }) => {
     password: "",
     incorrectUsername: false,
     incorrectPassword: false,
-    profAuthenticated: false,
     isCreate: false,
   });
+  const { isOpen, username, password, incorrectUsername, incorrectPassword, isCreate } = open;
   const handleCreate = () => {
     setOpen({
       ...open,
-      isCreate: !open.isCreate
+      isCreate: !isCreate
     });
   }
   const handleClickOpen = () => {
@@ -69,14 +69,14 @@ export const Landing = ({ isAuthenticated,profAuthenticated,addProf }) => {
     }
   };
   const submit = async (e) => {
-    let iu = false, ip = false, pa = false;
+    let iu = false, ip = false;
     e.preventDefault();
     await axios.post("/api/ProfAuth",
       {
-        username: open.username,
-        password: open.password
+        username: username,
+        password: password
       }, config).then(function (res) {
-        
+
         if (!res || res.status === 204) {
           iu = true;
         }
@@ -85,7 +85,6 @@ export const Landing = ({ isAuthenticated,profAuthenticated,addProf }) => {
           if (res.status === 206) { ip = true; }
           else {
             ip = false;
-            pa = true;
             //store the token in HTTP cookie
             Cookies.set('token', res.data.token, { expires: 1 });
             window.alert("welcome");
@@ -96,95 +95,93 @@ export const Landing = ({ isAuthenticated,profAuthenticated,addProf }) => {
           ...open,
           incorrectUsername: iu,
           incorrectPassword: ip,
-          profAuthenticated: pa,
         });
       }
       ).catch((err) => { console.log('Axios Error:', err); });
   }
-  
-  if(profAuthenticated)
-  {
+
+  if (profAuthenticated) {
     //redirect to dash here
   }
 
   if (isAuthenticated) {
     return <Redirect to='/checkloggedin'></Redirect>;
   }
-  
-  
 
 
-return (
 
-  <section className='landing body'>
-    <div className='dark-overlay'>
-      <div className='landing-inner'>
-        <div className='main'>
-          <h1 className='text-x-large text-landing'>ChronoFactorem</h1>
-          <p className='text-large text-landing description center'>
-            Create your own timetable.
+
+  return (
+
+    <section className='landing body'>
+      <div className='dark-overlay'>
+        <div className='landing-inner'>
+          <div className='main'>
+            <h1 className='text-x-large text-landing'>ChronoFactorem</h1>
+            <p className='text-large text-landing description center'>
+              Create your own timetable.
             </p>
-          <div>
-            <button className='btn-landing btn-left' onClick={handleClickOpen}>
-              <span>Staff </span>
-            </button>
-            <a href={configuration.urls.googleAuth}>
-              <button className='btn-landing btn-right'>
-                <span>Student </span>
+            <div>
+              <button className='btn-landing btn-left' onClick={handleClickOpen}>
+                <span>Staff </span>
               </button>
-            </a>
+              <a href={configuration.urls.googleAuth}>
+                <button className='btn-landing btn-right'>
+                  <span>Student </span>
+                </button>
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div>
-      <Dialog open={open.isOpen} onClose={handleClose} aria-labelledby="form-dialog-title">
-        <form onSubmit={submit}>
-          <DialogTitle id="form-dialog-title">Login</DialogTitle>
-          <DialogContent>
-            <DialogContentText>
-              Enter your username and password
+      <div>
+        <Dialog open={isOpen} onClose={handleClose} aria-labelledby="form-dialog-title">
+          <form onSubmit={submit}>
+            <DialogTitle id="form-dialog-title">Login</DialogTitle>
+            <DialogContent>
+              <DialogContentText>
+                Enter your username and password
           </DialogContentText>
-            <TextField
-              autoFocus
-              error={open.incorrectUsername}
-              margin="dense"
-              id="name"
-              label="Username"
-              type="text"
-              fullWidth
-              onChange={editUsername}
-              helperText={open.incorrectUsername ? "Username does not exist" : ""}
-            />
-            <TextField
-              error={open.incorrectPassword}
-              autoFocus
-              margin="dense"
-              id="name"
-              label="Password"
-              type="password"
-              fullWidth
-              onChange={editPassword}
-              helperText={open.incorrectPassword ? "Incorrect Password for given username" : ""}
-            />
-          </DialogContent>
+              <TextField
+                autoFocus
+                error={incorrectUsername}
+                margin="dense"
+                id="name"
+                label="Username"
+                type="text"
+                fullWidth
+                onChange={editUsername}
+                helperText={incorrectUsername ? "Username does not exist" : ""}
+              />
+              <TextField
+                error={incorrectPassword}
+                autoFocus
+                margin="dense"
+                id="name"
+                label="Password"
+                type="password"
+                fullWidth
+                onChange={editPassword}
+                helpertext={incorrectPassword ? "Incorrect Password for given username" : ""}
+              />
+            </DialogContent>
 
-          <DialogActions>
-            <Button onClick={handleClose} color="primary">
-              Cancel
+            <DialogActions>
+              <Button onClick={handleClose} color="primary">
+                Cancel
           </Button>
-            <Button type='submit' color="primary">
-              Login
+              <Button type='submit' color="primary">
+                Login
           </Button>
-            <Button onClick={handleCreate} color="primary">
-              Create new
+              <Button onClick={handleCreate} color="primary">
+                Create new
           </Button>
-          </DialogActions>
-        </form>
-      </Dialog>
-      <CreateAccount open={open.isCreate} action={handleCreate}/>
-    </div>
-  </section>);
+            </DialogActions>
+          </form>
+        </Dialog>
+        <CreateAccount open={isCreate} action={handleCreate} />
+      </div>
+    </section>);
 
 };
 
@@ -197,4 +194,4 @@ const mapStateToProps = state => {
 
 
 
-export default connect(mapStateToProps, {addProf})(Landing);
+export default connect(mapStateToProps, { addProf })(Landing);

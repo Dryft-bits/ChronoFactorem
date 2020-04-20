@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { logout } from "../../actions/auth";
+import { logout } from "../../redux/actions/auth";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import image from "../../images/default.png";

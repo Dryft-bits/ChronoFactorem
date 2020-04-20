@@ -2,7 +2,7 @@ import { Component } from "react";
 import React from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { deleteSection } from "../../actions/UpdateTimeTable";
+import { deleteSection } from "../../redux/actions/UpdateTimeTable";
 import "../../styles/Timetable.css";
 
 const ntw = require("number-to-words");

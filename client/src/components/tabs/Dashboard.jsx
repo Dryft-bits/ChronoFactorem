@@ -4,7 +4,7 @@ import { useGetData } from "use-axios-react";
 import axios from "axios";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { editTT } from "../../actions/UpdateTimeTable";
+import { editTT } from "../../redux/actions/UpdateTimeTable";
 import ShareTimeTable from "./ShareTimeTable";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
