@@ -1,9 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const { check, query, validationResult } = require("express-validator");
-const loggedIn = require("../../middleware/auth");
+const loggedIn = require("../../middleware/auth"); // TODO: Include admin middleware here
 const TimeTable = require("../../models/TimeTable");
-const Student = require("../../models/Student");
 const Login = require("../../models/Login");
 
 const mscBranches = ["BIO", "CHEM", "ECO", "MATH", "PHY"];
