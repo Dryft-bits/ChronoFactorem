@@ -6,7 +6,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { Redirect } from 'react-router-dom';
-import React from "react";
+import React, { useEffect } from "react";
 import "../../styles/Landing.css";
 import { useState } from "react";
 import InputLabel from '@material-ui/core/InputLabel';
@@ -30,7 +30,7 @@ const depts = [
 ];
 const CreateAccount = (props) => {
     const [open, setOpen] = useState({
-        isOpen: true,
+        isOpen:  props['open'],
         username: "",
         password: "",
         name: "",
@@ -45,16 +45,7 @@ const CreateAccount = (props) => {
         emptyDeptField: true,
         emptyEmailField: true,
     });
-
-    const handleClose = () => {
-        setOpen({
-            ...open,
-            isOpen: false,
-        });
-    }
-    if (open.isOpen === false) {
-        return <Redirect to='/'></Redirect>
-    }
+   
     const editUsername = (e) => {
         e.preventDefault();
         setOpen({
@@ -158,7 +149,7 @@ const CreateAccount = (props) => {
         }
     }
     return (
-        <Dialog open={props['true']} aria-labelledby="form-dialog-title">
+        <Dialog open={props['open']} aria-labelledby="form-dialog-title">
             <form onSubmit={submit}>
                 <DialogTitle id="form-dialog-title">Login</DialogTitle>
                 <DialogContent>
@@ -237,7 +228,7 @@ const CreateAccount = (props) => {
                 </DialogContent>
 
                 <DialogActions>
-                    <Button onClick={handleClose} color="primary">
+                    <Button onClick={props.action} color="primary">
                         Cancel
           </Button>
                     <Button type='submit' color="primary">

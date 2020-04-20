@@ -1,7 +1,7 @@
 import React from "react";
 import { VictoryBar, VictoryChart, VictoryAxis, VictoryLabel } from "victory";
-import Search from "../Search";
-import ItemList from "../ItemList";
+import Search from "../utils/Search";
+import ItemList from "../utils/ItemList";
 import * as TimeTableData from "../../Timetable.json";
 import { useGetData } from "use-axios-react";
 import axios from "axios";

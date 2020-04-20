@@ -15,8 +15,8 @@ import { connect } from "react-redux";
 import { useGetData } from "use-axios-react";
 import "../../styles/ShareTT.css";
 import { editTT } from "../../actions/UpdateTimeTable";
-import "./YearSelector";
-import YearSelector from "./YearSelector";
+import "../utils/YearSelector";
+import YearSelector from "../utils/YearSelector";
 
 const useStyles = makeStyles({
   root: {
