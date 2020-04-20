@@ -10,6 +10,8 @@ const auth = require("./routes/api/auth.js");
 const helForm = require("./routes/api/helForm.js");
 const helData = require("./routes/api/helData.js");
 const timetable = require("./routes/api/timetable.js");
+const dashboard = require("./routes/api/dashboard.js");
+
 const configuration = require("./config/constants.js");
 
 /* Express setup */
@@ -44,6 +46,7 @@ app.use("/api", auth);
 app.use("/api/helform", helForm);
 app.use("/api/helData", helData);
 app.use("/api/timetable", timetable);
+app.use("/api/dashboard", dashboard);
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 
