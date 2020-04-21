@@ -11,9 +11,7 @@ router.post(
   "/submit",
   [
     loggedIn,
-    check("slotNumber", "Slot is required")
-      .not()
-      .isEmpty(),
+    check("slotNumber", "Slot is required").not().isEmpty(),
     check("slotNumber", "Slot should be a number").isNumeric(),
     check("humanitiesElectives").isArray()
   ],
@@ -68,17 +66,11 @@ router.post(
   [
     loggedIn,
     [
-      check("email", "Email is required")
-        .not()
-        .isEmpty(),
+      check("email", "Email is required").not().isEmpty(),
       check("email", "Invalid email").isEmail(),
       check("studentBranch", "Invalid branch type").isArray(),
-      check("studentBranch", "Branch is required")
-        .not()
-        .isEmpty(),
-      check("year", "Year is required")
-        .not()
-        .isEmpty(),
+      check("studentBranch", "Branch is required").not().isEmpty(),
+      check("year", "Year is required").not().isEmpty(),
       check("year", "Year should be a number").isNumeric()
     ]
   ],
