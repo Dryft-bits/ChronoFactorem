@@ -9,6 +9,7 @@ import ShareTimeTable from "./ShareTimeTable";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
+import Grid from '@material-ui/core/Grid';
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
@@ -17,11 +18,19 @@ import Button from "@material-ui/core/Button";
 import "../../styles/Dashboard.css";
 const useStyles = makeStyles({
   root: {
-    minWidth: 250
+    minWidth: 250,
+    margin:"1vh"
   },
   cardcontainer: {
+    width: "100%",
     maxWidth: "95vw",
-    maxHeight: "27vh",
+    maxHeight: "30vh",
+    overflow: "auto"    
+  },
+  grid: {
+    flexGrow: 1,
+    maxWidth: "95vw",
+    maxHeight: "26vh",
     overflow: "auto"
   }
 });
@@ -77,13 +86,16 @@ const Dashboard = props => {
     return (
       <>
         <h4 className='title'>Saved Timetables</h4>
-        <br></br>
-        <div className={classes.cardcontainer}>
-          {" "}
-          <Container maxWidth='sm'>
-            {(TTData.savedTT || data).map(item => {
+            <div className={classes.grid} style={{position:"relative",left:"2vw" }}>
+              <Grid container style={{ backgroundColor:"#74b9ff"}}>
+            {(TTData.savedTT || data).map(itemc => {
               return (
                 <>
+                  <Grid item xs={6}>
+                  <div
+                    key={itemc._id}
+                    id={itemc._id}
+                  >
                   <Card className={classes.root}>
                     <CardContent>
                       <Typography
@@ -94,14 +106,14 @@ const Dashboard = props => {
                         Name
                       </Typography>
                       <Typography variant='h5' component='h2'>
-                        {item.name}
+                        {itemc.name}
                       </Typography>
                     </CardContent>
                     <CardActions>
                       <Link
                         to='/create'
                         onClick={() => {
-                          props.editTT(item);
+                          props.editTT(itemc);
                         }}
                       >
                         <Button
@@ -115,7 +127,7 @@ const Dashboard = props => {
 
                       <Button
                         onClick={() => {
-                          deleteTT(item._id);
+                          deleteTT(itemc._id);
                         }}
                         variant='contained'
                         color='secondary'
@@ -123,12 +135,12 @@ const Dashboard = props => {
                       >
                         Delete
                       </Button>
-                      {item.isShared ? (
+                      {itemc.isShared ? (
                         <Button
                           variant='contained'
                           size='small'
                           onClick={() => {
-                            toggleShare(item._id, "Unshared");
+                            toggleShare(itemc._id, "Unshared");
                           }}
                         >
                           Unshare
@@ -138,7 +150,7 @@ const Dashboard = props => {
                           variant='contained'
                           size='small'
                           onClick={() => {
-                            toggleShare(item._id, "Shared");
+                            toggleShare(itemc._id, "Shared");
                           }}
                         >
                           Share
@@ -146,14 +158,15 @@ const Dashboard = props => {
                       )}
                     </CardActions>
                   </Card>
-                  <br></br>
+                  </div>
+                  </Grid>
                 </>
               );
             })}
-          </Container>
-        </div>
-        <h4 className='title'>Publicily Shared Timetables</h4>
+            </Grid>
+          </div>
 
+        <h4 className='title'>Publicily Shared Timetables</h4>
         <ShareTimeTable />
       </>
     );
