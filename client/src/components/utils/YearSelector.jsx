@@ -34,6 +34,7 @@ const YearSelector = props => {
         value={Year[0]}
         control={<Radio color='primary' />}
         label={Year[1]}
+        key={Year[0]}
         className='text-black'
         onChange={handleYearChange}
         checked={year === Year[0]}
