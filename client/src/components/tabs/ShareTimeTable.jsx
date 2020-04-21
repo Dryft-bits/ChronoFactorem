@@ -4,6 +4,7 @@ import Creatable from "react-select";
 import { components } from "react-select";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
+import Grid from '@material-ui/core/Grid';
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
@@ -20,10 +21,10 @@ import YearSelector from "../utils/YearSelector";
 
 const useStyles = makeStyles({
   root: {
-    minWidth: 275
+    minWidth: 275,
+    margin: "1vh"
   },
   cardcontainer: {
-    width: "100%",
     maxWidth: "95vw",
     maxHeight: "65vh",
     overflow: "auto"
@@ -38,6 +39,12 @@ const useStyles = makeStyles({
   },
   pos: {
     marginBottom: 12
+  },
+  grid: {
+    flexGrow: 1,
+    maxWidth: "95vw",
+    maxHeight: "45vh",
+    overflow: "auto"
   }
 });
 
@@ -176,25 +183,23 @@ const ShareTimeTable = props => {
           ></YearSelector>
         </div>
         <br></br>
-        <div style={{ position: "relative", left: "5vw" }}>
           <input
             type='submit'
-            className='btn btn-primary btn-hf btn-big'
+            className='btn btn-primary btn-go btn-big'
             value='GO'
           />
-        </div>
-        <br></br>
       </form>
-      <div className={classes.cardcontainer}>
-        <Container maxWidth='sm'>
+          <br></br>
+          <div className={classes.grid} style={{position:"relative", left:"2vw"}}>
+            <Grid container style={{ backgroundColor:"#74b9ff"}} >
           {!loading && TTs.length !== 0 ? (
-            TTs.map(item => {
+            TTs.map(itemc => {
               return (
                 <>
+                <Grid item xs={6}>
                   <div
-                    key={item._id}
-                    id={item._id}
-                    style={{ textAlign: "center" }}
+                    key={itemc._id}
+                    id={itemc._id}
                   >
                     <Card className={classes.root}>
                       <CardContent>
@@ -206,28 +211,28 @@ const ShareTimeTable = props => {
                           Timetable Name
                         </Typography>
                         <Typography variant='h5' component='h2'>
-                          {item.name}
+                          {itemc.name}
                         </Typography>
                         <Typography color='textSecondary'>Shared by</Typography>
                         <Typography variant='h6' component='h6'>
-                          {item.ownerId.name}
+                          {itemc.ownerId.name}
                         </Typography>
                         <Typography
                           variant='body2'
                           color='textSecondary'
                           component='p'
                         >
-                          Date: {item.date.substr(0, item.date.indexOf("T"))}
+                          Date: {itemc.date.substr(0, itemc.date.indexOf("T"))}
                           <br />
                           {"Time: "}{" "}
-                          {item.date.substr(item.date.indexOf("T") + 1, 9)}
+                          {itemc.date.substr(itemc.date.indexOf("T") + 1, 9)}
                         </Typography>
                       </CardContent>
                       <CardActions>
                         <Link
                           to='/create'
                           onClick={() => {
-                            props.editTT(item);
+                            props.editTT(itemc);
                           }}
                         >
                           <Button
@@ -240,20 +245,21 @@ const ShareTimeTable = props => {
                         </Link>
                       </CardActions>
                     </Card>
-                    <br></br>
                   </div>
+                  </Grid>
                 </>
               );
             })
           ) : loading ? (
             <h4>Loading</h4>
           ) : (
-            <h4 className='title' style={{ textAlign: "center" }}>
+            <h4 className='title'>
               No Shared Timetables
             </h4>
           )}
-        </Container>
-      </div>
+        </Grid>
+        </div>
+
     </>
   );
 };
