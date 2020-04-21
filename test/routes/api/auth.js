@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 let chai = require("chai"),
   expect = chai.expect;
 let chaiHttp = require("chai-http");
-var server = require("../../../server.js");
+var server = require("../../../server/server.js");
 
 chai.use(chaiHttp);
 
