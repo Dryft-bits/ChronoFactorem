@@ -1,12 +1,14 @@
 const prod = {
   urls: {
-    googleAuth: "https://chronofactorem.herokuapp.com/api/auth/google"
+    googleAuth: "https://chronofactorem.herokuapp.com/api/auth/google",
+    adminLogin: ""
   }
 };
 
 const dev = {
   urls: {
-    googleAuth: "http://localhost:5000/api/auth/google"
+    googleAuth: "http://localhost:5000/api/auth/google",
+    adminLogin: "http://localhost:3001"
   }
 };
 

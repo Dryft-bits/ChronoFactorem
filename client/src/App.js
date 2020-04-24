@@ -35,7 +35,6 @@ const App = () => {
         <PrivateRoute exact path='/Dashboard' component={Dashboard} />
         <PrivateRoute exact path='/helData' component={HELData} />
         <PrivateRoute exact path='/create' component={CreateTimeTable} />
-        
         <PrivateRoute exact path='/aboutUs' component={AboutUs} />
       </BrowserRouter>
     </Provider>
