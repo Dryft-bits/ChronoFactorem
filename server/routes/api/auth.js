@@ -17,12 +17,9 @@ authRouter.get(
 );
 
 authRouter.get("/loggedin", loggedIn, function (req, res) {
-  console.log("in loggedin");
   if (req.user) {
-    console.log("loggedin found user");
     res.status(200).send(req.user);
   } else {
-    console.log("loggedin no user");
     res.status(401).json({ msg: "Unauthorized" });
   }
 });
@@ -43,12 +40,9 @@ authRouter.get("/logout", (req, res) => {
 });
 
 authRouter.get("/current_user", loggedIn, (req, res) => {
-  console.log("currentuser");
   if (req.user) {
-    console.log("currentuser found user");
     res.status(200).send(req.user);
   } else {
-    console.log("currentuser no find user");
     res.status(401).json({ msg: "Unauthorized" });
   }
 });
