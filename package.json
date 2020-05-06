@@ -66,9 +66,6 @@
     "cy": "cypress open",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
-  "routes": {
-    "/**": "index.html"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Dryft-bits/ChronoFactorem.git"
