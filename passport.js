@@ -1,4 +1,4 @@
-const configuration = require("./config/constants.js");
+const configuration = require("./server/config/constants.js");
 
 const dotenv = require("dotenv");
 dotenv.config();
