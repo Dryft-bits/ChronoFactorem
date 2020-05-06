@@ -64,7 +64,10 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "test": "NODE_ENV=test mocha --exit --recursive || true",
     "cy": "cypress open",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
+    "routes": {
+      "/**": "index.html"
+    }
   },
   "repository": {
     "type": "git",
