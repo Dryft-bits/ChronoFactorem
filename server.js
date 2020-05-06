@@ -1,18 +1,18 @@
 const express = require("express");
-const connectDB = require("./config/db.js");
+const connectDB = require("./server/config/db.js");
 const cors = require("cors");
 const passport = require("passport");
 const bodyParser = require("body-parser");
 const cookieSession = require("cookie-session");
 const path = require("path");
 
-const auth = require("./routes/api/auth.js");
-const helForm = require("./routes/api/helForm.js");
-const helData = require("./routes/api/helData.js");
-const timetable = require("./routes/api/timetable.js");
-const staff = require("./routes/api/profAuth.js");
+const auth = require("./server/routes/api/auth.js");
+const helForm = require("./server/routes/api/helForm.js");
+const helData = require("./server/routes/api/helData.js");
+const timetable = require("./server/routes/api/timetable.js");
+const staff = require("./server/routes/api/profAuth.js");
 
-const configuration = require("./config/constants.js");
+const configuration = require("./server/config/constants.js");
 
 /* Express setup */
 const app = express();
@@ -24,8 +24,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 /* Connect to database */
-const Student = require("./models/Student.js");
-const Login = require("./models/Login.js");
+const Student = require("./server/models/Student.js");
+const Login = require("./server/models/Login.js");
 if (process.env.NODE_ENV !== "test") {
   connectDB();
 }
