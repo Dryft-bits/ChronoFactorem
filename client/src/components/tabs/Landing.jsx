@@ -97,7 +97,6 @@ export const Landing = ({ isAuthenticated, profAuthenticated, addProf }) => {
             ip = false;
             //store the token in HTTP cookie
             Cookies.set("token", res.data.token, { expires: 1 });
-            window.alert("welcome");
             addProf(res.data.token);
           }
         }
