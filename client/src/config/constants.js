@@ -1,7 +1,7 @@
 const prod = {
   urls: {
     googleAuth: "https://chronofactorem.herokuapp.com/api/auth/google",
-    adminLogin: "https://chrono-dashboard.herokuapp.com/#/login"
+    adminLogin: "https://chrono-dashboard.herokuapp.com/"
   }
 };
 

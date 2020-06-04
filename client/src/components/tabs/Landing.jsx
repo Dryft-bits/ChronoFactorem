@@ -15,7 +15,7 @@ import axios from "axios";
 import Cookies from "js-cookie";
 import { addProf } from "../../redux/actions/auth";
 import CreateAccount from "../forms/CreateAccount";
-
+import { Route } from 'react-router-dom';
 export const Landing = ({ isAuthenticated, profAuthenticated, addProf }) => {
   let token = Cookies.get("token") ? Cookies.get("token") : null;
 
@@ -97,7 +97,6 @@ export const Landing = ({ isAuthenticated, profAuthenticated, addProf }) => {
             ip = false;
             //store the token in HTTP cookie
             Cookies.set("token", res.data.token, { expires: 1 });
-            window.alert("welcome");
             addProf(res.data.token);
           }
         }
@@ -114,6 +113,10 @@ export const Landing = ({ isAuthenticated, profAuthenticated, addProf }) => {
 
   if (profAuthenticated) {
     //redirect to dash here
+    return <Route path='/' component={() => {
+      window.location.href = configuration.urls.adminLogin;
+      return null;
+    }} />;
   }
 
   if (isAuthenticated) {
@@ -130,11 +133,12 @@ export const Landing = ({ isAuthenticated, profAuthenticated, addProf }) => {
               Create your own timetable.
             </p>
             <div>
-              <a href={configuration.urls.adminLogin}>
-                <button className='btn-landing btn-left'>
-                  <span>Staff </span>
-                </button>
-              </a>
+
+              <button className='btn-landing btn-left' onClick={handleClickOpen}
+              >
+                <span>Staff </span>
+              </button>
+
               <a href={configuration.urls.googleAuth}>
                 <button className='btn-landing btn-right'>
                   <span>Student </span>
