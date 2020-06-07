@@ -22,7 +22,7 @@ const StudentSchema = new Schema({
   },
   interestedCourses: [
     {
-      type: String,
+      type: Object,
     },
   ],
 });
