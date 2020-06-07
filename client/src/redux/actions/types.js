@@ -23,3 +23,6 @@ export const NO_PROF = "NO_PROF";
 
 export const OPEN_ALERT_DIALOG = "OPEN_ALERT_DIALOG";
 export const CLOSE_ALERT_DIALOG = "CLOSE_ALERT_DIALOG";
+
+export const OPEN_SAVE_ALERT = "OPEN_SAVE_ALERT";
+export const CLOSE_SAVE_ALERT = "CLOSE_SAVE_ALERT";

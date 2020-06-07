@@ -1,6 +1,6 @@
 import axios from "axios";
 import { ADD_SECTION, SAVE_TIMETABLE, DELETE_SECTION } from "../actions/types";
-import { deleteSection } from "../actions/UpdateTimeTable";
+import { deleteSection, openSaveAlert } from "../actions/UpdateTimeTable";
 import * as utils from "../../utils/CreateTTUtils.js";
 import * as TimeTableData from "../../Timetable.json";
 
@@ -174,11 +174,13 @@ export const saveTTMiddleware = (store) => (next) => (action) => {
           action.payload.id = res.data.id;
           action.payload.name = ttname;
           action.payload.timetable = store.getState().updateTT.myTimeTable;
-          window.alert("Successfully Saved the TimeTable");
+          store.dispatch(
+            openSaveAlert("Successfully Saved the TimeTable", "success")
+          );
           return next(action);
         });
     } catch (err) {
-      window.alert(err.message);
+      store.dispatch(openSaveAlert(err.message, "error"));
       return;
     }
   } else {

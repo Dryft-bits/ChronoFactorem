@@ -4,6 +4,8 @@ import {
   CLEAR_ALL,
   SAVE_TIMETABLE,
   EDIT_TIMETABLE,
+  OPEN_SAVE_ALERT,
+  CLOSE_SAVE_ALERT,
 } from "./types";
 import store from "../store";
 
@@ -63,5 +65,21 @@ export const editTT = (tt, sharedTT = false) => {
       timetable: tt.TimeTable,
       courses: tt.Courses,
     },
+  };
+};
+
+export const openSaveAlert = (msg, type) => {
+  return {
+    type: OPEN_SAVE_ALERT,
+    payload: {
+      msg: msg,
+      type: type,
+    },
+  };
+};
+
+export const closeSaveAlert = () => {
+  return {
+    type: CLOSE_SAVE_ALERT,
   };
 };

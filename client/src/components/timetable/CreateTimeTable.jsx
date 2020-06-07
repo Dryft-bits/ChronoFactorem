@@ -8,6 +8,7 @@ import PreviewTT from "./PreviewTT.jsx";
 import MidsemSched from "./MidsemSched.jsx";
 import CompreSched from "./CompreSched.jsx";
 import ExportPage from "./ExportPage.jsx";
+import AlertBox from "../utils/AlertBox.jsx";
 
 const courses = JSON.parse(JSON.stringify(TimeTableData));
 
@@ -15,7 +16,7 @@ class CreateTimeTable extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      view: 0
+      view: 0,
     };
     this.showView = this.showView.bind(this);
     this.CustomButton = this.CustomButton.bind(this);
@@ -41,7 +42,7 @@ class CreateTimeTable extends Component {
   render() {
     return (
       <>
-        {this.props.loading ? <h2>Loading...</h2> : null}
+        <AlertBox />
         {this.state.view === 0 ? (
           <>
             {this.CustomButton("Preview", 1)}
@@ -99,23 +100,17 @@ class CreateTimeTable extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    loading: state.updateTT.loading
-  };
-};
-
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     clearAll: () => dispatch(clearAll()),
-    save: () => dispatch(saveTimeTable())
+    save: () => dispatch(saveTimeTable()),
   };
 };
 
 CreateTimeTable.propTypes = {
   loading: PropTypes.bool.isRequired,
   clearAll: PropTypes.func.isRequired,
-  save: PropTypes.func.isRequired
+  save: PropTypes.func.isRequired,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(CreateTimeTable);
+export default connect(null, mapDispatchToProps)(CreateTimeTable);
