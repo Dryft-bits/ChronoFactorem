@@ -25,6 +25,7 @@ router.post(
           TimeTable: timetable,
           Courses: courses,
         });
+        statsCalculator.updateOnSaving(req.user.id, coursesToCheck);
       } else {
         tt.name = name;
         tt.TimeTable = timetable;
@@ -36,10 +37,19 @@ router.post(
           }
           return true;
         });
+        statsCalculator.updateOnSaving(req.user.id, coursesToCheck);
+        coursesToCheck = tt.Courses.filter((all) => {
+          for (let old of courses) {
+            if (Object.keys(all.course)[0] === Object.keys(old.course)[0]) {
+              return false;
+            }
+          }
+          return true;
+        });
+        statsCalculator.updateOnDeleting(req.user.id, coursesToCheck);
         tt.Courses = courses;
       }
       tt.save();
-      statsCalculator.updateOnSaving(req.user.id, coursesToCheck);
       res.status(200).json({ id: tt.id });
     } catch (err) {
       console.error(err.message);
