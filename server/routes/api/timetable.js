@@ -15,6 +15,7 @@ router.post(
       return res.status(422).json({ errors: errors.array() });
     }
     const { id, name, timetable, courses } = req.body;
+    let coursesToCheck = courses;
     try {
       let tt = await TimeTable.findOne({ _id: id, ownerId: req.user.id });
       if (!tt) {
@@ -27,10 +28,18 @@ router.post(
       } else {
         tt.name = name;
         tt.TimeTable = timetable;
+        coursesToCheck = courses.filter((all) => {
+          for (let old of tt.Courses) {
+            if (Object.keys(all.course)[0] === Object.keys(old.course)[0]) {
+              return false;
+            }
+          }
+          return true;
+        });
         tt.Courses = courses;
       }
       tt.save();
-      statsCalculator.updateOnSaving(req.user.id, courses);
+      statsCalculator.updateOnSaving(req.user.id, coursesToCheck);
       res.status(200).json({ id: tt.id });
     } catch (err) {
       console.error(err.message);
