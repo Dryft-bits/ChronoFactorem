@@ -9,6 +9,7 @@ import MidsemSched from "./MidsemSched.jsx";
 import CompreSched from "./CompreSched.jsx";
 import ExportPage from "./ExportPage.jsx";
 import AlertBox from "../utils/AlertBox.jsx";
+import AlertDialog from "../utils/AlertDialog.jsx";
 
 const courses = JSON.parse(JSON.stringify(TimeTableData));
 
@@ -42,6 +43,7 @@ class CreateTimeTable extends Component {
   render() {
     return (
       <>
+        <AlertDialog />
         <AlertBox />
         {this.state.view === 0 ? (
           <>
