@@ -6,7 +6,6 @@ export const CLEAR_CURRENT_COURSE = "CLEAR_CURRENT_COURSE";
 
 export const SAVE_TIMETABLE = "SAVE_TIMETABLE";
 export const EDIT_TIMETABLE = "EDIT_TIMETABLE";
-export const TIMETABLE_LOADING = "TIMETABLE_LOADING";
 
 export const SUBMIT_SUCCESS = "SUBMIT_SUCCESS";
 export const SUBMIT_FAIL = "SUBMIT_FAIL";
@@ -21,3 +20,6 @@ export const NO_USER = "NO_USER";
 
 export const PROF_LOADED = "PROF_LOADED";
 export const NO_PROF = "NO_PROF";
+
+export const OPEN_ALERT_DIALOG = "OPEN_ALERT_DIALOG";
+export const CLOSE_ALERT_DIALOG = "CLOSE_ALERT_DIALOG";
