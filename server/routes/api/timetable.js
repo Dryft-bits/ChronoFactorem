@@ -58,7 +58,7 @@ router.delete("/delete/:id", loggedIn, async (req, res) => {
       ownerId: req.user.id,
     });
     if (!tt) throw Error("TimeTable not found");
-
+    statsCalculator.updateOnDeleting(req.user.id, tt.Courses);
     const removed = await tt.remove();
     if (!removed)
       throw Error("Something went wrong while trying to delete the TimeTable");
