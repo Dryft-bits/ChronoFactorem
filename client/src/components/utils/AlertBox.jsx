@@ -1,24 +1,38 @@
 import React from "react";
+import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import Snackbar from "@material-ui/core/Snackbar";
 import Alert from "@material-ui/lab/Alert";
+import { closeSaveAlert } from "../../redux/actions/UpdateTimeTable";
 
 const AlertBox = (props) => {
   return (
     <Snackbar
-      open={props.AlertMsg.status}
+      open={props.alertMsg.status}
       autoHideDuration={5000}
       anchorOrigin={{ vertical: "bottom", horizontal: "left" }}
       onClose={props.handleClose}
     >
-      <Alert color={props.AlertMsg.type}>{props.AlertMsg.msg}</Alert>
+      <Alert color={props.alertMsg.type}>{props.alertMsg.msg}</Alert>
     </Snackbar>
   );
 };
 
+const mapStateToProps = (state) => {
+  return {
+    alertMsg: state.updateTT.alertMsg,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    handleClose: () => dispatch(closeSaveAlert()),
+  };
+};
+
 AlertBox.propTypes = {
-  AlertMsg: PropTypes.object.isRequired,
+  alertMsg: PropTypes.object.isRequired,
   handleClose: PropTypes.func.isRequired,
 };
 
-export default AlertBox;
+export default connect(mapStateToProps, mapDispatchToProps)(AlertBox);
