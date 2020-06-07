@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { check, query, validationResult } = require("express-validator");
 const loggedIn = require("../../middleware/auth");
+const statsCalculator = require("../../utils/statsCalculator");
 const TimeTable = require("../../models/TimeTable");
 
 router.post(
@@ -13,7 +14,6 @@ router.post(
       console.log(errors);
       return res.status(422).json({ errors: errors.array() });
     }
-
     const { id, name, timetable, courses } = req.body;
     try {
       let tt = await TimeTable.findOne({ _id: id, ownerId: req.user.id });
@@ -22,7 +22,7 @@ router.post(
           ownerId: req.user.id,
           name: name,
           TimeTable: timetable,
-          Courses: courses
+          Courses: courses,
         });
       } else {
         tt.name = name;
@@ -30,6 +30,7 @@ router.post(
         tt.Courses = courses;
       }
       tt.save();
+      statsCalculator.updateOnSaving(req.user.id, courses);
       res.status(200).json({ id: tt.id });
     } catch (err) {
       console.error(err.message);
@@ -41,7 +42,7 @@ router.post(
 router.get("/getTT", loggedIn, async (req, res) => {
   try {
     let tt = await TimeTable.find({ ownerId: req.user.id }).sort({
-      date: -1
+      date: -1,
     });
     res.status(200).json(tt);
   } catch (err) {
@@ -54,7 +55,7 @@ router.delete("/delete/:id", loggedIn, async (req, res) => {
   try {
     const tt = await TimeTable.findOne({
       _id: req.params.id,
-      ownerId: req.user.id
+      ownerId: req.user.id,
     });
     if (!tt) throw Error("TimeTable not found");
 
@@ -72,7 +73,7 @@ router.get("/toggleShare/:id", loggedIn, async (req, res) => {
   try {
     const tt = await TimeTable.findOne({
       _id: req.params.id,
-      ownerId: req.user.id
+      ownerId: req.user.id,
     });
     if (!tt) throw Error("TimeTable not found");
     tt.isShared = !tt.isShared;
@@ -85,24 +86,21 @@ router.get("/toggleShare/:id", loggedIn, async (req, res) => {
 
 router.get(
   "/viewshared",
-  [
-    loggedIn,
-    query("branch").isArray(),
-    query("year")
-      .not()
-      .isEmpty()
-  ],
+  [loggedIn, query("branch").isArray(), query("year").not().isEmpty()],
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
       res.status(422).json({ errors: errors.array() });
     } else {
       try {
-        await TimeTable.find({ isShared: true, ownerId: {$not: { $eq: req.user.id}} })
+        await TimeTable.find({
+          isShared: true,
+          ownerId: { $not: { $eq: req.user.id } },
+        })
           .populate({
             path: "ownerId",
-            match: { branch:  req.query.branch, year: req.query.year },
-            select: "name"
+            match: { branch: req.query.branch, year: req.query.year },
+            select: "name",
           })
           .exec((error, docs) => {
             if (error) {
@@ -110,8 +108,7 @@ router.get(
             } else {
               let TTList = [];
               for (let TT of docs) {
-                if(TT.ownerId !== null)
-                  TTList.push(TT);
+                if (TT.ownerId !== null) TTList.push(TT);
               }
               res.json(TTList);
             }
