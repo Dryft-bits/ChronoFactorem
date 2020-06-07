@@ -3,23 +3,28 @@ const Schema = mongoose.Schema;
 const StudentSchema = new Schema({
   name: {
     type: String,
-    required: true
+    required: true,
   },
   email: {
     type: String,
     required: true,
-    unique: true
+    unique: true,
   },
   submittedForm: {
     type: Boolean,
-    required: true
+    required: true,
   },
   year: {
-    type: Number
+    type: Number,
   },
   branch: {
-    type: Array
-  }
+    type: Array,
+  },
+  interestedCourses: [
+    {
+      type: String,
+    },
+  ],
 });
 
 module.exports = mongoose.model("student", StudentSchema);
