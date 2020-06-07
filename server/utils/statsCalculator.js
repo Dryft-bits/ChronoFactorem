@@ -37,7 +37,40 @@ const updateOnSaving = async (studentId, courses) => {
     throw err;
   }
 };
-const updateOnDeleting = async () => {};
+
+const updateOnDeleting = async (studentId, courses) => {
+  try {
+    let studentObj = await Student.findOne({ _id: studentId });
+    let toSearch = studentObj.interestedCourses;
+    let temp = [];
+    for (let i = 0; i < toSearch.length; i++) {
+      let flag = 0;
+      for (let chosen of courses) {
+        let courseId = Object.keys(chosen.course)[0];
+        if (courseId === Object.keys(toSearch[i])[0]) {
+          flag = 1;
+          if (toSearch[i][courseId] > 1) {
+            let obj = {};
+            obj[courseId] = toSearch[i][courseId] - 1;
+            temp.push(obj);
+          } else {
+            let stats = await CourseStats.findOne({ courseId: courseId });
+            stats.count--;
+            await stats.save();
+          }
+        }
+      }
+      if (!flag) {
+        temp.push(toSearch[i]);
+      }
+    }
+    studentObj.interestedCourses = [...temp];
+    await studentObj.save();
+  } catch (err) {
+    throw err;
+  }
+};
+
 module.exports = {
   updateOnSaving,
   updateOnDeleting,
