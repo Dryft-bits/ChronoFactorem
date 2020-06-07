@@ -1,6 +1,7 @@
 import axios from "axios";
 import { ADD_SECTION, SAVE_TIMETABLE, DELETE_SECTION } from "../actions/types";
 import { deleteSection, openSaveAlert } from "../actions/UpdateTimeTable";
+import { openAlertDialog } from "../actions/dialogs";
 import * as utils from "../../utils/CreateTTUtils.js";
 import * as TimeTableData from "../../Timetable.json";
 
@@ -26,7 +27,7 @@ export const checkSectionSwapMiddleware = (store) => (next) => (action) => {
     let section = action.payload.section;
     let duplicate = utils.checkSection(courseTemp, courseCode, section);
     if (duplicate === "same section") {
-      window.alert("You have already chosen this Section!");
+      store.dispatch(openAlertDialog("You have already chosen this Section!"));
       return;
     } else if (
       duplicate &&
@@ -68,8 +69,10 @@ export const checkClashOrDeleteMiddleWare = (store) => (next) => (action) => {
         );
     });
     if (clash) {
-      window.alert(
-        "The selected section clashes with an already present course section! Please remove the previous course first!"
+      store.dispatch(
+        openAlertDialog(
+          "The selected section clashes with an already present course section! Please remove the previous course first!"
+        )
       );
       return;
     }
