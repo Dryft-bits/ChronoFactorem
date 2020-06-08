@@ -110,7 +110,7 @@ const SearchHel = (props) => {
 };
 
 SearchHel.propTypes = {
-  currentHels: PropTypes.object.isRequired,
+  currentHels: PropTypes.object,
   onSelect: PropTypes.func.isRequired,
 };
 

@@ -1,5 +1,5 @@
 import { CLOSE_ALERT_DIALOG } from "../actions/types";
-import { closeAlertDialog, openAlertDialog } from "../actions/dialogs";
+import { openAlertDialog } from "../actions/dialogs";
 import { saveTimeTable } from "../actions/UpdateTimeTable";
 
 export const closeDialogMiddleware = (store) => (next) => (action) => {
