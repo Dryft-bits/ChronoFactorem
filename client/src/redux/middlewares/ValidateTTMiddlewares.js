@@ -145,23 +145,9 @@ export const deleteSectionMiddleware = (store) => (next) => (action) => {
 
 export const saveTTMiddleware = (store) => (next) => (action) => {
   if (action.type === SAVE_TIMETABLE) {
-    let ttname;
+    let ttname = null;
     let id = store.getState().updateTT.id;
-    if (
-      id &&
-      window.confirm(
-        "Click on ok to save as new TimeTable or on cancel to update this one!"
-      )
-    ) {
-      id = null;
-    }
-    if (id) {
-      ttname =
-        prompt("Would you like to change the name of the timetable?") ||
-        store.getState().updateTT.name;
-    } else {
-      ttname = prompt("Would you like to give the timetable a name?");
-    }
+    console.log("here");
     try {
       axios
         .post("/api/timetable/save", {

@@ -1,6 +1,7 @@
 import { applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { getSelectedCourseMiddleware } from "./SelectCourseMiddlewares";
+import { closeDialogMiddleware } from "./dialog";
 import thunk from "redux-thunk";
 
 import {
@@ -9,7 +10,7 @@ import {
   checkLunchHourMiddleware,
   addSectionMiddleware,
   deleteSectionMiddleware,
-  saveTTMiddleware
+  saveTTMiddleware,
 } from "./ValidateTTMiddlewares";
 
 export const customMiddleware = composeWithDevTools(
@@ -21,6 +22,7 @@ export const customMiddleware = composeWithDevTools(
     addSectionMiddleware,
     deleteSectionMiddleware,
     saveTTMiddleware,
+    closeDialogMiddleware,
     thunk
   )
 );

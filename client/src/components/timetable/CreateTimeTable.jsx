@@ -47,13 +47,13 @@ class CreateTimeTable extends Component {
       this.props.openDialog(
         "Would You like to give Your TimeTable a Name?",
         "form",
-        "save"
+        { success: "save", fail: "save" }
       );
     } else {
       this.props.openDialog(
         "Would You like to Save it as a new TimeTable?",
-        "form",
-        "newName"
+        "confirm",
+        { success: "newName", fail: "updateName" }
       );
     }
   }
@@ -133,7 +133,7 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 CreateTimeTable.propTypes = {
-  loading: PropTypes.bool.isRequired,
+  openDialog: PropTypes.func.isRequired,
   clearAll: PropTypes.func.isRequired,
   save: PropTypes.func.isRequired,
 };
