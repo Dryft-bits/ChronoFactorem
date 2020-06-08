@@ -34,6 +34,7 @@ const updateOnSaving = async (studentId, courses) => {
       await studentObj.save();
     }
   } catch (err) {
+    console.log(err.message);
     throw err;
   }
 };
@@ -67,6 +68,7 @@ const updateOnDeleting = async (studentId, courses) => {
     studentObj.interestedCourses = [...temp];
     await studentObj.save();
   } catch (err) {
+    console.log(err.message);
     throw err;
   }
 };
