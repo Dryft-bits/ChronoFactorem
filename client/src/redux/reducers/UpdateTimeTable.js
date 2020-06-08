@@ -17,7 +17,7 @@ const initialState = {
   myCourses: [],
 };
 
-export default function updateTTReducer(action, state = initialState) {
+export default function updateTTReducer(state = initialState, action) {
   switch (action.type) {
     case ADD_SECTION:
       timetable = Object.assign({}, action.payload.timetable);
