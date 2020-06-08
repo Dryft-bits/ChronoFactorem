@@ -17,7 +17,7 @@ class SectionTabs extends Component {
             ref={Tabs => {
               this.Tabs = Tabs;
             }}
-            className='tabs'
+            className='tabs tabs-fixed-width tab-demo'
           >
             <li className='tab col s6'>
               <a href='#Lecture'>Lecture</a>
