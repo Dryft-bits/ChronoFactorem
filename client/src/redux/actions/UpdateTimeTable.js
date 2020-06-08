@@ -4,6 +4,7 @@ import {
   CLEAR_ALL,
   SAVE_TIMETABLE,
   EDIT_TIMETABLE,
+  NULLIFY_ID,
 } from "./types";
 import store from "../store";
 
@@ -64,5 +65,11 @@ export const editTT = (tt, sharedTT = false) => {
       timetable: tt.TimeTable,
       courses: tt.Courses,
     },
+  };
+};
+
+export const nullifyId = () => {
+  return {
+    type: NULLIFY_ID,
   };
 };
