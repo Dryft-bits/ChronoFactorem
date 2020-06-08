@@ -9,13 +9,14 @@ const course = JSON.parse(JSON.stringify(TimeTableData)).default;
 const customStyles = {
   option: (provided, state) => ({
     ...provided,
-    borderBottom: "1px dotted pink",
-    color: state.isSelected ? "pink" : "blue",
-    padding: 20,
+    borderBottom: "1px solid gray",
+    // color: state.isSelected ? "white" : "black",
+    // backgroundColor: state.isSelected ? "black" : "rgba(116, 185, 255,1)",
+    maxHeight: "5vh"
   }),
   control: (provided) => ({
     ...provided,
-    height: "4vw",
+    height: "10vh",
   }),
   singleValue: (provided, state) => {
     const opacity = state.isDisabled ? 0.5 : 1;
@@ -102,7 +103,8 @@ const SearchHel = (props) => {
         }}
         options={hours}
         styles={customStyles}
-        placeholder='Select Hour'
+        placeholder='Select Hour'      
+
       />
       <ListCourse courses={current} />
     </>

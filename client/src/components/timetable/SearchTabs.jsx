@@ -1,12 +1,17 @@
 import React, { Component } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import M from "materialize-css";
+import "materialize-css/dist/css/materialize.min.css";
 import PropTypes from "prop-types";
 import SearchHel from "./SearchHel.jsx";
 import Search from "../utils/Search.jsx";
 import ListCourse from "./ListCourse.jsx";
 
 class SearchTabs extends Component {
+  componentDidMount() {
+    M.Tabs.init(this.Tabs);
+  }
   constructor(props) {
     super(props);
     this.state = {
@@ -35,7 +40,33 @@ class SearchTabs extends Component {
   render() {
     return (
       <>
-        <Tabs defaultIndex={this.props.current === "all" ? 0 : 1}>
+        <div className='col s12'>
+          <ul
+            ref={Tabs => {
+              this.Tabs=Tabs;
+            }}
+            className='tabs tabs-fixed-width tab-demo'
+            >
+              <li className='tab col s6'>
+                <a href='#ALL'>All Courses</a>
+              </li>
+              <li className='tab col s6'>
+                <a href='#HEL'>Humanities Electives</a>
+              </li>
+            </ul>
+        </div>
+        <div id='ALL' className='col s12'>
+          <Search action={this.filterItems} />
+          <ListCourse courses={this.state.current} />
+        </div>
+        <div id='HEL' className='col s12'>
+            <SearchHel
+              currentHels={this.props.currentHels}
+              onSelect={this.props.onSelectOption}
+            />
+        </div>
+
+        {/* <Tabs defaultIndex={this.props.current === "all" ? 0 : 1}>
           <TabList>
             <Tab
               onClick={() => {
@@ -63,7 +94,7 @@ class SearchTabs extends Component {
               onSelect={this.props.onSelectOption}
             />
           </TabPanel>
-        </Tabs>
+        </Tabs> */}
       </>
     );
   }
