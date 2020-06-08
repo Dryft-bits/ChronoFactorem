@@ -6,15 +6,64 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import { closeAlertDialog } from "../../redux/actions/dialogs.js";
 
 const AlertDialog = (props) => {
+  const [data, setData] = React.useState({
+    input: null,
+  });
+  const { input } = data;
+
+  function getName(e) {
+    console.log(e.target);
+  }
+
   return (
     <div>
       <Dialog
         open={props.status}
         onClose={() => {
-          props.closeAlertDialog();
+          props.closeAlertDialog(null, null);
         }}
+        disableEscapeKeyDown={
+          props.type === "form" || props.type === "confirm" ? true : false
+        }
+        disableBackdropClick={
+          props.type === "form" || props.type === "confirm" ? true : false
+        }
       >
         <DialogTitle>{props.msg}</DialogTitle>
+        {props.type === "form" ? (
+          <>
+            <input
+              onChange={(e) => {
+                getName(e);
+              }}
+            ></input>
+          </>
+        ) : null}
+        {props.type === "form" || props.type === "confirm" ? (
+          <div align='right'>
+            <button
+              onClick={() => {
+                props.closeAlertDialog("yes", props.next);
+              }}
+            >
+              Yes
+            </button>
+            <button
+              onClick={() => {
+                props.closeAlertDialog("no", props.next);
+              }}
+            >
+              NO
+            </button>
+            <button
+              onClick={() => {
+                props.closeAlertDialog("cancel", props.next);
+              }}
+            >
+              Cancel Saving
+            </button>
+          </div>
+        ) : null}
       </Dialog>
     </div>
   );
@@ -24,12 +73,14 @@ const mapStateToProps = (state) => {
   return {
     status: state.dialog.alertDialog.status,
     msg: state.dialog.alertDialog.msg,
+    type: state.dialog.alertDialog.type,
+    next: state.dialog.next,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    closeAlertDialog: () => dispatch(closeAlertDialog()),
+    closeAlertDialog: (res, next) => dispatch(closeAlertDialog(res, next)),
   };
 };
 
