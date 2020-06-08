@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import Snackbar from "@material-ui/core/Snackbar";
 import Alert from "@material-ui/lab/Alert";
-import { closeSaveAlert } from "../../redux/actions/UpdateTimeTable";
+import { closeSaveAlert } from "../../redux/actions/dialogs";
 
 const AlertBox = (props) => {
   return (
@@ -20,7 +20,7 @@ const AlertBox = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    alertMsg: state.updateTT.alertMsg,
+    alertMsg: state.dialog.alertMsg,
   };
 };
 

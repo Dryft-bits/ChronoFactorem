@@ -9,7 +9,7 @@ export const closeDialogMiddleware = (store) => (next) => (action) => {
         openAlertDialog(
           "Would You like to give Your TimeTable a Name?",
           "form",
-          "save"
+          { success: "save", fail: "save" }
         )
       );
       return;
@@ -18,7 +18,7 @@ export const closeDialogMiddleware = (store) => (next) => (action) => {
         openAlertDialog(
           "Would You like to Update the name of the TimeTable?",
           "form",
-          "save"
+          { success: "save", fail: "save" }
         )
       );
       return;

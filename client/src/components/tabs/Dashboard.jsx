@@ -14,6 +14,7 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import AlertBox from "../utils/AlertBox.jsx";
+import { openSaveAlert } from "../../redux/actions/dialogs";
 import "../../styles/Dashboard.css";
 
 const useStyles = makeStyles({
@@ -38,9 +39,8 @@ const Dashboard = (props) => {
   const classes = useStyles();
   const [TTData, setTTData] = React.useState({
     savedTT: null,
-    AlertMsg: { status: false, type: null, msg: null },
   });
-  const { savedTT, AlertMsg } = TTData;
+  const { savedTT } = TTData;
 
   function deleteTT(id) {
     let newMsg;
@@ -48,28 +48,17 @@ const Dashboard = (props) => {
       axios.delete(`/api/timetable/delete/${id}`).then((res) => {
         if (res.status === 200) {
           let newData = (savedTT || data).filter((item) => item._id !== id);
-          newMsg = {
-            status: true,
-            type: "success",
-            msg: "Successfully Deleted the Timetable",
-          };
-          setTTData({ savedTT: newData, AlertMsg: newMsg });
+          setTTData({ savedTT: newData });
+          props.openAlert("Successfully Deleted the Timetable", "success");
         } else {
-          newMsg = {
-            status: true,
-            type: "error",
-            msg: res.data.msg + " Please Try Again Later",
-          };
-          setTTData({ ...TTData, AlertMsg: newMsg });
+          props.openAlert(res.data.msg + " Please Try Again Later", "error");
         }
       });
     } catch (err) {
-      newMsg = {
-        status: true,
-        type: "error",
-        msg: "Couldn't Delete The TimeTable! Please Try Again Later.",
-      };
-      setTTData({ ...TTData, AlertMsg: newMsg });
+      props.openAlert(
+        "Couldn't Delete The TimeTable! Please Try Again Later.",
+        "error"
+      );
     }
   }
 
@@ -85,28 +74,17 @@ const Dashboard = (props) => {
             }
             newData.push(item);
           }
-          newMsg = {
-            status: true,
-            type: "success",
-            msg: "Successfully " + action + " the Timetable",
-          };
-          setTTData({ savedTT: newData, AlertMsg: newMsg });
+          setTTData({ savedTT: newData });
+          props.openAlert(
+            "Successfully " + action + " the Timetable",
+            "success"
+          );
         } else {
-          newMsg = {
-            status: true,
-            type: "error",
-            msg: res.data.msg,
-          };
-          setTTData({ ...TTData, AlertMsg: newMsg });
+          props.openAlert(res.data.msg, "error");
         }
       });
     } catch (err) {
-      newMsg = {
-        status: true,
-        type: "error",
-        msg: "res.data.msg" + " Please Try Again Later",
-      };
-      setTTData({ ...TTData, AlertMsg: newMsg });
+      props.openAlert("res.data.msg" + " Please Try Again Later", "error");
     }
   }
   let [data, loading] = useGetData("/api/timetable/getTT");
@@ -114,17 +92,8 @@ const Dashboard = (props) => {
   if (!loading) {
     return (
       <>
-        <AlertBox
-          AlertMsg={AlertMsg}
-          handleClose={() => {
-            setTTData({
-              ...TTData,
-              AlertMsg: { status: false, type: null, msg: null },
-            });
-          }}
-        />
-        <h4 className="title">Saved Timetables</h4>
-        <h4 className="title">Saved Timetables</h4>
+        <AlertBox />
+        <h4 className='title'>Saved Timetables</h4>
         <div
           className={classes.grid}
           style={{ position: "relative", left: "2vw" }}
@@ -139,26 +108,26 @@ const Dashboard = (props) => {
                         <CardContent>
                           <Typography
                             className={classes.root}
-                            color="textSecondary"
+                            color='textSecondary'
                             gutterBottom
                           >
                             Name
                           </Typography>
-                          <Typography variant="h5" component="h2">
+                          <Typography variant='h5' component='h2'>
                             {itemc.name}
                           </Typography>
                         </CardContent>
                         <CardActions>
                           <Link
-                            to="/create"
+                            to='/create'
                             onClick={() => {
                               props.editTT(itemc);
                             }}
                           >
                             <Button
-                              variant="contained"
-                              color="primary"
-                              size="small"
+                              variant='contained'
+                              color='primary'
+                              size='small'
                             >
                               Edit
                             </Button>
@@ -168,16 +137,16 @@ const Dashboard = (props) => {
                             onClick={() => {
                               deleteTT(itemc._id);
                             }}
-                            variant="contained"
-                            color="secondary"
-                            size="small"
+                            variant='contained'
+                            color='secondary'
+                            size='small'
                           >
                             Delete
                           </Button>
                           {itemc.isShared ? (
                             <Button
-                              variant="contained"
-                              size="small"
+                              variant='contained'
+                              size='small'
                               onClick={() => {
                                 toggleShare(itemc._id, "Unshared");
                               }}
@@ -186,8 +155,8 @@ const Dashboard = (props) => {
                             </Button>
                           ) : (
                             <Button
-                              variant="contained"
-                              size="small"
+                              variant='contained'
+                              size='small'
                               onClick={() => {
                                 toggleShare(itemc._id, "Shared");
                               }}
@@ -205,7 +174,7 @@ const Dashboard = (props) => {
           </Grid>
         </div>
 
-        <h4 className="title">Publicily Shared Timetables</h4>
+        <h4 className='title'>Publicily Shared Timetables</h4>
         <ShareTimeTable />
       </>
     );
@@ -217,11 +186,13 @@ const Dashboard = (props) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     editTT: (tt) => dispatch(editTT(tt)),
+    openAlert: (msg, type) => dispatch(openSaveAlert(msg, type)),
   };
 };
 
 Dashboard.propTypes = {
   editTT: PropTypes.func.isRequired,
+  openAlert: PropTypes.func.isRequired,
 };
 
 export default connect(null, mapDispatchToProps)(Dashboard);
