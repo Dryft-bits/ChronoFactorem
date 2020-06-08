@@ -95,8 +95,8 @@ class CreateTimeTable extends Component {
               <div style={{ float: "right", width: "35vw" }}>
                 <AddCourse allCourses={courses.default} />
               </div>
-              <div style={{ float: "left", width: "60vw" }}>
-                <PreviewTT style={{ float: "left" }} />
+              <div style={{ width: "60vw" }}>
+                <PreviewTT />
               </div>
             </div>
           </>
