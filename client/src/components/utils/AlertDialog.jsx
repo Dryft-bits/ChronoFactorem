@@ -12,7 +12,7 @@ const AlertDialog = (props) => {
   const { input } = data;
 
   function getName(e) {
-    console.log(e.target);
+    setData({ input: e.target.value });
   }
 
   return (
@@ -33,6 +33,9 @@ const AlertDialog = (props) => {
         {props.type === "form" ? (
           <>
             <input
+              type='text'
+              style={{ color: "black" }}
+              placeholder='Enter name here'
               onChange={(e) => {
                 getName(e);
               }}
