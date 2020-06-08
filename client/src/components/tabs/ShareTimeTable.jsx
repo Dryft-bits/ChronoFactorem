@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import Creatable from "react-select";
 import { components } from "react-select";
 import Typography from "@material-ui/core/Typography";
-import Container from "@material-ui/core/Container";
-import Grid from '@material-ui/core/Grid';
+import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
@@ -22,30 +21,30 @@ import YearSelector from "../utils/YearSelector";
 const useStyles = makeStyles({
   root: {
     minWidth: 275,
-    margin: "1vh"
+    margin: "1vh",
   },
   cardcontainer: {
     maxWidth: "95vw",
     maxHeight: "65vh",
-    overflow: "auto"
+    overflow: "auto",
   },
   bullet: {
     display: "inline-block",
     margin: "0 2px",
-    transform: "scale(0.8)"
+    transform: "scale(0.8)",
   },
   title: {
-    fontSize: 14
+    fontSize: 14,
   },
   pos: {
-    marginBottom: 12
+    marginBottom: 12,
   },
   grid: {
     flexGrow: 1,
     maxWidth: "95vw",
     maxHeight: "45vh",
-    overflow: "auto"
-  }
+    overflow: "auto",
+  },
 });
 
 const branches = [
@@ -62,18 +61,18 @@ const branches = [
   { value: "MATH", label: "Mathematics" },
   { value: "ME", label: "Mechanical Engineering" },
   { value: "PHA", label: "Pharmacy" },
-  { value: "PHY", label: "Physics" }
+  { value: "PHY", label: "Physics" },
 ];
 
-const ShareTimeTable = props => {
+const ShareTimeTable = (props) => {
   const [formData, setFormData] = useState({
     branch: props.user
-      ? branches.filter(branch =>
+      ? branches.filter((branch) =>
           props.user["branch"].includes(branch["value"])
         )
       : [],
     year: props.user ? props.user.year.toString() : "",
-    TTs: []
+    TTs: [],
   });
 
   const { branch, year, TTs } = formData;
@@ -82,7 +81,7 @@ const ShareTimeTable = props => {
     let TTData = [];
     try {
       let br = [];
-      branch.forEach(item => {
+      branch.forEach((item) => {
         br.push(item["value"]);
       });
 
@@ -90,10 +89,10 @@ const ShareTimeTable = props => {
         .get("/api/timetable/viewshared", {
           params: {
             branch: br,
-            year: year
-          }
+            year: year,
+          },
         })
-        .then(resp => {
+        .then((resp) => {
           if (resp.status === 422 || resp.data.length === 0) {
             TTData = [];
           } else if (resp.status !== 200) {
@@ -108,20 +107,20 @@ const ShareTimeTable = props => {
     }
   };
 
-  const handleBranchChange = newBranch => {
+  const handleBranchChange = (newBranch) => {
     setFormData({
       ...formData,
-      branch: newBranch
+      branch: newBranch,
     });
   };
-  const handleYearChange = newYear => {
+  const handleYearChange = (newYear) => {
     setFormData({
       ...formData,
-      year: newYear
+      year: newYear,
     });
   };
 
-  const onSubmit = async e => {
+  const onSubmit = async (e) => {
     e.preventDefault();
     if (!branch || branch.length === 0) {
       window.alert("Please enter your branch");
@@ -132,7 +131,7 @@ const ShareTimeTable = props => {
     }
   };
 
-  const Menu = props => {
+  const Menu = (props) => {
     const optionSelectedLength = props.getValue().length || 0;
     return (
       <components.Menu {...props}>
@@ -167,14 +166,14 @@ const ShareTimeTable = props => {
             options={branch && branch.length >= 2 ? branch : branches}
             className='left-width branch-inp'
             placeholder='Select branch (select 2 branches for dual degree)'
-            theme={theme => ({
+            theme={(theme) => ({
               ...theme,
               borderRadius: 2,
               colors: {
                 ...theme.colors,
                 primary25: "#0984e3",
-                neutral0: "rgba(116, 185, 255,1)"
-              }
+                neutral0: "rgba(116, 185, 255,1)",
+              },
             })}
           />
           <YearSelector
@@ -183,69 +182,72 @@ const ShareTimeTable = props => {
           ></YearSelector>
         </div>
         <br></br>
-          <input
-            type='submit'
-            className='btn btn-primary btn-go btn-big'
-            value='GO'
-          />
+        <input
+          type='submit'
+          className='btn btn-primary btn-go btn-big'
+          value='GO'
+        />
       </form>
-          <br></br>
-          <div className={classes.grid} style={{position:"relative", left:"2vw"}}>
-            <Grid container style={{ backgroundColor:"#74b9ff"}} >
+      <br></br>
+      <div
+        className={classes.grid}
+        style={{ position: "relative", left: "2vw" }}
+      >
+        <Grid container style={{ backgroundColor: "#74b9ff" }}>
           {!loading && TTs.length !== 0 ? (
-            TTs.map(itemc => {
+            TTs.map((itemc) => {
               return (
                 <>
-                <Grid item xs={6}>
-                  <div
-                    key={itemc._id}
-                    id={itemc._id}
-                  >
-                    <Card className={classes.root}>
-                      <CardContent>
-                        <Typography
-                          className={classes.title}
-                          color='textSecondary'
-                          gutterBottom
-                        >
-                          Timetable Name
-                        </Typography>
-                        <Typography variant='h5' component='h2'>
-                          {itemc.name}
-                        </Typography>
-                        <Typography color='textSecondary'>Shared by</Typography>
-                        <Typography variant='h6' component='h6'>
-                          {itemc.ownerId.name}
-                        </Typography>
-                        <Typography
-                          variant='body2'
-                          color='textSecondary'
-                          component='p'
-                        >
-                          Date: {itemc.date.substr(0, itemc.date.indexOf("T"))}
-                          <br />
-                          {"Time: "}{" "}
-                          {itemc.date.substr(itemc.date.indexOf("T") + 1, 9)}
-                        </Typography>
-                      </CardContent>
-                      <CardActions>
-                        <Link
-                          to='/create'
-                          onClick={() => {
-                            props.editTT(itemc);
-                          }}
-                        >
-                          <Button
-                            variant='contained'
-                            color='primary'
-                            size='large'
+                  <Grid item xs={6}>
+                    <div key={itemc._id} id={itemc._id}>
+                      <Card className={classes.root}>
+                        <CardContent>
+                          <Typography
+                            className={classes.title}
+                            color='textSecondary'
+                            gutterBottom
                           >
-                            View/Edit
-                          </Button>
-                        </Link>
-                      </CardActions>
-                    </Card>
-                  </div>
+                            Timetable Name
+                          </Typography>
+                          <Typography variant='h5' component='h2'>
+                            {itemc.name}
+                          </Typography>
+                          <Typography color='textSecondary'>
+                            Shared by
+                          </Typography>
+                          <Typography variant='h6' component='h6'>
+                            {itemc.ownerId.name}
+                          </Typography>
+                          <Typography
+                            variant='body2'
+                            color='textSecondary'
+                            component='p'
+                          >
+                            Date:{" "}
+                            {itemc.date.substr(0, itemc.date.indexOf("T"))}
+                            <br />
+                            {"Time: "}{" "}
+                            {itemc.date.substr(itemc.date.indexOf("T") + 1, 9)}
+                          </Typography>
+                        </CardContent>
+                        <CardActions>
+                          <Link
+                            to='/create'
+                            onClick={() => {
+                              props.editTT(itemc);
+                            }}
+                          >
+                            <Button
+                              variant='contained'
+                              color='primary'
+                              size='large'
+                            >
+                              View/Edit
+                            </Button>
+                          </Link>
+                        </CardActions>
+                      </Card>
+                    </div>
                   </Grid>
                 </>
               );
@@ -253,30 +255,27 @@ const ShareTimeTable = props => {
           ) : loading ? (
             <h4>Loading</h4>
           ) : (
-            <h4 className='title'>
-              No Shared Timetables
-            </h4>
+            <h4 className='title'>No Shared Timetables</h4>
           )}
         </Grid>
-        </div>
-
+      </div>
     </>
   );
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    user: state.auth.user
+    user: state.auth.user,
   };
 };
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    editTT: tt => dispatch(editTT(tt, true))
+    editTT: (tt) => dispatch(editTT(tt, true)),
   };
 };
 
 ShareTimeTable.propTypes = {
-  editTT: PropTypes.func.isRequired
+  editTT: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ShareTimeTable);
