@@ -145,9 +145,8 @@ export const deleteSectionMiddleware = (store) => (next) => (action) => {
 
 export const saveTTMiddleware = (store) => (next) => (action) => {
   if (action.type === SAVE_TIMETABLE) {
-    let ttname = null;
+    let ttname = action.payload.name;
     let id = store.getState().updateTT.id;
-    console.log("here");
     try {
       axios
         .post("/api/timetable/save", {

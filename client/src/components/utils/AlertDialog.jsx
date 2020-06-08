@@ -46,21 +46,21 @@ const AlertDialog = (props) => {
           <div align='right'>
             <button
               onClick={() => {
-                props.closeAlertDialog(props.next.success);
+                props.closeAlertDialog(props.next.success, input);
               }}
             >
               Yes
             </button>
             <button
               onClick={() => {
-                props.closeAlertDialog(props.next.fail);
+                props.closeAlertDialog(props.next.fail, null);
               }}
             >
               NO
             </button>
             <button
               onClick={() => {
-                props.closeAlertDialog("cancel");
+                props.closeAlertDialog("cancel", null);
               }}
             >
               Cancel Saving
@@ -83,7 +83,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    closeAlertDialog: (next) => dispatch(closeAlertDialog(next)),
+    closeAlertDialog: (next, input) => dispatch(closeAlertDialog(next, input)),
   };
 };
 

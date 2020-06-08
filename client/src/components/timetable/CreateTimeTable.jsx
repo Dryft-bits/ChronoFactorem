@@ -45,7 +45,7 @@ class CreateTimeTable extends Component {
   onSave() {
     if (!this.props.id) {
       this.props.openDialog(
-        "Would You like to give Your TimeTable a Name?",
+        "Would You like to give this TimeTable a name?",
         "form",
         { success: "save", fail: "save" }
       );
