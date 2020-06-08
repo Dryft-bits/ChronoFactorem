@@ -5,6 +5,7 @@ import {
   CLEAR_ALL,
   EDIT_TIMETABLE,
   SAVE_TIMETABLE,
+  NULLIFY_ID,
 } from "../actions/types";
 
 let timetable, courses;
@@ -53,6 +54,11 @@ export default function updateTTReducer(state = initialState, action) {
         ...state,
         id: action.payload.id,
         name: action.payload.name,
+      };
+    case NULLIFY_ID:
+      return {
+        ...state,
+        id: null,
       };
     default:
       return state;

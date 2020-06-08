@@ -53,7 +53,7 @@ class CreateTimeTable extends Component {
       this.props.openDialog(
         "Would You like to Save it as a new TimeTable?",
         "confirm",
-        { success: "newName", fail: "updateName" }
+        { success: "newName", fail: "updateName", todo: "updateId" }
       );
     }
   }

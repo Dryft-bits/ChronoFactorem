@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import Dialog from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import { closeAlertDialog } from "../../redux/actions/dialogs.js";
+import { nullifyId } from "../../redux/actions/UpdateTimeTable";
 
 const AlertDialog = (props) => {
   const [data, setData] = React.useState({
@@ -46,6 +47,9 @@ const AlertDialog = (props) => {
           <div align='right'>
             <button
               onClick={() => {
+                if (props.next.todo !== undefined) {
+                  props.nullifyId();
+                }
                 props.closeAlertDialog(props.next.success, input);
               }}
             >
@@ -84,6 +88,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     closeAlertDialog: (next, input) => dispatch(closeAlertDialog(next, input)),
+    nullifyId: () => dispatch(nullifyId()),
   };
 };
 
@@ -91,6 +96,7 @@ AlertDialog.propTypes = {
   status: PropTypes.bool.isRequired,
   msg: PropTypes.string,
   closeAlertDialog: PropTypes.func.isRequired,
+  nullifyId: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AlertDialog);
