@@ -5,8 +5,6 @@ import {
   CLEAR_ALL,
   EDIT_TIMETABLE,
   SAVE_TIMETABLE,
-  OPEN_SAVE_ALERT,
-  CLOSE_SAVE_ALERT,
 } from "../actions/types";
 
 let timetable, courses;
@@ -16,7 +14,6 @@ const initialState = {
   name: null,
   myTimeTable: new TimeTable(),
   myCourses: [],
-  alertMsg: { msg: null, tyoe: null, status: false },
 };
 
 export default function updateTTReducer(state = initialState, action) {
@@ -56,24 +53,6 @@ export default function updateTTReducer(state = initialState, action) {
         ...state,
         id: action.payload.id,
         name: action.payload.name,
-      };
-    case OPEN_SAVE_ALERT:
-      return {
-        ...state,
-        alertMsg: {
-          msg: action.payload.msg,
-          type: action.payload.type,
-          status: true,
-        },
-      };
-    case CLOSE_SAVE_ALERT:
-      return {
-        ...state,
-        alertMsg: {
-          msg: null,
-          type: null,
-          status: false,
-        },
       };
     default:
       return state;

@@ -1,7 +1,7 @@
 import axios from "axios";
 import { ADD_SECTION, SAVE_TIMETABLE, DELETE_SECTION } from "../actions/types";
-import { deleteSection, openSaveAlert } from "../actions/UpdateTimeTable";
-import { openAlertDialog } from "../actions/dialogs";
+import { deleteSection } from "../actions/UpdateTimeTable";
+import { openAlertDialog, openSaveAlert } from "../actions/dialogs";
 import * as utils from "../../utils/CreateTTUtils.js";
 import * as TimeTableData from "../../Timetable.json";
 
