@@ -14,10 +14,10 @@ const initialState = {
   isAuthenticated: null,
   profAuthenticated: null,
   user: null,
-  prof: null
+  prof: null,
 };
 
-export default function (state = initialState, action) {
+export default function (action, state = initialState) {
   const { type, payload } = action;
   switch (type) {
     case USER_LOADED:
@@ -25,21 +25,20 @@ export default function (state = initialState, action) {
       return {
         ...state,
         isAuthenticated: true,
-        user: payload
+        user: payload,
       };
 
     case PROF_LOADED:
       return {
         ...state,
         profAuthenticated: true,
-        prof: payload
+        prof: payload,
       };
-
 
     case UPDATE_INFO:
       return {
         ...state,
-        user: { ...state.user, branch: payload.branch, year: payload.year }
+        user: { ...state.user, branch: payload.branch, year: payload.year },
       };
 
     case NO_USER:
@@ -52,12 +51,8 @@ export default function (state = initialState, action) {
         user: null,
       };
 
-
-
     case LOGOUT_FAILURE:
     default:
       return state;
-
-
   }
 }

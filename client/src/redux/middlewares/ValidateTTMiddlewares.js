@@ -15,8 +15,8 @@ function getDetails(store, remove = false) {
     courseCode = Object.keys(store.getState().updateCC.currentCourse);
     sectionDict = store.getState().updateCC.currentCourse[courseCode].sections;
   }
-  let temp = store.getState().updateTT.myTimeTable;
-  let courseTemp = store.getState().updateTT.myCourses;
+  temp = store.getState().updateTT.myTimeTable;
+  courseTemp = store.getState().updateTT.myCourses;
 
   return [courseCode, temp, courseTemp, sectionDict];
 }
