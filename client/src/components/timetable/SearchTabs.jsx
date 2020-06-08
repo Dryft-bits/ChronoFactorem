@@ -73,7 +73,7 @@ SearchTabs.propTypes = {
   allCourses: PropTypes.object.isRequired,
   current: PropTypes.string.isRequired,
   onChangeTab: PropTypes.func.isRequired,
-  currentHels: PropTypes.object.isRequired,
+  currentHels: PropTypes.object,
   onSelectOption: PropTypes.func.isRequired,
 };
 
