@@ -14,7 +14,7 @@ export const Landing = () => {
             <div>
               <a href={configuration.urls.adminLogin}>
                 <button className='btn-landing btn-left'>
-                  <span>Staff </span>
+                  <span>Admin </span>
                 </button>
               </a>
               <a href={configuration.urls.googleAuth}>
