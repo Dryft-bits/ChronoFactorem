@@ -11,7 +11,7 @@ const initialState = {
   alertMsg: { msg: null, status: false, type: null },
 };
 
-export default function dialogReducer(action, state = initialState) {
+export default function dialogReducer(state = initialState, action) {
   switch (action.type) {
     case OPEN_ALERT_DIALOG:
       return {

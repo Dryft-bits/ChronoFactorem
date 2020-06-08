@@ -43,6 +43,7 @@ const Dashboard = (props) => {
   const { savedTT } = TTData;
 
   function deleteTT(id) {
+    let newMsg;
     try {
       axios.delete(`/api/timetable/delete/${id}`).then((res) => {
         if (res.status === 200) {
@@ -62,6 +63,7 @@ const Dashboard = (props) => {
   }
 
   function toggleShare(id, action) {
+    let newMsg;
     try {
       axios.get(`/api/timetable/toggleShare/${id}`).then((res) => {
         if (res.status === 200) {

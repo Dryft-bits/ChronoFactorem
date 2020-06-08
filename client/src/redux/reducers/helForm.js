@@ -1,10 +1,10 @@
 import { SUBMIT_SUCCESS, SUBMIT_FAIL } from "../actions/types";
 
 const initialState = {
-  submitted: false,
+  submitted: false
 };
 
-export default function (action, state = initialState) {
+export default function (state = initialState, action) {
   const { type, payload } = action;
 
   switch (type) {
@@ -12,13 +12,13 @@ export default function (action, state = initialState) {
       return {
         ...state,
         ...payload,
-        submitted: true,
+        submitted: true
       };
 
     case SUBMIT_FAIL:
       return {
         ...state,
-        submitted: false,
+        submitted: false
       };
 
     default:
