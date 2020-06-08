@@ -27,7 +27,9 @@ export const checkSectionSwapMiddleware = (store) => (next) => (action) => {
     let section = action.payload.section;
     let duplicate = utils.checkSection(courseTemp, courseCode, section);
     if (duplicate === "same section") {
-      store.dispatch(openAlertDialog("You have already chosen this Section!"));
+      store.dispatch(
+        openAlertDialog("You have already chosen this Section!", null, null)
+      );
       return;
     } else if (
       duplicate &&
@@ -71,7 +73,9 @@ export const checkClashOrDeleteMiddleWare = (store) => (next) => (action) => {
     if (clash) {
       store.dispatch(
         openAlertDialog(
-          "The selected section clashes with an already present course section! Please remove the previous course first!"
+          "The selected section clashes with an already present course section! Please remove the previous course first!",
+          null,
+          null
         )
       );
       return;

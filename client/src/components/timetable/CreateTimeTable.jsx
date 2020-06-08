@@ -43,6 +43,14 @@ class CreateTimeTable extends Component {
   }
 
   onSave() {
+    if (this.props.myCourses.length === 0) {
+      this.props.openDialog(
+        "Please Choose Some Courses before saving the timetable!",
+        null,
+        null
+      );
+      return;
+    }
     if (!this.props.id) {
       this.props.openDialog(
         "Would You like to give this TimeTable a name?",
@@ -121,6 +129,7 @@ class CreateTimeTable extends Component {
 const mapStateToProps = (state) => {
   return {
     id: state.updateTT.id,
+    myCourses: state.updateTT.myCourses,
   };
 };
 
@@ -133,6 +142,8 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 CreateTimeTable.propTypes = {
+  id: PropTypes.object,
+  myCourses: PropTypes.array,
   openDialog: PropTypes.func.isRequired,
   clearAll: PropTypes.func.isRequired,
   save: PropTypes.func.isRequired,
