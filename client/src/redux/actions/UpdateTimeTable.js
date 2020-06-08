@@ -45,12 +45,13 @@ export const clearAll = () => {
   };
 };
 
-export const saveTimeTable = () => {
+export const saveTimeTable = (name) => {
+  name = name ? name : store.getState().name;
   return {
     type: SAVE_TIMETABLE,
     payload: {
       id: store.getState().id,
-      name: store.getState().name,
+      name: name,
     },
   };
 };

@@ -23,7 +23,7 @@ export const closeDialogMiddleware = (store) => (next) => (action) => {
       );
       return;
     } else if (action.payload.next === "save") {
-      store.dispatch(saveTimeTable());
+      store.dispatch(saveTimeTable(action.payload.input));
     } else {
       store.dispatch(closeAlertDialog(null, null));
     }

@@ -7,11 +7,12 @@ export const openAlertDialog = (msg, type, next) => {
   };
 };
 
-export const closeAlertDialog = (next) => {
+export const closeAlertDialog = (next, input) => {
   return {
     type: CLOSE_ALERT_DIALOG,
     payload: {
       next: next,
+      input: input,
     },
   };
 };
