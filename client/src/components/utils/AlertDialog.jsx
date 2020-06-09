@@ -1,5 +1,4 @@
 import React from "react";
-import CssBaseline from '@material-ui/core/CssBaseline';
 import ScopedCssBaseline from '@material-ui/core/ScopedCssBaseline';
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
@@ -9,7 +8,6 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogActions from '@material-ui/core/DialogActions';
 import { closeAlertDialog } from "../../redux/actions/dialogs.js";
 import { nullifyId } from "../../redux/actions/UpdateTimeTable";
-import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
 const AlertDialog = (props) => {
