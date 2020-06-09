@@ -12,7 +12,7 @@
   float: left;
   width: 55%;
 }
-.selected-courses{
+.selected-courses {
   display: flex;
 }
 .form-whole {
@@ -59,8 +59,7 @@
   height: 5vh;
   padding-left: 1.5%;
 }
-.btn-go
-{
+.btn-go {
   position: relative;
   left: 5vw;
 }
@@ -85,39 +84,31 @@
   padding-top: 2vh;
   height: 4vh;
 }
-.submit-btn
-{
+.submit-btn {
   height: 7vh;
   width: 100%;
   text-align: center;
   cursor: pointer;
-  text-align: center;
 }
-.title
-{
+.title {
   font-variant: small-caps;
-  
 }
-.slot-title
-{
+.slot-title {
   width: 50vw;
   position: relative;
   left: 20vw;
 }
-.branch-title
-{
+.branch-title {
   position: relative;
   left: 20vw;
   display: inline;
 }
-.year-title
-{
+.year-title {
   width: 50vw;
   position: relative;
   left: 20vw;
 }
-.hel-title
-{
+.hel-title {
   position: relative;
   left: 30vw;
 }
