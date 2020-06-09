@@ -142,7 +142,7 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 CreateTimeTable.propTypes = {
-  id: PropTypes.object,
+  id: PropTypes.string,
   myCourses: PropTypes.array,
   openDialog: PropTypes.func.isRequired,
   clearAll: PropTypes.func.isRequired,
