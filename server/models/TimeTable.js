@@ -12,6 +12,15 @@ const TimeTableSchema = new Schema(
     name: {
       type: String
     },
+    branch:{
+      type: Array,
+    },
+    year:{
+      type: Number,
+    },
+    username:{
+      type: String
+    },
     TimeTable: {
       type: TimeTable,
       required: true
