@@ -216,7 +216,7 @@ const ShareTimeTable = (props) => {
                             Shared by
                           </Typography>
                           <Typography variant='h6' component='h6'>
-                            {itemc.ownerId.name}
+                            {itemc.username}
                           </Typography>
                           <Typography
                             variant='body2'

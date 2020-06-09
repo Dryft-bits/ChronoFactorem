@@ -22,8 +22,11 @@ router.post(
         tt = new TimeTable({
           ownerId: req.user.id,
           name: name,
+          branch: req.user.branch,
+          year: req.user.year,
           TimeTable: timetable,
           Courses: courses,
+          username: req.user.name,
         });
         statsCalculator.updateOnSaving(req.user.id, coursesToCheck);
       } else {
@@ -115,12 +118,9 @@ router.get(
         await TimeTable.find({
           isShared: true,
           ownerId: { $not: { $eq: req.user.id } },
+          branch: req.query.branch,
+          year: req.query.year
         })
-          .populate({
-            path: "ownerId",
-            match: { branch: req.query.branch, year: req.query.year },
-            select: "name",
-          })
           .exec((error, docs) => {
             if (error) {
               res.status(500).send(err);
