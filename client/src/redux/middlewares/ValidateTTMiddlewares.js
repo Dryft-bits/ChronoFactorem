@@ -1,6 +1,7 @@
 import axios from "axios";
 import { ADD_SECTION, SAVE_TIMETABLE, DELETE_SECTION } from "../actions/types";
-import { deleteSection, setTimeTableLoading } from "../actions/UpdateTimeTable";
+import { deleteSection } from "../actions/UpdateTimeTable";
+import { openAlertDialog, openSaveAlert } from "../actions/dialogs";
 import * as utils from "../../utils/CreateTTUtils.js";
 import * as TimeTableData from "../../Timetable.json";
 
@@ -14,19 +15,21 @@ function getDetails(store, remove = false) {
     courseCode = Object.keys(store.getState().updateCC.currentCourse);
     sectionDict = store.getState().updateCC.currentCourse[courseCode].sections;
   }
-  let temp = store.getState().updateTT.myTimeTable;
-  let courseTemp = store.getState().updateTT.myCourses;
+  temp = store.getState().updateTT.myTimeTable;
+  courseTemp = store.getState().updateTT.myCourses;
 
   return [courseCode, temp, courseTemp, sectionDict];
 }
 
-export const checkSectionSwapMiddleware = store => next => action => {
+export const checkSectionSwapMiddleware = (store) => (next) => (action) => {
   if (action.type === ADD_SECTION) {
     [courseCode, temp, courseTemp, sectionDict] = getDetails(store);
     let section = action.payload.section;
     let duplicate = utils.checkSection(courseTemp, courseCode, section);
     if (duplicate === "same section") {
-      window.alert("You have already chosen this Section!");
+      store.dispatch(
+        openAlertDialog("You have already chosen this Section!", null, null)
+      );
       return;
     } else if (
       duplicate &&
@@ -53,12 +56,12 @@ export const checkSectionSwapMiddleware = store => next => action => {
   return next(action);
 };
 
-export const checkClashOrDeleteMiddleWare = store => next => action => {
+export const checkClashOrDeleteMiddleWare = (store) => (next) => (action) => {
   if (action.type === ADD_SECTION) {
     [courseCode, temp, courseTemp, sectionDict] = getDetails(store);
     let clash = false;
     let section = action.payload.section;
-    sectionDict[section].sched.forEach(item => {
+    sectionDict[section].sched.forEach((item) => {
       clash =
         clash ||
         utils.checkClashOrDelete(
@@ -68,8 +71,12 @@ export const checkClashOrDeleteMiddleWare = store => next => action => {
         );
     });
     if (clash) {
-      window.alert(
-        "The selected section clashes with an already present course section! Please remove the previous course first!"
+      store.dispatch(
+        openAlertDialog(
+          "The selected section clashes with an already present course section! Please remove the previous course first!",
+          null,
+          null
+        )
       );
       return;
     }
@@ -77,12 +84,12 @@ export const checkClashOrDeleteMiddleWare = store => next => action => {
   return next(action);
 };
 
-export const checkLunchHourMiddleware = store => next => action => {
+export const checkLunchHourMiddleware = (store) => (next) => (action) => {
   if (action.type === ADD_SECTION) {
     [courseCode, temp, courseTemp, sectionDict] = getDetails(store);
     let section = action.payload.section;
     let checkLunch = false;
-    sectionDict[section].sched.forEach(item => {
+    sectionDict[section].sched.forEach((item) => {
       checkLunch =
         checkLunch || utils.checkLunchHour(temp, utils.getSectionDetails(item));
     });
@@ -100,7 +107,7 @@ export const checkLunchHourMiddleware = store => next => action => {
   return next(action);
 };
 
-export const addSectionMiddleware = store => next => action => {
+export const addSectionMiddleware = (store) => (next) => (action) => {
   if (action.type === ADD_SECTION) {
     let section = action.payload.section;
     [courseCode, temp, courseTemp, sectionDict] = getDetails(store);
@@ -118,7 +125,7 @@ export const addSectionMiddleware = store => next => action => {
   return next(action);
 };
 
-export const deleteSectionMiddleware = store => next => action => {
+export const deleteSectionMiddleware = (store) => (next) => (action) => {
   if (action.type === DELETE_SECTION) {
     if (action.payload.remove) {
       if (!window.confirm("Are You Sure That You Want To delete this Section?"))
@@ -140,46 +147,30 @@ export const deleteSectionMiddleware = store => next => action => {
   return next(action);
 };
 
-export const saveTTMiddleware = store => next => action => {
+export const saveTTMiddleware = (store) => (next) => (action) => {
   if (action.type === SAVE_TIMETABLE) {
-    let ttname;
+    let ttname = action.payload.name;
     let id = store.getState().updateTT.id;
-    if (
-      id &&
-      window.confirm(
-        "Click on ok to save as new TimeTable or on cancel to update this one!"
-      )
-    ) {
-      id = null;
-    }
-    if (id) {
-      ttname =
-        prompt("Would you like to change the name of the timetable?") ||
-        store.getState().updateTT.name;
-    } else {
-      ttname = prompt("Would you like to give the timetable a name?");
-    }
-    store.dispatch(setTimeTableLoading());
     try {
       axios
         .post("/api/timetable/save", {
           id: id,
           name: ttname,
           timetable: store.getState().updateTT.myTimeTable,
-          courses: store.getState().updateTT.myCourses
+          courses: store.getState().updateTT.myCourses,
         })
-        .then(res => {
+        .then((res) => {
           if (res.status !== 200) {
             throw Error("Couldn't Save The TimeTable! Please Try Again Later.");
           }
           action.payload.id = res.data.id;
-          action.payload.name = ttname;
-          action.payload.timetable = store.getState().updateTT.myTimeTable;
-          window.alert("Successfully Saved the TimeTable");
+          store.dispatch(
+            openSaveAlert("Successfully Saved the TimeTable", "success")
+          );
           return next(action);
         });
     } catch (err) {
-      window.alert(err.message);
+      store.dispatch(openSaveAlert(err.message, "error"));
       return;
     }
   } else {

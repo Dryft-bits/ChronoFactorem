@@ -8,6 +8,9 @@ import PreviewTT from "./PreviewTT.jsx";
 import MidsemSched from "./MidsemSched.jsx";
 import CompreSched from "./CompreSched.jsx";
 import ExportPage from "./ExportPage.jsx";
+import AlertBox from "../utils/AlertBox.jsx";
+import AlertDialog from "../utils/AlertDialog.jsx";
+import { openAlertDialog } from "../../redux/actions/dialogs";
 
 const courses = JSON.parse(JSON.stringify(TimeTableData));
 
@@ -15,10 +18,11 @@ class CreateTimeTable extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      view: 0
+      view: 0,
     };
     this.showView = this.showView.bind(this);
     this.CustomButton = this.CustomButton.bind(this);
+    this.onSave = this.onSave.bind(this);
   }
 
   showView(input) {
@@ -38,10 +42,35 @@ class CreateTimeTable extends Component {
     );
   }
 
+  onSave() {
+    if (this.props.myCourses.length === 0) {
+      this.props.openDialog(
+        "Please Choose Some Courses before saving the timetable!",
+        null,
+        null
+      );
+      return;
+    }
+    if (!this.props.id) {
+      this.props.openDialog(
+        "Would You like to give this TimeTable a name?",
+        "form",
+        { success: "save", fail: "save" }
+      );
+    } else {
+      this.props.openDialog(
+        "Would You like to Save it as a new TimeTable?",
+        "confirm",
+        { success: "newName", fail: "updateName", todo: "updateId" }
+      );
+    }
+  }
+
   render() {
     return (
       <>
-        {this.props.loading ? <h2>Loading...</h2> : null}
+        <AlertDialog />
+        <AlertBox />
         {this.state.view === 0 ? (
           <>
             {this.CustomButton("Preview", 1)}
@@ -58,9 +87,7 @@ class CreateTimeTable extends Component {
             </button>
             <button
               className='waves-effect waves-light btn'
-              onClick={() => {
-                this.props.save();
-              }}
+              onClick={this.onSave}
             >
               Save TimeTable
             </button>
@@ -99,23 +126,27 @@ class CreateTimeTable extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    loading: state.updateTT.loading
+    id: state.updateTT.id,
+    myCourses: state.updateTT.myCourses,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     clearAll: () => dispatch(clearAll()),
-    save: () => dispatch(saveTimeTable())
+    save: () => dispatch(saveTimeTable()),
+    openDialog: (msg, type, next) => dispatch(openAlertDialog(msg, type, next)),
   };
 };
 
 CreateTimeTable.propTypes = {
-  loading: PropTypes.bool.isRequired,
+  id: PropTypes.string,
+  myCourses: PropTypes.array,
+  openDialog: PropTypes.func.isRequired,
   clearAll: PropTypes.func.isRequired,
-  save: PropTypes.func.isRequired
+  save: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(CreateTimeTable);

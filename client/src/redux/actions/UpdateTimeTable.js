@@ -3,19 +3,19 @@ import {
   DELETE_SECTION,
   CLEAR_ALL,
   SAVE_TIMETABLE,
-  TIMETABLE_LOADING,
-  EDIT_TIMETABLE
+  EDIT_TIMETABLE,
+  NULLIFY_ID,
 } from "./types";
 import store from "../store";
 
-export const addSection = section => {
+export const addSection = (section) => {
   return {
     type: ADD_SECTION,
     payload: {
       section: section,
       timetable: store.getState().updateTT.myTimeTable,
-      courses: store.getState().updateTT.myCourses
-    }
+      courses: store.getState().updateTT.myCourses,
+    },
   };
 };
 
@@ -33,24 +33,28 @@ export const deleteSection = (
       courseCode: courseCode,
       timetable: timetable,
       courses: courses,
-      remove: remove
-    }
+      remove: remove,
+    },
   };
 };
 
 export const clearAll = () => {
   return {
-    type: CLEAR_ALL
+    type: CLEAR_ALL,
   };
 };
 
-export const saveTimeTable = () => {
+export const saveTimeTable = (name) => {
+  if (name === null) {
+    name = store.getState().updateTT.name;
+  }
+  console.log(name);
   return {
     type: SAVE_TIMETABLE,
     payload: {
       id: store.getState().id,
-      name: store.getState().name
-    }
+      name: name,
+    },
   };
 };
 
@@ -62,13 +66,13 @@ export const editTT = (tt, sharedTT = false) => {
       id: id,
       name: tt.name,
       timetable: tt.TimeTable,
-      courses: tt.Courses
-    }
+      courses: tt.Courses,
+    },
   };
 };
 
-export const setTimeTableLoading = () => {
+export const nullifyId = () => {
   return {
-    type: TIMETABLE_LOADING
+    type: NULLIFY_ID,
   };
 };
