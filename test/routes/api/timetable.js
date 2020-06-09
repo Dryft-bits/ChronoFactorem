@@ -43,7 +43,7 @@ describe("TimeTable api tests", function () {
       return true;
     };
 
-    varrequestData = { dsfjndfd: "fdsfed" };
+    const requestData = { dsfjndfd: "fdsfed" };
     chai
       .request(server)
       .post("/api/timetable/save")
