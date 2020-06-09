@@ -31,7 +31,8 @@ class SearchTabs extends Component {
               .toLowerCase()
               .search(input.target.value.toLowerCase()) !== -1
         )
-        .reduce((res, key) => ((res[key] = obj[key]), res), {});
+        .reduce((res, key) => {res[key] = obj[key]; return res}, {});
+        // .reduce((res, key) => ((res[key] = obj[key]), res), {});
     let updatedlist = filterCourses(this.state.initial);
     this.setState({ current: updatedlist });
   }

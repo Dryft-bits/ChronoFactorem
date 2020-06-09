@@ -19,7 +19,8 @@ const AddCourse = (props) => {
     let selectSections = (obj) =>
       Object.keys(obj)
         .filter((item) => item.charAt(0) === type)
-        .reduce((res, key) => ((res[key] = obj[key]), res), {});
+        .reduce((res, key) => {res[key] = obj[key]; return res}, {});
+        // .reduce((res, key) => ((res[key] = obj[key]), res), {});
     return selectSections(props.currentCourse[code].sections);
   }
 
