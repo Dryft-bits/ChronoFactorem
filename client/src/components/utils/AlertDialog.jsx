@@ -1,10 +1,16 @@
 import React from "react";
+import CssBaseline from '@material-ui/core/CssBaseline';
+import ScopedCssBaseline from '@material-ui/core/ScopedCssBaseline';
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import Dialog from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogActions from '@material-ui/core/DialogActions';
 import { closeAlertDialog } from "../../redux/actions/dialogs.js";
 import { nullifyId } from "../../redux/actions/UpdateTimeTable";
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 const AlertDialog = (props) => {
   const [data, setData] = React.useState({
@@ -33,19 +39,36 @@ const AlertDialog = (props) => {
         <DialogTitle>{props.msg}</DialogTitle>
         {props.type === "form" ? (
           <>
-            <input
-              type='text'
-              style={{ color: "black" }}
-              placeholder='Enter name here'
+            <DialogContent>
+            <ScopedCssBaseline>
+              {/* <TextField
+              autoFocus
+              margin="dense"
+              id="name"
+              label="Timetable Name"
+              fullWidth
               onChange={(e) => {
                 getName(e);
               }}
-            ></input>
+              /> */}
+              <input
+                type='text'
+                style={{ color: "black" }}
+                placeholder='Timetable Name'
+                onChange={(e) => {
+                  getName(e);
+                }}
+              ></input>
+            </ScopedCssBaseline>
+            </DialogContent>
           </>
         ) : null}
         {props.type === "form" || props.type === "confirm" ? (
-          <div align='right'>
-            <button
+          <DialogActions>
+            <Button
+              variant='contained'
+              size='small'
+              color='primary'
               onClick={() => {
                 if (props.next.todo !== undefined) {
                   props.nullifyId();
@@ -54,22 +77,27 @@ const AlertDialog = (props) => {
               }}
             >
               Yes
-            </button>
-            <button
+            </Button>
+            <Button
+              variant='contained'
+              size='small'
+              color='secondary'
               onClick={() => {
                 props.closeAlertDialog(props.next.fail, null);
               }}
             >
-              NO
-            </button>
-            <button
+              No
+            </Button>
+            <Button
+              variant='contained'
+              size='small'
               onClick={() => {
                 props.closeAlertDialog("cancel", null);
               }}
             >
               Cancel
-            </button>
-          </div>
+            </Button>
+          </DialogActions>
         ) : null}
       </Dialog>
     </div>
