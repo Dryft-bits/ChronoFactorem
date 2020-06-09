@@ -45,7 +45,10 @@ export const clearAll = () => {
 };
 
 export const saveTimeTable = (name) => {
-  name = name ? name : store.getState().name;
+  if (name === null) {
+    name = store.getState().updateTT.name;
+  }
+  console.log(name);
   return {
     type: SAVE_TIMETABLE,
     payload: {

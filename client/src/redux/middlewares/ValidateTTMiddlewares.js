@@ -164,8 +164,6 @@ export const saveTTMiddleware = (store) => (next) => (action) => {
             throw Error("Couldn't Save The TimeTable! Please Try Again Later.");
           }
           action.payload.id = res.data.id;
-          action.payload.name = ttname;
-          action.payload.timetable = store.getState().updateTT.myTimeTable;
           store.dispatch(
             openSaveAlert("Successfully Saved the TimeTable", "success")
           );
