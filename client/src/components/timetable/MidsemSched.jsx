@@ -9,7 +9,7 @@ const MidsemSched = props => {
         let code = Object.keys(myCourse.course);
         return (
           <div>
-            {!(myCourse.course[code].midsem === undefined) ? (
+            {myCourse.course[code].midsem !== undefined ? (
               <h5 key={code}>
                 <div className='examElement' style={{ fontSize: "medium" }}>
                   <div className='courseItem'>{code}</div>

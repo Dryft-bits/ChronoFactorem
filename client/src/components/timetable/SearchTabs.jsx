@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import M from "materialize-css";
 import "materialize-css/dist/css/materialize.min.css";
@@ -16,16 +15,16 @@ class SearchTabs extends Component {
     super(props);
     this.state = {
       initial: this.props.allCourses,
-      current: this.props.allCourses,
+      current: this.props.allCourses
     };
     this.filterItems = this.filterItems.bind(this);
   }
 
   filterItems(input) {
-    let filterCourses = (obj) =>
+    let filterCourses = obj =>
       Object.keys(obj)
         .filter(
-          (item) =>
+          item =>
             item.toLowerCase().search(input.target.value.toLowerCase()) !==
               -1 ||
             obj[item]["name"]
@@ -43,27 +42,27 @@ class SearchTabs extends Component {
         <div className='col s12'>
           <ul
             ref={Tabs => {
-              this.Tabs=Tabs;
+              this.Tabs = Tabs;
             }}
             className='tabs tabs-fixed-width tab-demo'
-            >
-              <li className='tab col s6'>
-                <a href='#ALL'>All Courses</a>
-              </li>
-              <li className='tab col s6'>
-                <a href='#HEL'>Humanities Electives</a>
-              </li>
-            </ul>
+          >
+            <li className='tab col s6'>
+              <a href='#ALL'>All Courses</a>
+            </li>
+            <li className='tab col s6'>
+              <a href='#HEL'>Humanities Electives</a>
+            </li>
+          </ul>
         </div>
         <div id='ALL' className='col s12'>
           <Search action={this.filterItems} />
           <ListCourse courses={this.state.current} />
         </div>
         <div id='HEL' className='col s12'>
-            <SearchHel
-              currentHels={this.props.currentHels}
-              onSelect={this.props.onSelectOption}
-            />
+          <SearchHel
+            currentHels={this.props.currentHels}
+            onSelect={this.props.onSelectOption}
+          />
         </div>
 
         {/* <Tabs defaultIndex={this.props.current === "all" ? 0 : 1}>
@@ -105,7 +104,7 @@ SearchTabs.propTypes = {
   current: PropTypes.string.isRequired,
   onChangeTab: PropTypes.func.isRequired,
   currentHels: PropTypes.object,
-  onSelectOption: PropTypes.func.isRequired,
+  onSelectOption: PropTypes.func.isRequired
 };
 
 export default SearchTabs;
