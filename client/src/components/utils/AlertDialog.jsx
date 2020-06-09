@@ -67,7 +67,7 @@ const AlertDialog = (props) => {
                 props.closeAlertDialog("cancel", null);
               }}
             >
-              Cancel Saving
+              Cancel
             </button>
           </div>
         ) : null}
