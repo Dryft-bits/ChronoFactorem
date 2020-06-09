@@ -105,7 +105,6 @@ const Dashboard = (props) => {
                       <Card className={classes.root}>
                         <CardContent>
                           <Typography
-                            className={classes.root}
                             color='textSecondary'
                             gutterBottom
                           >
