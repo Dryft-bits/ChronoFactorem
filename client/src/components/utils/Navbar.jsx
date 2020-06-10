@@ -34,7 +34,7 @@ export const Navbar = ({ submitted, user, isAuthenticated, logout }) => {
                 <NavLink to='/create'>Create TimeTable</NavLink>
               </li>
               <li>
-                <NavLink to='/aboutUs'>About Us</NavLink>
+                <NavLink to='/aboutUs'>About</NavLink>
               </li>
               <li>
                 <NavLink to='#!' onClick={logout}>
