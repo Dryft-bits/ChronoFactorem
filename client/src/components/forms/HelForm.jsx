@@ -166,7 +166,6 @@ const HelForm = ({ submitForm, submitted, user }) => {
               .search(input.target.value.toLowerCase()) !== -1
         )
         .reduce((res, key) => {res[key] = obj[key]; return res}, {});
-        // .reduce((res, key) => ((res[key] = obj[key]), res), {});
     currentlyShowingCourses = filterCourses(courses);
     setFormData({ ...formData });
   };
