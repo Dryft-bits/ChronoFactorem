@@ -6,7 +6,6 @@ export const getSelectedCourseMiddleware = () => next => action => {
       Object.keys(obj)
         .filter(course => course === action.payload.course)
         .reduce((res, key) => {res[key] = obj[key]; return res}, {});
-        // .reduce((res, key) => ((res[key] = obj[key]), res), {});
     action.payload.course = selectCourse(action.payload.currentCourses);
   }
   return next(action);

@@ -38,7 +38,6 @@ let humCourses = Object.keys(course)
       code.startsWith("BITS F385") ||
       code.startsWith("BITS F399")
   )
-  // .reduce((res, key) => ((res[key] = course[key]), res), {});
   .reduce((res, key) => {res[key] = course[key]; return res}, {});
 
 let hours = [{ value: null, label: "None" }];
@@ -80,7 +79,6 @@ const SearchHel = (props) => {
             ? selectedDay === obj[item]["sections"]["L1"]["sched"][0].days[0]
             : true
         )
-        // .reduce((res, key) => ((res[key] = obj[key]), res), {});
         .reduce((res, key) => {res[key] = obj[key]; return res}, {});
     let filteredlist = removeCourses(initial);
     let updatedlist = filterCourses(filteredlist);
