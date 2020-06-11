@@ -9,7 +9,7 @@ import HELData from "./components/tabs/HELData";
 import Navbar from "./components/utils/Navbar";
 import Dashboard from "./components/tabs/Dashboard";
 import CreateTimeTable from "./components/timetable/CreateTimeTable";
-import AboutUs from "./components/tabs/AboutUs";
+import About from "./components/tabs/About";
 import Landing from "./components/tabs/Landing";
 import HelForm from "./components/forms/HelForm";
 import PrivateRoute from "./components/routes/PrivateRoute";
@@ -35,7 +35,7 @@ const App = () => {
         <PrivateRoute exact path='/Dashboard' component={Dashboard} />
         <PrivateRoute exact path='/helData' component={HELData} />
         <PrivateRoute exact path='/create' component={CreateTimeTable} />
-        <PrivateRoute exact path='/aboutUs' component={AboutUs} />
+        <PrivateRoute exact path='/aboutUs' component={About} />
       </BrowserRouter>
     </Provider>
   );

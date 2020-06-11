@@ -17,8 +17,7 @@ let humCourses = Object.keys(course)
       code.startsWith("BITS F385") ||
       code.startsWith("BITS F399")
   )
-  .reduce((res, key) => ((res[key] = course[key]), res), {});
-
+  .reduce((res, key) => {res[key] = course[key]; return res}, {});
 const HELData = () => {
   const [studentData, setStudentData] = React.useState({
     courseStats: []
@@ -71,8 +70,7 @@ const HELData = () => {
             code.startsWith("BITS F385") ||
             code.startsWith("BITS F399")
         )
-        .reduce((res, key) => ((res[key] = obj[key]), res), {});
-
+        .reduce((res, key) => {res[key] = obj[key]; return res}, {});
     humCourses = filterCourses(courses);
     setStudentData({ ...studentData }); //force component update
   }
