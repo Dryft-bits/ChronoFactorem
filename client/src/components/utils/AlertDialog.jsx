@@ -1,18 +1,18 @@
 import React from "react";
-import ScopedCssBaseline from '@material-ui/core/ScopedCssBaseline';
+import ScopedCssBaseline from "@material-ui/core/ScopedCssBaseline";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import Dialog from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogActions from "@material-ui/core/DialogActions";
 import { closeAlertDialog } from "../../redux/actions/dialogs.js";
 import { nullifyId } from "../../redux/actions/UpdateTimeTable";
-import Button from '@material-ui/core/Button';
+import Button from "@material-ui/core/Button";
 
-const AlertDialog = (props) => {
+const AlertDialog = props => {
   const [data, setData] = React.useState({
-    input: null,
+    input: null
   });
   const { input } = data;
 
@@ -38,8 +38,8 @@ const AlertDialog = (props) => {
         {props.type === "form" ? (
           <>
             <DialogContent>
-            <ScopedCssBaseline>
-              {/* <TextField
+              <ScopedCssBaseline>
+                {/* <TextField
               autoFocus
               margin="dense"
               id="name"
@@ -49,15 +49,15 @@ const AlertDialog = (props) => {
                 getName(e);
               }}
               /> */}
-              <input
-                type='text'
-                style={{ color: "black" }}
-                placeholder='Timetable Name'
-                onChange={(e) => {
-                  getName(e);
-                }}
-              ></input>
-            </ScopedCssBaseline>
+                <input
+                  type='text'
+                  style={{ color: "black" }}
+                  placeholder='Timetable Name'
+                  onChange={e => {
+                    getName(e);
+                  }}
+                ></input>
+              </ScopedCssBaseline>
             </DialogContent>
           </>
         ) : null}
@@ -74,7 +74,7 @@ const AlertDialog = (props) => {
                 props.closeAlertDialog(props.next.success, input);
               }}
             >
-              Yes
+              Continue
             </Button>
             <Button
               variant='contained'
@@ -84,7 +84,7 @@ const AlertDialog = (props) => {
                 props.closeAlertDialog(props.next.fail, null);
               }}
             >
-              No
+              Skip
             </Button>
             <Button
               variant='contained'
@@ -102,19 +102,19 @@ const AlertDialog = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
     status: state.dialog.alertDialog.status,
     msg: state.dialog.alertDialog.msg,
     type: state.dialog.alertDialog.type,
-    next: state.dialog.next,
+    next: state.dialog.next
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
     closeAlertDialog: (next, input) => dispatch(closeAlertDialog(next, input)),
-    nullifyId: () => dispatch(nullifyId()),
+    nullifyId: () => dispatch(nullifyId())
   };
 };
 
@@ -122,7 +122,7 @@ AlertDialog.propTypes = {
   status: PropTypes.bool.isRequired,
   msg: PropTypes.string,
   closeAlertDialog: PropTypes.func.isRequired,
-  nullifyId: PropTypes.func.isRequired,
+  nullifyId: PropTypes.func.isRequired
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(AlertDialog);
