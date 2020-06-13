@@ -11,7 +11,7 @@ const CheckLoggedIn = ({ verifyLogin }) => {
   const [userInfo, loading] = useGetData("/api/current_user");
 
   if (loading) {
-    return <Redirect to='/checkloggedin'></Redirect>;
+    return <h1>Loading</h1>/*<Redirect to='/checkloggedin'></Redirect>*/;
   } else if (!userInfo) {
     return <Redirect to='/'></Redirect>;
   } else {

@@ -1,5 +1,4 @@
 import axios from "axios";
-import Professor from "../../schemas/Professor";
 import {
   LOGIN_FAILURE,
   LOGIN_SUCCESS,
@@ -7,13 +6,9 @@ import {
   LOGOUT_FAILURE,
   USER_LOADED,
   NO_USER,
-  PROF_LOADED,
-  NO_PROF,
 } from "./types";
 
 import { history } from "../../App";
-import Cookies from 'js-cookie';
-
 export const verifyLogin = () => async dispatch => {
   try {
     const res = await axios.get("/api/loggedin");
@@ -35,43 +30,6 @@ export const verifyLogin = () => async dispatch => {
   }
 };
 
-export const addProf = (prof) => async dispatch => {
-  if (prof) {
-    let res = null;
-    try {
-        res = await axios.post("/api/profAuth/profLoggedIn", {
-        token: prof
-      })
-      if (!res || !res.data) {
-        localStorage.setItem('prof', false);
-        dispatch({
-          type: NO_PROF
-        })
-      }
-      else {
-        localStorage.setItem('prof', true);
-        dispatch({
-          type: PROF_LOADED,
-          payload: new Professor(res.data.username, res.data.name, res.data.department, res.data.email)
-        })
-      }
-    }
-    catch (err) {
-      localStorage.setItem('prof',false);
-      dispatch({
-        type: NO_PROF
-      })
-    }
-  }
-}
-
-export const logoutProf = () => dispatch => {
-  localStorage.setItem('prof',false);
-  Cookies.remove("token");
-  dispatch({
-    type: NO_PROF
-  })
-}
 export const loadUser = () => async dispatch => {
   try {
     const res = await axios.get("/api/loggedin");
