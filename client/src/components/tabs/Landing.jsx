@@ -1,8 +1,14 @@
 import React from "react";
 import "../../styles/Landing.css";
 import configuration from "../../config/constants.js";
+import { useGetData } from "use-axios-react";
+import { Redirect } from "react-router-dom";
+
 export const Landing = () => {
-  return (
+  const [userInfo, loading] = useGetData("/api/current_user");
+  return userInfo && localStorage.getItem("loggedIn") ? (
+    <Redirect to='/checkloggedin'></Redirect>
+  ) : (
     <section className='landing body'>
       <div className='dark-overlay'>
         <div className='landing-inner'>
@@ -26,11 +32,9 @@ export const Landing = () => {
           </div>
         </div>
       </div>
-      <div>
-      </div>
+      <div></div>
     </section>
   );
 };
-
 
 export default Landing;
