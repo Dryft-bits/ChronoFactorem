@@ -34,7 +34,7 @@ const CheckLoggedIn = ({ verifyLogin }) => {
   }));
   const Cclasses = useStylesCircular();
   const classes = useStyles();
-  if (true) {
+  if (loading) {
     return (
       <>
         <div className={classes.root}>
