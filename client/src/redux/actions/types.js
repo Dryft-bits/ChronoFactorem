@@ -19,8 +19,6 @@ export const UPDATE_INFO = "UPDATE_INFO";
 export const USER_LOADED = "USER_LOADED";
 export const NO_USER = "NO_USER";
 
-export const PROF_LOADED = "PROF_LOADED";
-export const NO_PROF = "NO_PROF";
 
 export const OPEN_ALERT_DIALOG = "OPEN_ALERT_DIALOG";
 export const CLOSE_ALERT_DIALOG = "CLOSE_ALERT_DIALOG";
