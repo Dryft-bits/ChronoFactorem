@@ -121,6 +121,7 @@ psd
 thumb
 sketch
 
+Scripts
 .vscode
 client/package-lock.json
 package-lock.json
