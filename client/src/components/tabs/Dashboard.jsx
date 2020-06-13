@@ -171,7 +171,7 @@ const Dashboard = (props) => {
           </Grid>
         </div>
 
-        <h4 className='title'>Publicily Shared Timetables</h4>
+        <h4 className='title'>Publicly Shared Timetables</h4>
         <ShareTimeTable />
       </>
     );
