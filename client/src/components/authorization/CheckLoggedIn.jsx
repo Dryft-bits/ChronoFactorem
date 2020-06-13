@@ -23,16 +23,18 @@ const CheckLoggedIn = ({ verifyLogin }) => {
 
   const useStylesCircular = makeStyles((theme) => ({
     root: {
-      display: 'block',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
       '& > * + *': {
-        marginLeft: 'auto',
-        marginRight: 'auto'
+        marginLeft: theme.spacing(2),
+        marginTop: theme.spacing(2),
       },
     },
   }));
   const Cclasses = useStylesCircular();
   const classes = useStyles();
-  if (loading) {
+  if (true) {
     return (
       <>
         <div className={classes.root}>
