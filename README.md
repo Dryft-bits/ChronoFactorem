@@ -1,5 +1,5 @@
 # ChronoFactorem
-A MERN stack Web App that allows students to create draft time tables
+A MERN stack Web App that allows students to create draft time tables.
 
 # Contributing
 See Contributing.md
