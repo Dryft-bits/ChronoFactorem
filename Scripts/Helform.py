@@ -13,7 +13,7 @@ for course in timetable:
             'BITS F214', 'BITS F385', 'BITS F399'
     ]:
         data.append({
-            'courseName': course,
+            'courseName': course.lower(),
             'studentsInterestedInSlot': {
                 '0': {
                     '$numberInt': str(random.randint(1, 30))
