@@ -84,7 +84,7 @@ class PreviewTT extends Component {
                 </div>
                 {section.courseCode}
                 <br></br>
-                {section.sectionRoom}
+                {section.section}
                 <br></br>
               </div>
             </>
