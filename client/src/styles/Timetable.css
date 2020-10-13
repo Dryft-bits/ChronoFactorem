@@ -4,8 +4,9 @@
   row-gap: 0.5%;
   column-gap: 0.5%;
   transition-duration: 0.4s;
-  grid-template-rows: 8.63% 8.63% 8.63% 8.63% 8.63% 8.63% 8.63% 8.63% 8.63% 8.63% 8.63%;
+  grid-template-rows: 7.87% 7.87% 7.87% 7.87% 7.87% 7.87% 7.87% 7.87% 7.87% 7.87% 7.87% 7.87%;
   height: 80vh;
+  min-height: 768px;
 }
 
 .gridElement > div {
@@ -23,6 +24,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 60px;
   font-size: 80%;
 }
 
