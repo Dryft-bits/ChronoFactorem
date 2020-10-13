@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Creatable from "react-select";
+import Select from "react-select";
 import { components } from "react-select";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
@@ -63,6 +64,13 @@ const branches = [
   { value: "PHA", label: "Pharmacy" },
   { value: "PHY", label: "Physics" },
 ];
+const years = [
+  { value: "1", label: "First" },
+  { value: "2", label: "Second" },
+  { value: "3", label: "Third" },
+  { value: "4", label: "Fourth" },
+  { value: "5", label: "Fifth" },
+];
 
 const ShareTimeTable = (props) => {
   const [formData, setFormData] = useState({
@@ -124,10 +132,10 @@ const ShareTimeTable = (props) => {
     e.preventDefault();
     if (!branch || branch.length === 0) {
       window.alert("Please enter your branch");
-    } else if (year === "" || isNaN(year)) {
+    } else if (year.value === "" || isNaN(year.value)) {
       window.alert("Please enter your year");
     } else {
-      submitToMongo(branch, year);
+      submitToMongo(branch, year.value);
     }
   };
 
@@ -138,7 +146,7 @@ const ShareTimeTable = (props) => {
         {optionSelectedLength < 2 ? (
           props.children
         ) : (
-          <div className='wide-menu-row'>
+          <div className="wide-menu-row">
             You cannot select more than 2 branches
           </div>
         )}
@@ -152,112 +160,86 @@ const ShareTimeTable = (props) => {
   const classes = useStyles();
   return (
     <>
-      <h5 className='title' style={{ textAlign: "center" }}>
-        Please Enter your Branch and year below:
-      </h5>
-      <form className='form-whole' onSubmit={onSubmit}>
-        <div className='container-helform'>
-          <Creatable
+      <h5>Please Select your Branch and year below:</h5>
+      <form className="form-whole" onSubmit={onSubmit}>
+        <div className="branch-year-container">
+          <Select
             components={{ Menu }}
             onChange={handleBranchChange}
             value={branch}
             isMulti
             isValidNewOption={isValidNewOption}
             options={branch && branch.length >= 2 ? branch : branches}
-            className='left-width branch-inp'
-            placeholder='Select branch (select 2 branches for dual degree)'
-            theme={(theme) => ({
-              ...theme,
-              borderRadius: 2,
-              colors: {
-                ...theme.colors,
-                primary25: "#0984e3",
-                neutral0: "rgba(116, 185, 255,1)",
-              },
-            })}
+            className="left-width"
+            placeholder="Select branch (select 2 branches for dual degree)"
           />
-          <YearSelector
+          <Select
+            onChange={handleYearChange}
+            value={year}
+            isValidNewOption={isValidNewOption}
+            options={years}
+            className="left-width"
+            placeholder="Select Year"
+          />
+          {/* <YearSelector
             onYearChange={handleYearChange}
             initialYear={year}
-          ></YearSelector>
+          ></YearSelector> */}
+          <input type="submit" className="btn btn-primary" value="Go" />
         </div>
         <br></br>
-        <input
-          type='submit'
-          className='btn btn-primary btn-go btn-big'
-          value='GO'
-        />
       </form>
-      <br></br>
-      <div
-        className={classes.grid}
-        style={{ position: "relative", left: "2vw" }}
-      >
-        <Grid container style={{ backgroundColor: "#74b9ff" }}>
-          {!loading && TTs.length !== 0 ? (
-            TTs.map((itemc) => {
-              return (
-                <>
-                  <Grid item xs={6}>
-                    <div key={itemc._id} id={itemc._id}>
-                      <Card className={classes.root}>
-                        <CardContent>
-                          <Typography
-                            className={classes.title}
-                            color='textSecondary'
-                            gutterBottom
-                          >
-                            Timetable Name
-                          </Typography>
-                          <Typography variant='h5' component='h2'>
-                            {itemc.name}
-                          </Typography>
-                          <Typography color='textSecondary'>
-                            Shared by
-                          </Typography>
-                          <Typography variant='h6' component='h6'>
-                            {itemc.username}
-                          </Typography>
-                          <Typography
-                            variant='body2'
-                            color='textSecondary'
-                            component='p'
-                          >
-                            Date:{" "}
-                            {itemc.date.substr(0, itemc.date.indexOf("T"))}
-                            <br />
-                            {"Time: "}{" "}
-                            {itemc.date.substr(itemc.date.indexOf("T") + 1, 9)}
-                          </Typography>
-                        </CardContent>
-                        <CardActions>
-                          <Link
-                            to='/create'
-                            onClick={() => {
-                              props.editTT(itemc);
-                            }}
-                          >
-                            <Button
-                              variant='contained'
-                              color='primary'
-                              size='large'
-                            >
-                              View/Edit
-                            </Button>
-                          </Link>
-                        </CardActions>
-                      </Card>
-                    </div>
-                  </Grid>
-                </>
-              );
-            })
-          ) : loading ? (
-            <h4>Loading</h4>
-          ) : (
-            <h4 className='title'>No Shared Timetables</h4>
-          )}
-        </Grid>
+      <br />
+      <div>
+        {!loading && TTs.length !== 0 ? (
+          TTs.map((itemc) => {
+            return (
+              <Grid item xs={6}>
+                <div key={itemc._id} id={itemc._id}>
+                  <Card className={classes.root}>
+                    <CardContent>
+                      <Typography variant="h5" component="h2">
+                        {itemc.name}
+                      </Typography>
+                      <Typography color="textSecondary">Shared by</Typography>
+                      {itemc.username}
+                      <Typography
+                        variant="body2"
+                        color="textSecondary"
+                        component="p"
+                      >
+                        Date: {itemc.date.substr(0, itemc.date.indexOf("T"))}
+                        <br />
+                        {"Time: "}{" "}
+                        {itemc.date.substr(itemc.date.indexOf("T") + 1, 9)}
+                      </Typography>
+                    </CardContent>
+                    <CardActions>
+                      <Link
+                        to="/create"
+                        onClick={() => {
+                          props.editTT(itemc);
+                        }}
+                      >
+                        <Button
+                          variant="contained"
+                          color="primary"
+                          size="large"
+                        >
+                          View/Edit
+                        </Button>
+                      </Link>
+                    </CardActions>
+                  </Card>
+                </div>
+              </Grid>
+            );
+          })
+        ) : loading ? (
+          <h4>Loading</h4>
+        ) : (
+          <h4>No Shared Timetables</h4>
+        )}
       </div>
     </>
   );

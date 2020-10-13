@@ -32,13 +32,13 @@ class CreateTimeTable extends Component {
 
   CustomButton(type, id) {
     return (
-      <button
-        className='waves-effect waves-light btn'
+      <div
+        className="toolbar-button waves-effect waves-light btn"
         id={id}
         onClick={this.showView}
       >
         {this.state.view === 0 ? type : "Back"}
-      </button>
+      </div>
     );
   }
 
@@ -73,51 +73,63 @@ class CreateTimeTable extends Component {
         <AlertBox />
         {this.state.view === 0 ? (
           <>
-            {this.CustomButton("Preview", 1)}
-            {this.CustomButton("Midsem Schedule", 2)}
-            {this.CustomButton("Compre Schedule", 3)}
-            {this.CustomButton("Export As PNG", 4)}
-            <button
-              className='waves-effect waves-light btn'
-              onClick={() => {
-                this.props.clearAll();
-              }}
-            >
-              Clear All Entries
-            </button>
-            <button
-              className='waves-effect waves-light btn'
-              onClick={this.onSave}
-            >
-              Save TimeTable
-            </button>
-            <div>
-              <div style={{ float: "right", width: "35vw" }}>
-                <AddCourse allCourses={courses.default} />
-              </div>
-              <div style={{ width: "60vw" }}>
+            <div className="create-timetable-container">
+              <div className="timetable-preview">
                 <PreviewTT />
+                <br />
+                <div className="create-timetable-toolbar">
+                  {this.CustomButton("Preview", 1)}
+                  {this.CustomButton("Midsem Schedule", 2)}
+                  {this.CustomButton("Compre Schedule", 3)}
+                  {this.CustomButton("Export PNG", 4)}
+                  <button
+                    className="waves-effect waves-light btn"
+                    onClick={() => {
+                      this.props.clearAll();
+                    }}
+                  >
+                    Clear All Entries
+                  </button>
+                  <button
+                    className="waves-effect waves-light btn"
+                    onClick={this.onSave}
+                  >
+                    Save TimeTable
+                  </button>
+                </div>
+                <br />
+              </div>
+
+              <div className="courses-list">
+                <AddCourse allCourses={courses.default} />
               </div>
             </div>
           </>
         ) : this.state.view === 1 ? (
           <>
             {this.CustomButton("Preview", 0)}
+            <br />
+            <br />
             <PreviewTT />
           </>
         ) : this.state.view === 2 ? (
           <>
             {this.CustomButton("Midsem Schedule", 0)}
+            <br />
+            <br />
             <MidsemSched />
           </>
         ) : this.state.view === 3 ? (
           <>
             {this.CustomButton("Compre Schedule", 0)}
+            <br />
+            <br />
             <CompreSched />
           </>
         ) : this.state.view === 4 ? (
           <>
             {this.CustomButton("Export As PNG", 0)}
+            <br />
             <ExportPage />
           </>
         ) : null}

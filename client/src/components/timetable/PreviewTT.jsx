@@ -70,24 +70,22 @@ class PreviewTT extends Component {
           }
 
           str = (
-            <>
-              <div
-                className="gridItem"
-                style={divStyle}
-                onClick={() =>
-                  this.props.onRemove(section.section, section.courseCode)
-                }
-              >
-                <div style={(divStyle, { fontSize: "xx-small" })}>
-                  {section.courseName}
-                  <br></br>
-                </div>
-                {section.courseCode}
-                <br></br>
-                {section.section}
+            <div
+              className="gridItem"
+              style={divStyle}
+              onClick={() =>
+                this.props.onRemove(section.section, section.courseCode)
+              }
+            >
+              <div style={divStyle}>
+                {section.courseName}
                 <br></br>
               </div>
-            </>
+              {section.courseCode}
+              <br></br>
+              {section.section}
+              <br></br>
+            </div>
           );
         }
 

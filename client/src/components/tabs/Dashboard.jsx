@@ -91,92 +91,78 @@ const Dashboard = (props) => {
     return (
       <>
         <AlertBox />
-        <h4 className='title'>Saved Timetables</h4>
-        <div
-          className={classes.grid}
-          style={{ position: "relative", left: "2vw" }}
-        >
-          <Grid container style={{ backgroundColor: "#74b9ff" }}>
+        <h4>Saved Timetables</h4>
+        <div>
+          <Grid container>
             {(TTData.savedTT || data).map((itemc) => {
               return (
-                <>
-                  <Grid item xs={6}>
-                    <div key={itemc._id} id={itemc._id}>
-                      <Card className={classes.root}>
-                        <CardContent>
-                          <Typography
-                            color='textSecondary'
-                            gutterBottom
-                          >
-                            Name
-                          </Typography>
-                          <Typography variant='h5' component='h2'>
-                            {itemc.name}
-                          </Typography>
-                        </CardContent>
-                        <CardActions>
-                          <Link
-                            to='/create'
-                            onClick={() => {
-                              props.editTT(itemc);
-                            }}
-                          >
-                            <Button
-                              variant='contained'
-                              color='primary'
-                              size='small'
-                            >
-                              Edit
-                            </Button>
-                          </Link>
-
+                <Grid item>
+                  <div key={itemc._id} id={itemc._id}>
+                    <Card className={classes.root}>
+                      <CardContent>
+                        <h5>{itemc.name}</h5>
+                      </CardContent>
+                      <CardActions>
+                        <Link
+                          to="/create"
+                          onClick={() => {
+                            props.editTT(itemc);
+                          }}
+                        >
                           <Button
-                            onClick={() => {
-                              deleteTT(itemc._id);
-                            }}
-                            variant='contained'
-                            color='secondary'
-                            size='small'
+                            variant="contained"
+                            color="primary"
+                            size="small"
                           >
-                            Delete
+                            Edit
                           </Button>
-                          {itemc.isShared ? (
-                            <Button
-                              variant='contained'
-                              size='small'
-                              onClick={() => {
-                                toggleShare(itemc._id, "Unshared");
-                              }}
-                            >
-                              Unshare
-                            </Button>
-                          ) : (
-                            <Button
-                              variant='contained'
-                              size='small'
-                              onClick={() => {
-                                toggleShare(itemc._id, "Shared");
-                              }}
-                            >
-                              Share
-                            </Button>
-                          )}
-                        </CardActions>
-                      </Card>
-                    </div>
-                  </Grid>
-                </>
+                        </Link>
+
+                        <Button
+                          onClick={() => {
+                            deleteTT(itemc._id);
+                          }}
+                          variant="contained"
+                          color="secondary"
+                          size="small"
+                        >
+                          Delete
+                        </Button>
+                        {itemc.isShared ? (
+                          <Button
+                            variant="contained"
+                            size="small"
+                            onClick={() => {
+                              toggleShare(itemc._id, "Unshared");
+                            }}
+                          >
+                            Unshare
+                          </Button>
+                        ) : (
+                          <Button
+                            variant="contained"
+                            size="small"
+                            onClick={() => {
+                              toggleShare(itemc._id, "Shared");
+                            }}
+                          >
+                            Share
+                          </Button>
+                        )}
+                      </CardActions>
+                    </Card>
+                  </div>
+                </Grid>
               );
             })}
           </Grid>
         </div>
-
-        <h4 className='title'>Publicly Shared Timetables</h4>
+        <h4>Publicly Shared Timetables</h4>
         <ShareTimeTable />
       </>
     );
   } else {
-    return <h4>FETCHING LATEST DATA....</h4>;
+    return <h4>Fetching Latest Data....</h4>;
   }
 };
 

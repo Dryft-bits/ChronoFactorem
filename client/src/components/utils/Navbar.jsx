@@ -10,61 +10,59 @@ export const Navbar = ({ submitted, user, isAuthenticated, logout }) => {
   } else if ((!submitted && user && user.submittedForm) || submitted) {
     return (
       <div>
-        <nav className='nav-wraper indigo darken-4'>
-          <div className='container'>
-            <NavLink to='/' className='brand-logo left'>
-              <div style={{ height: "64px", width: "238.633px" }}>
-                <img
-                  src={image}
-                  height='64px'
-                  width='238.633px'
-                  id='logo'
-                  alt='Logo'
-                />
-              </div>
-            </NavLink>
-            <ul className='right hide-on-med-and-down'>
-              <li>
-                <NavLink to='/Dashboard'>Dashboard</NavLink>
-              </li>
-              <li>
-                <NavLink to='/HELDATA'>Statistics</NavLink>
-              </li>
-              <li>
-                <NavLink to='/create'>Create TimeTable</NavLink>
-              </li>
-              <li>
-                <NavLink to='/aboutUs'>About</NavLink>
-              </li>
-              <li>
-                <NavLink to='#!' onClick={logout}>
-                  Logout{" "}
-                </NavLink>
-              </li>
-            </ul>
-          </div>
+        <nav className="nav-container">
+          <NavLink to="/" className="nav-logo">
+            <div style={{ height: "64px", width: "238.633px" }}>
+              <img
+                src={image}
+                height="64px"
+                width="238.633px"
+                id="logo"
+                alt="Logo"
+              />
+            </div>
+          </NavLink>
+          <ul className="nav-list">
+            <li>
+              <NavLink to="/Dashboard">Dashboard</NavLink>
+            </li>
+            <li>
+              <NavLink to="/HELDATA">Statistics</NavLink>
+            </li>
+            <li>
+              <NavLink to="/create">Create TimeTable</NavLink>
+            </li>
+            <li>
+              <NavLink to="/aboutUs">About</NavLink>
+            </li>
+            <li className="nav-logout">
+              <NavLink to="#!" onClick={logout}>
+                Logout{" "}
+              </NavLink>
+            </li>
+          </ul>
         </nav>
       </div>
     );
   } else {
     return (
       <div>
-        <nav className='nav-wraper indigo darken-4'>
-          <div className='container'>
-            <NavLink to='/' className='brand-logo left'>
+        <nav className="nav-wraper indigo darken-4">
+          <div className="container">
+            <NavLink to="/" className="brand-logo left">
               <div style={{ height: "64px", width: "238.633px" }}>
                 <img
                   src={image}
-                  height='64px'
-                  width='238.633px'
-                  id='logo'
-                  alt='Logo'
+                  height="64px"
+                  width="238.633px"
+                  id="logo"
+                  alt="Logo"
                 />
               </div>
             </NavLink>
-            <ul className='right hide-on-med-and-down'>
+            <ul className="right hide-on-med-and-down">
               <li>
-                <NavLink to='/' onClick={logout}>
+                <NavLink to="/" onClick={logout}>
                   Logout{" "}
                 </NavLink>
               </li>
@@ -77,14 +75,14 @@ export const Navbar = ({ submitted, user, isAuthenticated, logout }) => {
 };
 
 Navbar.propTypes = {
-  logout: PropTypes.func.isRequired
+  logout: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     submitted: state.helForm.submitted,
     user: state.auth.user,
-    isAuthenticated: state.auth.isAuthenticated
+    isAuthenticated: state.auth.isAuthenticated,
   };
 };
 
