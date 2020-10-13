@@ -12,6 +12,7 @@ class WeekDay {
     this.eight = new Entry();
     this.nine = new Entry();
     this.ten = new Entry();
+    this.eleven = new Entry();
   }
 }
 

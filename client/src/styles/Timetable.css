@@ -1,114 +1,99 @@
 :root {
-    --row-gap: 0.5vh;
-    --header-column-width: 10%;
-    --reg-column-width: 15%;
-  }
-
-body
-{
-    background-color: #cadcfc;
+  --row-gap: 0.5vh;
+  --header-column-width: 10%;
+  --reg-column-width: 15%;
 }
 
-.gridElement
-{
-    display: grid;
-    grid-template-columns: 7% 15% 15% 15% 15% 15% 15%;
-    row-gap: 0.75vh;
-    column-gap:0.5%;
-    background-color: #0984e3;
-    padding: 3px;
-    border-radius: 5px;
-    grid-template-rows: 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh ;
-    transition-duration: 0.4s;
+body {
+  background-color: #cadcfc;
 }
 
-.gridElement > div
-{
-    background-color: #313131;
-    position: relative;
-    text-align: center;
-    padding: 10px 10px;
-    font-size: 67%;
-    border-radius: 3px;
-    color: white;
-    box-shadow: 2px 1.5px 2px 0.5px rgba(1, 4, 7, 0.5);
+.gridElement {
+  display: grid;
+  grid-template-columns: 7% 15% 15% 15% 15% 15% 15%;
+  row-gap: 0.75vh;
+  column-gap: 0.5%;
+  background-color: #0984e3;
+  padding: 3px;
+  border-radius: 5px;
+  grid-template-rows: 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh;
+  transition-duration: 0.4s;
 }
 
-
-
-.gridItem
-{
-    background-color: #333333;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.gridElement > div {
+  background-color: #313131;
+  position: relative;
+  text-align: center;
+  padding: 10px 10px;
+  font-size: 67%;
+  border-radius: 3px;
+  color: white;
+  box-shadow: 2px 1.5px 2px 0.5px rgba(1, 4, 7, 0.5);
 }
 
-.gridItem:hover
-{
-    /*background-color: #aaaaaa;*/
-    box-shadow: 2px 2px 5px 5px rgba(1, 4, 7, 0.76);
-    transition-duration: 0.4s;
-    font-size: 75%;
-    /*color: black;*/
+.gridItem {
+  background-color: #333333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-
-.courseElement
-{
-    display: grid;
-    grid-template-columns: 5% 45% 10% 10% 10% 10% 10%;
-    grid-template-rows: 5vh;
-}
-.courseElement:hover
-{
-    display: grid;
-    grid-template-columns: 5% 45% 10% 10% 10% 10% 10%;
-    grid-template-rows: 5vh;
-    background-color: #0984e3;
-    cursor: pointer;
-}
-.examElement
-{
-    display: grid;
-    grid-template-columns: 10% 60% 15% 15%;
-    column-gap: 0.5vh;
-    grid-template-rows: 5vh;
+.gridItem:hover {
+  /*background-color: #aaaaaa;*/
+  box-shadow: 2px 2px 5px 5px rgba(1, 4, 7, 0.76);
+  transition-duration: 0.4s;
+  font-size: 75%;
+  /*color: black;*/
 }
 
-.courseItem
-{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14;
+.courseElement {
+  display: grid;
+  grid-template-columns: 5% 45% 10% 10% 10% 10% 10%;
+  grid-template-rows: 5vh;
+}
+.courseElement:hover {
+  display: grid;
+  grid-template-columns: 5% 45% 10% 10% 10% 10% 10%;
+  grid-template-rows: 5vh;
+  background-color: #0984e3;
+  cursor: pointer;
+}
+.examElement {
+  display: grid;
+  grid-template-columns: 10% 60% 15% 15%;
+  column-gap: 0.5vh;
+  grid-template-rows: 5vh;
 }
 
-.courseWindow
-{
-    margin:5px;
-    padding:5px;
-    background-color: rgba(116, 185, 255,1);
-    height: 45vh;
-    overflow: auto;
-    font-size: 14px;
-    text-align:justify;
-}
-.courseSearch
-{
-    margin:5px;
-    padding:5px;
-    background-color: rgba(116, 185, 255,1);
-    height: 65vh;
-    overflow: auto;
-    text-align:justify;
+.courseItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14;
 }
 
-.courseSearch :hover{
-    cursor: pointer;
-    background-color: #0984e3;
+.courseWindow {
+  margin: 5px;
+  padding: 5px;
+  background-color: rgba(116, 185, 255, 1);
+  height: 45vh;
+  overflow: auto;
+  font-size: 14px;
+  text-align: justify;
 }
-.input-field ::placeholder{
-    color: black;
-    
+.courseSearch {
+  margin: 5px;
+  padding: 5px;
+  background-color: rgba(116, 185, 255, 1);
+  height: 65vh;
+  overflow: auto;
+  text-align: justify;
+}
+
+.courseSearch :hover {
+  cursor: pointer;
+  background-color: #0984e3;
+}
+.input-field ::placeholder {
+  color: black;
 }

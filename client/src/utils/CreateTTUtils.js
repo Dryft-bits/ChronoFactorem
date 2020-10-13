@@ -32,9 +32,7 @@ export function checkClashOrDelete(tt, courseCode, sched) {
   [hours, days, room] = sched;
   for (let day of days) {
     for (let hour of hours) {
-      if (tt[day][ntw.toWords(hour)].sectionRoom === room) {
-        return false;
-      } else if (
+      if (
         String(tt[day][ntw.toWords(hour)].courseCode) === courseCode[0]
       ) {
         return false;

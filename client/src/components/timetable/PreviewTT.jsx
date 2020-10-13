@@ -14,13 +14,13 @@ class PreviewTT extends Component {
   }
   populateTimetable() {
     var gridList = [
-      ["Time", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-      ["Monday", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-      ["Tuesday", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-      ["Wednesday", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-      ["Thursday", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-      ["Friday", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-      ["Saturday", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+      ["Time", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+      ["Monday", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      ["Tuesday", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      ["Wednesday", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      ["Thursday", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      ["Friday", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+      ["Saturday", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     ];
 
     let Map = {};
@@ -33,7 +33,7 @@ class PreviewTT extends Component {
 
     let divStyle = {};
     var days = ["M", "T", "W", "Th", "F", "S"];
-    var hours = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    var hours = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
     var day, hour;
     for (day of days) {
       for (hour of hours) {
@@ -49,7 +49,7 @@ class PreviewTT extends Component {
                 backgroundColor: "#black",
                 display: "flex",
                 alignItems: "center",
-                justifyContent: "center"
+                justifyContent: "center",
               }}
             >
               {" "}
@@ -65,14 +65,14 @@ class PreviewTT extends Component {
               gridRowStart: `${hour + 1}`,
               gridColumnStart: `${Map[day] + 1}`,
               gridCoulmnEnd: `${Map[day] + 2}`,
-              gridRowEnd: `span ${section.numHours}`
+              gridRowEnd: `span ${section.numHours}`,
             };
           }
 
           str = (
             <>
               <div
-                className='gridItem'
+                className="gridItem"
                 style={divStyle}
                 onClick={() =>
                   this.props.onRemove(section.section, section.courseCode)
@@ -84,7 +84,7 @@ class PreviewTT extends Component {
                 </div>
                 {section.courseCode}
                 <br></br>
-                {section.sectionRoom}
+                {section.section}
                 <br></br>
               </div>
             </>
@@ -95,7 +95,7 @@ class PreviewTT extends Component {
       }
     }
     for (let i = 0; i <= 6; i++) {
-      for (let j = 0; j <= 10; j++) {
+      for (let j = 0; j <= 11; j++) {
         if (j === 0 || i === 0) {
           gridList[i][j] = (
             <div
@@ -105,7 +105,7 @@ class PreviewTT extends Component {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                color: "white"
+                color: "white",
               }}
             >
               {gridList[i][j]}
@@ -120,7 +120,7 @@ class PreviewTT extends Component {
   render() {
     this.gridArray = this.populateTimetable();
     let divsToRender = [];
-    for (let i = 0; i <= 10; i++) {
+    for (let i = 0; i <= 11; i++) {
       for (let j = 0; j <= 6; j++) {
         if (this.gridArray[j][i] === -1);
         else {
@@ -128,26 +128,26 @@ class PreviewTT extends Component {
         }
       }
     }
-    return <div className='gridElement'>{divsToRender}</div>;
+    return <div className="gridElement">{divsToRender}</div>;
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    TimeTable: state.updateTT.myTimeTable
+    TimeTable: state.updateTT.myTimeTable,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     onRemove: (section, courseCode) =>
-      dispatch(deleteSection(section, courseCode))
+      dispatch(deleteSection(section, courseCode)),
   };
 };
 
 PreviewTT.propTypes = {
   TimeTable: PropTypes.object.isRequired,
-  onRemove: PropTypes.func.isRequired
+  onRemove: PropTypes.func.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(PreviewTT);
