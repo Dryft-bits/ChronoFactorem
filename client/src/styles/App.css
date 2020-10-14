@@ -37,7 +37,27 @@
   }
 }
 
-#root
-{
+#root {
   float: none;
+}
+
+.body {
+  background-color: #eeeeee;
+}
+
+.body-wrapper {
+  padding: 10px 30px;
+}
+
+.nav-logo {
+  float: left;
+}
+
+.nav-logout {
+  float: right;
+}
+
+.nav-container {
+  height: 64px;
+  background-color: #3f51b5;
 }

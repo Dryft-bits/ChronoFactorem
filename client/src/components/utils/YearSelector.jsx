@@ -6,14 +6,14 @@ import FormControl from "@material-ui/core/FormControl";
 
 import "../../styles/HelForm.css";
 
-const YearSelector = props => {
+const YearSelector = (props) => {
   const [yearData, setYear] = useState({
-    year: props.initialYear
+    year: props.initialYear,
   });
 
   const { year } = yearData;
 
-  const handleYearChange = e => {
+  const handleYearChange = (e) => {
     if (e.target.checked) {
       props.onYearChange(e.target.value);
     }
@@ -25,17 +25,17 @@ const YearSelector = props => {
     ["2", "Second"],
     ["3", "Third"],
     ["4", "Fourth"],
-    ["5", "Fifth"]
+    ["5", "Fifth"],
   ];
   let str = [];
-  yearList.map(Year => {
+  yearList.map((Year) => {
     str.push(
       <FormControlLabel
         value={Year[0]}
-        control={<Radio color='primary' />}
+        control={<Radio color="primary" />}
         label={Year[1]}
         key={Year[0]}
-        className='text-black'
+        className="text-black"
         onChange={handleYearChange}
         checked={year === Year[0]}
       />
@@ -44,14 +44,14 @@ const YearSelector = props => {
   });
   return (
     <Fragment>
-      <p className='label-mod branch-inp'>Select year: </p>
-      <FormControl component='fieldset' className='radio-grp'>
+      <p className="label-mod branch-inp">Select year: </p>
+      <FormControl component="fieldset" className="radio-grp">
         <RadioGroup
           row
-          aria-label='position'
-          name='position'
-          defaultValue='End'
-          className='radio-grp'
+          aria-label="position"
+          name="position"
+          defaultValue="End"
+          className="radio-grp"
         >
           {str}
         </RadioGroup>
