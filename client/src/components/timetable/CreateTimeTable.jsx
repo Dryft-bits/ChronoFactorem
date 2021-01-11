@@ -75,8 +75,7 @@ class CreateTimeTable extends Component {
           <>
             <div className="create-timetable-container">
               <div className="timetable-preview">
-                <PreviewTT />
-                <br />
+                
                 <div className="create-timetable-toolbar">
                   {this.CustomButton("Preview", 1)}
                   {this.CustomButton("Midsem Schedule", 2)}
@@ -97,6 +96,8 @@ class CreateTimeTable extends Component {
                     Save TimeTable
                   </button>
                 </div>
+                <br />
+                <PreviewTT />
                 <br />
               </div>
 
