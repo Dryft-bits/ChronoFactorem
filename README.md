@@ -3,11 +3,11 @@ A MERN stack Web App that allows students to create draft time tables
 <br></br>
 <kbd><img src="https://user-images.githubusercontent.com/46719471/97092039-1d586000-165e-11eb-9741-2164a67fb8bd.png"></kbd>
 <br></br>
-<kbd><img src="https://user-images.githubusercontent.com/46719471/97086719-b37e8d00-1642-11eb-8caa-8321076d11bb.png"></kbd>
+<kbd><img src="https://user-images.githubusercontent.com/46719471/104231680-54782980-5475-11eb-8ed7-470c37d97c80.png"></kbd>
 <br></br>
-<kbd><img src="https://user-images.githubusercontent.com/46719471/97086805-30116b80-1643-11eb-9d3e-03be936950d8.png"></kbd>
+<kbd><img src="https://user-images.githubusercontent.com/46719471/104232144-eb44e600-5475-11eb-9283-ca3a346292e3.png"></kbd>
 <br></br>
-<kbd><img src="https://user-images.githubusercontent.com/46719471/97086774-06584480-1643-11eb-97b5-28a9100fe600.png"></kbd>
+<kbd><img src="https://user-images.githubusercontent.com/46719471/104232279-1fb8a200-5476-11eb-8de4-79d04aa0064c.png"></kbd>
 
 # Contributing
 See Contributing.md
