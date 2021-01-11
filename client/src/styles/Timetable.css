@@ -19,19 +19,38 @@
   box-shadow: 2px 1.5px 2px 0.5px rgba(1, 4, 7, 0.5);
 }
 
+.gridItem .gridItemText {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+.gridItem:hover .gridItemText{
+  visibility: visible;
+  font-size: 125%
+}
+
 .gridItem {
   background-color: #333333;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 60px;
-  font-size: 80%;
+  font-size: 75%;
+  
 }
 
 .gridItem:hover {
   box-shadow: 2px 1.7px 2px 0.7px rgba(1, 4, 7, 0.76);
   transition-duration: 0.4s;
-  font-size: 90%;
+  cursor:pointer;
 }
 
 .courseElement {
@@ -115,7 +134,7 @@
 
 .toolbar-button {
   flex: 1;
-  min-width: 120px;
+  min-width: 4vw;
 }
 
 @media only screen and (min-width: 768px) {

@@ -43,8 +43,7 @@ const useStyles = makeStyles({
   },
   grid: {
     flexGrow: 1,
-    maxWidth: "95vw",
-    maxHeight: "45vh",
+    maxHeight: "40vh",
     overflow: "auto",
   },
 })
@@ -194,56 +193,60 @@ const ShareTimeTable = (props) => {
           <br></br>
         </form>
         <br />
-        <div>
-          {!loading && TTs.length !== 0 ? (
-            TTs.map((itemc) => {
-              return (
-                <Grid item xs={6}>
-                  <div key={itemc._id} id={itemc._id}>
-                    <Card className={classes.root}>
-                      <CardContent>
-                        <Typography variant="h5" component="h2">
-                          {itemc.name}
-                        </Typography>
-                        <Typography color="textSecondary">Shared by</Typography>
-                        {itemc.username}
-                        <Typography
-                          variant="body2"
-                          color="textSecondary"
-                          component="p"
-                        >
-                          Date: {itemc.date.substr(0, itemc.date.indexOf("T"))}
-                          <br />
-                          {"Time: "}{" "}
-                          {itemc.date.substr(itemc.date.indexOf("T") + 1, 9)}
-                        </Typography>
-                      </CardContent>
-                      <CardActions>
-                        <Link
-                          to="/create"
-                          onClick={() => {
-                            props.editTT(itemc)
-                          }}
-                        >
-                          <Button
-                            variant="contained"
-                            color="primary"
-                            size="large"
+
+        <div className={classes.grid}
+>
+          <Grid container>
+            {!loading && TTs.length !== 0 ? (
+              TTs.map((itemc) => {
+                return (
+                  <Grid item xs={6}>
+                    <div key={itemc._id} id={itemc._id}>
+                      <Card className={classes.root}>
+                        <CardContent>
+                          <Typography variant="h5" component="h2">
+                            {itemc.name}
+                          </Typography>
+                          <Typography color="textSecondary">Shared by</Typography>
+                          {itemc.username}
+                          <Typography
+                            variant="body2"
+                            color="textSecondary"
+                            component="p"
                           >
-                            View/Edit
-                          </Button>
-                        </Link>
-                      </CardActions>
-                    </Card>
-                  </div>
+                            Date: {itemc.date.substr(0, itemc.date.indexOf("T"))}
+                            <br />
+                            {"Time: "}{" "}
+                            {itemc.date.substr(itemc.date.indexOf("T") + 1, 9)}
+                          </Typography>
+                        </CardContent>
+                        <CardActions>
+                          <Link
+                            to="/create"
+                            onClick={() => {
+                              props.editTT(itemc)
+                            }}
+                          >
+                            <Button
+                              variant="contained"
+                              color="primary"
+                              size="large"
+                            >
+                              View/Edit
+                            </Button>
+                          </Link>
+                        </CardActions>
+                      </Card>
+                    </div>
                 </Grid>
               )
             })
           ) : loading ? (
             <h4>Loading</h4>
           ) : (
-            <h4>No Shared Timetables</h4>
+            <h5 style={{textAlign:"center"}} >No Shared Timetables</h5>
           )}
+          </Grid>
         </div>
       </div>
     </>

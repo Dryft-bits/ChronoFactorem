@@ -32,7 +32,7 @@ const useStyles = makeStyles({
   grid: {
     flexGrow: 1,
     maxWidth: "95vw",
-    maxHeight: "26vh",
+    maxHeight: "75vh",
     overflow: "auto",
   },
   card: {
@@ -101,8 +101,12 @@ const Dashboard = (props) => {
         <AlertBox />
         <Card className={classes.card}>
           <div>
-            <h4>Saved Timetables</h4>
+            <h4 style={{textAlign:"center"}}>Saved Timetables</h4>
           </div>
+          <div
+          className={classes.grid}
+          style={{ left: "2vw" }}
+          >
           <Grid container>
             {(TTData.savedTT || data).map((itemc) => {
               return (
@@ -166,6 +170,7 @@ const Dashboard = (props) => {
               )
             })}
           </Grid>
+          </div>
         </Card>
         <Card className={classes.card}>
           <ShareTimeTable />

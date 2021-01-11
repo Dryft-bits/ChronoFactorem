@@ -76,6 +76,7 @@ class PreviewTT extends Component {
                 this.props.onRemove(section.section, section.courseCode)
               }
             >
+              <span className="gridItemText">Click to remove section</span>
               <div style={divStyle}>
                 {section.courseName}
                 <br></br>
