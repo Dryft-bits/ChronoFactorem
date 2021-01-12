@@ -43,11 +43,27 @@
                     "Monica"
                 ],
                 "sched": []
+            },
+            "P3": {
+                "instructors": [
+                    "Nidhi O"
+                ],
+                "sched": []
+            },
+            "P4": {
+                "instructors": [
+                    "Rolly Kumari"
+                ],
+                "sched": []
             }
         },
         "compre": {
             "date": "01/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "01/03",
+            "time": "9.00 -10.30AM"
         }
     },
     "BIO F215": {
@@ -91,10 +107,14 @@
         "compre": {
             "date": "17/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "06/03",
+            "time": "11.00 - 12.30PM"
         }
     },
     "BIO F216": {
-        "name": "W Aste, Sanitation and Solid W Aste Management",
+        "name": "Water Sanitation and Solid Waste Management",
         "sections": {
             "L1": {
                 "instructors": [
@@ -104,8 +124,12 @@
             }
         },
         "compre": {
-            "date": "03/05",
+            "date": "11/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "04/03",
+            "time": "1.30 - 3.00PM"
         }
     },
     "BIO F241": {
@@ -155,6 +179,10 @@
         "compre": {
             "date": "15/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "3.30  - 5.00PM"
         }
     },
     "BIO F243": {
@@ -180,7 +208,7 @@
             },
             "T1": {
                 "instructors": [
-                    "Anne Lohitha Alias Anuhya"
+                    "Anne Lohitha Alias"
                 ],
                 "sched": [
                     {
@@ -198,6 +226,10 @@
         "compre": {
             "date": "05/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "02/03",
+            "time": "1.30 - 3.00PM"
         }
     },
     "BIO F244": {
@@ -276,8 +308,12 @@
             }
         },
         "compre": {
-            "date": "04/05",
+            "date": "07/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "06/03",
+            "time": "1.30 - 3.00PM"
         }
     },
     "BIO F266": {
@@ -297,7 +333,7 @@
             "L1": {
                 "instructors": [
                     "VIVEK SHARMA",
-                    "K  Pranav Narayan"
+                    "K Pranav Narayan"
                 ],
                 "sched": [
                     {
@@ -339,6 +375,10 @@
         "compre": {
             "date": "12/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "9.00 -10.3AM"
         }
     },
     "BIO F342": {
@@ -395,6 +435,10 @@
         "compre": {
             "date": "10/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "04/03",
+            "time": "11.00 -12.30PM"
         }
     },
     "BIO F366": {
@@ -467,6 +511,10 @@
         "compre": {
             "date": "18/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "06/03",
+            "time": "3.30 - 5.00PM"
         }
     },
     "BIOT F422": {
@@ -494,6 +542,10 @@
         "compre": {
             "date": "08/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "03/03",
+            "time": "3.30 - 5.00PM"
         }
     },
     "BITS C790T": {
@@ -501,7 +553,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "V V KRISHNA VENUGANTI"
+                    "V V KRISHNA"
                 ],
                 "sched": []
             }
@@ -512,7 +564,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "V V KRISHNA VENUGANTI"
+                    "V V KRISHNA"
                 ],
                 "sched": []
             }
@@ -523,7 +575,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "V V KRISHNA VENUGANTI"
+                    "V V KRISHNA"
                 ],
                 "sched": []
             }
@@ -534,7 +586,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "V V KRISHNA VENUGANTI"
+                    "V V KRISHNA"
                 ],
                 "sched": []
             }
@@ -545,7 +597,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "V V KRISHNA VENUGANTI"
+                    "V V KRISHNA"
                 ],
                 "sched": []
             }
@@ -578,6 +630,10 @@
         "compre": {
             "date": "03/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "01/03",
+            "time": "3.30 -5.00PM"
         }
     },
     "BITS E793T": {
@@ -585,7 +641,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "V V KRISHNA VENUGANTI"
+                    "V V KRISHNA"
                 ],
                 "sched": []
             }
@@ -622,8 +678,8 @@
                             "M"
                         ],
                         "hours": [
-                            7,
-                            8
+                            8,
+                            9
                         ]
                     }
                 ]
@@ -666,6 +722,10 @@
         "compre": {
             "date": "08/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "03/03",
+            "time": "1.30 - 3.00PM"
         }
     },
     "BITS F225": {
@@ -673,7 +733,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "SRIDEV MOHAPATRA",
+                    "SRIDEV  MOHAPATRA",
                     "Anmala Jagadeesh",
                     "Iyman Abrar"
                 ],
@@ -695,10 +755,14 @@
         "compre": {
             "date": "10/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "04/03",
+            "time": "9.00 -10.30AM"
         }
     },
     "BITS F313": {
-        "name": "Multicriterion Dec Making in Engg\n& Mgmt",
+        "name": "Multicriterion Dec Making in Engg & Mgmt",
         "sections": {
             "L1": {
                 "instructors": [
@@ -722,6 +786,10 @@
         "compre": {
             "date": "15/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "1.30  - 3.00PM"
         }
     },
     "BITS F314": {
@@ -749,6 +817,10 @@
         "compre": {
             "date": "05/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "02/03",
+            "time": "3.30 - 5.00PM"
         }
     },
     "BITS F319": {
@@ -775,6 +847,10 @@
         "compre": {
             "date": "15/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "1.30  - 3.00PM"
         }
     },
     "BITS F327": {
@@ -782,8 +858,8 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "ARSHAD JAVED",
-                    "V Sandeep"
+                    "ABHISHEK SARKAR",
+                    "Arshad Javed"
                 ],
                 "sched": [
                     {
@@ -800,7 +876,7 @@
             },
             "P1": {
                 "instructors": [
-                    "Arshad Javed"
+                    "Abhishek Sarkar"
                 ],
                 "sched": [
                     {
@@ -825,6 +901,10 @@
         "compre": {
             "date": "04/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "02/03",
+            "time": "9.00 -10.30AM"
         }
     },
     "BITS F364": {
@@ -843,15 +923,19 @@
                             "S"
                         ],
                         "hours": [
-                            2
+                            3
                         ]
                     }
                 ]
             }
         },
         "compre": {
-            "date": "05/05",
-            "session": "AN"
+            "date": "15/05",
+            "session": "FN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "1.30  - 3.00PM"
         }
     },
     "BITS F385": {
@@ -879,6 +963,32 @@
         "compre": {
             "date": "17/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "06/03",
+            "time": "11.00 - 12.30PM"
+        }
+    },
+    "BITS F412": {
+        "name": "Practice School II",
+        "sections": {
+            "L1": {
+                "instructors": [
+                    "SP REGALLA"
+                ],
+                "sched": []
+            }
+        }
+    },
+    "BITS F413": {
+        "name": "Practice School II",
+        "sections": {
+            "L1": {
+                "instructors": [
+                    "SP REGALLA"
+                ],
+                "sched": []
+            }
         }
     },
     "BITS F415": {
@@ -929,69 +1039,54 @@
         "compre": {
             "date": "15/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "1.30  - 3.00PM"
         }
     },
-    "BITS F417": {
-        "name": "Micro-fluidics & its App",
+    "BITS F421T": {
+        "name": "Thesis",
         "sections": {
             "L1": {
                 "instructors": [
-                    "SATISH K DUBEY",
-                    "Sanket Goel"
-                ],
-                "sched": [
-                    {
-                        "room": "NA",
-                        "days": [
-                            "M",
-                            "W",
-                            "F"
-                        ],
-                        "hours": [
-                            3
-                        ]
-                    }
-                ]
-            },
-            "P1": {
-                "instructors": [
-                    "Satish K Dubey"
-                ],
-                "sched": [
-                    {
-                        "room": "NA",
-                        "days": [
-                            "T"
-                        ],
-                        "hours": [
-                            10,
-                            11
-                        ]
-                    }
-                ]
-            },
-            "P2": {
-                "instructors": [
-                    "Sangam Srikanth"
-                ],
-                "sched": []
-            },
-            "P3": {
-                "instructors": [
-                    "Sanket Goel"
-                ],
-                "sched": []
-            },
-            "P4": {
-                "instructors": [
-                    "Sarala Bhavani Kallepalli"
+                    "A VASAN"
                 ],
                 "sched": []
             }
-        },
-        "compre": {
-            "date": "08/05",
-            "session": "FN"
+        }
+    },
+    "BITS F422T": {
+        "name": "Thesis",
+        "sections": {
+            "L1": {
+                "instructors": [
+                    "A VASAN"
+                ],
+                "sched": []
+            }
+        }
+    },
+    "BITS F423T": {
+        "name": "Thesis",
+        "sections": {
+            "L1": {
+                "instructors": [
+                    "A VASAN"
+                ],
+                "sched": []
+            }
+        }
+    },
+    "BITS F424T": {
+        "name": "Thesis",
+        "sections": {
+            "L1": {
+                "instructors": [
+                    "A VASAN"
+                ],
+                "sched": []
+            }
         }
     },
     "BITS F441": {
@@ -1019,6 +1114,10 @@
         "compre": {
             "date": "05/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "02/03",
+            "time": "3.30 - 5.00PM"
         }
     },
     "BITS F442": {
@@ -1046,6 +1145,10 @@
         "compre": {
             "date": "08/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "03/03",
+            "time": "3.30 - 5.00PM"
         }
     },
     "BITS F446": {
@@ -1073,6 +1176,10 @@
         "compre": {
             "date": "05/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "02/03",
+            "time": "3.30 - 5.00PM"
         }
     },
     "BITS F463": {
@@ -1081,15 +1188,15 @@
             "L1": {
                 "instructors": [
                     "G GEETHAKUMARI",
-                    "Priyanka Rushikesh Chaudh"
+                    "Priyanka Rushikesh\nChaudh"
                 ],
                 "sched": [
                     {
                         "room": "NA",
                         "days": [
-                            "M",
-                            "W",
-                            "F"
+                            "T",
+                            "Th",
+                            "S"
                         ],
                         "hours": [
                             2
@@ -1099,8 +1206,12 @@
             }
         },
         "compre": {
-            "date": "01/05",
+            "date": "05/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "02/03",
+            "time": "3.30 - 5.00PM"
         }
     },
     "BITS F464": {
@@ -1109,7 +1220,6 @@
             "L1": {
                 "instructors": [
                     "NL BHANUMURTHY",
-                    "K Simran",
                     "Mandan Naresh"
                 ],
                 "sched": [
@@ -1130,6 +1240,10 @@
         "compre": {
             "date": "15/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "1.30  - 3.00PM"
         }
     },
     "BITS F467": {
@@ -1148,15 +1262,19 @@
                             "F"
                         ],
                         "hours": [
-                            2
+                            10
                         ]
                     }
                 ]
             }
         },
         "compre": {
-            "date": "01/05",
-            "session": "AN"
+            "date": "04/05",
+            "session": "FN"
+        },
+        "midsem": {
+            "date": "02/03",
+            "time": "9.00 -10.30AM"
         }
     },
     "BITS G513": {
@@ -1164,7 +1282,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "V V KRISHNA VENUGANTI"
+                    "V V KRISHNA"
                 ],
                 "sched": []
             }
@@ -1175,7 +1293,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "V V KRISHNA VENUGANTI"
+                    "V V KRISHNA"
                 ],
                 "sched": []
             }
@@ -1186,7 +1304,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "V V KRISHNA VENUGANTI"
+                    "V V KRISHNA"
                 ],
                 "sched": []
             }
@@ -1197,7 +1315,18 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "V V KRISHNA VENUGANTI"
+                    "V V KRISHNA"
+                ],
+                "sched": []
+            }
+        }
+    },
+    "BITS G639": {
+        "name": "Practice School",
+        "sections": {
+            "L1": {
+                "instructors": [
+                    "SP REGALLA"
                 ],
                 "sched": []
             }
@@ -1208,7 +1337,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "V V KRISHNA VENUGANTI"
+                    "V V KRISHNA"
                 ],
                 "sched": []
             }
@@ -1271,6 +1400,10 @@
         "compre": {
             "date": "01/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "01/03",
+            "time": "9.00 -10.30AM"
         }
     },
     "CE F242": {
@@ -1296,7 +1429,7 @@
             },
             "T1": {
                 "instructors": [
-                    "Sheik Mohammed Zoheb Na"
+                    "Sheik Mohammed Zoheb\nNa"
                 ],
                 "sched": [
                     {
@@ -1330,6 +1463,10 @@
         "compre": {
             "date": "08/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "03/03",
+            "time": "1.30 - 3.00PM"
         }
     },
     "CE F243": {
@@ -1378,7 +1515,7 @@
                     {
                         "room": "NA",
                         "days": [
-                            "W"
+                            "Th"
                         ],
                         "hours": [
                             7,
@@ -1389,7 +1526,7 @@
             },
             "P3": {
                 "instructors": [
-                    "Radha Kiranmaye Bandlamu"
+                    "Radha Kiranmaye\nBandlamu"
                 ],
                 "sched": [
                     {
@@ -1440,6 +1577,10 @@
         "compre": {
             "date": "15/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "1.30  - 3.00PM"
         }
     },
     "CE F244": {
@@ -1550,6 +1691,10 @@
         "compre": {
             "date": "05/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "02/03",
+            "time": "1.30 - 3.00PM"
         }
     },
     "CE F266": {
@@ -1620,6 +1765,10 @@
         "compre": {
             "date": "03/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "01/03",
+            "time": "3.30 -5.00PM"
         }
     },
     "CE F342": {
@@ -1730,6 +1879,10 @@
         "compre": {
             "date": "06/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "03/03",
+            "time": "9.00 - 10.30AM"
         }
     },
     "CE F343": {
@@ -1789,6 +1942,10 @@
         "compre": {
             "date": "10/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "04/03",
+            "time": "11.00 -12.30PM"
         }
     },
     "CE F366": {
@@ -1796,7 +1953,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "ANMALA JAGADEESH"
+                    "ANMALA  JAGADEESH"
                 ],
                 "sched": []
             }
@@ -1807,7 +1964,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "ANMALA JAGADEESH"
+                    "ANMALA  JAGADEESH"
                 ],
                 "sched": []
             }
@@ -1860,6 +2017,10 @@
         "compre": {
             "date": "12/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "9.00 -10.3AM"
         }
     },
     "CE F416": {
@@ -1890,7 +2051,23 @@
                     {
                         "room": "NA",
                         "days": [
-                            "Th",
+                            "Th"
+                        ],
+                        "hours": [
+                            8,
+                            9
+                        ]
+                    }
+                ]
+            },
+            "P2": {
+                "instructors": [
+                    "Arkamitra Kar"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
                             "S"
                         ],
                         "hours": [
@@ -1904,6 +2081,10 @@
         "compre": {
             "date": "05/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "02/03",
+            "time": "3.30 - 5.00PM"
         }
     },
     "CE F420": {
@@ -1931,6 +2112,10 @@
         "compre": {
             "date": "12/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "9.00 -10.3AM"
         }
     },
     "CE F425": {
@@ -1958,6 +2143,10 @@
         "compre": {
             "date": "01/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "01/03",
+            "time": "11.00 -12.30PM"
         }
     },
     "CE F428": {
@@ -1985,6 +2174,10 @@
         "compre": {
             "date": "15/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "1.30  - 3.00PM"
         }
     },
     "CE F432": {
@@ -2012,6 +2205,10 @@
         "compre": {
             "date": "17/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "06/03",
+            "time": "9.00 - 10.30AM"
         }
     },
     "CE F435": {
@@ -2019,7 +2216,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "ANMALA JAGADEESH"
+                    "ANMALA  JAGADEESH"
                 ],
                 "sched": [
                     {
@@ -2039,6 +2236,21 @@
         "compre": {
             "date": "08/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "03/03",
+            "time": "3.30 - 5.00PM"
+        }
+    },
+    "CE F491": {
+        "name": "Special Project",
+        "sections": {
+            "L1": {
+                "instructors": [
+                    "RAGHU PISKA"
+                ],
+                "sched": []
+            }
         }
     },
     "CHE F241": {
@@ -2098,6 +2310,10 @@
         "compre": {
             "date": "05/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "02/03",
+            "time": "1.30 - 3.00PM"
         }
     },
     "CHE F242": {
@@ -2157,6 +2373,10 @@
         "compre": {
             "date": "01/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "01/03",
+            "time": "9.00 -10.30AM"
         }
     },
     "CHE F243": {
@@ -2216,6 +2436,10 @@
         "compre": {
             "date": "08/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "03/03",
+            "time": "1.30 - 3.00PM"
         }
     },
     "CHE F244": {
@@ -2241,7 +2465,7 @@
             },
             "T1": {
                 "instructors": [
-                    "Satyapaul Singh Amarthaluri"
+                    "Satyapaul Singh\nAmarthaluri"
                 ],
                 "sched": [
                     {
@@ -2257,7 +2481,7 @@
             },
             "T2": {
                 "instructors": [
-                    "Satyapaul Singh Amarthaluri"
+                    "Satyapaul Singh\nAmarthaluri"
                 ],
                 "sched": [
                     {
@@ -2275,6 +2499,10 @@
         "compre": {
             "date": "15/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "3.30  - 5.00PM"
         }
     },
     "CHE F266": {
@@ -2293,22 +2521,34 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "SATYAPAUL SINGH AMART",
+                    "SATYAPAUL SINGH\nAMART",
                     "Debirupa Mitra",
                     "Nandini Bhandaru",
-                    "Sadamanti Sireesha"
+                    "P Pradeep Reddy",
+                    "Sadamanti Sireesha",
+                    "Satyapaul Singh\nAmarthaluri"
                 ],
                 "sched": [
                     {
                         "room": "NA",
                         "days": [
-                            "T",
-                            "S"
+                            "T"
                         ],
                         "hours": [
                             7,
                             8,
                             9
+                        ]
+                    },
+                    {
+                        "room": "NA",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            8,
+                            9,
+                            10
                         ]
                     }
                 ]
@@ -2322,7 +2562,6 @@
                 "instructors": [
                     "SRIKANTA DINDA",
                     "Arnab Dutta",
-                    "P Pradeep Reddy",
                     "Suresh Kanuri",
                     "Vuchuru Kalyan"
                 ],
@@ -2400,6 +2639,10 @@
         "compre": {
             "date": "10/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "04/03",
+            "time": "11.00 -12.30PM"
         }
     },
     "CHE F366": {
@@ -2451,7 +2694,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "JAIDEEP CHATTERJEE"
+                    "JAIDEEP  CHATTERJEE"
                 ],
                 "sched": [
                     {
@@ -2471,6 +2714,10 @@
         "compre": {
             "date": "03/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "01/03",
+            "time": "3.30 -5.00PM"
         }
     },
     "CHE F498": {
@@ -2498,6 +2745,10 @@
         "compre": {
             "date": "05/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "02/03",
+            "time": "3.30 - 5.00PM"
         }
     },
     "CHE G522": {
@@ -2525,6 +2776,10 @@
         "compre": {
             "date": "08/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "03/03",
+            "time": "3.30 - 5.00PM"
         }
     },
     "CHE G554": {
@@ -2532,8 +2787,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "VIKRANT KUMAR S",
-                    "Dasika Prabhat Sourya"
+                    "VIKRANT KUMAR S"
                 ],
                 "sched": [
                     {
@@ -2548,11 +2802,38 @@
                         ]
                     }
                 ]
+            },
+            "P1": {
+                "instructors": [
+                    "Dasika Prabhat Sourya"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "F"
+                        ],
+                        "hours": [
+                            7,
+                            8
+                        ]
+                    }
+                ]
+            },
+            "P2": {
+                "instructors": [
+                    "Vikrant Kumar S"
+                ],
+                "sched": []
             }
         },
         "compre": {
             "date": "12/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "9.00 -10.3AM"
         }
     },
     "CHEM F223": {
@@ -2581,6 +2862,10 @@
         "compre": {
             "date": "08/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "03/03",
+            "time": "3.30 - 5.00PM"
         }
     },
     "CHEM F241": {
@@ -2594,9 +2879,9 @@
                     {
                         "room": "NA",
                         "days": [
-                            "M",
-                            "W",
-                            "F"
+                            "T",
+                            "Th",
+                            "S"
                         ],
                         "hours": [
                             3
@@ -2628,8 +2913,12 @@
             }
         },
         "compre": {
-            "date": "08/05",
+            "date": "15/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "3.30  - 5.00PM"
         }
     },
     "CHEM F242": {
@@ -2648,13 +2937,13 @@
                     {
                         "room": "NA",
                         "days": [
-                            "W",
+                            "M",
                             "F"
                         ],
                         "hours": [
-                            4,
-                            5,
-                            6
+                            6,
+                            7,
+                            8
                         ]
                     }
                 ]
@@ -2666,16 +2955,16 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "TANMAY CHATTERJEE",
+                    "TANMAY  CHATTERJEE",
                     "Anupam Bhattacharya"
                 ],
                 "sched": [
                     {
                         "room": "NA",
                         "days": [
-                            "T",
-                            "Th",
-                            "S"
+                            "M",
+                            "W",
+                            "F"
                         ],
                         "hours": [
                             3
@@ -2707,8 +2996,12 @@
             }
         },
         "compre": {
-            "date": "15/05",
+            "date": "08/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "03/03",
+            "time": "1.30 - 3.00PM"
         }
     },
     "CHEM F244": {
@@ -2750,7 +3043,7 @@
             },
             "T2": {
                 "instructors": [
-                    "Madhuparna Chakraborty"
+                    "Madhuparna  Chakraborty"
                 ],
                 "sched": []
             }
@@ -2758,6 +3051,10 @@
         "compre": {
             "date": "05/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "02/03",
+            "time": "1.30 - 3.00PM"
         }
     },
     "CHEM F266": {
@@ -2783,9 +3080,9 @@
                     {
                         "room": "NA",
                         "days": [
-                            "M",
-                            "W",
-                            "F"
+                            "T",
+                            "Th",
+                            "S"
                         ],
                         "hours": [
                             4
@@ -2840,33 +3137,15 @@
                     "T Leelasree"
                 ],
                 "sched": []
-            },
-            "T1": {
-                "instructors": [
-                    "Anupam Bhattacharya"
-                ],
-                "sched": [
-                    {
-                        "room": "NA",
-                        "days": [
-                            "T"
-                        ],
-                        "hours": [
-                            1
-                        ]
-                    }
-                ]
-            },
-            "T2": {
-                "instructors": [
-                    "Himanshu Aggarwal"
-                ],
-                "sched": []
             }
         },
         "compre": {
-            "date": "03/05",
-            "session": "FN"
+            "date": "10/05",
+            "session": "AN"
+        },
+        "midsem": {
+            "date": "04/03",
+            "time": "11.00 -12.30PM"
         }
     },
     "CHEM F327": {
@@ -2895,6 +3174,10 @@
         "compre": {
             "date": "01/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "01/03",
+            "time": "11.00 -12.30PM"
         }
     },
     "CHEM F329": {
@@ -2913,7 +3196,7 @@
                             "F"
                         ],
                         "hours": [
-                            3
+                            2
                         ]
                     }
                 ]
@@ -2937,14 +3220,18 @@
             },
             "P2": {
                 "instructors": [
-                    "Madduri Lalitha Sai Naga Vis"
+                    "Madduri Lalitha Sai Naga\nVis"
                 ],
                 "sched": []
             }
         },
         "compre": {
-            "date": "08/05",
-            "session": "FN"
+            "date": "01/05",
+            "session": "AN"
+        },
+        "midsem": {
+            "date": "01/03",
+            "time": "11.00 -12.30PM"
         }
     },
     "CHEM F335": {
@@ -2953,7 +3240,7 @@
             "L1": {
                 "instructors": [
                     "KVG CHANDRASEKHAR",
-                    "Khetmalis Yogesh Mahadu"
+                    "Khetmalis Yogesh"
                 ],
                 "sched": [
                     {
@@ -2964,15 +3251,19 @@
                             "S"
                         ],
                         "hours": [
-                            3
+                            5
                         ]
                     }
                 ]
             }
         },
         "compre": {
-            "date": "15/05",
+            "date": "17/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "06/03",
+            "time": "9.00 - 10.30AM"
         }
     },
     "CHEM F341": {
@@ -3032,10 +3323,10 @@
                     {
                         "room": "NA",
                         "days": [
-                            "T"
+                            "S"
                         ],
                         "hours": [
-                            9
+                            1
                         ]
                     }
                 ]
@@ -3050,6 +3341,10 @@
         "compre": {
             "date": "12/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "9.00 -10.3AM"
         }
     },
     "CHEM F366": {
@@ -3122,6 +3417,176 @@
         "compre": {
             "date": "12/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "9.00 -10.3AM"
+        }
+    },
+    "CHEM F491": {
+        "name": "Special Project",
+        "sections": {
+            "L1": {
+                "instructors": [
+                    "CHANCHAL"
+                ],
+                "sched": []
+            }
+        }
+    },
+    "CS F111": {
+        "name": "Computer Programming",
+        "sections": {
+            "L1": {
+                "instructors": [
+                    "CHITTARANJAN  HOTA"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "M",
+                            "W",
+                            "F"
+                        ],
+                        "hours": [
+                            2
+                        ]
+                    }
+                ]
+            },
+            "L2": {
+                "instructors": [
+                    "Nikumani Choudhury"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "M",
+                            "W",
+                            "F"
+                        ],
+                        "hours": [
+                            2
+                        ]
+                    }
+                ]
+            },
+            "P1": {
+                "instructors": [
+                    "Mrityunjay Singh"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "M"
+                        ],
+                        "hours": [
+                            6,
+                            7
+                        ]
+                    }
+                ]
+            },
+            "P2": {
+                "instructors": [
+                    "V Sandeep"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            3,
+                            4
+                        ]
+                    }
+                ]
+            },
+            "P4": {
+                "instructors": [
+                    "Mrityunjay Singh"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "F"
+                        ],
+                        "hours": [
+                            6,
+                            7
+                        ]
+                    }
+                ]
+            },
+            "P3": {
+                "instructors": [
+                    "V Sandeep"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "W"
+                        ],
+                        "hours": [
+                            6,
+                            7
+                        ]
+                    }
+                ]
+            },
+            "P6": {
+                "instructors": [
+                    "Mrityunjay Singh"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "S"
+                        ],
+                        "hours": [
+                            3,
+                            4
+                        ]
+                    }
+                ]
+            },
+            "P8": {
+                "instructors": [
+                    "Chavali Lalitha"
+                ],
+                "sched": []
+            },
+            "P5": {
+                "instructors": [
+                    "Raghunath Reddy M"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            3,
+                            4
+                        ]
+                    }
+                ]
+            },
+            "P10": {
+                "instructors": [
+                    "Chenna Kesavulu Ganna"
+                ],
+                "sched": []
+            }
         }
     },
     "CS F211": {
@@ -3198,7 +3663,7 @@
             },
             "P3": {
                 "instructors": [
-                    "Ramaswamy Venkatakrishna"
+                    "Ramaswamy\nVenkatakrishna"
                 ],
                 "sched": [
                     {
@@ -3271,6 +3736,10 @@
         "compre": {
             "date": "01/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "01/03",
+            "time": "9.00 -10.30AM"
         }
     },
     "CS F212": {
@@ -3328,23 +3797,6 @@
                     }
                 ]
             },
-            "P4": {
-                "instructors": [
-                    "V Sandeep"
-                ],
-                "sched": [
-                    {
-                        "room": "NA",
-                        "days": [
-                            "F"
-                        ],
-                        "hours": [
-                            4,
-                            5
-                        ]
-                    }
-                ]
-            },
             "P3": {
                 "instructors": [
                     "Lov Kumar"
@@ -3362,9 +3814,32 @@
                     }
                 ]
             },
-            "P6": {
+            "P5": {
                 "instructors": [
                     "K Simran"
+                ],
+                "sched": []
+            },
+            "P4": {
+                "instructors": [
+                    "Ayan Das"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "F"
+                        ],
+                        "hours": [
+                            4,
+                            5
+                        ]
+                    }
+                ]
+            },
+            "P7": {
+                "instructors": [
+                    "Chavali Lalitha"
                 ],
                 "sched": []
             },
@@ -3420,6 +3895,10 @@
         "compre": {
             "date": "08/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "03/03",
+            "time": "1.30 - 3.00PM"
         }
     },
     "CS F213": {
@@ -3427,7 +3906,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "SUBHRAKANTA PANDA"
+                    "SUBHRAKANTA  PANDA"
                 ],
                 "sched": [
                     {
@@ -3479,7 +3958,7 @@
             },
             "P4": {
                 "instructors": [
-                    "Deepa Kumari"
+                    "T Sahithi"
                 ],
                 "sched": []
             },
@@ -3502,7 +3981,7 @@
             },
             "P6": {
                 "instructors": [
-                    "T Sahithi"
+                    "Deepa Kumari"
                 ],
                 "sched": []
             }
@@ -3510,6 +3989,10 @@
         "compre": {
             "date": "08/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "03/03",
+            "time": "3.30 - 5.00PM"
         }
     },
     "CS F241": {
@@ -3605,7 +4088,7 @@
             },
             "P4": {
                 "instructors": [
-                    "Karumbaiah Chappanda Nan"
+                    "Karumbaiah  Chappanda\nNan"
                 ],
                 "sched": [
                     {
@@ -3622,7 +4105,7 @@
             },
             "P3": {
                 "instructors": [
-                    "Karumbaiah Chappanda Nan"
+                    "Karumbaiah  Chappanda\nNan"
                 ],
                 "sched": [
                     {
@@ -3656,7 +4139,7 @@
             },
             "P8": {
                 "instructors": [
-                    "Ramakant"
+                    "Rajesh Kumar Tripathy"
                 ],
                 "sched": [
                     {
@@ -3690,7 +4173,7 @@
             },
             "P10": {
                 "instructors": [
-                    "Ramakant"
+                    "Rajesh Kumar Tripathy"
                 ],
                 "sched": [
                     {
@@ -3775,7 +4258,7 @@
             },
             "P9": {
                 "instructors": [
-                    "Ramakant"
+                    "Rajesh Kumar Tripathy"
                 ],
                 "sched": [
                     {
@@ -3792,7 +4275,7 @@
             },
             "P18": {
                 "instructors": [
-                    "G Sahith"
+                    "Aparna Nair M K"
                 ],
                 "sched": []
             },
@@ -4053,6 +4536,10 @@
         "compre": {
             "date": "05/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "02/03",
+            "time": "1.30 - 3.00PM"
         }
     },
     "CS F266": {
@@ -4146,7 +4633,7 @@
             },
             "P6": {
                 "instructors": [
-                    "Pattiwar Shravan Kumar"
+                    "Mandan Naresh"
                 ],
                 "sched": []
             },
@@ -4202,6 +4689,10 @@
         "compre": {
             "date": "03/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "01/03",
+            "time": "3.30 -5.00PM"
         }
     },
     "CS F342": {
@@ -4292,6 +4783,10 @@
         "compre": {
             "date": "12/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "9.00 -10.3AM"
         }
     },
     "CS F363": {
@@ -4306,8 +4801,7 @@
                         "room": "NA",
                         "days": [
                             "M",
-                            "W",
-                            "F"
+                            "W"
                         ],
                         "hours": [
                             5
@@ -4317,7 +4811,7 @@
             },
             "P1": {
                 "instructors": [
-                    "R Gururaj"
+                    "Raghunath Reddy M"
                 ],
                 "sched": [
                     {
@@ -4357,7 +4851,7 @@
             },
             "P3": {
                 "instructors": [
-                    "Raghunath Reddy M"
+                    "R Gururaj"
                 ],
                 "sched": [
                     {
@@ -4424,6 +4918,10 @@
         "compre": {
             "date": "06/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "03/03",
+            "time": "9.00 - 10.30AM"
         }
     },
     "CS F364": {
@@ -4487,7 +4985,7 @@
             },
             "T3": {
                 "instructors": [
-                    "Ramaswamy Venkatakrishna"
+                    "Ramaswamy\nVenkatakrishna"
                 ],
                 "sched": [
                     {
@@ -4505,6 +5003,10 @@
         "compre": {
             "date": "10/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "04/03",
+            "time": "11.00 -12.30PM"
         }
     },
     "CS F366": {
@@ -4535,7 +5037,7 @@
             "L1": {
                 "instructors": [
                     "BARSHA MITRA",
-                    "S Rasagna Vakkalanka"
+                    "K Simran"
                 ],
                 "sched": [
                     {
@@ -4555,6 +5057,10 @@
         "compre": {
             "date": "01/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "01/03",
+            "time": "11.00 -12.30PM"
         }
     },
     "CS F376": {
@@ -4604,6 +5110,10 @@
         "compre": {
             "date": "08/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "03/03",
+            "time": "3.30 - 5.00PM"
         }
     },
     "CS F407": {
@@ -4611,7 +5121,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "CHITTARANJAN HOTA",
+                    "CHITTARANJAN  HOTA",
                     "Ramisetty Kavya"
                 ],
                 "sched": [
@@ -4632,6 +5142,10 @@
         "compre": {
             "date": "12/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "9.00 -10.3AM"
         }
     },
     "CS F413": {
@@ -4659,6 +5173,10 @@
         "compre": {
             "date": "01/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "01/03",
+            "time": "11.00 -12.30PM"
         }
     },
     "CS F415": {
@@ -4687,6 +5205,10 @@
         "compre": {
             "date": "17/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "06/03",
+            "time": "9.00 - 10.30AM"
         }
     },
     "CS F441": {
@@ -4714,6 +5236,21 @@
         "compre": {
             "date": "05/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "02/03",
+            "time": "3.30 - 5.00PM"
+        }
+    },
+    "CS F491": {
+        "name": "Special Project",
+        "sections": {
+            "L1": {
+                "instructors": [
+                    "JABEZ J CHRISTOPHER"
+                ],
+                "sched": []
+            }
         }
     },
     "CS G527": {
@@ -4741,6 +5278,305 @@
         "compre": {
             "date": "08/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "03/03",
+            "time": "3.30 - 5.00PM"
+        }
+    },
+    "ECE F211": {
+        "name": "Electrical Machines",
+        "sections": {
+            "L1": {
+                "instructors": [
+                    "MITHUN MONDAL"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "M",
+                            "W",
+                            "F"
+                        ],
+                        "hours": [
+                            2
+                        ]
+                    }
+                ]
+            },
+            "L2": {
+                "instructors": [
+                    "Pratyush Chakraborty"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "M",
+                            "W",
+                            "F"
+                        ],
+                        "hours": [
+                            2
+                        ]
+                    }
+                ]
+            },
+            "P1": {
+                "instructors": [
+                    "Mithun Mondal"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "M"
+                        ],
+                        "hours": [
+                            7,
+                            8
+                        ]
+                    }
+                ]
+            },
+            "P2": {
+                "instructors": [
+                    "Mithun Mondal"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "W"
+                        ],
+                        "hours": [
+                            7,
+                            8
+                        ]
+                    }
+                ]
+            },
+            "P3": {
+                "instructors": [
+                    "Pratyush Chakraborty"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "M"
+                        ],
+                        "hours": [
+                            4,
+                            5
+                        ]
+                    }
+                ]
+            },
+            "P5": {
+                "instructors": [
+                    "STP Srinivas"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            7,
+                            8
+                        ]
+                    }
+                ]
+            },
+            "P6": {
+                "instructors": [
+                    "Pratyush Chakraborty"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "W"
+                        ],
+                        "hours": [
+                            4,
+                            5
+                        ]
+                    }
+                ]
+            },
+            "P8": {
+                "instructors": [
+                    "Manoj Samal"
+                ],
+                "sched": []
+            },
+            "P9": {
+                "instructors": [
+                    "TO BE ANNOUNCED"
+                ],
+                "sched": []
+            },
+            "P4": {
+                "instructors": [
+                    "STP Srinivas"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "F"
+                        ],
+                        "hours": [
+                            7,
+                            8
+                        ]
+                    }
+                ]
+            },
+            "P11": {
+                "instructors": [
+                    "Manoj Samal"
+                ],
+                "sched": []
+            },
+            "P12": {
+                "instructors": [
+                    "Santhi Durganjali Challa"
+                ],
+                "sched": []
+            },
+            "P14": {
+                "instructors": [
+                    "E Prasanth Kumar"
+                ],
+                "sched": []
+            },
+            "P15": {
+                "instructors": [
+                    "P Anil Kumar"
+                ],
+                "sched": []
+            },
+            "P17": {
+                "instructors": [
+                    "E Prasanth Kumar"
+                ],
+                "sched": []
+            },
+            "P18": {
+                "instructors": [
+                    "P Anil Kumar"
+                ],
+                "sched": []
+            },
+            "T1": {
+                "instructors": [
+                    "Mithun Mondal"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T2": {
+                "instructors": [
+                    "Mithun Mondal"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T3": {
+                "instructors": [
+                    "Pratyush Chakraborty"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T4": {
+                "instructors": [
+                    "Pratyush Chakraborty"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T5": {
+                "instructors": [
+                    "Sudha Radhika"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T6": {
+                "instructors": [
+                    "Sudha Radhika"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            }
+        },
+        "compre": {
+            "date": "01/05",
+            "session": "FN"
+        },
+        "midsem": {
+            "date": "01/03",
+            "time": "9.00 -10.30AM"
         }
     },
     "ECE F241": {
@@ -4836,7 +5672,7 @@
             },
             "P4": {
                 "instructors": [
-                    "Karumbaiah Chappanda Nan"
+                    "Karumbaiah  Chappanda\nNan"
                 ],
                 "sched": [
                     {
@@ -4853,7 +5689,7 @@
             },
             "P3": {
                 "instructors": [
-                    "Karumbaiah Chappanda Nan"
+                    "Karumbaiah  Chappanda\nNan"
                 ],
                 "sched": [
                     {
@@ -4887,7 +5723,7 @@
             },
             "P8": {
                 "instructors": [
-                    "Ramakant"
+                    "Rajesh Kumar Tripathy"
                 ],
                 "sched": [
                     {
@@ -4921,7 +5757,7 @@
             },
             "P10": {
                 "instructors": [
-                    "Ramakant"
+                    "Rajesh Kumar Tripathy"
                 ],
                 "sched": [
                     {
@@ -5006,7 +5842,7 @@
             },
             "P9": {
                 "instructors": [
-                    "Ramakant"
+                    "Rajesh Kumar Tripathy"
                 ],
                 "sched": [
                     {
@@ -5023,7 +5859,7 @@
             },
             "P18": {
                 "instructors": [
-                    "G Sahith"
+                    "Aparna Nair M K"
                 ],
                 "sched": []
             },
@@ -5284,6 +6120,10 @@
         "compre": {
             "date": "05/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "02/03",
+            "time": "1.30 - 3.00PM"
         }
     },
     "ECE F244": {
@@ -5375,7 +6215,7 @@
             },
             "T4": {
                 "instructors": [
-                    "Parikshit Parshuram Sahatiy"
+                    "Parikshit Parshuram\nSahatiy"
                 ],
                 "sched": [
                     {
@@ -5391,7 +6231,7 @@
             },
             "T5": {
                 "instructors": [
-                    "Parikshit Parshuram Sahatiy"
+                    "Parikshit Parshuram\nSahatiy"
                 ],
                 "sched": [
                     {
@@ -5425,6 +6265,10 @@
         "compre": {
             "date": "15/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "3.30  - 5.00PM"
         }
     },
     "ECE F266": {
@@ -5641,10 +6485,14 @@
         "compre": {
             "date": "06/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "03/03",
+            "time": "9.00 - 10.30AM"
         }
     },
     "ECE F312": {
-        "name": "Em Fields Lab Micro Engg Lab",
+        "name": "Em Fields Lab Micro Engg\nlab",
         "sections": {
             "L1": {
                 "instructors": [
@@ -5715,8 +6563,8 @@
                             "M"
                         ],
                         "hours": [
-                            7,
-                            8
+                            10,
+                            11
                         ]
                     }
                 ]
@@ -5732,8 +6580,8 @@
                             "W"
                         ],
                         "hours": [
-                            7,
-                            8
+                            10,
+                            11
                         ]
                     }
                 ]
@@ -5757,7 +6605,7 @@
             },
             "P5": {
                 "instructors": [
-                    "Amit  Kumar Panda"
+                    "Amit Kumar Panda"
                 ],
                 "sched": [
                     {
@@ -5780,7 +6628,7 @@
             },
             "P4": {
                 "instructors": [
-                    "Amit  Kumar Panda"
+                    "Amit Kumar Panda"
                 ],
                 "sched": [
                     {
@@ -5789,8 +6637,8 @@
                             "F"
                         ],
                         "hours": [
-                            7,
-                            8
+                            10,
+                            11
                         ]
                     }
                 ]
@@ -5907,6 +6755,10 @@
         "compre": {
             "date": "10/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "04/03",
+            "time": "11.00 -12.30PM"
         }
     },
     "ECE F366": {
@@ -5914,7 +6766,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "PARIKSHIT PARSHURAM S"
+                    "PARIKSHIT\nPARSHURAM S"
                 ],
                 "sched": []
             }
@@ -5925,7 +6777,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "PARIKSHIT PARSHURAM S"
+                    "PARIKSHIT\nPARSHURAM S"
                 ],
                 "sched": []
             }
@@ -5936,7 +6788,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "KARUMBAIAH CHAPPANDA"
+                    "KARUMBAIAH\nCHAPPANDA"
                 ],
                 "sched": []
             }
@@ -5947,7 +6799,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "KARUMBAIAH CHAPPANDA"
+                    "KARUMBAIAH\nCHAPPANDA"
                 ],
                 "sched": []
             }
@@ -6011,7 +6863,7 @@
             },
             "P4": {
                 "instructors": [
-                    "Chaluvadi V Naga Bhaskar"
+                    "Chaluvadi V Naga"
                 ],
                 "sched": []
             },
@@ -6023,7 +6875,7 @@
             },
             "P3": {
                 "instructors": [
-                    "Chaluvadi V Naga Bhaskar"
+                    "Chaluvadi V Naga"
                 ],
                 "sched": [
                     {
@@ -6040,7 +6892,7 @@
             },
             "P7": {
                 "instructors": [
-                    "Mrunali Dnyaneshwar Wagh"
+                    "Mrunali Dnyaneshwar\nWagh"
                 ],
                 "sched": []
             },
@@ -6096,6 +6948,10 @@
         "compre": {
             "date": "03/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "01/03",
+            "time": "3.30 -5.00PM"
         }
     },
     "ECON F211": {
@@ -6103,7 +6959,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "ARCHANA SRIVASTAVA"
+                    "ARCHANA  SRIVASTAVA"
                 ],
                 "sched": [
                     {
@@ -6151,6 +7007,24 @@
                         ],
                         "hours": [
                             9
+                        ]
+                    }
+                ]
+            },
+            "L4": {
+                "instructors": [
+                    "Archana Srivastava"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "T",
+                            "Th",
+                            "S"
+                        ],
+                        "hours": [
+                            5
                         ]
                     }
                 ]
@@ -6234,11 +7108,31 @@
                         ]
                     }
                 ]
+            },
+            "T6": {
+                "instructors": [
+                    "Archana Srivastava"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            1
+                        ]
+                    }
+                ]
             }
         },
         "compre": {
             "date": "12/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "04/03",
+            "time": "3.30 -5.00PM"
         }
     },
     "ECON F212": {
@@ -6267,6 +7161,10 @@
         "compre": {
             "date": "17/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "06/03",
+            "time": "9.00 - 10.30AM"
         }
     },
     "ECON F241": {
@@ -6326,6 +7224,10 @@
         "compre": {
             "date": "01/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "01/03",
+            "time": "9.00 -10.30AM"
         }
     },
     "ECON F242": {
@@ -6373,7 +7275,7 @@
                     {
                         "room": "NA",
                         "days": [
-                            "W"
+                            "F"
                         ],
                         "hours": [
                             1
@@ -6385,6 +7287,10 @@
         "compre": {
             "date": "08/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "03/03",
+            "time": "1.30 - 3.00PM"
         }
     },
     "ECON F243": {
@@ -6416,7 +7322,7 @@
                     {
                         "room": "NA",
                         "days": [
-                            "M"
+                            "W"
                         ],
                         "hours": [
                             1
@@ -6450,6 +7356,10 @@
         "compre": {
             "date": "05/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "02/03",
+            "time": "1.30 - 3.00PM"
         }
     },
     "ECON F244": {
@@ -6510,6 +7420,10 @@
         "compre": {
             "date": "15/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "3.30  - 5.00PM"
         }
     },
     "ECON F266": {
@@ -6517,7 +7431,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "Bheemeshwar Reddy A"
+                    "MINI THOMAS"
                 ],
                 "sched": []
             }
@@ -6549,6 +7463,10 @@
         "compre": {
             "date": "08/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "03/03",
+            "time": "3.30 - 5.00PM"
         }
     },
     "ECON F341": {
@@ -6608,6 +7526,10 @@
         "compre": {
             "date": "10/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "04/03",
+            "time": "11.00 -12.30PM"
         }
     },
     "ECON F342": {
@@ -6667,6 +7589,10 @@
         "compre": {
             "date": "17/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "06/03",
+            "time": "9.00 - 10.30AM"
         }
     },
     "ECON F343": {
@@ -6726,6 +7652,10 @@
         "compre": {
             "date": "12/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "9.00 -10.3AM"
         }
     },
     "ECON F345": {
@@ -6754,6 +7684,10 @@
         "compre": {
             "date": "18/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "06/03",
+            "time": "3.30 - 5.00PM"
         }
     },
     "ECON F354": {
@@ -6799,6 +7733,10 @@
         "compre": {
             "date": "18/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "06/03",
+            "time": "3.30 - 5.00PM"
         }
     },
     "ECON F355": {
@@ -6826,6 +7764,10 @@
         "compre": {
             "date": "01/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "01/03",
+            "time": "11.00 -12.30PM"
         }
     },
     "ECON F366": {
@@ -6897,6 +7839,10 @@
         "compre": {
             "date": "17/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "06/03",
+            "time": "9.00 - 10.30AM"
         }
     },
     "ECON F412": {
@@ -6924,6 +7870,10 @@
         "compre": {
             "date": "15/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "1.30  - 3.00PM"
         }
     },
     "ECON F415": {
@@ -6933,7 +7883,19 @@
                 "instructors": [
                     "R RAGHUNATHAN"
                 ],
-                "sched": []
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "M",
+                            "W"
+                        ],
+                        "hours": [
+                            10,
+                            11
+                        ]
+                    }
+                ]
             }
         }
     },
@@ -6942,7 +7904,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "ARCHANA SRIVASTAVA"
+                    "ARCHANA  SRIVASTAVA"
                 ],
                 "sched": [
                     {
@@ -6962,6 +7924,10 @@
         "compre": {
             "date": "01/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "01/03",
+            "time": "11.00 -12.30PM"
         }
     },
     "ECON F435": {
@@ -6989,6 +7955,211 @@
         "compre": {
             "date": "08/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "03/03",
+            "time": "3.30 - 5.00PM"
+        }
+    },
+    "EEE F111": {
+        "name": "Electrical Sciences",
+        "sections": {
+            "L1": {
+                "instructors": [
+                    "STP SRINIVAS"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "M",
+                            "W",
+                            "F"
+                        ],
+                        "hours": [
+                            3
+                        ]
+                    }
+                ]
+            },
+            "L2": {
+                "instructors": [
+                    "Amit Kumar Panda"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "M",
+                            "W",
+                            "F"
+                        ],
+                        "hours": [
+                            3
+                        ]
+                    }
+                ]
+            },
+            "T1": {
+                "instructors": [
+                    "Ramakant"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            1
+                        ]
+                    }
+                ]
+            },
+            "T2": {
+                "instructors": [
+                    "Ramakant"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "W"
+                        ],
+                        "hours": [
+                            4
+                        ]
+                    }
+                ]
+            },
+            "T3": {
+                "instructors": [
+                    "Ramakant"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "M"
+                        ],
+                        "hours": [
+                            4
+                        ]
+                    }
+                ]
+            },
+            "T4": {
+                "instructors": [
+                    "Amit Kumar Panda"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            1
+                        ]
+                    }
+                ]
+            },
+            "T5": {
+                "instructors": [
+                    "Amit Kumar Panda"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T6": {
+                "instructors": [
+                    "Ponnalagu R N"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            1
+                        ]
+                    }
+                ]
+            },
+            "T7": {
+                "instructors": [
+                    "Ponnalagu R N"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "W"
+                        ],
+                        "hours": [
+                            4
+                        ]
+                    }
+                ]
+            },
+            "T8": {
+                "instructors": [
+                    "STP Srinivas"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            1
+                        ]
+                    }
+                ]
+            },
+            "T9": {
+                "instructors": [
+                    "Alivelu Manga Parimi"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            1
+                        ]
+                    }
+                ]
+            },
+            "T10": {
+                "instructors": [
+                    "Alivelu Manga Parimi"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "W"
+                        ],
+                        "hours": [
+                            4
+                        ]
+                    }
+                ]
+            }
         }
     },
     "EEE F211": {
@@ -7280,6 +8451,10 @@
         "compre": {
             "date": "01/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "01/03",
+            "time": "9.00 -10.30AM"
         }
     },
     "EEE F241": {
@@ -7375,7 +8550,7 @@
             },
             "P4": {
                 "instructors": [
-                    "Karumbaiah Chappanda Nan"
+                    "Karumbaiah  Chappanda\nNan"
                 ],
                 "sched": [
                     {
@@ -7392,7 +8567,7 @@
             },
             "P3": {
                 "instructors": [
-                    "Karumbaiah Chappanda Nan"
+                    "Karumbaiah  Chappanda\nNan"
                 ],
                 "sched": [
                     {
@@ -7426,7 +8601,7 @@
             },
             "P8": {
                 "instructors": [
-                    "Ramakant"
+                    "Rajesh Kumar Tripathy"
                 ],
                 "sched": [
                     {
@@ -7460,7 +8635,7 @@
             },
             "P10": {
                 "instructors": [
-                    "Ramakant"
+                    "Rajesh Kumar Tripathy"
                 ],
                 "sched": [
                     {
@@ -7545,7 +8720,7 @@
             },
             "P9": {
                 "instructors": [
-                    "Ramakant"
+                    "Rajesh Kumar Tripathy"
                 ],
                 "sched": [
                     {
@@ -7562,7 +8737,7 @@
             },
             "P18": {
                 "instructors": [
-                    "G Sahith"
+                    "Aparna Nair M K"
                 ],
                 "sched": []
             },
@@ -7823,6 +8998,10 @@
         "compre": {
             "date": "05/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "02/03",
+            "time": "1.30 - 3.00PM"
         }
     },
     "EEE F244": {
@@ -7914,7 +9093,7 @@
             },
             "T4": {
                 "instructors": [
-                    "Parikshit Parshuram Sahatiy"
+                    "Parikshit Parshuram\nSahatiy"
                 ],
                 "sched": [
                     {
@@ -7930,7 +9109,7 @@
             },
             "T5": {
                 "instructors": [
-                    "Parikshit Parshuram Sahatiy"
+                    "Parikshit Parshuram\nSahatiy"
                 ],
                 "sched": [
                     {
@@ -7964,14 +9143,18 @@
         "compre": {
             "date": "15/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "3.30  - 5.00PM"
         }
     },
     "EEE F245": {
-        "name": "Control Systems Laboratory",
+        "name": "Control Systems\nlaboratory",
         "sections": {
             "L1": {
                 "instructors": [
-                    "ANKUR BHATTACHARJEE",
+                    "ANKUR\nBHATTACHARJEE",
                     "Priyalatha. P"
                 ],
                 "sched": [
@@ -8025,7 +9208,7 @@
         }
     },
     "EEE F246": {
-        "name": "Electrical & Electronic Circuits Laboratory",
+        "name": "Electrical & Electronic\ncircuits Laboratory",
         "sections": {
             "L1": {
                 "instructors": [
@@ -8053,12 +9236,13 @@
                     "Venkateswaran R",
                     "Adepu Vivek",
                     "Jayapiriya U S",
-                    "Parikshit Parshuram Sahatiy"
+                    "Parikshit Parshuram\nSahatiy"
                 ],
                 "sched": [
                     {
                         "room": "NA",
                         "days": [
+                            "T",
                             "Th"
                         ],
                         "hours": [
@@ -8284,6 +9468,10 @@
         "compre": {
             "date": "06/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "03/03",
+            "time": "9.00 - 10.30AM"
         }
     },
     "EEE F341": {
@@ -8336,8 +9524,8 @@
                             "M"
                         ],
                         "hours": [
-                            7,
-                            8
+                            10,
+                            11
                         ]
                     }
                 ]
@@ -8353,8 +9541,8 @@
                             "W"
                         ],
                         "hours": [
-                            7,
-                            8
+                            10,
+                            11
                         ]
                     }
                 ]
@@ -8378,7 +9566,7 @@
             },
             "P5": {
                 "instructors": [
-                    "Amit  Kumar Panda"
+                    "Amit Kumar Panda"
                 ],
                 "sched": [
                     {
@@ -8401,7 +9589,7 @@
             },
             "P4": {
                 "instructors": [
-                    "Amit  Kumar Panda"
+                    "Amit Kumar Panda"
                 ],
                 "sched": [
                     {
@@ -8410,8 +9598,8 @@
                             "F"
                         ],
                         "hours": [
-                            7,
-                            8
+                            10,
+                            11
                         ]
                     }
                 ]
@@ -8528,6 +9716,10 @@
         "compre": {
             "date": "10/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "04/03",
+            "time": "11.00 -12.30PM"
         }
     },
     "EEE F342": {
@@ -8679,6 +9871,10 @@
         "compre": {
             "date": "17/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "06/03",
+            "time": "11.00 - 12.30PM"
         }
     },
     "EEE F366": {
@@ -8686,7 +9882,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "PARIKSHIT PARSHURAM S"
+                    "PARIKSHIT\nPARSHURAM S"
                 ],
                 "sched": []
             }
@@ -8697,7 +9893,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "PARIKSHIT PARSHURAM S"
+                    "PARIKSHIT\nPARSHURAM S"
                 ],
                 "sched": []
             }
@@ -8708,7 +9904,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "KARUMBAIAH CHAPPANDA"
+                    "KARUMBAIAH\nCHAPPANDA"
                 ],
                 "sched": []
             }
@@ -8719,7 +9915,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "KARUMBAIAH CHAPPANDA"
+                    "KARUMBAIAH\nCHAPPANDA"
                 ],
                 "sched": []
             }
@@ -8773,6 +9969,10 @@
         "compre": {
             "date": "05/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "02/03",
+            "time": "3.30 - 5.00PM"
         }
     },
     "EEE F422": {
@@ -8800,6 +10000,10 @@
         "compre": {
             "date": "01/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "01/03",
+            "time": "11.00 -12.30PM"
         }
     },
     "EEE F426": {
@@ -8827,6 +10031,10 @@
         "compre": {
             "date": "15/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "1.30  - 3.00PM"
         }
     },
     "EEE F434": {
@@ -8887,7 +10095,7 @@
             },
             "P4": {
                 "instructors": [
-                    "Chaluvadi V Naga Bhaskar"
+                    "Chaluvadi V Naga"
                 ],
                 "sched": []
             },
@@ -8899,7 +10107,7 @@
             },
             "P3": {
                 "instructors": [
-                    "Chaluvadi V Naga Bhaskar"
+                    "Chaluvadi V Naga"
                 ],
                 "sched": [
                     {
@@ -8916,7 +10124,7 @@
             },
             "P7": {
                 "instructors": [
-                    "Mrunali Dnyaneshwar Wagh"
+                    "Mrunali Dnyaneshwar\nWagh"
                 ],
                 "sched": []
             },
@@ -8972,6 +10180,10 @@
         "compre": {
             "date": "03/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "01/03",
+            "time": "3.30 -5.00PM"
         }
     },
     "EEE F474": {
@@ -9022,6 +10234,10 @@
         "compre": {
             "date": "12/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "9.00 -10.3AM"
         }
     },
     "EEE F477": {
@@ -9049,14 +10265,18 @@
         "compre": {
             "date": "08/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "03/03",
+            "time": "3.30 - 5.00PM"
         }
     },
     "EEE F478": {
-        "name": "Pow Er Systems Lab",
+        "name": "Power Systems Lab",
         "sections": {
             "L1": {
                 "instructors": [
-                    "ALIVELU MANGA PARIMI",
+                    "ALIVELU MANGA",
                     "P Shambhu Prasad"
                 ],
                 "sched": [
@@ -9118,6 +10338,10 @@
         "compre": {
             "date": "18/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "06/03",
+            "time": "3.30 - 5.00PM"
         }
     },
     "FIN F313": {
@@ -9145,6 +10369,10 @@
         "compre": {
             "date": "15/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "1.30  - 3.00PM"
         }
     },
     "FIN F315": {
@@ -9173,6 +10401,10 @@
         "compre": {
             "date": "08/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "03/03",
+            "time": "3.30 - 5.00PM"
         }
     },
     "FIN F414": {
@@ -9200,6 +10432,10 @@
         "compre": {
             "date": "04/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "02/03",
+            "time": "11.00 -12.30PM"
         }
     },
     "GS F212": {
@@ -9218,15 +10454,19 @@
                             "F"
                         ],
                         "hours": [
-                            7
+                            9
                         ]
                     }
                 ]
             }
         },
         "compre": {
-            "date": "18/05",
+            "date": "12/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "04/03",
+            "time": "3.30 -5.00PM"
         }
     },
     "GS F232": {
@@ -9234,7 +10474,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "SANTOSH  MAHAPATRA"
+                    "SANTOSH MAHAPATRA"
                 ],
                 "sched": [
                     {
@@ -9254,6 +10494,10 @@
         "compre": {
             "date": "17/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "06/03",
+            "time": "11.00 - 12.30PM"
         }
     },
     "GS F241": {
@@ -9281,6 +10525,10 @@
         "compre": {
             "date": "10/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "04/03",
+            "time": "9.00 -10.30AM"
         }
     },
     "GS F322": {
@@ -9308,6 +10556,10 @@
         "compre": {
             "date": "12/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "04/03",
+            "time": "3.30 -5.00PM"
         }
     },
     "GS F333": {
@@ -9335,6 +10587,10 @@
         "compre": {
             "date": "10/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "04/03",
+            "time": "9.00 -10.30AM"
         }
     },
     "HSS F232": {
@@ -9343,6 +10599,99 @@
             "L1": {
                 "instructors": [
                     "SUCHISMITA SATPATHY"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "T",
+                            "Th",
+                            "S"
+                        ],
+                        "hours": [
+                            3
+                        ]
+                    }
+                ]
+            }
+        },
+        "compre": {
+            "date": "15/05",
+            "session": "FN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "1.30  - 3.00PM"
+        }
+    },
+    "HSS F235": {
+        "name": "Introductory Philosophy",
+        "sections": {
+            "L1": {
+                "instructors": [
+                    "JAYESH A K"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "M",
+                            "W",
+                            "F"
+                        ],
+                        "hours": [
+                            7
+                        ]
+                    }
+                ]
+            }
+        },
+        "compre": {
+            "date": "18/05",
+            "session": "AN"
+        },
+        "midsem": {
+            "date": "06/03",
+            "time": "3.30 - 5.00PM"
+        }
+    },
+    "HSS F236": {
+        "name": "Symbolic Logic",
+        "sections": {
+            "L1": {
+                "instructors": [
+                    "PRANESH  BHARGAVA"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "M",
+                            "W",
+                            "F"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            }
+        },
+        "compre": {
+            "date": "12/05",
+            "session": "AN"
+        },
+        "midsem": {
+            "date": "04/03",
+            "time": "3.30 -5.00PM"
+        }
+    },
+    "HSS F237": {
+        "name": "Contemporary Indian English Fiction",
+        "sections": {
+            "L1": {
+                "instructors": [
+                    "MAYA VINAY"
                 ],
                 "sched": [
                     {
@@ -9362,87 +10711,10 @@
         "compre": {
             "date": "10/05",
             "session": "FN"
-        }
-    },
-    "HSS F235": {
-        "name": "Introductory Philosophy",
-        "sections": {
-            "L1": {
-                "instructors": [
-                    "JAYESH A K"
-                ],
-                "sched": [
-                    {
-                        "room": "NA",
-                        "days": [
-                            "M",
-                            "W",
-                            "F"
-                        ],
-                        "hours": [
-                            9
-                        ]
-                    }
-                ]
-            }
         },
-        "compre": {
-            "date": "12/05",
-            "session": "AN"
-        }
-    },
-    "HSS F236": {
-        "name": "Symbolic Logic",
-        "sections": {
-            "L1": {
-                "instructors": [
-                    "PRANESH BHARGAVA"
-                ],
-                "sched": [
-                    {
-                        "room": "NA",
-                        "days": [
-                            "M",
-                            "W",
-                            "F"
-                        ],
-                        "hours": [
-                            9
-                        ]
-                    }
-                ]
-            }
-        },
-        "compre": {
-            "date": "12/05",
-            "session": "AN"
-        }
-    },
-    "HSS F237": {
-        "name": "Contemporary Indian English Fiction",
-        "sections": {
-            "L1": {
-                "instructors": [
-                    "MAYA VINAY"
-                ],
-                "sched": [
-                    {
-                        "room": "NA",
-                        "days": [
-                            "T",
-                            "Th",
-                            "S"
-                        ],
-                        "hours": [
-                            5
-                        ]
-                    }
-                ]
-            }
-        },
-        "compre": {
-            "date": "17/05",
-            "session": "AN"
+        "midsem": {
+            "date": "04/03",
+            "time": "9.00 -10.30AM"
         }
     },
     "HSS F244": {
@@ -9470,6 +10742,10 @@
         "compre": {
             "date": "18/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "06/03",
+            "time": "3.30 - 5.00PM"
         }
     },
     "HSS F245": {
@@ -9497,6 +10773,10 @@
         "compre": {
             "date": "18/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "06/03",
+            "time": "3.30 - 5.00PM"
         }
     },
     "HSS F248": {
@@ -9515,15 +10795,19 @@
                             "F"
                         ],
                         "hours": [
-                            4
+                            7
                         ]
                     }
                 ]
             }
         },
         "compre": {
-            "date": "03/05",
-            "session": "FN"
+            "date": "18/05",
+            "session": "AN"
+        },
+        "midsem": {
+            "date": "06/03",
+            "time": "3.30 - 5.00PM"
         }
     },
     "HSS F266": {
@@ -9531,7 +10815,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "PRANESH BHARGAVA"
+                    "PRANESH  BHARGAVA"
                 ],
                 "sched": []
             }
@@ -9562,6 +10846,10 @@
         "compre": {
             "date": "18/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "06/03",
+            "time": "3.30 - 5.00PM"
         }
     },
     "HSS F322": {
@@ -9589,6 +10877,10 @@
         "compre": {
             "date": "03/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "01/03",
+            "time": "3.30 -5.00PM"
         }
     },
     "HSS F325": {
@@ -9616,6 +10908,10 @@
         "compre": {
             "date": "17/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "06/03",
+            "time": "11.00 - 12.30PM"
         }
     },
     "HSS F328": {
@@ -9643,6 +10939,10 @@
         "compre": {
             "date": "17/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "06/03",
+            "time": "11.00 - 12.30PM"
         }
     },
     "HSS F332": {
@@ -9670,6 +10970,10 @@
         "compre": {
             "date": "17/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "06/03",
+            "time": "11.00 - 12.30PM"
         }
     },
     "HSS F338": {
@@ -9697,6 +11001,10 @@
         "compre": {
             "date": "03/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "01/03",
+            "time": "3.30 -5.00PM"
         }
     },
     "HSS F340": {
@@ -9724,6 +11032,10 @@
         "compre": {
             "date": "03/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "01/03",
+            "time": "3.30 -5.00PM"
         }
     },
     "HSS F363": {
@@ -9751,6 +11063,10 @@
         "compre": {
             "date": "17/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "06/03",
+            "time": "11.00 - 12.30PM"
         }
     },
     "HSS F365": {
@@ -9778,6 +11094,10 @@
         "compre": {
             "date": "12/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "04/03",
+            "time": "3.30 -5.00PM"
         }
     },
     "HSS F368": {
@@ -9805,6 +11125,316 @@
         "compre": {
             "date": "08/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "03/03",
+            "time": "3.30 - 5.00PM"
+        }
+    },
+    "HSS F376": {
+        "name": "Design Project",
+        "sections": {
+            "L1": {
+                "instructors": [
+                    "PRANESH  BHARGAVA"
+                ],
+                "sched": []
+            }
+        }
+    },
+    "INSTR F211": {
+        "name": "Electrical Machines",
+        "sections": {
+            "L1": {
+                "instructors": [
+                    "MITHUN MONDAL"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "M",
+                            "W",
+                            "F"
+                        ],
+                        "hours": [
+                            2
+                        ]
+                    }
+                ]
+            },
+            "L2": {
+                "instructors": [
+                    "Pratyush Chakraborty"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "M",
+                            "W",
+                            "F"
+                        ],
+                        "hours": [
+                            2
+                        ]
+                    }
+                ]
+            },
+            "P1": {
+                "instructors": [
+                    "Mithun Mondal"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "M"
+                        ],
+                        "hours": [
+                            7,
+                            8
+                        ]
+                    }
+                ]
+            },
+            "P2": {
+                "instructors": [
+                    "Mithun Mondal"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "W"
+                        ],
+                        "hours": [
+                            7,
+                            8
+                        ]
+                    }
+                ]
+            },
+            "P3": {
+                "instructors": [
+                    "Pratyush Chakraborty"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "M"
+                        ],
+                        "hours": [
+                            4,
+                            5
+                        ]
+                    }
+                ]
+            },
+            "P5": {
+                "instructors": [
+                    "STP Srinivas"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            7,
+                            8
+                        ]
+                    }
+                ]
+            },
+            "P6": {
+                "instructors": [
+                    "Pratyush Chakraborty"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "W"
+                        ],
+                        "hours": [
+                            4,
+                            5
+                        ]
+                    }
+                ]
+            },
+            "P8": {
+                "instructors": [
+                    "Manoj Samal"
+                ],
+                "sched": []
+            },
+            "P9": {
+                "instructors": [
+                    "TO BE ANNOUNCED"
+                ],
+                "sched": []
+            },
+            "P4": {
+                "instructors": [
+                    "STP Srinivas"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "F"
+                        ],
+                        "hours": [
+                            7,
+                            8
+                        ]
+                    }
+                ]
+            },
+            "P11": {
+                "instructors": [
+                    "Manoj Samal"
+                ],
+                "sched": []
+            },
+            "P12": {
+                "instructors": [
+                    "Santhi Durganjali Challa"
+                ],
+                "sched": []
+            },
+            "P14": {
+                "instructors": [
+                    "E Prasanth Kumar"
+                ],
+                "sched": []
+            },
+            "P15": {
+                "instructors": [
+                    "P Anil Kumar"
+                ],
+                "sched": []
+            },
+            "P17": {
+                "instructors": [
+                    "E Prasanth Kumar"
+                ],
+                "sched": []
+            },
+            "P18": {
+                "instructors": [
+                    "P Anil Kumar"
+                ],
+                "sched": []
+            },
+            "T1": {
+                "instructors": [
+                    "Mithun Mondal"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T2": {
+                "instructors": [
+                    "Mithun Mondal"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T3": {
+                "instructors": [
+                    "Pratyush Chakraborty"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T4": {
+                "instructors": [
+                    "Pratyush Chakraborty"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T5": {
+                "instructors": [
+                    "Sudha Radhika"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T6": {
+                "instructors": [
+                    "Sudha Radhika"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            }
+        },
+        "compre": {
+            "date": "01/05",
+            "session": "FN"
+        },
+        "midsem": {
+            "date": "01/03",
+            "time": "9.00 -10.30AM"
         }
     },
     "INSTR F241": {
@@ -9900,7 +11530,7 @@
             },
             "P4": {
                 "instructors": [
-                    "Karumbaiah Chappanda Nan"
+                    "Karumbaiah  Chappanda\nNan"
                 ],
                 "sched": [
                     {
@@ -9917,7 +11547,7 @@
             },
             "P3": {
                 "instructors": [
-                    "Karumbaiah Chappanda Nan"
+                    "Karumbaiah  Chappanda\nNan"
                 ],
                 "sched": [
                     {
@@ -9951,7 +11581,7 @@
             },
             "P8": {
                 "instructors": [
-                    "Ramakant"
+                    "Rajesh Kumar Tripathy"
                 ],
                 "sched": [
                     {
@@ -9985,7 +11615,7 @@
             },
             "P10": {
                 "instructors": [
-                    "Ramakant"
+                    "Rajesh Kumar Tripathy"
                 ],
                 "sched": [
                     {
@@ -10070,7 +11700,7 @@
             },
             "P9": {
                 "instructors": [
-                    "Ramakant"
+                    "Rajesh Kumar Tripathy"
                 ],
                 "sched": [
                     {
@@ -10087,7 +11717,7 @@
             },
             "P18": {
                 "instructors": [
-                    "G Sahith"
+                    "Aparna Nair M K"
                 ],
                 "sched": []
             },
@@ -10348,6 +11978,10 @@
         "compre": {
             "date": "05/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "02/03",
+            "time": "1.30 - 3.00PM"
         }
     },
     "INSTR F244": {
@@ -10439,7 +12073,7 @@
             },
             "T4": {
                 "instructors": [
-                    "Parikshit Parshuram Sahatiy"
+                    "Parikshit Parshuram\nSahatiy"
                 ],
                 "sched": [
                     {
@@ -10455,7 +12089,7 @@
             },
             "T5": {
                 "instructors": [
-                    "Parikshit Parshuram Sahatiy"
+                    "Parikshit Parshuram\nSahatiy"
                 ],
                 "sched": [
                     {
@@ -10489,6 +12123,10 @@
         "compre": {
             "date": "15/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "3.30  - 5.00PM"
         }
     },
     "INSTR F266": {
@@ -10525,7 +12163,7 @@
             },
             "P1": {
                 "instructors": [
-                    "Karumbaiah Chappanda Nan"
+                    "Karumbaiah  Chappanda\nNan"
                 ],
                 "sched": [
                     {
@@ -10534,8 +12172,8 @@
                             "M"
                         ],
                         "hours": [
-                            7,
-                            8
+                            10,
+                            11
                         ]
                     }
                 ]
@@ -10548,7 +12186,7 @@
             },
             "T1": {
                 "instructors": [
-                    "Karumbaiah Chappanda Nan"
+                    "Karumbaiah  Chappanda\nNan"
                 ],
                 "sched": [
                     {
@@ -10566,6 +12204,10 @@
         "compre": {
             "date": "06/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "03/03",
+            "time": "9.00 - 10.30AM"
         }
     },
     "INSTR F341": {
@@ -10618,8 +12260,8 @@
                             "M"
                         ],
                         "hours": [
-                            7,
-                            8
+                            10,
+                            11
                         ]
                     }
                 ]
@@ -10635,8 +12277,8 @@
                             "W"
                         ],
                         "hours": [
-                            7,
-                            8
+                            10,
+                            11
                         ]
                     }
                 ]
@@ -10660,7 +12302,7 @@
             },
             "P5": {
                 "instructors": [
-                    "Amit  Kumar Panda"
+                    "Amit Kumar Panda"
                 ],
                 "sched": [
                     {
@@ -10683,7 +12325,7 @@
             },
             "P4": {
                 "instructors": [
-                    "Amit  Kumar Panda"
+                    "Amit Kumar Panda"
                 ],
                 "sched": [
                     {
@@ -10692,8 +12334,8 @@
                             "F"
                         ],
                         "hours": [
-                            7,
-                            8
+                            10,
+                            11
                         ]
                     }
                 ]
@@ -10810,6 +12452,10 @@
         "compre": {
             "date": "10/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "04/03",
+            "time": "11.00 -12.30PM"
         }
     },
     "INSTR F342": {
@@ -10961,6 +12607,10 @@
         "compre": {
             "date": "17/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "06/03",
+            "time": "11.00 - 12.30PM"
         }
     },
     "INSTR F366": {
@@ -10968,7 +12618,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "PARIKSHIT PARSHURAM S"
+                    "PARIKSHIT\nPARSHURAM S"
                 ],
                 "sched": []
             }
@@ -10979,7 +12629,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "PARIKSHIT PARSHURAM S"
+                    "PARIKSHIT\nPARSHURAM S"
                 ],
                 "sched": []
             }
@@ -10990,7 +12640,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "KARUMBAIAH CHAPPANDA"
+                    "KARUMBAIAH\nCHAPPANDA"
                 ],
                 "sched": []
             }
@@ -11001,7 +12651,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "KARUMBAIAH CHAPPANDA"
+                    "KARUMBAIAH\nCHAPPANDA"
                 ],
                 "sched": []
             }
@@ -11055,6 +12705,10 @@
         "compre": {
             "date": "03/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "01/03",
+            "time": "3.30 -5.00PM"
         }
     },
     "IS F311": {
@@ -11082,6 +12736,10 @@
         "compre": {
             "date": "12/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "9.00 -10.3AM"
         }
     },
     "IS F341": {
@@ -11089,18 +12747,18 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "NARASIMHA BOLLOJU"
+                    "NARASIMHA  BOLLOJU"
                 ],
                 "sched": [
                     {
                         "room": "NA",
                         "days": [
-                            "T",
-                            "Th",
-                            "S"
+                            "M",
+                            "W",
+                            "F"
                         ],
                         "hours": [
-                            5
+                            3
                         ]
                     }
                 ]
@@ -11113,8 +12771,7 @@
                     {
                         "room": "NA",
                         "days": [
-                            "T",
-                            "Th"
+                            "T"
                         ],
                         "hours": [
                             8,
@@ -11131,8 +12788,12 @@
             }
         },
         "compre": {
-            "date": "17/05",
+            "date": "08/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "03/03",
+            "time": "3.30 - 5.00PM"
         }
     },
     "IS F462": {
@@ -11160,6 +12821,57 @@
         "compre": {
             "date": "17/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "06/03",
+            "time": "9.00 - 10.30AM"
+        }
+    },
+    "MATH F113": {
+        "name": "Probability and Statistics",
+        "sections": {
+            "L1": {
+                "instructors": [
+                    "Nirman Ganguly"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "M",
+                            "W",
+                            "F"
+                        ],
+                        "hours": [
+                            10
+                        ]
+                    }
+                ]
+            },
+            "T1": {
+                "instructors": [
+                    "Nirman Ganguly"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            }
+        },
+        "compre": {
+            "date": "04/05",
+            "session": "FN"
+        },
+        "midsem": {
+            "date": "02/03",
+            "time": "9.00 -10.30AM"
         }
     },
     "MATH F213": {
@@ -11178,33 +12890,19 @@
                             "S"
                         ],
                         "hours": [
-                            5
-                        ]
-                    }
-                ]
-            },
-            "L2": {
-                "instructors": [
-                    "Nirman Ganguly"
-                ],
-                "sched": [
-                    {
-                        "room": "NA",
-                        "days": [
-                            "T",
-                            "Th",
-                            "S"
-                        ],
-                        "hours": [
-                            5
+                            6
                         ]
                     }
                 ]
             }
         },
         "compre": {
-            "date": "17/05",
+            "date": "07/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "06/03",
+            "time": "1.30 - 3.00PM"
         }
     },
     "MATH F231": {
@@ -11232,6 +12930,10 @@
         "compre": {
             "date": "18/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "06/03",
+            "time": "3.30 - 5.00PM"
         }
     },
     "MATH F241": {
@@ -11291,6 +12993,10 @@
         "compre": {
             "date": "01/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "01/03",
+            "time": "9.00 -10.30AM"
         }
     },
     "MATH F242": {
@@ -11356,6 +13062,10 @@
         "compre": {
             "date": "15/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "3.30  - 5.00PM"
         }
     },
     "MATH F243": {
@@ -11415,6 +13125,10 @@
         "compre": {
             "date": "05/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "02/03",
+            "time": "1.30 - 3.00PM"
         }
     },
     "MATH F244": {
@@ -11446,10 +13160,10 @@
                     {
                         "room": "NA",
                         "days": [
-                            "T"
+                            "M"
                         ],
                         "hours": [
-                            1
+                            6
                         ]
                     }
                 ]
@@ -11462,10 +13176,10 @@
                     {
                         "room": "NA",
                         "days": [
-                            "T"
+                            "M"
                         ],
                         "hours": [
-                            1
+                            6
                         ]
                     }
                 ]
@@ -11474,6 +13188,10 @@
         "compre": {
             "date": "08/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "03/03",
+            "time": "1.30 - 3.00PM"
         }
     },
     "MATH F266": {
@@ -11512,6 +13230,10 @@
         "compre": {
             "date": "05/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "02/03",
+            "time": "3.30 - 5.00PM"
         }
     },
     "MATH F341": {
@@ -11571,6 +13293,10 @@
         "compre": {
             "date": "10/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "04/03",
+            "time": "11.00 -12.30PM"
         }
     },
     "MATH F342": {
@@ -11589,7 +13315,7 @@
                             "S"
                         ],
                         "hours": [
-                            5
+                            6
                         ]
                     }
                 ]
@@ -11628,8 +13354,12 @@
             }
         },
         "compre": {
-            "date": "17/05",
-            "session": "AN"
+            "date": "07/05",
+            "session": "FN"
+        },
+        "midsem": {
+            "date": "06/03",
+            "time": "1.30 - 3.00PM"
         }
     },
     "MATH F343": {
@@ -11689,6 +13419,10 @@
         "compre": {
             "date": "12/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "9.00 -10.3AM"
         }
     },
     "MATH F353": {
@@ -11716,6 +13450,10 @@
         "compre": {
             "date": "17/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "06/03",
+            "time": "9.00 - 10.30AM"
         }
     },
     "MATH F354": {
@@ -11743,6 +13481,10 @@
         "compre": {
             "date": "08/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "03/03",
+            "time": "3.30 - 5.00PM"
         }
     },
     "MATH F366": {
@@ -11814,6 +13556,10 @@
         "compre": {
             "date": "12/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "9.00 -10.3AM"
         }
     },
     "MATH F423": {
@@ -11841,6 +13587,10 @@
         "compre": {
             "date": "15/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "1.30  - 3.00PM"
         }
     },
     "MATH F441": {
@@ -11868,6 +13618,10 @@
         "compre": {
             "date": "18/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "06/03",
+            "time": "3.30 - 5.00PM"
         }
     },
     "MATH F456": {
@@ -11895,6 +13649,10 @@
         "compre": {
             "date": "01/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "01/03",
+            "time": "11.00 -12.30PM"
         }
     },
     "MATH F471": {
@@ -11922,6 +13680,10 @@
         "compre": {
             "date": "01/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "01/03",
+            "time": "11.00 -12.30PM"
         }
     },
     "ME F218": {
@@ -11936,8 +13698,7 @@
                         "room": "NA",
                         "days": [
                             "M",
-                            "W",
-                            "F"
+                            "W"
                         ],
                         "hours": [
                             2
@@ -12009,6 +13770,10 @@
         "compre": {
             "date": "01/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "01/03",
+            "time": "9.00 -10.30AM"
         }
     },
     "ME F219": {
@@ -12164,6 +13929,10 @@
         "compre": {
             "date": "15/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "3.30  - 5.00PM"
         }
     },
     "ME F220": {
@@ -12263,10 +14032,10 @@
                     {
                         "room": "NA",
                         "days": [
-                            "W"
+                            "Th"
                         ],
                         "hours": [
-                            1
+                            9
                         ]
                     }
                 ]
@@ -12279,10 +14048,10 @@
                     {
                         "room": "NA",
                         "days": [
-                            "W"
+                            "Th"
                         ],
                         "hours": [
-                            1
+                            9
                         ]
                     }
                 ]
@@ -12301,10 +14070,10 @@
                     {
                         "room": "NA",
                         "days": [
-                            "W"
+                            "Th"
                         ],
                         "hours": [
-                            1
+                            9
                         ]
                     }
                 ]
@@ -12319,6 +14088,10 @@
         "compre": {
             "date": "05/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "02/03",
+            "time": "1.30 - 3.00PM"
         }
     },
     "ME F221": {
@@ -12406,6 +14179,370 @@
         "compre": {
             "date": "08/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "03/03",
+            "time": "1.30 - 3.00PM"
+        }
+    },
+    "ME F241": {
+        "name": "Machine Design & Drawing",
+        "sections": {
+            "L1": {
+                "instructors": [
+                    "NITIN RAMESH K"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "T",
+                            "Th",
+                            "S"
+                        ],
+                        "hours": [
+                            2
+                        ]
+                    }
+                ]
+            },
+            "P1": {
+                "instructors": [
+                    "Nitin Ramesh K"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            7,
+                            8
+                        ]
+                    }
+                ]
+            },
+            "T1": {
+                "instructors": [
+                    "Nitin Ramesh K"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            }
+        },
+        "compre": {
+            "date": "05/05",
+            "session": "FN"
+        },
+        "midsem": {
+            "date": "02/03",
+            "time": "1.30 - 3.00PM"
+        }
+    },
+    "ME F242": {
+        "name": "Ic Engines",
+        "sections": {
+            "L1": {
+                "instructors": [
+                    "KHALID ANWAR"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "M",
+                            "W"
+                        ],
+                        "hours": [
+                            2
+                        ]
+                    }
+                ]
+            },
+            "T1": {
+                "instructors": [
+                    "Khalid Anwar"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "F"
+                        ],
+                        "hours": [
+                            2
+                        ]
+                    }
+                ]
+            }
+        },
+        "compre": {
+            "date": "01/05",
+            "session": "FN"
+        },
+        "midsem": {
+            "date": "01/03",
+            "time": "9.00 -10.30AM"
+        }
+    },
+    "ME F243": {
+        "name": "Production Techniques I",
+        "sections": {
+            "L1": {
+                "instructors": [
+                    "N SURESH KUMAR REDDY"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "T",
+                            "Th",
+                            "S"
+                        ],
+                        "hours": [
+                            3
+                        ]
+                    }
+                ]
+            },
+            "P1": {
+                "instructors": [
+                    "Sreejith S"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "M"
+                        ],
+                        "hours": [
+                            7,
+                            8
+                        ]
+                    }
+                ]
+            },
+            "P2": {
+                "instructors": [
+                    "Jella Gangadhar"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "W"
+                        ],
+                        "hours": [
+                            4,
+                            5
+                        ]
+                    }
+                ]
+            },
+            "P3": {
+                "instructors": [
+                    "Ankit Sharma"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "F"
+                        ],
+                        "hours": [
+                            7,
+                            8
+                        ]
+                    }
+                ]
+            },
+            "P4": {
+                "instructors": [
+                    "Jella Gangadhar"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            7,
+                            8
+                        ]
+                    }
+                ]
+            },
+            "T1": {
+                "instructors": [
+                    "Amar S D"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "M"
+                        ],
+                        "hours": [
+                            1
+                        ]
+                    }
+                ]
+            },
+            "T2": {
+                "instructors": [
+                    "Jose Santo"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "M"
+                        ],
+                        "hours": [
+                            1
+                        ]
+                    }
+                ]
+            },
+            "T4": {
+                "instructors": [
+                    "N Suresh Kumar Reddy"
+                ],
+                "sched": []
+            },
+            "T3": {
+                "instructors": [
+                    "Petla Sivateja"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "M"
+                        ],
+                        "hours": [
+                            1
+                        ]
+                    }
+                ]
+            },
+            "T6": {
+                "instructors": [
+                    "N Suresh Kumar Reddy"
+                ],
+                "sched": []
+            }
+        },
+        "compre": {
+            "date": "15/05",
+            "session": "AN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "3.30  - 5.00PM"
+        }
+    },
+    "ME F244": {
+        "name": "Kin & Dyn of Machines",
+        "sections": {
+            "L1": {
+                "instructors": [
+                    "YV DASESWARA RAO"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "M",
+                            "W",
+                            "F"
+                        ],
+                        "hours": [
+                            3
+                        ]
+                    }
+                ]
+            },
+            "T1": {
+                "instructors": [
+                    "Gauri Rajendra M"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "F"
+                        ],
+                        "hours": [
+                            1
+                        ]
+                    }
+                ]
+            },
+            "T2": {
+                "instructors": [
+                    "Lanka Tata Rao"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "F"
+                        ],
+                        "hours": [
+                            1
+                        ]
+                    }
+                ]
+            },
+            "T4": {
+                "instructors": [
+                    "YV Daseswara Rao"
+                ],
+                "sched": []
+            },
+            "T3": {
+                "instructors": [
+                    "G Lakshmi Srinivas"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "F"
+                        ],
+                        "hours": [
+                            1
+                        ]
+                    }
+                ]
+            },
+            "T6": {
+                "instructors": [
+                    "YV Daseswara Rao"
+                ],
+                "sched": []
+            }
+        },
+        "compre": {
+            "date": "08/05",
+            "session": "AN"
+        },
+        "midsem": {
+            "date": "03/03",
+            "time": "1.30 - 3.00PM"
         }
     },
     "ME F266": {
@@ -12572,6 +14709,10 @@
         "compre": {
             "date": "03/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "01/03",
+            "time": "3.30 -5.00PM"
         }
     },
     "ME F313": {
@@ -12727,6 +14868,10 @@
         "compre": {
             "date": "12/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "9.00 -10.3AM"
         }
     },
     "ME F341": {
@@ -12751,7 +14896,7 @@
             },
             "P1": {
                 "instructors": [
-                    "G Prashanth Kumar Reddy"
+                    "G Prashanth Kumar"
                 ],
                 "sched": [
                     {
@@ -12768,7 +14913,7 @@
             },
             "P2": {
                 "instructors": [
-                    "Pardha Saradhi Gurugubelli"
+                    "Pardha Saradhi"
                 ],
                 "sched": [
                     {
@@ -12785,7 +14930,7 @@
             },
             "P3": {
                 "instructors": [
-                    "Kandula Uday Kumar Reddy"
+                    "Kandula Uday Kumar\nReddy"
                 ],
                 "sched": [
                     {
@@ -12819,7 +14964,7 @@
             },
             "T1": {
                 "instructors": [
-                    "Kandula Uday Kumar Reddy"
+                    "Kandula Uday Kumar\nReddy"
                 ],
                 "sched": [
                     {
@@ -12835,7 +14980,7 @@
             },
             "T2": {
                 "instructors": [
-                    "G Prashanth Kumar Reddy"
+                    "G Prashanth Kumar"
                 ],
                 "sched": [
                     {
@@ -12881,6 +15026,121 @@
         "compre": {
             "date": "10/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "04/03",
+            "time": "11.00 -12.30PM"
+        }
+    },
+    "ME F342": {
+        "name": "Computer Aided Design",
+        "sections": {
+            "L1": {
+                "instructors": [
+                    "SP REGALLA"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "M",
+                            "W",
+                            "F"
+                        ],
+                        "hours": [
+                            4
+                        ]
+                    }
+                ]
+            },
+            "P1": {
+                "instructors": [
+                    "Veeraiahgari Vamshi"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            8,
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T1": {
+                "instructors": [
+                    "SP Regalla"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            1
+                        ]
+                    }
+                ]
+            }
+        },
+        "compre": {
+            "date": "03/05",
+            "session": "FN"
+        },
+        "midsem": {
+            "date": "01/03",
+            "time": "3.30 -5.00PM"
+        }
+    },
+    "ME F343": {
+        "name": "Mechanical Vibrations",
+        "sections": {
+            "L1": {
+                "instructors": [
+                    "G R SABAREESH"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "T",
+                            "Th",
+                            "S"
+                        ],
+                        "hours": [
+                            5
+                        ]
+                    }
+                ]
+            },
+            "T1": {
+                "instructors": [
+                    "G R Sabareesh"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            10
+                        ]
+                    }
+                ]
+            }
+        },
+        "compre": {
+            "date": "17/05",
+            "session": "FN"
+        },
+        "midsem": {
+            "date": "06/03",
+            "time": "9.00 - 10.30AM"
         }
     },
     "ME F344": {
@@ -12905,7 +15165,7 @@
             },
             "T1": {
                 "instructors": [
-                    "Vardhanapu Muralidhar"
+                    "Vardhanapu  Muralidhar"
                 ],
                 "sched": [
                     {
@@ -12983,6 +15243,10 @@
         "compre": {
             "date": "06/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "03/03",
+            "time": "9.00 - 10.30AM"
         }
     },
     "ME F366": {
@@ -13012,7 +15276,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "MRINAL KETAN JAGIRDAR"
+                    "MRINAL KETAN"
                 ],
                 "sched": []
             }
@@ -13023,73 +15287,10 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "MRINAL KETAN JAGIRDAR"
+                    "MRINAL KETAN"
                 ],
                 "sched": []
             }
-        }
-    },
-    "ME F423": {
-        "name": "Micro-fluidics & its App",
-        "sections": {
-            "L1": {
-                "instructors": [
-                    "SATISH K DUBEY",
-                    "Sanket Goel"
-                ],
-                "sched": [
-                    {
-                        "room": "NA",
-                        "days": [
-                            "M",
-                            "W",
-                            "F"
-                        ],
-                        "hours": [
-                            3
-                        ]
-                    }
-                ]
-            },
-            "P1": {
-                "instructors": [
-                    "Satish K Dubey"
-                ],
-                "sched": [
-                    {
-                        "room": "NA",
-                        "days": [
-                            "T"
-                        ],
-                        "hours": [
-                            10,
-                            11
-                        ]
-                    }
-                ]
-            },
-            "P2": {
-                "instructors": [
-                    "Sangam Srikanth"
-                ],
-                "sched": []
-            },
-            "P3": {
-                "instructors": [
-                    "Sanket Goel"
-                ],
-                "sched": []
-            },
-            "P4": {
-                "instructors": [
-                    "Sarala Bhavani Kallepalli"
-                ],
-                "sched": []
-            }
-        },
-        "compre": {
-            "date": "08/05",
-            "session": "FN"
         }
     },
     "ME F433": {
@@ -13134,6 +15335,10 @@
         "compre": {
             "date": "17/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "06/03",
+            "time": "9.00 - 10.30AM"
         }
     },
     "ME F452": {
@@ -13161,6 +15366,10 @@
         "compre": {
             "date": "17/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "06/03",
+            "time": "9.00 - 10.30AM"
         }
     },
     "ME F461": {
@@ -13189,6 +15398,10 @@
         "compre": {
             "date": "08/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "03/03",
+            "time": "3.30 - 5.00PM"
         }
     },
     "ME F482": {
@@ -13216,6 +15429,10 @@
         "compre": {
             "date": "15/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "1.30  - 3.00PM"
         }
     },
     "ME F483": {
@@ -13243,6 +15460,10 @@
         "compre": {
             "date": "04/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "02/03",
+            "time": "9.00 -10.30AM"
         }
     },
     "ME F484": {
@@ -13270,6 +15491,10 @@
         "compre": {
             "date": "05/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "02/03",
+            "time": "3.30 - 5.00PM"
         }
     },
     "MF F266": {
@@ -13288,7 +15513,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "KUNDAN KUMAR SINGH"
+                    "ARSHAD JAVED"
                 ],
                 "sched": [
                     {
@@ -13330,6 +15555,74 @@
         "compre": {
             "date": "15/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "3.30  - 5.00PM"
+        }
+    },
+    "MF F343": {
+        "name": "Casting & Welding",
+        "sections": {
+            "L1": {
+                "instructors": [
+                    "SUJITH R"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "T",
+                            "Th",
+                            "S"
+                        ],
+                        "hours": [
+                            5
+                        ]
+                    }
+                ]
+            },
+            "P1": {
+                "instructors": [
+                    "Sujith R"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            7,
+                            8
+                        ]
+                    }
+                ]
+            },
+            "T1": {
+                "instructors": [
+                    "Sujith R"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            10
+                        ]
+                    }
+                ]
+            }
+        },
+        "compre": {
+            "date": "17/05",
+            "session": "FN"
+        },
+        "midsem": {
+            "date": "06/03",
+            "time": "9.00 - 10.30AM"
         }
     },
     "MF F366": {
@@ -13359,7 +15652,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "MRINAL KETAN JAGIRDAR"
+                    "MRINAL KETAN"
                 ],
                 "sched": []
             }
@@ -13370,7 +15663,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "MRINAL KETAN JAGIRDAR"
+                    "MRINAL KETAN"
                 ],
                 "sched": []
             }
@@ -13392,15 +15685,19 @@
                             "F"
                         ],
                         "hours": [
-                            2
+                            3
                         ]
                     }
                 ]
             }
         },
         "compre": {
-            "date": "01/05",
-            "session": "AN"
+            "date": "08/05",
+            "session": "FN"
+        },
+        "midsem": {
+            "date": "03/03",
+            "time": "3.30 - 5.00PM"
         }
     },
     "MF F421": {
@@ -13428,6 +15725,10 @@
         "compre": {
             "date": "01/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "01/03",
+            "time": "11.00 -12.30PM"
         }
     },
     "MF F485": {
@@ -13455,6 +15756,10 @@
         "compre": {
             "date": "08/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "03/03",
+            "time": "3.30 - 5.00PM"
         }
     },
     "MGTS F211": {
@@ -13514,6 +15819,10 @@
         "compre": {
             "date": "12/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "04/03",
+            "time": "3.30 -5.00PM"
         }
     },
     "MST F332": {
@@ -13542,6 +15851,156 @@
         "compre": {
             "date": "01/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "01/03",
+            "time": "11.00 -12.30PM"
+        }
+    },
+    "PHA F212": {
+        "name": "Dispensing Pharmacy",
+        "sections": {
+            "L1": {
+                "instructors": [
+                    "D SRIRAM"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "M",
+                            "W"
+                        ],
+                        "hours": [
+                            3
+                        ]
+                    }
+                ]
+            },
+            "P1": {
+                "instructors": [
+                    "D Sriram"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            6,
+                            7
+                        ]
+                    }
+                ]
+            },
+            "P2": {
+                "instructors": [
+                    "Girdhari Roy"
+                ],
+                "sched": []
+            },
+            "P3": {
+                "instructors": [
+                    "Leela Sai Lokesh\nJanardhan"
+                ],
+                "sched": []
+            },
+            "P4": {
+                "instructors": [
+                    "Ridahunlang  Nongkhlaw"
+                ],
+                "sched": []
+            },
+            "T1": {
+                "instructors": [
+                    "D Sriram"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "F"
+                        ],
+                        "hours": [
+                            3
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "PHA F214": {
+        "name": "Anatomy Physio & Hygiene",
+        "sections": {
+            "L1": {
+                "instructors": [
+                    "ARTI DHAR"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "T",
+                            "Th"
+                        ],
+                        "hours": [
+                            2
+                        ]
+                    }
+                ]
+            },
+            "P1": {
+                "instructors": [
+                    "Arti Dhar"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            6,
+                            7
+                        ]
+                    }
+                ]
+            },
+            "P2": {
+                "instructors": [
+                    "Ashutosh Balasaheb\nMahale"
+                ],
+                "sched": []
+            },
+            "P3": {
+                "instructors": [
+                    "D Deepika"
+                ],
+                "sched": []
+            },
+            "P4": {
+                "instructors": [
+                    "Trupti Ghatage"
+                ],
+                "sched": []
+            },
+            "T1": {
+                "instructors": [
+                    "Arti Dhar"
+                ],
+                "sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "S"
+                        ],
+                        "hours": [
+                            2
+                        ]
+                    }
+                ]
+            }
         }
     },
     "PHA F241": {
@@ -13575,15 +16034,15 @@
                             "W"
                         ],
                         "hours": [
-                            7,
-                            8
+                            8,
+                            9
                         ]
                     }
                 ]
             },
             "P2": {
                 "instructors": [
-                    "Dasugari Varakala Saiprasad"
+                    "Dasugari Varakala\nSaiprasad"
                 ],
                 "sched": []
             },
@@ -13619,6 +16078,10 @@
         "compre": {
             "date": "15/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "3.30  - 5.00PM"
         }
     },
     "PHA F242": {
@@ -13632,8 +16095,8 @@
                     {
                         "room": "NA",
                         "days": [
-                            "T",
-                            "Th"
+                            "M",
+                            "W"
                         ],
                         "hours": [
                             2
@@ -13652,8 +16115,8 @@
                             "F"
                         ],
                         "hours": [
-                            7,
-                            8
+                            8,
+                            9
                         ]
                     }
                 ]
@@ -13701,7 +16164,7 @@
                     {
                         "room": "NA",
                         "days": [
-                            "S"
+                            "F"
                         ],
                         "hours": [
                             2
@@ -13711,8 +16174,12 @@
             }
         },
         "compre": {
-            "date": "05/05",
+            "date": "01/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "01/03",
+            "time": "9.00 -10.30AM"
         }
     },
     "PHA F266": {
@@ -13737,8 +16204,8 @@
                     {
                         "room": "NA",
                         "days": [
-                            "M",
-                            "W"
+                            "T",
+                            "Th"
                         ],
                         "hours": [
                             2
@@ -13790,7 +16257,7 @@
             },
             "P6": {
                 "instructors": [
-                    "Shreya Shashank Chauhan"
+                    "Shreya Shashank"
                 ],
                 "sched": []
             },
@@ -13802,7 +16269,7 @@
                     {
                         "room": "NA",
                         "days": [
-                            "F"
+                            "S"
                         ],
                         "hours": [
                             2
@@ -13812,8 +16279,12 @@
             }
         },
         "compre": {
-            "date": "01/05",
+            "date": "05/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "02/03",
+            "time": "1.30 - 3.00PM"
         }
     },
     "PHA F341": {
@@ -13885,6 +16356,10 @@
         "compre": {
             "date": "03/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "01/03",
+            "time": "3.30 -5.00PM"
         }
     },
     "PHA F342": {
@@ -13968,6 +16443,10 @@
         "compre": {
             "date": "12/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "9.00 -10.3AM"
         }
     },
     "PHA F343": {
@@ -14010,6 +16489,10 @@
         "compre": {
             "date": "17/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "06/03",
+            "time": "11.00 - 12.30PM"
         }
     },
     "PHA F344": {
@@ -14051,7 +16534,7 @@
             },
             "P2": {
                 "instructors": [
-                    "Bollareddy Srivarsha Reddy"
+                    "Bollareddy Srivarsha"
                 ],
                 "sched": []
             },
@@ -14093,6 +16576,10 @@
         "compre": {
             "date": "06/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "03/03",
+            "time": "9.00 - 10.30AM"
         }
     },
     "PHA F366": {
@@ -14164,6 +16651,10 @@
         "compre": {
             "date": "01/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "01/03",
+            "time": "11.00 -12.30PM"
         }
     },
     "PHA F414": {
@@ -14191,6 +16682,10 @@
         "compre": {
             "date": "15/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "1.30  - 3.00PM"
         }
     },
     "PHA F415": {
@@ -14218,6 +16713,10 @@
         "compre": {
             "date": "05/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "02/03",
+            "time": "3.30 - 5.00PM"
         }
     },
     "PHY F214": {
@@ -14306,6 +16805,10 @@
         "compre": {
             "date": "15/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "3.30  - 5.00PM"
         }
     },
     "PHY F243": {
@@ -14349,6 +16852,10 @@
         "compre": {
             "date": "05/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "02/03",
+            "time": "1.30 - 3.00PM"
         }
     },
     "PHY F266": {
@@ -14391,10 +16898,10 @@
                     {
                         "room": "NA",
                         "days": [
-                            "F"
+                            "T"
                         ],
                         "hours": [
-                            1
+                            9
                         ]
                     }
                 ]
@@ -14403,6 +16910,10 @@
         "compre": {
             "date": "08/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "03/03",
+            "time": "1.30 - 3.00PM"
         }
     },
     "PHY F315": {
@@ -14430,6 +16941,10 @@
         "compre": {
             "date": "18/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "06/03",
+            "time": "3.30 - 5.00PM"
         }
     },
     "PHY F341": {
@@ -14448,7 +16963,7 @@
                             "S"
                         ],
                         "hours": [
-                            5
+                            6
                         ]
                     }
                 ]
@@ -14471,8 +16986,12 @@
             }
         },
         "compre": {
-            "date": "17/05",
-            "session": "AN"
+            "date": "07/05",
+            "session": "FN"
+        },
+        "midsem": {
+            "date": "06/03",
+            "time": "1.30 - 3.00PM"
         }
     },
     "PHY F342": {
@@ -14486,19 +17005,19 @@
                     {
                         "room": "NA",
                         "days": [
-                            "T",
-                            "Th",
-                            "S"
+                            "M",
+                            "W",
+                            "F"
                         ],
                         "hours": [
-                            4
+                            9
                         ]
                     }
                 ]
             },
             "T1": {
                 "instructors": [
-                    "Aranya Bhuti Bhattacherjee"
+                    "Aranya Bhuti"
                 ],
                 "sched": [
                     {
@@ -14514,8 +17033,12 @@
             }
         },
         "compre": {
-            "date": "10/05",
-            "session": "AN"
+            "date": "12/05",
+            "session": "FN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "9.00 -10.3AM"
         }
     },
     "PHY F343": {
@@ -14529,12 +17052,12 @@
                     {
                         "room": "NA",
                         "days": [
-                            "M",
-                            "W",
-                            "F"
+                            "T",
+                            "Th",
+                            "S"
                         ],
                         "hours": [
-                            9
+                            4
                         ]
                     }
                 ]
@@ -14557,8 +17080,12 @@
             }
         },
         "compre": {
-            "date": "12/05",
-            "session": "FN"
+            "date": "10/05",
+            "session": "AN"
+        },
+        "midsem": {
+            "date": "04/03",
+            "time": "11.00 -12.30PM"
         }
     },
     "PHY F344": {
@@ -14566,8 +17093,8 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "KANNAN RAMASWAMY",
-                    "B Harihara  Venkataraman"
+                    "KANNAN  RAMASWAMY",
+                    "B Harihara"
                 ],
                 "sched": [
                     {
@@ -14587,7 +17114,7 @@
             "L2": {
                 "instructors": [
                     "Kannan Ramaswamy",
-                    "B Harihara  Venkataraman"
+                    "B Harihara"
                 ],
                 "sched": [
                     {
@@ -14621,7 +17148,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "SARMISTHA BANIK"
+                    "SWASTIK\nBHATTACHARYA"
                 ],
                 "sched": []
             }
@@ -14632,7 +17159,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "SARMISTHA BANIK"
+                    "SWASTIK\nBHATTACHARYA"
                 ],
                 "sched": []
             }
@@ -14643,7 +17170,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "SARMISTHA BANIK",
+                    "SWASTIK\nBHATTACHARYA",
                     "Aravinda N Raghavan"
                 ],
                 "sched": []
@@ -14655,7 +17182,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "SARMISTHA BANIK"
+                    "SWASTIK\nBHATTACHARYA"
                 ],
                 "sched": []
             }
@@ -14667,7 +17194,7 @@
             "L1": {
                 "instructors": [
                     "VSN MURTHY",
-                    "B Harihara  Venkataraman"
+                    "B Harihara"
                 ],
                 "sched": [
                     {
@@ -14687,6 +17214,10 @@
         "compre": {
             "date": "01/05",
             "session": "AN"
+        },
+        "midsem": {
+            "date": "01/03",
+            "time": "11.00 -12.30PM"
         }
     },
     "PHY F420": {
@@ -14714,6 +17245,10 @@
         "compre": {
             "date": "08/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "03/03",
+            "time": "3.30 - 5.00PM"
         }
     },
     "PHY F425": {
@@ -14741,6 +17276,10 @@
         "compre": {
             "date": "15/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "1.30  - 3.00PM"
         }
     },
     "PHY F431": {
@@ -14768,6 +17307,10 @@
         "compre": {
             "date": "12/05",
             "session": "FN"
+        },
+        "midsem": {
+            "date": "05/03",
+            "time": "9.00 -10.3AM"
         }
     }
 }
