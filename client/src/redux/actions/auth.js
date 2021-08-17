@@ -69,6 +69,7 @@ export const logout = () => async dispatch => {
     })
     .then(() => {
       localStorage.removeItem("loggedIn");
+      window.location.reload();
     })
     .catch(err => {
       // TODO: Can choose to pass error and show alert. For when alerts are implemented.
