@@ -28,7 +28,7 @@
                     {
                         "room": "NA",
                         "days": [
-                            "M"
+                            "T"
                         ],
                         "hours": [
                             1
@@ -291,7 +291,7 @@
                             "W"
                         ],
                         "hours": [
-                            4
+                            7
                         ]
                     }
                 ]
@@ -481,7 +481,8 @@
                         "room": "NA",
                         "days": [
                             "M",
-                            "W"
+                            "W",
+                            "F"
                         ],
                         "hours": [
                             3
@@ -491,7 +492,7 @@
             },
             "P1": {
                 "instructors": [
-                    "Swati Biswas"
+                    "Pranay Amruth Maroju"
                 ],
                 "sched": [
                     {
@@ -518,22 +519,6 @@
                     "Sakhare Kalyani Rajesh"
                 ],
                 "sched": []
-            },
-            "T1": {
-                "instructors": [
-                    "Swati Biswas"
-                ],
-                "sched": [
-                    {
-                        "room": "NA",
-                        "days": [
-                            "F"
-                        ],
-                        "hours": [
-                            3
-                        ]
-                    }
-                ]
             }
         },
         "compre": {
@@ -561,25 +546,12 @@
                             "S"
                         ],
                         "hours": [
-                            4
+                            2
                         ]
                     }
                 ]
-            }
-        },
-        "compre": {
-            "date": "10/05",
-            "session": "FN"
-        },
-        "midsem": {
-            "date": "04/03",
-            "time": "9.00 -10.30AM"
-        }
-    },
-    "BITS F313": {
-        "name": "Multicriterion Dec Making in Engg & Mgmt",
-        "sections": {
-            "L1": {
+            },
+            "P1": {
                 "instructors": [
                     "Nikhil P T"
                 ],
@@ -591,7 +563,8 @@
                             "F"
                         ],
                         "hours": [
-                            3
+                            8,
+                            9
                         ]
                     }
                 ]
@@ -629,30 +602,17 @@
                     {
                         "room": "NA",
                         "days": [
-                            "T",
-                            "Th",
-                            "S"
+                            "M",
+                            "W",
+                            "F"
                         ],
                         "hours": [
                             2
                         ]
                     }
                 ]
-            }
-        },
-        "compre": {
-            "date": "05/05",
-            "session": "AN"
-        },
-        "midsem": {
-            "date": "02/03",
-            "time": "3.30 - 5.00PM"
-        }
-    },
-    "BITS F319": {
-        "name": "Negotiation Skills and Techniques",
-        "sections": {
-            "L1": {
+            },
+            "P1": {
                 "instructors": [
                     "Swati"
                 ],
@@ -731,8 +691,9 @@
                     {
                         "room": "NA",
                         "days": [
-                            "M",
-                            "W"
+                            "T",
+                            "Th",
+                            "S"
                         ],
                         "hours": [
                             3
@@ -1252,7 +1213,7 @@
                             "F"
                         ],
                         "hours": [
-                            1
+                            9
                         ]
                     }
                 ]
@@ -1383,7 +1344,7 @@
                             "F"
                         ],
                         "hours": [
-                            4
+                            9
                         ]
                     }
                 ]
@@ -1439,7 +1400,9 @@
                     {
                         "room": "NA",
                         "days": [
-                            "M"
+                            "M",
+                            "W",
+                            "F"
                         ],
                         "hours": [
                             2
@@ -1544,7 +1507,9 @@
                     {
                         "room": "NA",
                         "days": [
-                            "T"
+                            "M",
+                            "W",
+                            "F"
                         ],
                         "hours": [
                             8
@@ -1573,7 +1538,9 @@
                     {
                         "room": "NA",
                         "days": [
-                            "Th"
+                            "M",
+                            "W",
+                            "F"
                         ],
                         "hours": [
                             9
@@ -1607,8 +1574,7 @@
                             "S"
                         ],
                         "hours": [
-                            10,
-                            11
+                            5
                         ]
                     }
                 ]
@@ -1689,7 +1655,9 @@
                     {
                         "room": "NA",
                         "days": [
-                            "T"
+                            "M",
+                            "W",
+                            "F"
                         ],
                         "hours": [
                             9
@@ -1755,7 +1723,7 @@
                             "S"
                         ],
                         "hours": [
-                            1
+                            5
                         ]
                     }
                 ]
@@ -1768,7 +1736,7 @@
                     {
                         "room": "NA",
                         "days": [
-                            "S"
+                            "Th"
                         ],
                         "hours": [
                             2,
@@ -1802,9 +1770,7 @@
                     {
                         "room": "NA",
                         "days": [
-                            "T",
-                            "Th",
-                            "S"
+                            "Th"
                         ],
                         "hours": [
                             7,
@@ -1837,7 +1803,7 @@
                     {
                         "room": "NA",
                         "days": [
-                            "W"
+                            "Th"
                         ],
                         "hours": [
                             9
@@ -1954,8 +1920,7 @@
                             "Th"
                         ],
                         "hours": [
-                            10,
-                            11
+                            9
                         ]
                     }
                 ]
@@ -2127,7 +2092,7 @@
                             "F"
                         ],
                         "hours": [
-                            6
+                            1
                         ]
                     }
                 ]
@@ -2203,7 +2168,7 @@
                     {
                         "room": "NA",
                         "days": [
-                            "Th"
+                            "W"
                         ],
                         "hours": [
                             1
@@ -2320,7 +2285,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "K BHARGAV KUMAR"
+                    "PRASANTA KUMAR SAHU"
                 ],
                 "sched": []
             }
@@ -2401,7 +2366,9 @@
                     {
                         "room": "NA",
                         "days": [
-                            "M"
+                            "M",
+                            "W",
+                            "F"
                         ],
                         "hours": [
                             7
@@ -2439,21 +2406,8 @@
                         ]
                     }
                 ]
-            }
-        },
-        "compre": {
-            "date": "08/05",
-            "session": "AN"
-        },
-        "midsem": {
-            "date": "03/03",
-            "time": "1.30 - 3.00PM"
-        }
-    },
-    "MATH F266": {
-        "name": "Study Project",
-        "sections": {
-            "L1": {
+            },
+            "P1": {
                 "instructors": [
                     "K Rajitha"
                 ],
@@ -2501,7 +2455,7 @@
                     }
                 ]
             },
-            "T1": {
+            "P1": {
                 "instructors": [
                     "Bahurudeen A"
                 ],
@@ -2512,7 +2466,8 @@
                             "W"
                         ],
                         "hours": [
-                            7
+                            8,
+                            9
                         ]
                     }
                 ]
@@ -2547,21 +2502,8 @@
                         ]
                     }
                 ]
-            }
-        },
-        "compre": {
-            "date": "10/05",
-            "session": "AN"
-        },
-        "midsem": {
-            "date": "04/03",
-            "time": "11.00 -12.30PM"
-        }
-    },
-    "MATH F342": {
-        "name": "Differential Geometry",
-        "sections": {
-            "L1": {
+            },
+            "P1": {
                 "instructors": [
                     "Sridhar Raju"
                 ],
@@ -2572,7 +2514,8 @@
                             "T"
                         ],
                         "hours": [
-                            6
+                            8,
+                            9
                         ]
                     }
                 ]
@@ -2598,15 +2541,17 @@
                     {
                         "room": "NA",
                         "days": [
-                            "T"
+                            "M",
+                            "W",
+                            "F"
                         ],
                         "hours": [
-                            8
+                            4
                         ]
                     }
                 ]
             },
-            "T2": {
+            "P1": {
                 "instructors": [
                     "V Vinayaka Ram"
                 ],
@@ -2617,7 +2562,8 @@
                             "M"
                         ],
                         "hours": [
-                            8
+                            8,
+                            9
                         ]
                     }
                 ]
@@ -2653,7 +2599,7 @@
                     }
                 ]
             },
-            "T1": {
+            "P1": {
                 "instructors": [
                     "Chandu Parimi"
                 ],
@@ -2664,7 +2610,8 @@
                             "Th"
                         ],
                         "hours": [
-                            7
+                            8,
+                            9
                         ]
                     }
                 ]
@@ -2747,21 +2694,8 @@
                         ]
                     }
                 ]
-            }
-        },
-        "compre": {
-            "date": "17/05",
-            "session": "FN"
-        },
-        "midsem": {
-            "date": "06/03",
-            "time": "9.00 - 10.30AM"
-        }
-    },
-    "MATH F354": {
-        "name": "Complex Analysis",
-        "sections": {
-            "L1": {
+            },
+            "P1": {
                 "instructors": [
                     "Bandhan Bandhu Majumdar"
                 ],
@@ -2769,9 +2703,7 @@
                     {
                         "room": "NA",
                         "days": [
-                            "M",
-                            "W",
-                            "F"
+                            "Th"
                         ],
                         "hours": [
                             8,
@@ -2810,21 +2742,8 @@
                         ]
                     }
                 ]
-            }
-        },
-        "compre": {
-            "date": "12/05",
-            "session": "FN"
-        },
-        "midsem": {
-            "date": "05/03",
-            "time": "9.00 -10.3AM"
-        }
-    },
-    "MATH F423": {
-        "name": "Introduction to Algebraic Topology",
-        "sections": {
-            "L1": {
+            },
+            "P1": {
                 "instructors": [
                     "Prasanta Kumar Sahu"
                 ],
@@ -2919,21 +2838,8 @@
                         ]
                     }
                 ]
-            }
-        },
-        "compre": {
-            "date": "01/05",
-            "session": "AN"
-        },
-        "midsem": {
-            "date": "01/03",
-            "time": "11.00 -12.30PM"
-        }
-    },
-    "MATH F471": {
-        "name": "Nonlinear Optimization",
-        "sections": {
-            "L1": {
+            },
+            "P1": {
                 "instructors": [
                     "Bahurudeen A"
                 ],
@@ -2941,9 +2847,7 @@
                     {
                         "room": "NA",
                         "days": [
-                            "M",
-                            "W",
-                            "F"
+                            "T"
                         ],
                         "hours": [
                             8,
@@ -3187,12 +3091,6 @@
                         ]
                     }
                 ]
-            },
-            "T6": {
-                "instructors": [
-                    "N Suresh Kumar Reddy"
-                ],
-                "sched": []
             }
         },
         "compre": {
@@ -3759,7 +3657,9 @@
                     {
                         "room": "NA",
                         "days": [
-                            "T"
+                            "M",
+                            "W",
+                            "F"
                         ],
                         "hours": [
                             3
@@ -3946,13 +3846,7 @@
                     }
                 ]
             },
-            "T4": {
-                "instructors": [
-                    "YV Daseswara Rao"
-                ],
-                "sched": []
-            },
-            "T3": {
+            "P1": {
                 "instructors": [
                     "J Subbalakshmi"
                 ],
@@ -3970,7 +3864,7 @@
                     }
                 ]
             },
-            "T6": {
+            "P2": {
                 "instructors": [
                     "Amit Nag"
                 ],
@@ -4106,7 +4000,9 @@
                     {
                         "room": "NA",
                         "days": [
-                            "T"
+                            "T",
+                            "Th",
+                            "S"
                         ],
                         "hours": [
                             5
@@ -4562,7 +4458,9 @@
                     {
                         "room": "NA",
                         "days": [
-                            "F"
+                            "T",
+                            "Th",
+                            "S"
                         ],
                         "hours": [
                             5
@@ -4583,7 +4481,7 @@
                             "Th"
                         ],
                         "hours": [
-                            1
+                            5
                         ]
                     },
                     {
@@ -4724,7 +4622,7 @@
                     {
                         "room": "NA",
                         "days": [
-                            "Th"
+                            "T"
                         ],
                         "hours": [
                             2,
@@ -4783,17 +4681,7 @@
                 "instructors": [
                     "P Joshna"
                 ],
-                "sched": [
-                    {
-                        "room": "NA",
-                        "days": [
-                            "Th"
-                        ],
-                        "hours": [
-                            1
-                        ]
-                    }
-                ]
+                "sched": []
             },
             "P19": {
                 "instructors": [
@@ -4854,12 +4742,10 @@
                     {
                         "room": "NA",
                         "days": [
-                            "T",
-                            "Th",
                             "S"
                         ],
                         "hours": [
-                            5
+                            1
                         ]
                     }
                 ]
@@ -4872,7 +4758,7 @@
                     {
                         "room": "NA",
                         "days": [
-                            "T"
+                            "M"
                         ],
                         "hours": [
                             1
@@ -16829,8 +16715,9 @@
                     {
                         "room": "NA",
                         "days": [
-                            "T",
-                            "Th"
+                            "M",
+                            "W",
+                            "F"
                         ],
                         "hours": [
                             8
@@ -17262,7 +17149,7 @@
                     }
                 ]
             },
-            "T2": {
+            "P1": {
                 "instructors": [
                     "Arti Dhar"
                 ],
@@ -17642,8 +17529,7 @@
                             "S"
                         ],
                         "hours": [
-                            7,
-                            8
+                            4
                         ]
                     }
                 ]
@@ -17714,6 +17600,8 @@
                     {
                         "room": "NA",
                         "days": [
+                            "M",
+                            "W",
                             "F"
                         ],
                         "hours": [
@@ -17786,22 +17674,6 @@
                     "Leela Sai Lokesh Janardhan"
                 ],
                 "sched": []
-            },
-            "T1": {
-                "instructors": [
-                    "A Sajeli Begum"
-                ],
-                "sched": [
-                    {
-                        "room": "NA",
-                        "days": [
-                            "S"
-                        ],
-                        "hours": [
-                            2
-                        ]
-                    }
-                ]
             }
         },
         "compre": {
@@ -17824,11 +17696,12 @@
                     {
                         "room": "NA",
                         "days": [
-                            "M",
-                            "W"
+                            "T",
+                            "Th",
+                            "S"
                         ],
                         "hours": [
-                            4
+                            3
                         ]
                     }
                 ]
@@ -17848,7 +17721,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "P YOGEESWARI"
+                    "R PUNNA RAO"
                 ],
                 "sched": [
                     {
@@ -17866,13 +17739,14 @@
             },
             "P1": {
                 "instructors": [
-                    "P Yogeeswari"
+                    "R Punna Rao"
                 ],
                 "sched": [
                     {
                         "room": "NA",
                         "days": [
-                            "T"
+                            "T",
+                            "Th"
                         ],
                         "hours": [
                             7,
@@ -17926,7 +17800,7 @@
                     {
                         "room": "NA",
                         "days": [
-                            "S"
+                            "M"
                         ],
                         "hours": [
                             7,
@@ -18132,27 +18006,8 @@
                         "room": "NA",
                         "days": [
                             "M",
-                            "W"
-                        ],
-                        "hours": [
-                            7,
-                            8
-                        ]
-                    }
-                ]
-            },
-            "L2": {
-                "instructors": [
-                    "Subash N. Karbelkar",
-                    "K V Shiv Chaitanya",
-                    "Meenakshi V"
-                ],
-                "sched": [
-                    {
-                        "room": "NA",
-                        "days": [
-                            "T",
-                            "Th"
+                            "W",
+                            "F"
                         ],
                         "hours": [
                             2
@@ -18168,9 +18023,9 @@
                     {
                         "room": "NA",
                         "days": [
-                            "T",
-                            "Th",
-                            "S"
+                            "M",
+                            "W",
+                            "F"
                         ],
                         "hours": [
                             2
@@ -18193,21 +18048,8 @@
                         ]
                     }
                 ]
-            }
-        },
-        "compre": {
-            "date": "15/05",
-            "session": "AN"
-        },
-        "midsem": {
-            "date": "05/03",
-            "time": "3.30  - 5.00PM"
-        }
-    },
-    "PHY F243": {
-        "name": "Mathematical Methods of Physics",
-        "sections": {
-            "L1": {
+            },
+            "T2": {
                 "instructors": [
                     "Sarmistha Banik"
                 ],
@@ -18234,12 +18076,12 @@
                             "S"
                         ],
                         "hours": [
-                            2
+                            1
                         ]
                     }
                 ]
             },
-            "T1": {
+            "T4": {
                 "instructors": [
                     "Subash N. Karbelkar"
                 ],
@@ -18257,7 +18099,7 @@
             },
             "T5": {
                 "instructors": [
-                    "SOURI BANERJEE"
+                    "Prasant Samantray"
                 ],
                 "sched": [
                     {
@@ -18266,7 +18108,7 @@
                             "S"
                         ],
                         "hours": [
-                            3
+                            1
                         ]
                     }
                 ]
@@ -18461,7 +18303,7 @@
                             "T"
                         ],
                         "hours": [
-                            8
+                            9
                         ]
                     }
                 ]
@@ -18481,8 +18323,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "KANNAN  RAMASWAMY",
-                    "B Harihara"
+                    "PK THIRUVIKRAMAN"
                 ],
                 "sched": [
                     {
@@ -18498,10 +18339,9 @@
                     }
                 ]
             },
-            "L2": {
+            "T1": {
                 "instructors": [
-                    "Kannan Ramaswamy",
-                    "B Harihara"
+                    "PK Thiruvikraman"
                 ],
                 "sched": [
                     {
