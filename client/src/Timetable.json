@@ -3583,15 +3583,14 @@
     },
 	"CHE F491": {
 		"name": "Special Projects",
-		"sections": [
-			{
-				"L1": {
-					"instructors": [
-						"Jaideep"
-					]
-				}
+		"sections": 
+		{
+			"L1": {
+				"instructors": [
+					"Jaideep"
+				]
 			}
-		],
+		}
 	},
     "CHEM F211": {
         "name": "Physical Chemistry I",
