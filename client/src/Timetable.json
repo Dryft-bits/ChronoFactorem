@@ -844,7 +844,9 @@
             "L1": {
                 "instructors": [
                     "DURBA ROY",
-                    "PTV Praveen Kumar"
+                    "PTV Praveen Kumar",
+					"Satyapaul Singh",
+					"Amarthaluri"
                 ],
                 "sched": [
                     {
@@ -1077,7 +1079,8 @@
                     "Chandu Parimi",
                     "Debashree B",
                     "Govu Radha",
-                    "Madhuparna  Chakraborty"
+                    "Madhuparna  Chakraborty",
+					"Anand N"
                 ],
                 "sched": [
                     {
@@ -1151,18 +1154,18 @@
                             "F"
                         ],
                         "hours": [
-                            2
+                            9
                         ]
                     }
                 ]
             }
         },
         "compre": {
-            "date": "27/12",
+            "date": "22/12",
             "session": "AN"
         },
         "midsem": {
-            "date": "23/10/2021",
+            "date": "22/10/2021",
             "time": "9.00-10.30AM"
         }
     },
@@ -1495,6 +1498,37 @@
             "time": "3.30-5.00PM"
         }
     },
+	"BITS F441": {
+		"name": "Robotics",
+		"sections": {
+			"L1": {
+				"instructors": [
+					"Y VENKAT DASESWARA RAO"
+				],
+				"sched": [
+                    {
+                        "room": "NA",
+                        "days": [
+                            "T",
+                            "Th",
+                            "S"
+                        ],
+                        "hours": [
+                            5
+                        ]
+                    }
+                ]
+			}
+		},
+		"compre": {
+            "date": "15/12",
+            "session": "AN"
+        },
+        "midsem": {
+            "date": "19/10/2021",
+            "time": "1.30-3.00PM"
+        }
+	},
     "BITS F452": {
         "name": "Blockchain Technology",
         "sections": {
@@ -1624,6 +1658,17 @@
     },
     "BITS G540": {
         "name": "Research Practice",
+        "sections": {
+            "L1": {
+                "instructors": [
+                    "V V KRISHNA VENUGANTI"
+                ],
+                "sched": []
+            }
+        }
+    },
+	"BITS G562T/G564T": {
+        "name": "Dissertation",
         "sections": {
             "L1": {
                 "instructors": [
@@ -2183,7 +2228,7 @@
         },
         "midsem": {
             "date": "22/10/2021",
-            "time": "1.30-3.00PM"
+            "time": "3.30-5.00PM"
         }
     },
     "CE F320": {
@@ -2530,54 +2575,6 @@
             "time": "3.30-5.00PM"
         }
     },
-    "CE G548": {
-        "name": "Pavement Mgmt Systems",
-        "sections": {
-            "L1": {
-                "instructors": [
-                    "V VINAYAKA RAM"
-                ],
-                "sched": [
-                    {
-                        "room": "NA",
-                        "days": [
-                            "M",
-                            "W",
-                            "F"
-                        ],
-                        "hours": [
-                            4
-                        ]
-                    }
-                ]
-            },
-            "P1": {
-                "instructors": [
-                    "V Vinayaka Ram"
-                ],
-                "sched": [
-                    {
-                        "room": "NA",
-                        "days": [
-                            "M"
-                        ],
-                        "hours": [
-                            8,
-                            9
-                        ]
-                    }
-                ]
-            }
-        },
-        "compre": {
-            "date": "23/12",
-            "session": "FN"
-        },
-        "midsem": {
-            "date": "22/10/2021",
-            "time": "1.30-3.00PM"
-        }
-    },
     "CE G553": {
         "name": "Theory of Plates and Shells",
         "sections": {
@@ -2770,6 +2767,55 @@
             "time": "1.30-3.00PM"
         }
     },
+	"CE G574": {
+		"name": "Pavement Maintenance",
+		"sections": {
+			"L1": {
+				"instructors": [
+					"V VINAYAKA RAM"
+				],
+				"sched": [
+					{
+						"room": "NA",
+						"days": [
+							"M",
+							"W",
+							"F"
+						],
+						"hours": [
+							4
+						]
+					}
+					
+				]
+			},
+			"P1": {
+				"instructors": [
+					"V VINAYAKA RAM"
+				],
+				"sched": [
+					{	
+						"room": "NA",
+						"days": [
+							"M",
+						],
+						"hours": [
+							8,
+							9
+						]
+					}
+				]
+			}
+		}
+		"compre": {
+            "date": "23/12",
+            "session": "FN"
+        },
+        "midsem": {
+            "date": "22/10/2021",
+            "time": "1.30-3.00PM"
+        }
+	},
     "CE G612": {
         "name": "Advanced Steel Structure",
         "sections": {
@@ -3349,6 +3395,56 @@
             "time": "11.00 -12.30PM"
         }
     },
+	"CHE F343": {
+		"name": "PROCESS DESIGN PRINCIPLES II",
+		"sections": {
+			"L1": {
+				"instructors": [
+					"Amarthaluri",
+					"Satyapaul Singh"
+				],
+				"sched": [
+					{
+						"room": "NA",
+						"days": [
+							"T",
+							"Th",
+							"S"
+						],
+						"hours": [
+							3
+						]
+					}
+				]
+				
+			},
+			"T1": {
+				"instructors": [
+					"Amarthaluri",
+					"Satyapaul Singh"
+				],
+				"sched": [
+					{
+						"room": "NA",
+						"days": [
+							"M"
+						],
+						"hours": [
+							1
+						]
+					}
+				]
+			}
+		},
+		"compre": {
+            "date": "13/12",
+            "session": "FN"
+        },
+        "midsem": {
+            "date": "2021-10-18",
+            "time": "3.30 -5.00PM"
+        }
+	},
     "CHE F366": {
         "name": "Laboratory Project",
         "sections": {
@@ -3487,6 +3583,18 @@
             "time": "9.00-10.30AM"
         }
     },
+	"CHE F491": {
+		"name": "Special Projects",
+		"sections": [
+			{
+				"L1": {
+					"instructors": [
+						"Jaideep"
+					]
+				}
+			}
+		],
+	},
     "CHEM F211": {
         "name": "Physical Chemistry I",
         "sections": {
@@ -3696,7 +3804,7 @@
         },
         "midsem": {
             "date": "22/10/2021",
-            "time": "1.30-3.00PM"
+            "time": "3.30-5.00PM"
         }
     },
     "CHEM F266": {
@@ -4077,6 +4185,135 @@
             }
         }
     },
+	"CHEM G552": {
+		"name": "ADVANCED INORGANIC CHEMISTRY",
+		"sections": {
+			"L1": {
+				"instructors": [
+					"R. Krishnan [IC]",
+					"Himanshu Aggarwal"					
+				],
+				"sched": [
+					{
+						"room": "NA",
+						"days": [
+							"M",
+							"W",
+							"F"
+						],
+						"hours": [
+							5
+						]
+					}
+				]
+			}
+		},
+		"compre": {
+            "date": "11/12",
+            "session": "FN"
+        },
+        "midsem": {
+            "date": "18/10/2021",
+            "time": "11.00-12.30PM"
+        }
+	},
+	"CHEM G553": {
+		"name": "ADVANCED PHYSICAL CHEMISTRY",
+		"sections": {
+			"L1": {
+				"instructors": [
+					"Jayanty Subbalakshmi [IC]",
+					"Amit Nag"					
+				],
+				"sched": [
+					{	
+						"room": "NA",
+						"days": [
+							"M",
+							"W",
+							"F"
+						],
+						"hours": [
+							7
+						]
+					}
+				]
+			}
+		},
+		"compre": {
+            "date": "13/12",
+            "session": "FN"
+        },
+        "midsem": {
+            "date": "19/10/2021",
+            "time": "11.00-12.30PM"
+        }
+	},
+	"CHEM G554": {
+		"name": "PHYSICAL METHODS IN CHEMISTRY",
+		"sections": {
+			"L1": {
+				"instructors": [
+					"Nilanjan Dey [IC]",
+					"Anupam Bhattacharya",
+					"Arijit Mukherjee"
+				],
+				"sched": [
+					{	
+						"room": "NA",
+						"days": [
+							"M",
+							"W",
+							"F"
+						],
+						"hours": [
+							3
+						]
+					}
+				]
+			}
+		},
+		"compre": {
+            "date": "15/12",
+            "session": "FN"
+        },
+        "midsem": {
+            "date": "20/10/2021",
+            "time": "11.00-12.30PM"
+        }
+	},
+	"CHEM G561": {
+		"name": "Heterocyclic Chemistry",
+		"sections": {
+			"L1": {
+				"instructors": [
+					"D Ramaiah [IC]",
+					"Tanmay Chatterjee"
+				],
+				"sched": [
+					{
+						"room": "NA",
+						"days": [
+							"M",
+							"W",
+							"F"
+						],
+						"hours": [
+							9
+						]
+					}
+				]
+			}
+		},
+		"compre": {
+            "date": "17/12",
+            "session": "FN"
+        },
+        "midsem": {
+            "date": "21/10/2021",
+            "time": "11.00-12.30PM"
+        }
+	},
     "CS F211": {
         "name": "Data Structures & Algo",
         "sections": {
@@ -4933,7 +5170,7 @@
                     {
                         "room": "NA",
                         "days": [
-                            "W"
+                            "M"
                         ],
                         "hours": [
                             1
@@ -5289,8 +5526,8 @@
             "session": "FN"
         },
         "midsem": {
-            "date": "21/10/2021",
-            "time": "1.30-3.00PM"
+            "date": "17/10/2021",
+            "time": "9.30-11.00AM"
         }
     },
     "CS F342": {
@@ -5660,7 +5897,7 @@
         },
         "midsem": {
             "date": "22/10/2021",
-            "time": "1.30-3.00PM"
+            "time": "3.30-5.00PM"
         }
     },
     "CS F366": {
@@ -7705,7 +7942,7 @@
         },
         "midsem": {
             "date": "22/10/2021",
-            "time": "1.30-3.00PM"
+            "time": "3.30-5.00PM"
         }
     },
     "ECE F366": {
@@ -11675,7 +11912,7 @@
                             "S"
                         ],
                         "hours": [
-                            4
+                            3
                         ]
                     }
                 ]
@@ -13139,7 +13376,7 @@
         },
         "midsem": {
             "date": "22/10/2021",
-            "time": "1.30-3.00PM"
+            "time": "3.30-5.00PM"
         }
     },
     "INSTR F312": {
@@ -13658,7 +13895,7 @@
             },
             "T12": {
                 "instructors": [
-                    "Shaik Azharuddin"
+                    "Lokesh Kumar Duchaniya"
                 ],
                 "sched": [
                     {
@@ -13853,8 +14090,8 @@
             }
         },
         "compre": {
-            "date": "23/12",
-            "session": "AN"
+            "date": "26/12",
+            "session": "FN"
         },
         "midsem": {
             "date": "16/10/2021",
@@ -15022,7 +15259,9 @@
             },
             "P1": {
                 "instructors": [
-                    "Sunkara Prudhvi Raj"
+                    "Sunkara Prudhvi Raj",
+					"P Anakamma Rao",
+					"M Srinivas"
                 ],
                 "sched": [
                     {
@@ -15039,7 +15278,9 @@
             },
             "P2": {
                 "instructors": [
-                    "B Sravya"
+                    "B Sravya",
+					"V Venkateswara Rao",
+					"M Srinivas"
                 ],
                 "sched": [
                     {
@@ -15056,7 +15297,9 @@
             },
             "P3": {
                 "instructors": [
-                    "Shaik Gouse Ahammad"
+                    "Shaik Gouse Ahammad",
+					"Deepak Nabapure",
+					"J Murali Mohan"
                 ],
                 "sched": [
                     {
@@ -15091,7 +15334,9 @@
             },
             "P4": {
                 "instructors": [
-                    "R Naresh"
+                    "R Naresh",
+					"Gi Venkata Naga Trivedi",
+					"Kalyani Panigrahi"
                 ],
                 "sched": [
                     {
@@ -15329,7 +15574,7 @@
         },
         "midsem": {
             "date": "22/10/2021",
-            "time": "1.30-3.00PM"
+            "time": "3.30-5.00PM"
         }
     },
     "ME F313": {
@@ -15500,7 +15745,7 @@
         },
         "midsem": {
             "date": "22/10/2021",
-            "time": "1.30-3.00PM"
+            "time": "3.30-5.00PM"
         }
     },
     "ME F315": {
@@ -16965,15 +17210,15 @@
                 ],
                 "sched": [
                     {
-                        "room": "NA",
-                        "days": [
-                            "T",
-                            "Th"
-                        ],
-                        "hours": [
-                            5
-                        ]
-                    }
+						"room": "NA",
+						"days": [
+							"M",
+							"W"
+						],
+						"hours": [
+							8
+						]
+					}
                 ]
             },
             "P1": {
@@ -16984,11 +17229,11 @@
                     {
                         "room": "NA",
                         "days": [
-                            "M"
+                            "T"
                         ],
                         "hours": [
-                            7,
-                            8
+                            2,
+                            3
                         ]
                     }
                 ]
@@ -17001,11 +17246,11 @@
                     {
                         "room": "NA",
                         "days": [
-                            "W"
+                            "Th"
                         ],
                         "hours": [
-                            7,
-                            8
+                            2,
+                            3
                         ]
                     }
                 ]
@@ -17036,21 +17281,21 @@
                     {
                         "room": "NA",
                         "days": [
-                            "S"
+                            "F"
                         ],
                         "hours": [
-                            5
+                            8
                         ]
                     }
                 ]
             }
         },
         "compre": {
-            "date": "16/12",
-            "session": "FN"
+            "date": "18/12",
+            "session": "AN"
         },
         "midsem": {
-            "date": "2021-10-20",
+            "date": "2021-10-21",
             "time": "9.00 - 10.30AM"
         }
     },
@@ -17454,7 +17699,7 @@
         },
         "midsem": {
             "date": "2021-10-22",
-            "time": "1.30 - 3.00PM"
+            "time": "3.30 - 5.00PM"
         }
     },
     "PHA F314": {
@@ -18556,11 +18801,10 @@
                         "room": "NA",
                         "days": [
                             "M",
-                            "W",
-                            "F"
                         ],
                         "hours": [
-                            4
+                            6,
+							7
                         ]
                     }
                 ]
