@@ -9,7 +9,12 @@ class PreviewTT extends Component {
   constructor(props) {
     super(props)
     this.populateTimetable.bind(this)
+    this.infoRedirect.bind(this)
     this.gridArray = []
+  }
+  infoRedirect(courseCode){
+    let courseName = courseCode.toString().replace(' ','_')
+    window.open("https://reviews.bphc.xyz/courses/"+courseName)
   }
   populateTimetable() {
     var gridList = [
@@ -72,8 +77,16 @@ class PreviewTT extends Component {
             <div
               className="gridItem"
               style={divStyle}
-              onClick={() =>
+              onMouseDown={() =>{
+                if (!e) var e = window.event;
+                if (e.button == 1){
+                  e.preventDefault()
+                  this.infoRedirect(section.courseCode)
+                }
+                else if(e.button==0){
                 this.props.onRemove(section.section, section.courseCode)
+                }
+              }
               }
             >
               <span className="gridItemText">Click to remove section</span>
