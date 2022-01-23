@@ -1622,8 +1622,8 @@
             },
             "T1": {
                 "instructors": [
-                    "Chandu Parimi",
-                    "Sheik Mohammed Zoheb Na"
+                    "Krishnendu Sivadas",
+                    "Sheik Mohammed Zoheb Navaz"
                 ],
                 "sched": [
                     {
@@ -1957,7 +1957,7 @@
             },
             "P1": {
                 "instructors": [
-                    "Sandra Maria Cherian"
+                    "M Naveen Naidu"
                 ],
                 "sched": [
                     {
@@ -1980,11 +1980,11 @@
                     {
                         "room": "D108",
                         "days": [
-                            "T"
+                            "Th"
                         ],
                         "hours": [
-                            8,
-                            9
+                            7,
+                            8
                         ]
                     }
                 ]
@@ -2358,54 +2358,6 @@
             "time": "11.00am-12.30pm"
         }
     },
-    "CE G513": {
-        "name": "Advanced Compu Tech",
-        "sections": {
-            "L1": {
-                "instructors": [
-                    "RAGHU PISKA"
-                ],
-                "sched": [
-                    {
-                        "room": "F203",
-                        "days": [
-                            "T",
-                            "Th",
-                            "S"
-                        ],
-                        "hours": [
-                            4
-                        ]
-                    }
-                ]
-            },
-            "P1": {
-                "instructors": [
-                    "Raghu Piska"
-                ],
-                "sched": [
-                    {
-                        "room": "LAB",
-                        "days": [
-                            "W"
-                        ],
-                        "hours": [
-                            8,
-                            9
-                        ]
-                    }
-                ]
-            }
-        },
-        "compre": {
-            "date": "07/05",
-            "session": "FN"
-        },
-        "midsem": {
-            "date": "10/03",
-            "time": "1.30pm-3.00pm"
-        }
-    },
     "CE G514": {
         "name": "Structural Optimization",
         "sections": {
@@ -2484,54 +2436,6 @@
         "midsem": {
             "date": "10/03",
             "time": "1.30pm-3.00pm"
-        }
-    },
-    "CE G562": {
-        "name": "Advanced Concrete Technology",
-        "sections": {
-            "L1": {
-                "instructors": [
-                    "ARKAMITRA KAR"
-                ],
-                "sched": [
-                    {
-                        "room": "F202",
-                        "days": [
-                            "M",
-                            "W",
-                            "F"
-                        ],
-                        "hours": [
-                            5
-                        ]
-                    }
-                ]
-            },
-            "P1": {
-                "instructors": [
-                    "Arkamitra Kar"
-                ],
-                "sched": [
-                    {
-                        "room": "LAB",
-                        "days": [
-                            "F"
-                        ],
-                        "hours": [
-                            8,
-                            9
-                        ]
-                    }
-                ]
-            }
-        },
-        "compre": {
-            "date": "14/05",
-            "session": "FN"
-        },
-        "midsem": {
-            "date": "14/03",
-            "time": "3.30pm-5.00pm"
         }
     },
     "CE G566": {
@@ -2630,60 +2534,13 @@
             "time": "1.30pm-3.00pm"
         }
     },
-    "CE G573": {
-        "name": "Road Safety and Accident Analysis",
-        "sections": {
-            "L1": {
-                "instructors": [
-                    "BANDHAN BANDHU MAJU"
-                ],
-                "sched": [
-                    {
-                        "room": "F203",
-                        "days": [
-                            "M",
-                            "W",
-                            "F"
-                        ],
-                        "hours": [
-                            5
-                        ]
-                    }
-                ]
-            },
-            "P1": {
-                "instructors": [
-                    "Bandhan Bandhu Majumdar"
-                ],
-                "sched": [
-                    {
-                        "room": "LAB",
-                        "days": [
-                            "T"
-                        ],
-                        "hours": [
-                            8,
-                            9
-                        ]
-                    }
-                ]
-            }
-        },
-        "compre": {
-            "date": "17/05",
-            "session": "FN"
-        },
-        "midsem": {
-            "date": "15/03",
-            "time": "9.00am-10.30am"
-        }
-    },
     "CE G575": {
         "name": "Freight Transportation",
         "sections": {
             "L1": {
                 "instructors": [
-                    "PRASANTA KUMAR SAHU"
+                    "PRASANTA KUMAR SAHU",
+                    "Bandhan Majumdar"
                 ],
                 "sched": [
                     {
@@ -3774,19 +3631,19 @@
                             "F"
                         ],
                         "hours": [
-                            3
+                            10
                         ]
                     }
                 ]
             }
         },
         "compre": {
-            "date": "06/05",
+            "date": "07/05",
             "session": "AN"
         },
         "midsem": {
             "date": "10/03",
-            "time": "11.00am-12.30pm"
+            "time": "3.30pm-5.00pm"
         }
     },
     "CHEM F329": {
@@ -9823,6 +9680,23 @@
                         ]
                     }
                 ]
+            },
+            "L4": {
+                "instructors": [
+                    "Alivelu Manga Parmi"
+                ],
+                "sched": [
+                    {
+                        "room": "LAB",
+                        "days": [
+                            "W"
+                        ],
+                        "hours": [
+                            7,
+                            8
+                        ]
+                    }
+                ]
             }
         }
     },
@@ -10750,19 +10624,19 @@
                             "F"
                         ],
                         "hours": [
-                            3
+                            10
                         ]
                     }
                 ]
             }
         },
         "compre": {
-            "date": "06/05",
+            "date": "07/05",
             "session": "AN"
         },
         "midsem": {
             "date": "10/03",
-            "time": "11.00am-12.30pm"
+            "time": "03.30pm-05.00pm"
         }
     },
     "EEE F478": {
@@ -14677,7 +14551,7 @@
                     {
                         "room": "LAB",
                         "days": [
-                            "W"
+                            "Th"
                         ],
                         "hours": [
                             7,
@@ -16192,9 +16066,9 @@
                             "W"
                         ],
                         "hours": [
-                            7,
                             8,
-                            9
+                            9,
+                            10
                         ]
                     }
                 ]
@@ -17564,37 +17438,6 @@
             "time": "11.00am-12.30pm"
         }
     },
-    "PHA F415": {
-        "name": "Pathophysiology",
-        "sections": {
-            "L1": {
-                "instructors": [
-                    "SRINIVAS PRASAD K"
-                ],
-                "sched": [
-                    {
-                        "room": "G204",
-                        "days": [
-                            "M",
-                            "W",
-                            "F"
-                        ],
-                        "hours": [
-                            2
-                        ]
-                    }
-                ]
-            }
-        },
-        "compre": {
-            "date": "11/05",
-            "session": "FN"
-        },
-        "midsem": {
-            "date": "12/03",
-            "time": "9.00am-10.30am"
-        }
-    },
     "PHA F417": {
         "name": "Pharmacoeconomics",
         "sections": {
@@ -17931,10 +17774,10 @@
                     {
                         "room": "G201",
                         "days": [
-                            "F"
+                            "Th"
                         ],
                         "hours": [
-                            7
+                            9
                         ]
                     }
                 ]
@@ -18389,37 +18232,6 @@
             "time": "11.00am-12.30pm"
         }
     },
-    "PHY F425": {
-        "name": "Adv Math Methods of Phy",
-        "sections": {
-            "L1": {
-                "instructors": [
-                    "SUBASH N. KARBELKAR"
-                ],
-                "sched": [
-                    {
-                        "room": "G202",
-                        "days": [
-                            "M",
-                            "W",
-                            "F"
-                        ],
-                        "hours": [
-                            7
-                        ]
-                    }
-                ]
-            }
-        },
-        "compre": {
-            "date": "10/05",
-            "session": "AN"
-        },
-        "midsem": {
-            "date": "11/03",
-            "time": "3.30pm-5.00pm"
-        }
-    },
     "PHY F431": {
         "name": "Geometrical Methods in",
         "sections": {
@@ -18449,6 +18261,127 @@
         "midsem": {
             "date": "15/03",
             "time": "9.00am-10.30am"
+        }
+    },
+    "CHEM G531": {
+        "name": "Recent Advances in Chem",
+        "sections": {
+            "L1": {
+                "instructors": [
+                    "JAYANTY SUBBALAKSHMI "
+                ],
+                "sched": [
+                    {
+                        "days": [
+                            "M",
+                            "w",
+                            "F"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            }
+        },
+        "compre": {
+            "date": "09/05",
+            "session": "FN"
+        },
+        "midsem": {
+            "date": "11/03",
+            "time": "9.00am-10.30am"
+        }
+    },
+    "CHEM G551": {
+        "name": "Adv Organic chemistry",
+        "sections": {
+            "L1": {
+                "instructors": [
+                    "D. RAMAIAH"
+                ],
+                "sched": [
+                    {
+                        "days": [
+                            "M",
+                            "w",
+                            "F"
+                        ],
+                        "hours": [
+                            3
+                        ]
+                    }
+                ]
+            }
+        },
+        "compre": {
+            "date": "06/05",
+            "session": "AN"
+        },
+        "midsem": {
+            "date": "10/03",
+            "time": "11.00am-12.30pm"
+        }
+    },
+    "CHEM G552": {
+        "name": "Adv Inorganic chemistry",
+        "sections": {
+            "L1": {
+                "instructors": [
+                    "HIMANSHU AGGARWAL",
+                    "Sounak Roy"
+                ],
+                "sched": [
+                    {
+                        "days": [
+                            "T",
+                            "Th",
+                            "S"
+                        ],
+                        "hours": [
+                            5
+                        ]
+                    }
+                ]
+            }
+        },
+        "compre": {
+            "date": "23/05",
+            "session": "FN"
+        },
+        "midsem": {
+            "date": "16/03",
+            "time": "3.30pm-5.00pm"
+        }
+    },
+    "CHEM G561": {
+        "name": "Heterocyclic Chemistry",
+        "sections": {
+            "L1": {
+                "instructors": [
+                    "TANMANY CHATTERJEE"
+                ],
+                "sched": [
+                    {
+                        "days": [
+                            "M",
+                            "W",
+                            "F"
+                        ],
+                        "hours": [
+                            4
+                        ]
+                    }
+                ]
+            }
+        },
+        "compre": {
+            "date": "20/05",
+            "session": "FN"
+        },
+        "midsem": {
+            "date": "16/03",
+            "time": "1.30pm-3.00pm"
         }
     }
 }
