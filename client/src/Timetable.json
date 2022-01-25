@@ -504,7 +504,7 @@
             "session": "FN"
         },
         "midsem": {
-            "date": "12/03",
+            "date": "11/03",
             "time": "1.30pm-3.00pm"
         }
     },
@@ -533,8 +533,8 @@
             "P1": {
                 "instructors": [
                     "I Shivkumar",
-                    "Nikhil P T",
-                    "Vartika Singh"
+                    "Vartika Singh",
+                    "Shibashish Mund"
                 ],
                 "sched": [
                     {
@@ -584,7 +584,6 @@
                 "instructors": [
                     "Dhansri  Krishnamurthy",
                     "Mohammad  Mehaboob Subh",
-                    "Murali Krishna Ramgopal",
                     "Namita Pandey"
                 ],
                 "sched": [
@@ -635,9 +634,8 @@
             "P1": {
                 "instructors": [
                     "Nikhil P T",
-                    "Gargi Prasad S",
-                    "Mude Hemanjali",
-                    "Poosala Ramya Sri"
+                    "Poosala Ramya Sri",
+                    "Jayasree"
                 ],
                 "sched": [
                     {
@@ -1124,7 +1122,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "TO BE ANNOUNCED"
+                    "S P REGALLA (PS DEAN)"
                 ],
                 "sched": []
             }
@@ -1135,7 +1133,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "TO BE ANNOUNCED"
+                    "S P REGALLA (PS DEAN)"
                 ],
                 "sched": []
             }
@@ -1502,7 +1500,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "TO BE ANNOUNCED"
+                    "S P REGALLA (PS DEAN)"
                 ],
                 "sched": []
             }
@@ -1774,7 +1772,7 @@
                     {
                         "room": "LAB",
                         "days": [
-                            "Th"
+                            "M"
                         ],
                         "hours": [
                             7,
@@ -1997,11 +1995,11 @@
                     {
                         "room": "D108",
                         "days": [
-                            "F"
+                            "Th"
                         ],
                         "hours": [
-                            4,
-                            5
+                            7,
+                            8
                         ]
                     }
                 ]
@@ -3469,8 +3467,8 @@
             }
         },
         "compre": {
-            "date": "06/05",
-            "session": "FN"
+            "date": "11/05",
+            "session": "AN"
         },
         "midsem": {
             "date": "10/03",
@@ -3480,11 +3478,10 @@
     "CHEM F242": {
         "name": "Chemical Exper I",
         "sections": {
-            "L1": {
+            "P": {
                 "instructors": [
                     "ARIJIT MUKHERJEE",
                     "Anupam Bhattacharya",
-                    "B Aniket Diliprao",
                     "D Ramaiah",
                     "Sruthi Peesapati"
                 ],
@@ -3585,18 +3582,18 @@
                     {
                         "room": "G102",
                         "days": [
-                            "M"
+                            "W"
                         ],
                         "hours": [
-                            8
+                            5
                         ]
                     }
                 ]
             }
         },
         "compre": {
-            "date": "11/05",
-            "session": "AN"
+            "date": "06/05",
+            "session": "FN"
         },
         "midsem": {
             "date": "12/03",
@@ -3984,7 +3981,7 @@
             "P2": {
                 "instructors": [
                     "Barsha Mitra",
-                    "S Rasagna Vakkalanka"
+                    "K Sai Anirudh"
                 ],
                 "sched": [
                     {
@@ -4367,8 +4364,7 @@
             },
             "P1": {
                 "instructors": [
-                    "R Gururaj",
-                    "Pattiwar Shravan Kumar"
+                    "R Gururaj"
                 ],
                 "sched": [
                     {
@@ -4377,8 +4373,25 @@
                             "T"
                         ],
                         "hours": [
-                            8,
-                            9
+                            9,
+                            10
+                        ]
+                    }
+                ]
+            },
+            "P2": {
+                "instructors": [
+                    "Patiwar Shravan Kumar"
+                ],
+                "sched": [
+                    {
+                        "room": "LAB",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            9,
+                            10
                         ]
                     }
                 ]
@@ -5261,7 +5274,7 @@
             },
             "P3": {
                 "instructors": [
-                    "Sameer Singh",
+                    "Sameera Muhammed Salam",
                     "Chillara Anil Kumar"
                 ],
                 "sched": [
@@ -13108,10 +13121,10 @@
                     {
                         "room": "I212",
                         "days": [
-                            "Th"
+                            "F"
                         ],
                         "hours": [
-                            7
+                            1
                         ]
                     }
                 ]
@@ -14923,11 +14936,11 @@
                     {
                         "room": "D208",
                         "days": [
-                            "T"
+                            "Th"
                         ],
                         "hours": [
-                            8,
-                            9
+                            7,
+                            8
                         ]
                     }
                 ]
@@ -17491,9 +17504,9 @@
                     {
                         "room": "G203",
                         "days": [
-                            "T",
-                            "Th",
-                            "S"
+                            "M",
+                            "W",
+                            "F"
                         ],
                         "hours": [
                             5
@@ -17626,12 +17639,13 @@
                     {
                         "room": "LAB",
                         "days": [
-                            "M",
                             "W"
                         ],
                         "hours": [
+                            7,
                             8,
-                            9
+                            9,
+                            10
                         ]
                     }
                 ]
@@ -17774,10 +17788,10 @@
                     {
                         "room": "G201",
                         "days": [
-                            "Th"
+                            "W"
                         ],
                         "hours": [
-                            9
+                            8
                         ]
                     }
                 ]
