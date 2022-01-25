@@ -1,82 +1,61 @@
 /* Containers */
-.container-helform {
-    display: flex;
-    width: 100%;
-  }
-  .half-width {
-    width: 50%;
-    white-space: nowrap;
-  }
-  
-  /* Form */
-  .course-disp {
-    float: right;
-    width: 40%;
-  }
-  
-  .form-whole {
-    width: 100%;
-  }
-  
-  .form-group {
-    float: left;
-    width: 59.5%;
-    padding-top: 1.25%;
-    padding-left: 0.5%;
-  }
-  
-  .course-inp {
-    width: 74%;
-  }
-  
-  .branch-inp {
-    padding-top: 5px;
-  }
-  
-  .wide-menu-row {
-    height: 30px;
-    text-align: center;
-    color: gray;
-  }
-  
-  .label-mod {
-    padding-left: 2%;
-    width: 10%;
-    padding-top: 3vh;
-    height: 4vh;
-  }
-  
-  .left-width {
-    width: 59.5%;
-  }
-  
-  /* Buttons */
-  .btn-mod {
-    width: 10%;
-    height: 5vh;
-    padding-left: 1.5%;
-  }
-  
-  .btn-hf {
-    cursor: pointer;
-  }
-  .btn-big {
-    width: 50%;
-    height: 5vh;
-  }
-  
-  /* Select component styling */
-  .select-container {
-    background-color: rgba(116, 185, 255,1);
-  }
-  
-  /* Radio group */
-  .radio-grp {
-    padding-top: 2vh;
-    height: 4vh;
-  }
-  
-  /* Text */
-  .text-black {
-    color: black;
-  }
+.branch-year-container {
+  display: flex;
+  width: 100%;
+  max-width: 720px;
+  gap: 10px;
+}
+.half-width {
+  width: 50%;
+  white-space: nowrap;
+  float: left;
+}
+
+/* Form */
+.course-disp {
+  float: right;
+  width: 40%;
+}
+
+.form-whole {
+  width: 100%;
+}
+
+.form-group {
+  float: left;
+  width: 59.5%;
+  padding-top: 1.25%;
+  padding-left: 0.5%;
+}
+
+.course-inp {
+  width: 74%;
+}
+
+.branch-inp {
+  padding-top: 5px;
+}
+
+.wide-menu-row {
+  height: 30px;
+  text-align: center;
+  color: gray;
+}
+
+.label-mod {
+  padding-left: 2%;
+  width: 10%;
+  padding-top: 3vh;
+  height: 4vh;
+}
+
+/* Radio group */
+.radio-grp {
+  padding-top: 2vh;
+  height: 4vh;
+}
+
+/* Text */
+.text-black {
+  color: black;
+}

@@ -31,14 +31,14 @@ var humanitiesCodes = Object.keys(courses).filter(
 // Currently, these are the only ones offered across all semesters
 
 const slots = [
-  { value: "0", label: "1:30 - 2:00 PM" },
-  { value: "1", label: "2:00 - 2:30 PM" },
-  { value: "2", label: "2:30 - 3:00 PM" },
-  { value: "3", label: "3:00 - 3:30 PM" },
-  { value: "4", label: "3:30 - 4:00 PM" },
-  { value: "5", label: "4:00 - 4:30 PM" },
-  { value: "6", label: "4:30 - 5:00 PM" },
-  { value: "7", label: "5:30 - 5:30 PM" }
+  { value: "0", label: "Slot 1" },
+  { value: "1", label: "Slot 2" },
+  { value: "2", label: "Slot 3" },
+  { value: "3", label: "Slot 4" },
+  { value: "4", label: "Slot 5" },
+  { value: "5", label: "Slot 6" },
+  { value: "6", label: "Slot 7" },
+  { value: "7", label: "Slot 8" }
 ];
 const branches = [
   { value: "BIO", label: "Biological Sciences" },
@@ -199,18 +199,19 @@ const HelForm = ({ submitForm, submitted, user }) => {
   return (
     <Fragment>
       <h5 className='title'>
-        Please Enter your Branch, year and select your Humanities Courses of the
-        previous semester below:
+        Before you continue to timetable creation, please share the following details with us: 
+        <br/>
+        Your <b>current</b> year and branch, along with your <b>previous semester's</b> slot and humanities electives
       </h5>
       <br></br>
       <form className='form-whole' onSubmit={e => onSubmit(e)}>
         <Select
-          placeholder='Please select slot'
+          placeholder='Please select your previous semester registeration slot'
           className='hf-width'
           value={slotNumber}
           options={slots}
           onItemClick={handleSlotChange}
-          containerStyle={{ backgroundColor: "rgba(116, 185, 255,1)" }}
+          containerStyle={{ backgroundColor: "white" }}
           menuStyle={{ backgroundColor: "rgba(116, 185, 255,1)" }}
           menuItemStyle={{ backgroundColor: "#ffffff" }}
           activeItemStyle={{ backgroundColor: "#0984e3" }}
@@ -232,7 +233,7 @@ const HelForm = ({ submitForm, submitted, user }) => {
                 ...theme.colors,
                 primary25: "#0984e3",
                 text: "#353b48",
-                neutral0: "rgba(116, 185, 255,1)"
+                neutral0: "white"
               }
             })}
           />

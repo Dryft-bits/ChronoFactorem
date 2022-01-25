@@ -1,5 +1,5 @@
 import { applyMiddleware } from "redux";
-import { composeWithDevTools } from "redux-devtools-extension";
+import { composeWithDevTools } from "redux-devtools-extension/developmentOnly";
 import { getSelectedCourseMiddleware } from "./SelectCourseMiddlewares";
 import { closeDialogMiddleware } from "./dialog";
 import thunk from "redux-thunk";

@@ -12,25 +12,25 @@ const CheckLoggedIn = ({ verifyLogin }) => {
     verifyLogin();
   }, [verifyLogin]);
   const [userInfo, loading] = useGetData("/api/current_user");
-  const useStyles = makeStyles(theme => ({
+  const useStyles = makeStyles((theme) => ({
     root: {
       width: "100%",
       "& > * + *": {
-        marginTop: theme.spacing(2)
-      }
-    }
+        marginTop: theme.spacing(2),
+      },
+    },
   }));
 
-  const useStylesCircular = makeStyles(theme => ({
+  const useStylesCircular = makeStyles((theme) => ({
     root: {
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
       "& > * + *": {
         marginLeft: theme.spacing(2),
-        marginTop: theme.spacing(2)
-      }
-    }
+        marginTop: theme.spacing(2),
+      },
+    },
   }));
   const Cclasses = useStylesCircular();
   const classes = useStyles();
@@ -46,9 +46,9 @@ const CheckLoggedIn = ({ verifyLogin }) => {
       </> /*<Redirect to='/checkloggedin'></Redirect>*/
     );
   } else if (!userInfo) {
-    return <Redirect to='/'></Redirect>;
+    return <Redirect to="/"></Redirect>;
   } else {
-    return <Redirect to='/dashboard'></Redirect>;
+    return <Redirect to="/create"></Redirect>;
   }
 };
 

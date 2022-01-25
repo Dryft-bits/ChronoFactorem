@@ -1,114 +1,151 @@
-:root {
-    --row-gap: 0.5vh;
-    --header-column-width: 10%;
-    --reg-column-width: 15%;
+.gridElement {
+  display: grid;
+  grid-template-columns: 7% 15% 15% 15% 15% 15% 15%;
+  row-gap: 0.5%;
+  column-gap: 0.5%;
+  transition-duration: 0.4s;
+  grid-template-rows: 7.87% 7.87% 7.87% 7.87% 7.87% 7.87% 7.87% 7.87% 7.87% 7.87% 7.87% 7.87%;
+  height: 80vh;
+  min-height: 768px;
+}
+
+.gridElement > div {
+  box-sizing: border-box;
+  background-color: #313131;
+  text-align: center;
+  padding: 10px 10px;
+  border-radius: 3px;
+  color: white;
+  box-shadow: 2px 1.5px 2px 0.5px rgba(1, 4, 7, 0.5);
+}
+
+.gridItem .gridItemText {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+.gridItem:hover .gridItemText{
+  visibility: visible;
+  font-size: 125%
+}
+
+.gridItem {
+  background-color: #333333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
+  font-size: 75%;
+  
+}
+
+.gridItem:hover {
+  box-shadow: 2px 1.7px 2px 0.7px rgba(1, 4, 7, 0.76);
+  transition-duration: 0.4s;
+  cursor:pointer;
+}
+
+.courseElement {
+  display: grid;
+  grid-template-columns: 5% 45% 10% 10% 10% 10% 10%;
+  grid-template-rows: 5vh;
+}
+.courseElement:hover {
+  display: grid;
+  grid-template-columns: 5% 45% 10% 10% 10% 10% 10%;
+  grid-template-rows: 5vh;
+  background-color: #0984e3;
+  cursor: pointer;
+}
+.examElement {
+  display: grid;
+  grid-template-columns: 10% 60% 15% 15%;
+  column-gap: 0.5vh;
+  grid-template-rows: 5vh;
+}
+
+.courseItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14;
+  padding: 10px;
+}
+
+.searchItem {
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: center; */
+  font-size: 14;
+  padding: 10px;
+}
+
+.courseWindow {
+  margin: 5px;
+  padding: 5px;
+  /* background-color: rgba(116, 185, 255, 1); */
+  height: 45vh;
+  overflow: auto;
+  font-size: 14px;
+  text-align: justify;
+}
+
+.courseSearch {
+  margin: 5px;
+  padding: 5px;
+  /* background-color: rgba(116, 185, 255, 1); */
+  height: 65vh;
+  overflow: auto;
+  text-align: justify;
+}
+
+.courseSearch :hover {
+  cursor: pointer;
+  background-color: #0984e3;
+}
+.input-field ::placeholder {
+  color: black;
+}
+
+.create-timetable-container {
+  display: block;
+}
+
+.timetable-preview {
+  min-height: 540px;
+  min-width: 540px;
+  flex: 2;
+}
+
+.create-timetable-toolbar {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.toolbar-button {
+  flex: 1;
+  min-width: 4vw;
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .create-timetable-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    flex-grow: 0;
   }
-
-body
-{
-    background-color: #cadcfc;
-}
-
-.gridElement
-{
-    display: grid;
-    grid-template-columns: 7% 15% 15% 15% 15% 15% 15%;
-    row-gap: 0.75vh;
-    column-gap:0.5%;
-    background-color: #0984e3;
-    padding: 3px;
-    border-radius: 5px;
-    grid-template-rows: 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh 8.08vh ;
-    transition-duration: 0.4s;
-}
-
-.gridElement > div
-{
-    background-color: #313131;
-    position: relative;
-    text-align: center;
-    padding: 10px 10px;
-    font-size: 67%;
-    border-radius: 3px;
-    color: white;
-    box-shadow: 2px 1.5px 2px 0.5px rgba(1, 4, 7, 0.5);
-}
-
-
-
-.gridItem
-{
-    background-color: #333333;
+  .courses-list {
     display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.gridItem:hover
-{
-    /*background-color: #aaaaaa;*/
-    box-shadow: 2px 2px 5px 5px rgba(1, 4, 7, 0.76);
-    transition-duration: 0.4s;
-    font-size: 75%;
-    /*color: black;*/
-}
-
-
-.courseElement
-{
-    display: grid;
-    grid-template-columns: 5% 45% 10% 10% 10% 10% 10%;
-    grid-template-rows: 5vh;
-}
-.courseElement:hover
-{
-    display: grid;
-    grid-template-columns: 5% 45% 10% 10% 10% 10% 10%;
-    grid-template-rows: 5vh;
-    background-color: #0984e3;
-    cursor: pointer;
-}
-.examElement
-{
-    display: grid;
-    grid-template-columns: 10% 60% 15% 15%;
-    column-gap: 0.5vh;
-    grid-template-rows: 5vh;
-}
-
-.courseItem
-{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14;
-}
-
-.courseWindow
-{
-    margin:5px;
-    padding:5px;
-    background-color: rgba(116, 185, 255,1);
-    height: 45vh;
-    overflow: auto;
-    font-size: 14px;
-    text-align:justify;
-}
-.courseSearch
-{
-    margin:5px;
-    padding:5px;
-    background-color: rgba(116, 185, 255,1);
-    height: 65vh;
-    overflow: auto;
-    text-align:justify;
-}
-
-.courseSearch :hover{
-    cursor: pointer;
-    background-color: #0984e3;
-}
-.input-field ::placeholder{
-    color: black;
-    
+  }
 }

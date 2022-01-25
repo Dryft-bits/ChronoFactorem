@@ -7,37 +7,37 @@ const TimeTableSchema = new Schema(
     ownerId: {
       type: Schema.Types.ObjectId,
       required: true,
-      ref: "student"
+      ref: "student",
     },
     name: {
-      type: String
+      type: String,
     },
-    branch:{
+    branch: {
       type: Array,
     },
-    year:{
+    year: {
       type: Number,
     },
-    username:{
-      type: String
+    username: {
+      type: String,
     },
     TimeTable: {
       type: TimeTable,
-      required: true
+      required: true,
     },
     Courses: [
       {
-        type: Object
-      }
+        type: Object,
+      },
     ],
     date: {
       type: Date,
-      default: Date.now
+      default: Date.now,
     },
     isShared: {
       type: Boolean,
-      default: false
-    }
+      default: true,
+    },
   },
   { minimize: false }
 );
