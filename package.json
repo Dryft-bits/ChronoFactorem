@@ -17,7 +17,7 @@
     "express-validator": "^6.14.2",
     "jsonwebtoken": "^8.5.1",
     "moment": "^2.29.4",
-    "mongoose": "^6.5.1",
+    "mongoose": "^6.5.2",
     "npm-check-updates": "^16.0.5",
     "passport": "^0.6.0",
     "passport-google-oauth20": "^2.0.0",
@@ -27,7 +27,7 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.18.10",
-    "@babel/core": "^7.18.10",
+    "@babel/core": "^7.18.13",
     "@babel/node": "^7.18.10",
     "@babel/plugin-proposal-class-properties": "^7.18.6",
     "@babel/plugin-proposal-decorators": "^7.18.10",
@@ -52,7 +52,7 @@
     "chai": "^4.3.6",
     "chai-http": "^4.3.0",
     "concurrently": "^7.3.0",
-    "cypress": "^10.4.0",
+    "cypress": "^10.6.0",
     "mocha": "^10.0.0",
     "nodemon": "^2.0.19"
   },
