@@ -1,11 +1,18 @@
 import React from "react";
 import "../../styles/Landing.css";
 import configuration from "../../config/constants.js";
-import { useGetData } from "use-axios-react";
 import { Redirect } from "react-router-dom";
+import axios from "axios";
 
 export const Landing = () => {
-  const [userInfo, loading] = useGetData("/api/current_user");
+
+  const [userInfo, setUserInfo]=React.useState(null);
+  axios.get("/api/current_user").then((response) => {
+    setUserInfo(response.data);
+  }).catch((error) => {
+    console.log(error.toJSON());
+  });
+
   return userInfo && localStorage.getItem("loggedIn") ? (
     <Redirect to='/checkloggedin'></Redirect>
   ) : (

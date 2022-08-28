@@ -1,17 +1,24 @@
 import React, { useEffect } from "react";
 import { Redirect } from "react-router-dom";
-import { useGetData } from "use-axios-react";
 import { connect } from "react-redux";
 import { verifyLogin } from "../../redux/actions/auth";
 import { makeStyles } from "@material-ui/core/styles";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import axios from "axios";
 
 const CheckLoggedIn = ({ verifyLogin }) => {
   useEffect(() => {
     verifyLogin();
   }, [verifyLogin]);
-  const [userInfo, loading] = useGetData("/api/current_user");
+
+  const [userInfo, setUserInfo]=React.useState(null);
+  axios.get("/api/current_user").then((response) => {
+    setUserInfo(response.data);
+  }).catch((error) => {
+    console.log(error.toJSON());
+  });
+
   const useStyles = makeStyles((theme) => ({
     root: {
       width: "100%",
@@ -34,7 +41,7 @@ const CheckLoggedIn = ({ verifyLogin }) => {
   }));
   const Cclasses = useStylesCircular();
   const classes = useStyles();
-  if (loading || (localStorage.getItem("loggedIn") && !userInfo)) {
+  if (localStorage.getItem("loggedIn") && !userInfo) {
     return (
       <>
         <div className={classes.root}>

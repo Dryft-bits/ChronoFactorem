@@ -6,10 +6,15 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
-import { useGetData } from "use-axios-react";
+import axios from "axios";
 
 const SemiPrivateRoute = ({ component: Component, ...rest }) => {
-  const [userInfo, loading] = useGetData("/api/current_user");
+  const [userInfo, setUserInfo]=React.useState(null);
+  axios.get("/api/current_user").then((response) => {
+    setUserInfo(response.data);
+  }).catch((error) => {
+    console.log(error.toJSON());
+  });
 
   return (
     <Route
@@ -18,7 +23,7 @@ const SemiPrivateRoute = ({ component: Component, ...rest }) => {
         // Put a cool animation here
         !userInfo && !localStorage.getItem("loggedIn") ? (
           <Redirect to='/'></Redirect>
-        ) : loading ? (
+        ) : !userInfo ? (
           <div>Loading...</div>
         ) : (
           <Component {...props} />
