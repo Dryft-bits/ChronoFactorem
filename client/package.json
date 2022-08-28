@@ -28,7 +28,6 @@
     "redux": "^4.1.1",
     "redux-devtools-extension": "^2.13.9",
     "redux-thunk": "^2.3.0",
-    "use-axios-react": "^0.2.3",
     "victory": "^35.10.1"
   },
   "scripts": {
