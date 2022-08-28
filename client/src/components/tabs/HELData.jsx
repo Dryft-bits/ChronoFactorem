@@ -3,10 +3,10 @@ import { VictoryBar, VictoryChart, VictoryAxis, VictoryLabel } from "victory"
 import Search from "../utils/Search"
 import ItemList from "../utils/ItemList"
 import * as TimeTableData from "../../Timetable.json"
-import { useGetData } from "use-axios-react"
 import axios from "axios"
 import Card from "@material-ui/core/Card"
 import { makeStyles } from "@material-ui/core"
+
 const course = JSON.parse(JSON.stringify(TimeTableData)).default
 const useStyles = makeStyles({
   card: {
@@ -103,8 +103,13 @@ const HELData = () => {
       </Card>
     </div>,
   ]
-  const [, loading] = useGetData("/api/heldata/searchHEL/:name")
-  if (!loading) {
+
+  const [userInfo, setUserInfo]=React.useState(null);
+  axios.get("/api/heldata/searchHEL/:name").then((response) => {
+    setUserInfo(response.data);
+  });
+
+  if (!userInfo) {
     if (resp === true && courseStats.length > 0) {
       let max = 0
       for (let i of courseStats) max = i["y"] > max ? i["y"] : max
