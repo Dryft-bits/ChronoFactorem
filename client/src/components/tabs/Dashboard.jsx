@@ -94,7 +94,7 @@ const Dashboard = (props) => {
   }
   const [data , setData] = React.useState(null);
   axios.get("/api/timetable/getTT").then((response) => {
-    setUserInfo(response.data);
+    setData(response.data);
   }).catch((error) => {
     console.log(error.toJSON());
   });
