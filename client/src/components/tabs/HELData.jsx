@@ -114,8 +114,8 @@ const HELData = () => {
 
   if (!userInfo) {
     if (resp === true && courseStats.length > 0) {
-      let max = 0
-      for (let i of courseStats) max = i["y"] > max ? i["y"] : max
+      let maxm = 0
+      for (let i of courseStats) maxm = i["y"] > maxm ? i["y"] : maxm
       str.push([
         <div style={{ float: "left", width: "64%" }}>
           <Card className={classes.card}>
@@ -135,7 +135,7 @@ const HELData = () => {
               />
               <VictoryAxis
                 dependentAxis
-                tickCount={max < 3 ? 2 : 5}
+                tickCount={maxm < 3 ? 2 : 5}
                 tickFormat={(x) => x}
               />
               <VictoryBar
