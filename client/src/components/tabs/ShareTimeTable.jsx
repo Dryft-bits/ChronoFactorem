@@ -12,9 +12,9 @@ import Button from "@material-ui/core/Button"
 import axios from "axios"
 import PropTypes from "prop-types"
 import { connect } from "react-redux"
-import { useGetData } from "use-axios-react"
 import "../../styles/ShareTT.css"
 import { editTT } from "../../redux/actions/UpdateTimeTable"
+import { useEffect } from "react"
 
 const useStyles = makeStyles({
   root: {
@@ -76,8 +76,8 @@ const ShareTimeTable = (props) => {
   const [formData, setFormData] = useState({
     branch: props.user
       ? branches.filter((branch) =>
-          props.user["branch"].includes(branch["value"])
-        )
+        props.user["branch"].includes(branch["value"])
+      )
       : [],
     year: props.user ? props.user.year.toString() : "",
     TTs: [],
@@ -156,7 +156,16 @@ const ShareTimeTable = (props) => {
   const isValidNewOption = (inputValue, selectValue) =>
     inputValue.length > 0 && selectValue.length < 5
 
-  const [, loading] = useGetData("/api/timetable/viewshared")
+  const [sharedData, setSharedData] = React.useState(null);
+  useEffect(() => {
+    axios.get("/api/current_user").then((response) => {
+      setSharedData(response.data);
+    }).catch((error) => {
+      console.log(error.toJSON());
+    });
+
+  }, []);
+
   const classes = useStyles()
   return (
     <>
@@ -195,9 +204,9 @@ const ShareTimeTable = (props) => {
         <br />
 
         <div className={classes.grid}
->
+        >
           <Grid container>
-            {!loading && TTs.length !== 0 ? (
+            {sharedData && TTs.length !== 0 ? (
               TTs.map((itemc) => {
                 return (
                   <Grid item xs={6}>
@@ -238,14 +247,14 @@ const ShareTimeTable = (props) => {
                         </CardActions>
                       </Card>
                     </div>
-                </Grid>
-              )
-            })
-          ) : loading ? (
-            <h4>Loading</h4>
-          ) : (
-            <h5 style={{textAlign:"center"}} >No Shared Timetables</h5>
-          )}
+                  </Grid>
+                )
+              })
+            ) : !sharedData ? (
+              <h4>Loading</h4>
+            ) : (
+              <h5 style={{ textAlign: "center" }} >No Shared Timetables</h5>
+            )}
           </Grid>
         </div>
       </div>

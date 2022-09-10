@@ -1,6 +1,5 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { connect } from "react-redux"
-import { useGetData } from "use-axios-react"
 import axios from "axios"
 import PropTypes from "prop-types"
 import { Link } from "react-router-dom"
@@ -93,83 +92,92 @@ const Dashboard = (props) => {
       props.openAlert("res.data.msg" + " Please Try Again Later", "error")
     }
   }
-  let [data, loading] = useGetData("/api/timetable/getTT")
 
-  if (!loading) {
+  const [data, setData] = React.useState(null);
+  useEffect(() => {
+    axios.get("/api/timetable/getTT").then((response) => {
+      setData(response.data);
+    }).catch((error) => {
+      console.log(error.toJSON());
+    });
+  }, []);
+
+
+  if (data) {
     return (
       <>
         <AlertBox />
         <Card className={classes.card}>
           <div>
-            <h4 style={{textAlign:"center"}}>Saved Timetables</h4>
+            <h4 style={{ textAlign: "center" }}>Saved Timetables</h4>
           </div>
           <div
-          className={classes.grid}
-          style={{ left: "2vw" }}
+            className={classes.grid}
+            style={{ left: "2vw" }}
           >
-          <Grid container>
-            {(TTData.savedTT || data).map((itemc) => {
-              return (
-                <Grid item>
-                  <div key={itemc._id} id={itemc._id}>
-                    <Card className={classes.ttname}>
-                      <CardContent>
-                        <h5>{itemc.name}</h5>
-                      </CardContent>
-                      <CardActions>
-                        <Link
-                          to="/create"
-                          onClick={() => {
-                            props.editTT(itemc)
-                          }}
-                        >
-                          <Button
-                            variant="contained"
-                            color="primary"
-                            size="small"
+            <Grid container>
+              {(TTData.savedTT || data).map((itemc) => {
+                return (
+                  <Grid item>
+                    <div key={itemc._id} id={itemc._id}>
+                      <Card className={classes.ttname}>
+                        <CardContent>
+                          <h5>{itemc.name}</h5>
+                        </CardContent>
+                        <CardActions>
+                          <Link
+                            to="/create"
+                            onClick={() => {
+                              props.editTT(itemc)
+                            }}
                           >
-                            Edit
-                          </Button>
-                        </Link>
+                            <Button
+                              variant="contained"
+                              color="primary"
+                              size="small"
+                            >
+                              Edit
+                            </Button>
+                          </Link>
 
-                        <Button
-                          onClick={() => {
-                            deleteTT(itemc._id)
-                          }}
-                          variant="contained"
-                          color="secondary"
-                          size="small"
-                        >
-                          Delete
-                        </Button>
-                        {itemc.isShared ? (
                           <Button
-                            variant="contained"
-                            size="small"
                             onClick={() => {
-                              toggleShare(itemc._id, "Unshared")
+                              deleteTT(itemc._id)
                             }}
-                          >
-                            Unshare
-                          </Button>
-                        ) : (
-                          <Button
                             variant="contained"
+                            color="secondary"
                             size="small"
-                            onClick={() => {
-                              toggleShare(itemc._id, "Shared")
-                            }}
                           >
-                            Share
+                            Delete
                           </Button>
-                        )}
-                      </CardActions>
-                    </Card>
-                  </div>
-                </Grid>
-              )
-            })}
-          </Grid>
+                          {itemc.isShared ? (
+                            <Button
+                              variant="contained"
+                              size="small"
+                              onClick={() => {
+                                toggleShare(itemc._id, "Unshared")
+                              }}
+                            >
+                              Unshare
+                            </Button>
+                          ) : (
+                            <Button
+                              variant="contained"
+                              size="small"
+                              onClick={() => {
+                                toggleShare(itemc._id, "Shared")
+                              }}
+                            >
+                              Share
+                            </Button>
+                          )}
+                        </CardActions>
+                      </Card>
+                    </div>
+                  </Grid>
+                )
+              })}
+            </Grid>
           </div>
         </Card>
         <Card className={classes.card}>

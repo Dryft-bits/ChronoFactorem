@@ -3,10 +3,11 @@ import { VictoryBar, VictoryChart, VictoryAxis, VictoryLabel } from "victory"
 import Search from "../utils/Search"
 import ItemList from "../utils/ItemList"
 import * as TimeTableData from "../../Timetable.json"
-import { useGetData } from "use-axios-react"
 import axios from "axios"
 import Card from "@material-ui/core/Card"
 import { makeStyles } from "@material-ui/core"
+import { useEffect } from "react"
+
 const course = JSON.parse(JSON.stringify(TimeTableData)).default
 const useStyles = makeStyles({
   card: {
@@ -103,15 +104,22 @@ const HELData = () => {
       </Card>
     </div>,
   ]
-  const [, loading] = useGetData("/api/heldata/searchHEL/:name")
-  if (!loading) {
+
+  const [userInfo, setUserInfo] = React.useState(null);
+  useEffect(() => {
+    axios.get("/api/heldata/searchHEL/:name").then((response) => {
+      setUserInfo(response.data);
+    });
+  }, []);
+
+  if (!userInfo) {
     if (resp === true && courseStats.length > 0) {
-      let max = 0
-      for (let i of courseStats) max = i["y"] > max ? i["y"] : max
+      let maxm = 0
+      for (let i of courseStats) maxm = i["y"] > maxm ? i["y"] : maxm
       str.push([
         <div style={{ float: "left", width: "64%" }}>
           <Card className={classes.card}>
-            <VictoryChart domainPadding={10} animate={{ duration: 2000 }}>
+            <VictoryChart domainPadding={10} animate={{ duration: 1500 }}>
               <VictoryAxis
                 tickValues={[1, 2, 3, 4, 5, 6, 7, 8]}
                 tickFormat={[
@@ -127,7 +135,7 @@ const HELData = () => {
               />
               <VictoryAxis
                 dependentAxis
-                tickCount={max < 3 ? 2 : 5}
+                tickCount={maxm < 3 ? 2 : 5}
                 tickFormat={(x) => x}
               />
               <VictoryBar
