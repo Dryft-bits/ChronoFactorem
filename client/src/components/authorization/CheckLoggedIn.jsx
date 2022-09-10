@@ -13,11 +13,14 @@ const CheckLoggedIn = ({ verifyLogin }) => {
   }, [verifyLogin]);
 
   const [userInfo, setUserInfo]=React.useState(null);
+  useEffect(() => {
   axios.get("/api/current_user").then((response) => {
     setUserInfo(response.data);
   }).catch((error) => {
     console.log(error.toJSON());
   });
+  },[]);
+
 
   const useStyles = makeStyles((theme) => ({
     root: {

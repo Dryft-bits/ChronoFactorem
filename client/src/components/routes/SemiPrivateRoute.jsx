@@ -7,14 +7,17 @@ import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import axios from "axios";
+import { useEffect } from "react";
 
 const SemiPrivateRoute = ({ component: Component, ...rest }) => {
-  const [userInfo, setUserInfo]=React.useState(null);
-  axios.get("/api/current_user").then((response) => {
-    setUserInfo(response.data);
-  }).catch((error) => {
-    console.log(error.toJSON());
-  });
+  const [userInfo, setUserInfo] = React.useState(null);
+  useEffect(() => {
+    axios.get("/api/current_user").then((response) => {
+      setUserInfo(response.data);
+    }).catch((error) => {
+      console.log(error.toJSON());
+    });
+  }, []);
 
   return (
     <Route

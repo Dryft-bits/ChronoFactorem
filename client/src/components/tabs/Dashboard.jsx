@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { connect } from "react-redux"
 import axios from "axios"
 import PropTypes from "prop-types"
@@ -92,12 +92,15 @@ const Dashboard = (props) => {
       props.openAlert("res.data.msg" + " Please Try Again Later", "error")
     }
   }
-  const [data , setData] = React.useState(null);
-  axios.get("/api/timetable/getTT").then((response) => {
-    setData(response.data);
-  }).catch((error) => {
-    console.log(error.toJSON());
-  });
+
+  const [data, setData] = React.useState(null);
+  useEffect(() => {
+    axios.get("/api/timetable/getTT").then((response) => {
+      setData(response.data);
+    }).catch((error) => {
+      console.log(error.toJSON());
+    });
+  }, []);
 
 
   if (data) {

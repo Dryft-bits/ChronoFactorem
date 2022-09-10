@@ -6,6 +6,7 @@ import * as TimeTableData from "../../Timetable.json"
 import axios from "axios"
 import Card from "@material-ui/core/Card"
 import { makeStyles } from "@material-ui/core"
+import { useEffect } from "react"
 
 const course = JSON.parse(JSON.stringify(TimeTableData)).default
 const useStyles = makeStyles({
@@ -104,10 +105,12 @@ const HELData = () => {
     </div>,
   ]
 
-  const [userInfo, setUserInfo]=React.useState(null);
-  axios.get("/api/heldata/searchHEL/:name").then((response) => {
-    setUserInfo(response.data);
-  });
+  const [userInfo, setUserInfo] = React.useState(null);
+  useEffect(() => {
+    axios.get("/api/heldata/searchHEL/:name").then((response) => {
+      setUserInfo(response.data);
+    });
+  }, []);
 
   if (!userInfo) {
     if (resp === true && courseStats.length > 0) {
@@ -116,7 +119,7 @@ const HELData = () => {
       str.push([
         <div style={{ float: "left", width: "64%" }}>
           <Card className={classes.card}>
-            <VictoryChart domainPadding={10} animate={{ duration: 2000 }}>
+            <VictoryChart domainPadding={10} animate={{ duration: 1500 }}>
               <VictoryAxis
                 tickValues={[1, 2, 3, 4, 5, 6, 7, 8]}
                 tickFormat={[

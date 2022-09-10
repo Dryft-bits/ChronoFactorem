@@ -7,6 +7,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import axios from "axios";
+import { useEffect } from "react";
 
 const PrivateRoute = ({
   component: Component,
@@ -16,13 +17,16 @@ const PrivateRoute = ({
   ...rest
 }) => {
 
-  const [userInfo, setUserInfo]=React.useState(null);
-  axios.get("/api/current_user").then((response) => {
-    setUserInfo(response.data);
-  }).catch((error) => {
-    console.log(error.toJSON());
-  });
+  const [userInfo, setUserInfo] = React.useState(null);
+  useEffect(() => {
+    axios.get("/api/current_user").then((response) => {
+      setUserInfo(response.data);
+    }).catch((error) => {
+      console.log(error.toJSON());
+    });
 
+
+  }, []);
   const useStyles = makeStyles(theme => ({
     root: {
       width: "100%",

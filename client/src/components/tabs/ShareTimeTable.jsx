@@ -14,6 +14,7 @@ import PropTypes from "prop-types"
 import { connect } from "react-redux"
 import "../../styles/ShareTT.css"
 import { editTT } from "../../redux/actions/UpdateTimeTable"
+import { useEffect } from "react"
 
 const useStyles = makeStyles({
   root: {
@@ -156,11 +157,14 @@ const ShareTimeTable = (props) => {
     inputValue.length > 0 && selectValue.length < 5
 
   const [sharedData, setSharedData] = React.useState(null);
-  axios.get("/api/current_user").then((response) => {
-    setSharedData(response.data);
-  }).catch((error) => {
-    console.log(error.toJSON());
-  });
+  useEffect(() => {
+    axios.get("/api/current_user").then((response) => {
+      setSharedData(response.data);
+    }).catch((error) => {
+      console.log(error.toJSON());
+    });
+
+  }, []);
 
   const classes = useStyles()
   return (
