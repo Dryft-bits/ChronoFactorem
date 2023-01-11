@@ -1,6 +1,6 @@
 const prod = {
   urls: {
-    googleAuth: "https://chronofactorem.herokuapp.com/api/auth/google",
+    googleAuth: "https://chronofactorem.up.railway.app/api/auth/google",
     adminLogin: "https://chrono-dashboard.herokuapp.com/"
   }
 };
