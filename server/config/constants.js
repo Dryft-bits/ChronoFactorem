@@ -1,8 +1,8 @@
 const prod = {
   urls: {
     googleAuthCallback:
-      "https://chronofactorem.herokuapp.com/api/auth/google/callback",
-    homePage: "https://chronofactorem.herokuapp.com/checkloggedin"
+      "https://chronofactorem.up.railway.app/api/auth/google/callback",
+    homePage: "https://chronofactorem.up.railway.app/checkloggedin"
   }
 };
 
