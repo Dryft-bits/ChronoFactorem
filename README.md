@@ -1,5 +1,6 @@
 # ChronoFactorem
-A MERN stack Web App that allows students to create draft time tables
+A MERN stack Web App that allows students to create draft time tables<br>
+Now live at https://chronofactorem.up.railway.app/
 <br></br>
 <kbd><img src="https://user-images.githubusercontent.com/46719471/97092039-1d586000-165e-11eb-9741-2164a67fb8bd.png"></kbd>
 <br></br>
