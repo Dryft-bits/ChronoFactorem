@@ -4,7 +4,8 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "Nishith Gupta"
+                    "Nishith Gupta",
+                    "Shivashis Mund"
                 ],
                 "sched": [
                     {
@@ -15,6 +16,182 @@
                         "hours": [
                             2,
                             3
+                        ]
+                    }
+                ]
+            },
+            "L2": {
+                "instructors": [
+                    "Aditi Dey"
+                ],
+                "sched": [
+                    {
+                        "room": "A122",
+                        "days": [
+                            "W"
+                        ],
+                        "hours": [
+                            7,
+                            8
+                        ]
+                    }
+                ]
+            },
+            "L3": {
+                "instructors": [
+                    "K  Pranav Narayan",
+                    "Chhavi Dhiman"
+                ],
+                "sched": [
+                    {
+                        "room": "A122",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            6,
+                            7
+                        ]
+                    }
+                ]
+            },
+            "L4": {
+                "instructors": [
+                    "Sharayu Umakant Ghodesw",
+                    "Neethu R S"
+                ],
+                "sched": [
+                    {
+                        "room": "A122",
+                        "days": [
+                            "F"
+                        ],
+                        "hours": [
+                            7,
+                            8
+                        ]
+                    }
+                ]
+            },
+            "L5": {
+                "instructors": [
+                    "JAYATI RAY DUTTA",
+                    "Mude Hemanjali"
+                ],
+                "sched": [
+                    {
+                        "room": "A122",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            4,
+                            5
+                        ]
+                    }
+                ]
+            },
+            "L6": {
+                "instructors": [
+                    "Tata Pranathi"
+                ],
+                "sched": [
+                    {
+                        "room": "A122",
+                        "days": [
+                            "S"
+                        ],
+                        "hours": [
+                            4,
+                            5
+                        ]
+                    }
+                ]
+            },
+            "L7": {
+                "instructors": [
+                    "Sharon Mariam Abraham",
+                    "Puja Bhardwaj"
+                ],
+                "sched": [
+                    {
+                        "room": "A122",
+                        "days": [
+                            "M"
+                        ],
+                        "hours": [
+                            7,
+                            8
+                        ]
+                    }
+                ]
+            },
+            "L8": {
+                "instructors": [
+                    "Piyush Khandelia",
+                    "Devika.P"
+                ],
+                "sched": [
+                    {
+                        "room": "A122",
+                        "days": [
+                            "M"
+                        ],
+                        "hours": [
+                            2,
+                            3
+                        ]
+                    }
+                ]
+            },
+            "L9": {
+                "instructors": [
+                    "Poosala Ramya Sri"
+                ],
+                "sched": [
+                    {
+                        "room": "A122",
+                        "days": [
+                            "W"
+                        ],
+                        "hours": [
+                            2,
+                            3
+                        ]
+                    }
+                ]
+            },
+            "L10": {
+                "instructors": [
+                    "Vivek Sharma",
+                    "Suryansh Sengar"
+                ],
+                "sched": [
+                    {
+                        "room": "A122",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            4,
+                            5
+                        ]
+                    }
+                ]
+            },
+            "L11": {
+                "instructors": [
+                    "Priyanka Chakravarti"
+                ],
+                "sched": [
+                    {
+                        "room": "A122",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            6,
+                            7
                         ]
                     }
                 ]
@@ -42,6 +219,161 @@
                         ],
                         "hours": [
                             5
+                        ]
+                    }
+                ]
+            },
+            "L2": {
+                "instructors": [
+                    "Shuvadeep Maity",
+                    "Kirtimaan Syal"
+                ],
+                "sched": [
+                    {
+                        "room": "F105",
+                        "days": [
+                            "M",
+                            "W",
+                            "F"
+                        ],
+                        "hours": [
+                            5
+                        ]
+                    }
+                ]
+            },
+            "T1": {
+                "instructors": [
+                    "Ruchi Jain Dey"
+                ],
+                "sched": [
+                    {
+                        "room": "G107",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            3
+                        ]
+                    }
+                ]
+            },
+            "T2": {
+                "instructors": [],
+                "sched": [
+                    {
+                        "room": "G201",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            3
+                        ]
+                    }
+                ]
+            },
+            "T3": {
+                "instructors": [],
+                "sched": [
+                    {
+                        "room": "G204",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            3
+                        ]
+                    }
+                ]
+            },
+            "T4": {
+                "instructors": [],
+                "sched": [
+                    {
+                        "room": "G203",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            3
+                        ]
+                    }
+                ]
+            },
+            "T5": {
+                "instructors": [],
+                "sched": [
+                    {
+                        "room": "G102",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            3
+                        ]
+                    }
+                ]
+            },
+            "T6": {
+                "instructors": [
+                    "Naga Mohan K"
+                ],
+                "sched": [
+                    {
+                        "room": "G205",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            3
+                        ]
+                    }
+                ]
+            },
+            "T7": {
+                "instructors": [
+                    "Amartya Sanyal"
+                ],
+                "sched": [
+                    {
+                        "room": "G105",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            3
+                        ]
+                    }
+                ]
+            },
+            "T8": {
+                "instructors": [
+                    "Supratim Ghosh"
+                ],
+                "sched": [
+                    {
+                        "room": "G106",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            3
+                        ]
+                    }
+                ]
+            },
+            "T9": {
+                "instructors": [
+                    "P Sankar Ganesh"
+                ],
+                "sched": [
+                    {
+                        "room": "G104",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            3
                         ]
                     }
                 ]
@@ -74,6 +406,322 @@
                         ]
                     }
                 ]
+            },
+            "L2": {
+                "instructors": [
+                    "Arshad Javed"
+                ],
+                "sched": [
+                    {
+                        "room": "F103",
+                        "days": [
+                            "S"
+                        ],
+                        "hours": [
+                            1
+                        ]
+                    }
+                ]
+            },
+            "P1": {
+                "instructors": [
+                    "ARKAMITRA KAR",
+                    "Lingampally Swetha",
+                    "Sk Abdul Kaium"
+                ],
+                "sched": [
+                    {
+                        "room": "D208 A",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            4,
+                            5
+                        ]
+                    }
+                ]
+            },
+            "P2": {
+                "instructors": [
+                    "Vemu Sahiti",
+                    "Akshay Gundla",
+                    "Vijay Krupaker Maddu"
+                ],
+                "sched": [
+                    {
+                        "room": "D208 A",
+                        "days": [
+                            "W"
+                        ],
+                        "hours": [
+                            2,
+                            3
+                        ]
+                    }
+                ]
+            },
+            "P3": {
+                "instructors": [
+                    "Ansab shafi mir",
+                    "Raghu Piska"
+                ],
+                "sched": [
+                    {
+                        "room": "D208 A",
+                        "days": [
+                            "S"
+                        ],
+                        "hours": [
+                            4,
+                            5
+                        ]
+                    }
+                ]
+            },
+            "P4": {
+                "instructors": [
+                    "K Ramesh",
+                    "Ishant Sharma",
+                    "Naveed Farooz"
+                ],
+                "sched": [
+                    {
+                        "room": "D208 A",
+                        "days": [
+                            "M"
+                        ],
+                        "hours": [
+                            7,
+                            8
+                        ]
+                    }
+                ]
+            },
+            "P5": {
+                "instructors": [
+                    "Renuka Pradeep Rekhade",
+                    "Gowlla Jyothsna"
+                ],
+                "sched": [
+                    {
+                        "room": "D208 A",
+                        "days": [
+                            "W"
+                        ],
+                        "hours": [
+                            7,
+                            8
+                        ]
+                    }
+                ]
+            },
+            "P6": {
+                "instructors": [
+                    "Anna Mariya Shajan"
+                ],
+                "sched": [
+                    {
+                        "room": "D208 A",
+                        "days": [
+                            "F"
+                        ],
+                        "hours": [
+                            7,
+                            8
+                        ]
+                    }
+                ]
+            },
+            "P7": {
+                "instructors": [
+                    "Jakkam Leela Kishan",
+                    "Siddartha Koramati"
+                ],
+                "sched": [
+                    {
+                        "room": "D208 A",
+                        "days": [
+                            "M"
+                        ],
+                        "hours": [
+                            2,
+                            3
+                        ]
+                    }
+                ]
+            },
+            "P8": {
+                "instructors": [
+                    "Suhas shreekrishna",
+                    "Radha Kiranmaye Bandlamu"
+                ],
+                "sched": [
+                    {
+                        "room": "D208 A",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            4,
+                            5
+                        ]
+                    }
+                ]
+            },
+            "P9": {
+                "instructors": [
+                    "M Abhinav",
+                    "Md Zabiulla"
+                ],
+                "sched": [
+                    {
+                        "room": "D208 A",
+                        "days": [
+                            "F"
+                        ],
+                        "hours": [
+                            2,
+                            3
+                        ]
+                    }
+                ]
+            },
+            "T1": {
+                "instructors": [
+                    "K Rajitha"
+                ],
+                "sched": [
+                    {
+                        "room": "G107",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            3
+                        ]
+                    }
+                ]
+            },
+            "T2": {
+                "instructors": [
+                    "Ambili P"
+                ],
+                "sched": [
+                    {
+                        "room": "G201",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            3
+                        ]
+                    }
+                ]
+            },
+            "T3": {
+                "instructors": [
+                    "Navaneetha E"
+                ],
+                "sched": [
+                    {
+                        "room": "G204",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            3
+                        ]
+                    }
+                ]
+            },
+            "T4": {
+                "instructors": [
+                    "Sk Rahaman"
+                ],
+                "sched": [
+                    {
+                        "room": "G203",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            3
+                        ]
+                    }
+                ]
+            },
+            "T6": {
+                "instructors": [],
+                "sched": [
+                    {
+                        "room": "G102",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            3
+                        ]
+                    }
+                ]
+            },
+            "T7": {
+                "instructors": [
+                    "Balija Upendra"
+                ],
+                "sched": [
+                    {
+                        "room": "G205",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            3
+                        ]
+                    }
+                ]
+            },
+            "T8": {
+                "instructors": [],
+                "sched": [
+                    {
+                        "room": "G104",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            3
+                        ]
+                    }
+                ]
+            },
+            "T9": {
+                "instructors": [],
+                "sched": [
+                    {
+                        "room": "G105",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            3
+                        ]
+                    }
+                ]
+            },
+            "T10": {
+                "instructors": [],
+                "sched": [
+                    {
+                        "room": "G106",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            3
+                        ]
+                    }
+                ]
             }
         },
         "compre": {
@@ -90,7 +738,8 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "VIKRANT KUMAR S"
+                    "VIKRANT KUMAR S",
+                    "Dasika Prabhat Sourya"
                 ],
                 "sched": [
                     {
@@ -101,6 +750,212 @@
                         ],
                         "hours": [
                             8
+                        ]
+                    },
+                    {
+                        "room": "F102",
+                        "days": [
+                            "M"
+                        ],
+                        "hours": [
+                            10
+                        ]
+                    }
+                ]
+            },
+            "L2": {
+                "instructors": [
+                    "R Parameshwaran"
+                ],
+                "sched": [
+                    {
+                        "room": "F104",
+                        "days": [
+                            "T",
+                            "Th"
+                        ],
+                        "hours": [
+                            8
+                        ]
+                    },
+                    {
+                        "room": "F104",
+                        "days": [
+                            "M"
+                        ],
+                        "hours": [
+                            10
+                        ]
+                    }
+                ]
+            },
+            "T1": {
+                "instructors": [
+                    "Ramesh Babu A",
+                    "Chitturi Huldah Suharika"
+                ],
+                "sched": [
+                    {
+                        "room": "G208",
+                        "days": [
+                            "T",
+                            "Th"
+                        ],
+                        "hours": [
+                            1
+                        ]
+                    }
+                ]
+            },
+            "T2": {
+                "instructors": [
+                    "Karthik Chetan",
+                    "Nalabala Madhavaiah"
+                ],
+                "sched": [
+                    {
+                        "room": "G204",
+                        "days": [
+                            "T",
+                            "Th"
+                        ],
+                        "hours": [
+                            1
+                        ]
+                    }
+                ]
+            },
+            "T3": {
+                "instructors": [
+                    "Arnab Dutta",
+                    "P Pradeep Reddy"
+                ],
+                "sched": [
+                    {
+                        "room": "G205",
+                        "days": [
+                            "T",
+                            "Th"
+                        ],
+                        "hours": [
+                            1
+                        ]
+                    }
+                ]
+            },
+            "T4": {
+                "instructors": [
+                    "Debirupa Mitra"
+                ],
+                "sched": [
+                    {
+                        "room": "G206",
+                        "days": [
+                            "T",
+                            "Th"
+                        ],
+                        "hours": [
+                            1
+                        ]
+                    }
+                ]
+            },
+            "T5": {
+                "instructors": [
+                    "Ramendra Kishor Pal"
+                ],
+                "sched": [
+                    {
+                        "room": "G207",
+                        "days": [
+                            "T",
+                            "Th"
+                        ],
+                        "hours": [
+                            1
+                        ]
+                    }
+                ]
+            },
+            "T6": {
+                "instructors": [],
+                "sched": [
+                    {
+                        "room": "F201",
+                        "days": [
+                            "T",
+                            "Th"
+                        ],
+                        "hours": [
+                            1
+                        ]
+                    }
+                ]
+            },
+            "T7": {
+                "instructors": [
+                    "Jeevan Jaidi"
+                ],
+                "sched": [
+                    {
+                        "room": "F202",
+                        "days": [
+                            "T",
+                            "Th"
+                        ],
+                        "hours": [
+                            1
+                        ]
+                    }
+                ]
+            },
+            "T8": {
+                "instructors": [
+                    "Jayaprakash K S"
+                ],
+                "sched": [
+                    {
+                        "room": "F203",
+                        "days": [
+                            "T",
+                            "Th"
+                        ],
+                        "hours": [
+                            1
+                        ]
+                    }
+                ]
+            },
+            "T9": {
+                "instructors": [
+                    "Santanu Prasad Datta"
+                ],
+                "sched": [
+                    {
+                        "room": "F207",
+                        "days": [
+                            "T",
+                            "Th"
+                        ],
+                        "hours": [
+                            1
+                        ]
+                    }
+                ]
+            },
+            "T10": {
+                "instructors": [
+                    "KRC Murthy"
+                ],
+                "sched": [
+                    {
+                        "room": "F208",
+                        "days": [
+                            "T",
+                            "Th"
+                        ],
+                        "hours": [
+                            1
                         ]
                     }
                 ]
@@ -131,6 +986,85 @@
                         ],
                         "hours": [
                             3
+                        ]
+                    }
+                ]
+            },
+            "L2": {
+                "instructors": [
+                    "MG Prasuna"
+                ],
+                "sched": [
+                    {
+                        "room": "F108",
+                        "days": [
+                            "T",
+                            "Th"
+                        ],
+                        "hours": [
+                            5
+                        ]
+                    }
+                ]
+            },
+            "L3": {
+                "instructors": [
+                    "Santosh  Mahapatra"
+                ],
+                "sched": [
+                    {
+                        "room": "F107",
+                        "days": [
+                            "M",
+                            "W"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "L4": {
+                "instructors": [],
+                "sched": [
+                    {
+                        "room": "F108",
+                        "days": [
+                            "M",
+                            "W"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "L5": {
+                "instructors": [],
+                "sched": [
+                    {
+                        "room": "F207",
+                        "days": [
+                            "M",
+                            "W"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "L6": {
+                "instructors": [],
+                "sched": [
+                    {
+                        "room": "F107",
+                        "days": [
+                            "T",
+                            "Th"
+                        ],
+                        "hours": [
+                            5
                         ]
                     }
                 ]
@@ -165,6 +1099,22 @@
                         ]
                     }
                 ]
+            },
+            "T1": {
+                "instructors": [
+                    "Pankaj Patel"
+                ],
+                "sched": [
+                    {
+                        "room": "I222",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
             }
         },
         "compre": {
@@ -181,7 +1131,9 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "DURBA ROY"
+                    "DURBA ROY",
+                    "Dinesh Kumar J",
+                    "Jayapriya V"
                 ],
                 "sched": [
                     {
@@ -192,6 +1144,196 @@
                         "hours": [
                             6,
                             7
+                        ]
+                    }
+                ]
+            },
+            "L2": {
+                "instructors": [
+                    "Tanmay Chatterjee",
+                    "Appanapalli nagavenkatasat",
+                    "Paramita Pattanayak"
+                ],
+                "sched": [
+                    {
+                        "room": "B124",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            6,
+                            7
+                        ]
+                    }
+                ]
+            },
+            "L3": {
+                "instructors": [
+                    "Ramakrishnan G",
+                    "Amita Aanne Mathews",
+                    "Mariya Midhu Francis"
+                ],
+                "sched": [
+                    {
+                        "room": "B124",
+                        "days": [
+                            "W"
+                        ],
+                        "hours": [
+                            8,
+                            9
+                        ]
+                    }
+                ]
+            },
+            "L4": {
+                "instructors": [
+                    "Nilanjan Dey",
+                    "Khetmalis Yogesh Mahadu",
+                    "Rikitha Sharyl Fernandes"
+                ],
+                "sched": [
+                    {
+                        "room": "B124",
+                        "days": [
+                            "M"
+                        ],
+                        "hours": [
+                            2,
+                            3
+                        ]
+                    }
+                ]
+            },
+            "L5": {
+                "instructors": [
+                    "K Sumithra",
+                    "Sahithi Reddy Andru",
+                    "Savita"
+                ],
+                "sched": [
+                    {
+                        "room": "B124",
+                        "days": [
+                            "W"
+                        ],
+                        "hours": [
+                            2,
+                            3
+                        ]
+                    }
+                ]
+            },
+            "L6": {
+                "instructors": [
+                    "J Subbalakshmi",
+                    "Adarash Kumar Shukla",
+                    "Anuradha Sureshrao Mohitka"
+                ],
+                "sched": [
+                    {
+                        "room": "B124",
+                        "days": [
+                            "F"
+                        ],
+                        "hours": [
+                            8,
+                            9
+                        ]
+                    }
+                ]
+            },
+            "L7": {
+                "instructors": [
+                    "N Rajesh",
+                    "Christina Nilavu",
+                    "Reeshma Rameshan"
+                ],
+                "sched": [
+                    {
+                        "room": "B124",
+                        "days": [
+                            "F"
+                        ],
+                        "hours": [
+                            2,
+                            3
+                        ]
+                    }
+                ]
+            },
+            "L8": {
+                "instructors": [
+                    "Balaji Gopalan",
+                    "Akshita Jain",
+                    "Ankita Singh"
+                ],
+                "sched": [
+                    {
+                        "room": "B124",
+                        "days": [
+                            "S"
+                        ],
+                        "hours": [
+                            4,
+                            5
+                        ]
+                    }
+                ]
+            },
+            "L9": {
+                "instructors": [
+                    "Arijit Mukherjee",
+                    "Aluri Ravallika",
+                    "Mollah Rohan Ahsan"
+                ],
+                "sched": [
+                    {
+                        "room": "B124",
+                        "days": [
+                            "M"
+                        ],
+                        "hours": [
+                            8,
+                            9
+                        ]
+                    }
+                ]
+            },
+            "L10": {
+                "instructors": [
+                    "Mudit Dixit",
+                    "Anamika Bandyopadhyay",
+                    "Sayan Halder"
+                ],
+                "sched": [
+                    {
+                        "room": "B124",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            4,
+                            5
+                        ]
+                    }
+                ]
+            },
+            "L11": {
+                "instructors": [
+                    "Himanshu Aggarwal",
+                    "Akhil Chandran P",
+                    "Govu Radha"
+                ],
+                "sched": [
+                    {
+                        "room": "B124",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            4,
+                            5
                         ]
                     }
                 ]
@@ -212,6 +1354,174 @@
                             "M",
                             "W",
                             "F"
+                        ],
+                        "hours": [
+                            1
+                        ]
+                    }
+                ]
+            },
+            "L2": {
+                "instructors": [
+                    "Chanchal Chakraborty",
+                    "Amit Nag"
+                ],
+                "sched": [
+                    {
+                        "room": "F103",
+                        "days": [
+                            "T",
+                            "Th"
+                        ],
+                        "hours": [
+                            8
+                        ]
+                    },
+                    {
+                        "room": "F103",
+                        "days": [
+                            "M"
+                        ],
+                        "hours": [
+                            10
+                        ]
+                    }
+                ]
+            },
+            "T1": {
+                "instructors": [],
+                "sched": [
+                    {
+                        "room": "G101",
+                        "days": [
+                            "T",
+                            "Th"
+                        ],
+                        "hours": [
+                            1
+                        ]
+                    }
+                ]
+            },
+            "T2": {
+                "instructors": [],
+                "sched": [
+                    {
+                        "room": "G102",
+                        "days": [
+                            "T",
+                            "Th"
+                        ],
+                        "hours": [
+                            1
+                        ]
+                    }
+                ]
+            },
+            "T3": {
+                "instructors": [],
+                "sched": [
+                    {
+                        "room": "G103",
+                        "days": [
+                            "T",
+                            "Th"
+                        ],
+                        "hours": [
+                            1
+                        ]
+                    }
+                ]
+            },
+            "T4": {
+                "instructors": [],
+                "sched": [
+                    {
+                        "room": "G104",
+                        "days": [
+                            "T",
+                            "Th"
+                        ],
+                        "hours": [
+                            1
+                        ]
+                    }
+                ]
+            },
+            "T5": {
+                "instructors": [],
+                "sched": [
+                    {
+                        "room": "G105",
+                        "days": [
+                            "T",
+                            "Th"
+                        ],
+                        "hours": [
+                            1
+                        ]
+                    }
+                ]
+            },
+            "T6": {
+                "instructors": [
+                    "Manab Chakravarty"
+                ],
+                "sched": [
+                    {
+                        "room": "G106",
+                        "days": [
+                            "T",
+                            "Th"
+                        ],
+                        "hours": [
+                            1
+                        ]
+                    }
+                ]
+            },
+            "T7": {
+                "instructors": [
+                    "R Krishnan"
+                ],
+                "sched": [
+                    {
+                        "room": "G201",
+                        "days": [
+                            "T",
+                            "Th"
+                        ],
+                        "hours": [
+                            1
+                        ]
+                    }
+                ]
+            },
+            "T8": {
+                "instructors": [],
+                "sched": [
+                    {
+                        "room": "G203",
+                        "days": [
+                            "T",
+                            "Th"
+                        ],
+                        "hours": [
+                            1
+                        ]
+                    }
+                ]
+            },
+            "T9": {
+                "instructors": [
+                    "Subit Kumar Saha"
+                ],
+                "sched": [
+                    {
+                        "room": "G107",
+                        "days": [
+                            "T",
+                            "Th"
                         ],
                         "hours": [
                             1
@@ -249,6 +1559,183 @@
                         ]
                     }
                 ]
+            },
+            "L2": {
+                "instructors": [
+                    "Apurba Das"
+                ],
+                "sched": [
+                    {
+                        "room": "F104",
+                        "days": [
+                            "M",
+                            "W",
+                            "F"
+                        ],
+                        "hours": [
+                            1
+                        ]
+                    }
+                ]
+            },
+            "L3": {
+                "instructors": [
+                    "Aruna Malapati"
+                ],
+                "sched": []
+            },
+            "P1": {
+                "instructors": [
+                    "Pooja"
+                ],
+                "sched": [
+                    {
+                        "room": "D311",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            4,
+                            5
+                        ]
+                    }
+                ]
+            },
+            "P2": {
+                "instructors": [
+                    "Attarde Pranjali Devidas"
+                ],
+                "sched": [
+                    {
+                        "room": "D311",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            4,
+                            5
+                        ]
+                    }
+                ]
+            },
+            "P3": {
+                "instructors": [],
+                "sched": [
+                    {
+                        "room": "D311",
+                        "days": [
+                            "S"
+                        ],
+                        "hours": [
+                            4,
+                            5
+                        ]
+                    }
+                ]
+            },
+            "P4": {
+                "instructors": [
+                    "Chittaranjan Hota",
+                    "Mekala Kiran"
+                ],
+                "sched": [
+                    {
+                        "room": "D311",
+                        "days": [
+                            "M"
+                        ],
+                        "hours": [
+                            2,
+                            3
+                        ]
+                    }
+                ]
+            },
+            "P5": {
+                "instructors": [],
+                "sched": [
+                    {
+                        "room": "D311",
+                        "days": [
+                            "W"
+                        ],
+                        "hours": [
+                            2,
+                            3
+                        ]
+                    }
+                ]
+            },
+            "P6": {
+                "instructors": [
+                    "TO BE ANNOUNCED"
+                ],
+                "sched": [
+                    {
+                        "room": "D311",
+                        "days": [
+                            "F"
+                        ],
+                        "hours": [
+                            8,
+                            9
+                        ]
+                    }
+                ]
+            },
+            "P7": {
+                "instructors": [
+                    "Praneeta Krishnaprasad Ma"
+                ],
+                "sched": [
+                    {
+                        "room": "D311",
+                        "days": [
+                            "M"
+                        ],
+                        "hours": [
+                            8,
+                            9
+                        ]
+                    }
+                ]
+            },
+            "P8": {
+                "instructors": [
+                    "Nikumani Choudhury",
+                    "Chillara Anil Kumar"
+                ],
+                "sched": [
+                    {
+                        "room": "D311",
+                        "days": [
+                            "W"
+                        ],
+                        "hours": [
+                            8,
+                            9
+                        ]
+                    }
+                ]
+            },
+            "P9": {
+                "instructors": [],
+                "sched": [
+                    {
+                        "room": "D311",
+                        "days": [
+                            "F"
+                        ],
+                        "hours": [
+                            2,
+                            3
+                        ]
+                    }
+                ]
+            },
+            "P10": {
+                "instructors": [],
+                "sched": []
             }
         },
         "compre": {
@@ -276,6 +1763,29 @@
                         ],
                         "hours": [
                             8
+                        ]
+                    },
+                    {
+                        "room": "J107",
+                        "days": [
+                            "M"
+                        ],
+                        "hours": [
+                            10
+                        ]
+                    }
+                ]
+            },
+            "T5": {
+                "instructors": [],
+                "sched": [
+                    {
+                        "room": "J107",
+                        "days": [
+                            "F"
+                        ],
+                        "hours": [
+                            1
                         ]
                     }
                 ]
@@ -310,6 +1820,162 @@
                         ]
                     }
                 ]
+            },
+            "L2": {
+                "instructors": [
+                    "STP Srinivas"
+                ],
+                "sched": [
+                    {
+                        "room": "F105",
+                        "days": [
+                            "M"
+                        ],
+                        "hours": [
+                            10
+                        ]
+                    },
+                    {
+                        "room": "F105",
+                        "days": [
+                            "T",
+                            "Th"
+                        ],
+                        "hours": [
+                            8
+                        ]
+                    }
+                ]
+            },
+            "T1": {
+                "instructors": [],
+                "sched": [
+                    {
+                        "room": "I111",
+                        "days": [
+                            "M"
+                        ],
+                        "hours": [
+                            2
+                        ]
+                    }
+                ]
+            },
+            "T2": {
+                "instructors": [],
+                "sched": [
+                    {
+                        "room": "I111",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            7
+                        ]
+                    }
+                ]
+            },
+            "T3": {
+                "instructors": [],
+                "sched": [
+                    {
+                        "room": "I111",
+                        "days": [
+                            "F"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T4": {
+                "instructors": [],
+                "sched": [
+                    {
+                        "room": "I111",
+                        "days": [
+                            "S"
+                        ],
+                        "hours": [
+                            5
+                        ]
+                    }
+                ]
+            },
+            "T5": {
+                "instructors": [
+                    "Sayan Kanungo"
+                ],
+                "sched": [
+                    {
+                        "room": "I111",
+                        "days": [
+                            "W"
+                        ],
+                        "hours": [
+                            2
+                        ]
+                    }
+                ]
+            },
+            "T6": {
+                "instructors": [],
+                "sched": [
+                    {
+                        "room": "I111",
+                        "days": [
+                            "F"
+                        ],
+                        "hours": [
+                            2
+                        ]
+                    }
+                ]
+            },
+            "T7": {
+                "instructors": [
+                    "Imran khan"
+                ],
+                "sched": [
+                    {
+                        "room": "I111",
+                        "days": [
+                            "M"
+                        ],
+                        "hours": [
+                            7
+                        ]
+                    }
+                ]
+            },
+            "T8": {
+                "instructors": [],
+                "sched": [
+                    {
+                        "room": "I111",
+                        "days": [
+                            "W"
+                        ],
+                        "hours": [
+                            7
+                        ]
+                    }
+                ]
+            },
+            "T9": {
+                "instructors": [],
+                "sched": [
+                    {
+                        "room": "I111",
+                        "days": [
+                            "F"
+                        ],
+                        "hours": [
+                            7
+                        ]
+                    }
+                ]
             }
         },
         "compre": {
@@ -338,6 +2004,414 @@
                         ],
                         "hours": [
                             4
+                        ]
+                    }
+                ]
+            },
+            "L2": {
+                "instructors": [],
+                "sched": [
+                    {
+                        "room": "F103",
+                        "days": [
+                            "M",
+                            "W",
+                            "F"
+                        ],
+                        "hours": [
+                            4
+                        ]
+                    }
+                ]
+            },
+            "L3": {
+                "instructors": [
+                    "Sharan Gopal"
+                ],
+                "sched": [
+                    {
+                        "room": "F104",
+                        "days": [
+                            "M",
+                            "W",
+                            "F"
+                        ],
+                        "hours": [
+                            4
+                        ]
+                    }
+                ]
+            },
+            "L4": {
+                "instructors": [
+                    "A Michael Alphonse"
+                ],
+                "sched": [
+                    {
+                        "room": "F102",
+                        "days": [
+                            "T",
+                            "Th",
+                            "S"
+                        ],
+                        "hours": [
+                            2
+                        ]
+                    }
+                ]
+            },
+            "L5": {
+                "instructors": [
+                    "Jhuma Sen Gupta"
+                ],
+                "sched": [
+                    {
+                        "room": "F103",
+                        "days": [
+                            "T",
+                            "Th",
+                            "S"
+                        ],
+                        "hours": [
+                            2
+                        ]
+                    }
+                ]
+            },
+            "L6": {
+                "instructors": [
+                    "Pratyusha Chattopadhyaa"
+                ],
+                "sched": [
+                    {
+                        "room": "F104",
+                        "days": [
+                            "T",
+                            "Th",
+                            "S"
+                        ],
+                        "hours": [
+                            2
+                        ]
+                    }
+                ]
+            },
+            "T1": {
+                "instructors": [
+                    "Rahul Vijay Bhagat"
+                ],
+                "sched": [
+                    {
+                        "room": "G107",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T2": {
+                "instructors": [
+                    "Dheeraj Singh Rana"
+                ],
+                "sched": [
+                    {
+                        "room": "I213",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T3": {
+                "instructors": [
+                    "Aaqid Mohi Ud Din Bhat"
+                ],
+                "sched": [
+                    {
+                        "room": "J115",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T4": {
+                "instructors": [
+                    "Amritanshu Rai"
+                ],
+                "sched": [
+                    {
+                        "room": "J220",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T5": {
+                "instructors": [
+                    "Moreshwar Jagadeorao Tayd"
+                ],
+                "sched": [
+                    {
+                        "room": "J120",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T6": {
+                "instructors": [
+                    "Shivangi Joshi"
+                ],
+                "sched": [
+                    {
+                        "room": "J121",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T7": {
+                "instructors": [
+                    "Tapaswini Patro"
+                ],
+                "sched": [
+                    {
+                        "room": "J219",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T8": {
+                "instructors": [
+                    "Sai Swagat Mishra"
+                ],
+                "sched": [
+                    {
+                        "room": "J206",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T9": {
+                "instructors": [
+                    "Gaurav Narayanrao Gadbail"
+                ],
+                "sched": [
+                    {
+                        "room": "J214",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T10": {
+                "instructors": [
+                    "Anjali P V"
+                ],
+                "sched": [
+                    {
+                        "room": "J217",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T11": {
+                "instructors": [
+                    "Amit Kumar Pal"
+                ],
+                "sched": [
+                    {
+                        "room": "J218",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T12": {
+                "instructors": [
+                    "Debismita Nayak"
+                ],
+                "sched": [
+                    {
+                        "room": "G203",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T13": {
+                "instructors": [
+                    "Kadam Siddheshwar Atmara"
+                ],
+                "sched": [
+                    {
+                        "room": "G204",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T14": {
+                "instructors": [
+                    "Sunita Kumawat"
+                ],
+                "sched": [
+                    {
+                        "room": "G205",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T15": {
+                "instructors": [
+                    "Suman Prabha Yadav"
+                ],
+                "sched": [
+                    {
+                        "room": "G206",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T16": {
+                "instructors": [
+                    "Ankur Pandey"
+                ],
+                "sched": [
+                    {
+                        "room": "G207",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T17": {
+                "instructors": [
+                    "Shubham Atmaram Narawad"
+                ],
+                "sched": [
+                    {
+                        "room": "G103",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T18": {
+                "instructors": [
+                    "Komal Kumar"
+                ],
+                "sched": [
+                    {
+                        "room": "G104",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T19": {
+                "instructors": [
+                    "Kailash Chand Swami"
+                ],
+                "sched": [
+                    {
+                        "room": "G105",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T20": {
+                "instructors": [
+                    "Sushil Pathak"
+                ],
+                "sched": [
+                    {
+                        "room": "G106",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            9
                         ]
                     }
                 ]
@@ -372,6 +2446,414 @@
                         ]
                     }
                 ]
+            },
+            "L3": {
+                "instructors": [
+                    "G Murali Mohan Reddy"
+                ],
+                "sched": [
+                    {
+                        "room": "F107",
+                        "days": [
+                            "M",
+                            "W",
+                            "F"
+                        ],
+                        "hours": [
+                            4
+                        ]
+                    }
+                ]
+            },
+            "L4": {
+                "instructors": [
+                    "K Venkata Ratnam"
+                ],
+                "sched": [
+                    {
+                        "room": "F105",
+                        "days": [
+                            "M",
+                            "W",
+                            "F"
+                        ],
+                        "hours": [
+                            4
+                        ]
+                    }
+                ]
+            },
+            "L5": {
+                "instructors": [
+                    "Sabyasachi Dey"
+                ],
+                "sched": [
+                    {
+                        "room": "F106",
+                        "days": [
+                            "T",
+                            "Th",
+                            "S"
+                        ],
+                        "hours": [
+                            2
+                        ]
+                    }
+                ]
+            },
+            "L6": {
+                "instructors": [
+                    "Sayan Ghosh"
+                ],
+                "sched": [
+                    {
+                        "room": "F107",
+                        "days": [
+                            "T",
+                            "Th",
+                            "S"
+                        ],
+                        "hours": [
+                            2
+                        ]
+                    }
+                ]
+            },
+            "L7": {
+                "instructors": [
+                    "DK Satpathi"
+                ],
+                "sched": [
+                    {
+                        "room": "F105",
+                        "days": [
+                            "T",
+                            "Th",
+                            "S"
+                        ],
+                        "hours": [
+                            2
+                        ]
+                    }
+                ]
+            },
+            "T2": {
+                "instructors": [
+                    "Sneha Pradhan"
+                ],
+                "sched": [
+                    {
+                        "room": "G107",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T3": {
+                "instructors": [
+                    "Ruddarraju Amrutha"
+                ],
+                "sched": [
+                    {
+                        "room": "J115",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T4": {
+                "instructors": [
+                    "Nitin Kumar Sharma"
+                ],
+                "sched": [
+                    {
+                        "room": "J220",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T5": {
+                "instructors": [
+                    "Agrawal Amarkumar Shyams"
+                ],
+                "sched": [
+                    {
+                        "room": "J120",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T6": {
+                "instructors": [
+                    "Zinnat Hassan"
+                ],
+                "sched": [
+                    {
+                        "room": "J121",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T7": {
+                "instructors": [
+                    "Tathe Kartik Vilasrao"
+                ],
+                "sched": [
+                    {
+                        "room": "J219",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T8": {
+                "instructors": [
+                    "Raja Solanki"
+                ],
+                "sched": [
+                    {
+                        "room": "J206",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T9": {
+                "instructors": [
+                    "Vipin V"
+                ],
+                "sched": [
+                    {
+                        "room": "J214",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T10": {
+                "instructors": [
+                    "Sangeeta Dhawan"
+                ],
+                "sched": [
+                    {
+                        "room": "J217",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T11": {
+                "instructors": [
+                    "G Vinodkumar Rajlingappa"
+                ],
+                "sched": [
+                    {
+                        "room": "J218",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T12": {
+                "instructors": [
+                    "Lakhan Valmik Jaybhaye"
+                ],
+                "sched": [
+                    {
+                        "room": "G203",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T13": {
+                "instructors": [
+                    "Mintu Mandal"
+                ],
+                "sched": [
+                    {
+                        "room": "G204",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T14": {
+                "instructors": [
+                    "Purohit Nisarg Bharatbhai"
+                ],
+                "sched": [
+                    {
+                        "room": "G205",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T15": {
+                "instructors": [
+                    "Sandhya Mel"
+                ],
+                "sched": [
+                    {
+                        "room": "G206",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T16": {
+                "instructors": [],
+                "sched": [
+                    {
+                        "room": "G207",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T17": {
+                "instructors": [
+                    "Lohakare Santosh Vijay"
+                ],
+                "sched": [
+                    {
+                        "room": "G103",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T18": {
+                "instructors": [
+                    "Md Imdadul Islam"
+                ],
+                "sched": [
+                    {
+                        "room": "G104",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T19": {
+                "instructors": [
+                    "Mayuri Verma"
+                ],
+                "sched": [
+                    {
+                        "room": "G105",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T20": {
+                "instructors": [
+                    "Amya Ranjan Ray"
+                ],
+                "sched": [
+                    {
+                        "room": "G106",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T21": {
+                "instructors": [
+                    "Subhendu Paul"
+                ],
+                "sched": [
+                    {
+                        "room": "G102",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
             }
         },
         "compre": {
@@ -388,7 +2870,8 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "SUJITH R"
+                    "SUJITH R",
+                    "Ravi Shanker Vidyarthy"
                 ],
                 "sched": [
                     {
@@ -398,6 +2881,122 @@
                         ],
                         "hours": [
                             1
+                        ]
+                    }
+                ]
+            },
+            "P1": {
+                "instructors": [
+                    "Kandukuri Prudviraj",
+                    "Sanjeet Kumar"
+                ],
+                "sched": [
+                    {
+                        "room": "WS",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            3,
+                            4,
+                            5
+                        ]
+                    }
+                ]
+            },
+            "P2": {
+                "instructors": [
+                    "Kiran Somisetti",
+                    "Bagadi Ramana Murthy",
+                    "Y S Prasanna"
+                ],
+                "sched": [
+                    {
+                        "room": "WS",
+                        "days": [
+                            "W"
+                        ],
+                        "hours": [
+                            7,
+                            8,
+                            9
+                        ]
+                    }
+                ]
+            },
+            "P3": {
+                "instructors": [
+                    "P  Chennakesava Sai",
+                    "Sibin V Mathew"
+                ],
+                "sched": [
+                    {
+                        "room": "WS",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            3,
+                            4,
+                            5
+                        ]
+                    }
+                ]
+            },
+            "P4": {
+                "instructors": [
+                    "Kundan Kumar Singh",
+                    "Nagarani s",
+                    "Petla Sivateja"
+                ],
+                "sched": [
+                    {
+                        "room": "WS",
+                        "days": [
+                            "M"
+                        ],
+                        "hours": [
+                            7,
+                            8,
+                            9
+                        ]
+                    }
+                ]
+            },
+            "P5": {
+                "instructors": [
+                    "Pichika S V V S Narayana"
+                ],
+                "sched": [
+                    {
+                        "room": "WS",
+                        "days": [
+                            "F"
+                        ],
+                        "hours": [
+                            7,
+                            8,
+                            9
+                        ]
+                    }
+                ]
+            },
+            "P6": {
+                "instructors": [
+                    "Pavan Kumar P",
+                    "Gururaja S",
+                    "Gudlavalleti Deepak Kumar"
+                ],
+                "sched": [
+                    {
+                        "room": "WS",
+                        "days": [
+                            "S"
+                        ],
+                        "hours": [
+                            3,
+                            4,
+                            5
                         ]
                     }
                 ]
@@ -425,6 +3024,54 @@
                         "days": [
                             "M",
                             "W"
+                        ],
+                        "hours": [
+                            4
+                        ]
+                    }
+                ]
+            },
+            "P1": {
+                "instructors": [
+                    "Lahane Ganesh Panditrao",
+                    "Rupal Kothari",
+                    "Trupti Ghatage"
+                ],
+                "sched": [
+                    {
+                        "room": "A009",
+                        "days": [
+                            "M"
+                        ],
+                        "hours": [
+                            8,
+                            9
+                        ]
+                    }
+                ]
+            },
+            "P2": {
+                "instructors": [],
+                "sched": [
+                    {
+                        "room": "A009",
+                        "days": [
+                            "W"
+                        ],
+                        "hours": [
+                            2,
+                            3
+                        ]
+                    }
+                ]
+            },
+            "T1": {
+                "instructors": [],
+                "sched": [
+                    {
+                        "room": "G102",
+                        "days": [
+                            "F"
                         ],
                         "hours": [
                             4
@@ -461,6 +3108,55 @@
                         ]
                     }
                 ]
+            },
+            "P1": {
+                "instructors": [
+                    "Deepika K",
+                    "Jegadheeswari V",
+                    "K Vandana",
+                    "Priyadarshini Sathe"
+                ],
+                "sched": [
+                    {
+                        "room": "B212",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            4,
+                            5
+                        ]
+                    }
+                ]
+            },
+            "P2": {
+                "instructors": [],
+                "sched": [
+                    {
+                        "room": "B212",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            4,
+                            5
+                        ]
+                    }
+                ]
+            },
+            "T1": {
+                "instructors": [],
+                "sched": [
+                    {
+                        "room": "G102",
+                        "days": [
+                            "F"
+                        ],
+                        "hours": [
+                            5
+                        ]
+                    }
+                ]
             }
         },
         "compre": {
@@ -477,7 +3173,8 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "PK Thiruvikraman"
+                    "PK Thiruvikraman",
+                    "Yash Pareek"
                 ],
                 "sched": [
                     {
@@ -488,6 +3185,182 @@
                         "hours": [
                             3,
                             4
+                        ]
+                    }
+                ]
+            },
+            "L2": {
+                "instructors": [
+                    "SARMISTHA BANIK",
+                    "Priyanka Mitra"
+                ],
+                "sched": [
+                    {
+                        "room": "A222",
+                        "days": [
+                            "M"
+                        ],
+                        "hours": [
+                            8,
+                            9
+                        ]
+                    }
+                ]
+            },
+            "L3": {
+                "instructors": [
+                    "Aranya Bhuti Bhattacherjee",
+                    "Tamali Mukherjee"
+                ],
+                "sched": [
+                    {
+                        "room": "A222",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            3,
+                            4
+                        ]
+                    }
+                ]
+            },
+            "L4": {
+                "instructors": [
+                    "Anamika Avinash Pathak"
+                ],
+                "sched": [
+                    {
+                        "room": "A222",
+                        "days": [
+                            "F"
+                        ],
+                        "hours": [
+                            8,
+                            9
+                        ]
+                    }
+                ]
+            },
+            "L5": {
+                "instructors": [
+                    "Subash N. Karbelkar",
+                    "Greeshma Gopinath"
+                ],
+                "sched": [
+                    {
+                        "room": "A222",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            6,
+                            7
+                        ]
+                    }
+                ]
+            },
+            "L6": {
+                "instructors": [
+                    "K V Shiv Chaitanya",
+                    "Urjjarani Patel"
+                ],
+                "sched": [
+                    {
+                        "room": "A222",
+                        "days": [
+                            "M"
+                        ],
+                        "hours": [
+                            2,
+                            3
+                        ]
+                    }
+                ]
+            },
+            "L7": {
+                "instructors": [
+                    "Sreeshna S"
+                ],
+                "sched": [
+                    {
+                        "room": "A222",
+                        "days": [
+                            "W"
+                        ],
+                        "hours": [
+                            2,
+                            3
+                        ]
+                    }
+                ]
+            },
+            "L8": {
+                "instructors": [
+                    "Swastik Bhattacharya",
+                    "Anagh Venneti"
+                ],
+                "sched": [
+                    {
+                        "room": "A222",
+                        "days": [
+                            "F"
+                        ],
+                        "hours": [
+                            2,
+                            3
+                        ]
+                    }
+                ]
+            },
+            "L9": {
+                "instructors": [
+                    "Subhadeep Roy",
+                    "Geetika Sahu"
+                ],
+                "sched": [
+                    {
+                        "room": "A222",
+                        "days": [
+                            "T"
+                        ],
+                        "hours": [
+                            3,
+                            4
+                        ]
+                    }
+                ]
+            },
+            "L10": {
+                "instructors": [
+                    "Ronit Mahapatra"
+                ],
+                "sched": [
+                    {
+                        "room": "A222",
+                        "days": [
+                            "W"
+                        ],
+                        "hours": [
+                            8,
+                            9
+                        ]
+                    }
+                ]
+            },
+            "L11": {
+                "instructors": [
+                    "Akhil U Nair"
+                ],
+                "sched": [
+                    {
+                        "room": "A222",
+                        "days": [
+                            "Th"
+                        ],
+                        "hours": [
+                            6,
+                            7
                         ]
                     }
                 ]
@@ -503,7 +3376,7 @@
         "sections": {
             "L1": {
                 "instructors": [
-                    "PK Thiruvikraman"
+                    "Souri Banerjee"
                 ],
                 "sched": [
                     {
@@ -512,6 +3385,116 @@
                             "M",
                             "W",
                             "F"
+                        ],
+                        "hours": [
+                            5
+                        ]
+                    }
+                ]
+            },
+            "L2": {
+                "instructors": [],
+                "sched": [
+                    {
+                        "room": "F103",
+                        "days": [
+                            "M",
+                            "W",
+                            "F"
+                        ],
+                        "hours": [
+                            1
+                        ]
+                    }
+                ]
+            },
+            "T1": {
+                "instructors": [],
+                "sched": [
+                    {
+                        "room": "F107",
+                        "days": [
+                            "M",
+                            "W"
+                        ],
+                        "hours": [
+                            2
+                        ]
+                    }
+                ]
+            },
+            "T2": {
+                "instructors": [
+                    "Prasant Samantray"
+                ],
+                "sched": [
+                    {
+                        "room": "F107",
+                        "days": [
+                            "T",
+                            "Th"
+                        ],
+                        "hours": [
+                            7
+                        ]
+                    }
+                ]
+            },
+            "T3": {
+                "instructors": [
+                    "VSN MURTHY"
+                ],
+                "sched": [
+                    {
+                        "room": "F108",
+                        "days": [
+                            "T",
+                            "Th"
+                        ],
+                        "hours": [
+                            7
+                        ]
+                    }
+                ]
+            },
+            "T4": {
+                "instructors": [],
+                "sched": [
+                    {
+                        "room": "G102",
+                        "days": [
+                            "M",
+                            "W"
+                        ],
+                        "hours": [
+                            9
+                        ]
+                    }
+                ]
+            },
+            "T5": {
+                "instructors": [],
+                "sched": [
+                    {
+                        "room": "G206",
+                        "days": [
+                            "M",
+                            "W"
+                        ],
+                        "hours": [
+                            7
+                        ]
+                    }
+                ]
+            },
+            "T6": {
+                "instructors": [],
+                "sched": [
+                    {
+                        "room": "G206",
+                        "days": [
+                            "T",
+                            "Th"
                         ],
                         "hours": [
                             5
