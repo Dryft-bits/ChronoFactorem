@@ -121,6 +121,9 @@ psd
 thumb
 sketch
 
+# client build
+client/build
+
 .vscode
 
 ### API Keys ###
