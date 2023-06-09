@@ -122,9 +122,7 @@ thumb
 sketch
 
 .vscode
-client/package-lock.json
-package-lock.json
 
 ### API Keys ###
-.env
+.env*
 # End of https://www.gitignore.io/api/node,react

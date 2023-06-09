@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  chrono:
+    image: "chrono"
+    restart: on-failure
+    ports:
+      - 3000:5000
+    env_file:
+      - .env
+
+  mongo:
+    image: "mongo"
+    restart: on-failure
+    env_file:
+      - .env.db
