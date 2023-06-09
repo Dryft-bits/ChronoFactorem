@@ -121,11 +121,8 @@ psd
 thumb
 sketch
 
-# client build
-client/build
-
 .vscode
 
 ### API Keys ###
-.env*
+.env
 # End of https://www.gitignore.io/api/node,react
