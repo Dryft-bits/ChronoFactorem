@@ -1,7 +1,6 @@
 FROM node:17-bullseye-slim
 ENV NODE_ENV production
 RUN apt-get update && apt-get install -y --no-install-recommends dumb-init
-EXPOSE 5000
 WORKDIR /usr/src/app
 
 COPY --chown=node:node . .
