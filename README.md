@@ -1,6 +1,7 @@
-# ChronoFactorem
+# ChronoFactorem  
+ChronoFactorem has been rewritten! Now at https://chrono.crux-bphc.com/  
+Access the rewritten repo [here](https://github.com/crux-bphc/chronofactorem-rewrite)  
 A MERN stack Web App that allows students to create draft time tables<br>
-Now live at https://chronofactorem.up.railway.app/
 <br></br>
 <kbd><img src="https://user-images.githubusercontent.com/46719471/97092039-1d586000-165e-11eb-9741-2164a67fb8bd.png"></kbd>
 <br></br>
